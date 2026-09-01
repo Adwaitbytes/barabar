@@ -1,0 +1,10 @@
+web
+tests
+evals/datasets
+data
+.venv
+.github
+docs
+.hypothesis
+.pytest_cache
+.ruff_cache

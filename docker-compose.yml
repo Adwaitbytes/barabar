@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: barabar
+      POSTGRES_PASSWORD: barabar
+      POSTGRES_DB: barabar
+    ports: ["5432:5432"]
+    volumes: ["pgdata:/var/lib/postgresql/data"]
+  api:
+    build: .
+    environment:
+      DATABASE_URL: postgresql+psycopg://barabar:barabar@postgres:5432/barabar
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      RAZORPAY_WEBHOOK_SECRET: ${RAZORPAY_WEBHOOK_SECRET:-}
+    ports: ["8000:8000"]
+    depends_on: [postgres]
+volumes:
+  pgdata: {}

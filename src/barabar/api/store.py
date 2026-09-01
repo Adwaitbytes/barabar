@@ -115,13 +115,20 @@ webhook_events = Table(
 )
 
 
+def default_sqlite_url() -> str:
+    """Local file by default; ``/tmp`` on read-only serverless filesystems (Vercel)."""
+    if os.environ.get("VERCEL") or os.environ.get("AWS_LAMBDA_FUNCTION_NAME"):
+        return "sqlite:////tmp/barabar.db"
+    return "sqlite:///./data/local/barabar.db"
+
+
 def _now() -> datetime:
     return datetime.now(tz=UTC)
 
 
 class Store:
     def __init__(self, url: str | None = None) -> None:
-        url = url or os.environ.get("DATABASE_URL") or "sqlite:///./data/local/barabar.db"
+        url = url or os.environ.get("DATABASE_URL") or default_sqlite_url()
         if url.startswith("sqlite:///") and not url.endswith(":memory:"):
             os.makedirs(os.path.dirname(url.removeprefix("sqlite:///")) or ".", exist_ok=True)
         memory = url in ("sqlite://", "sqlite:///:memory:")
