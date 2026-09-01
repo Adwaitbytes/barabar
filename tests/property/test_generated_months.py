@@ -106,3 +106,13 @@ def test_throughput_6000_under_ten_seconds() -> None:
     t0 = time.perf_counter()
     reconcile(g.month, CFG, "run")
     assert time.perf_counter() - t0 < 10
+
+
+@pytest.mark.perf
+def test_throughput_60000_under_ninety_seconds() -> None:
+    import time
+
+    g = generate(seed=7, n_orders=60000)
+    t0 = time.perf_counter()
+    reconcile(g.month, CFG, "run")
+    assert time.perf_counter() - t0 < 90

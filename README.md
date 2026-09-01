@@ -15,6 +15,7 @@ A Razorpay payout is one bank credit hiding hundreds of orders, fees, 18% GST on
 | 60 orders | 100.0% | 100% | 74.4% | 100% | 100% | 0.005 s |
 | 600 orders | 99.94% | 100% | 92.5% | 100% | 100% | 0.03 s |
 | 6,000 orders | 99.99% | 100% | 97.0% | 100% | 100% | 0.55 s |
+| 60,000 orders | — | — | — | — | — | 5.4 s (laptop; PRD target < 90 s) |
 
 "Explained" is honest: the demo month deliberately injects a missing bank credit, an unknown credit, a truncated UTR and two manual adjustments — rupees no rule can explain without a person. "Coverage" is how much of everything *else* the rules explained. Both numbers are in `evals/reports/latest.md`, computed against generator ground truth, never against the matcher's opinion of itself. False-match cost at tiers A/B: **₹0** at every size.
 

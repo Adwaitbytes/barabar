@@ -146,6 +146,7 @@ class _Ctx:
     )
     credit_notes_by_refund: dict[str, LedgerEntry] = field(default_factory=dict)
     ledger_matched_payments: set[str] = field(default_factory=set)
+    payments_by_rupee: dict[int, list[RzPayment]] = field(default_factory=lambda: defaultdict(list))
 
     # --- emitters ------------------------------------------------------------
 
@@ -267,6 +268,8 @@ def _index(ctx: _Ctx) -> None:
     ctx.payments = {p.payment_id: p for p in m.payments}
     ctx.payments_by_receipt = {p.order_receipt: p for p in m.payments if p.order_receipt}
     ctx.refunds = {r.refund_id: r for r in m.refunds}
+    for p in m.payments:
+        ctx.payments_by_rupee[p.amount // 100].append(p)
     for line in sorted(m.recon_lines, key=lambda x: (x.settlement_id or "", x.entity_id)):
         if line.settlement_id:
             ctx.lines_by_setl[line.settlement_id].append(line)
@@ -813,9 +816,15 @@ def _match_ledger(ctx: _Ctx) -> None:
 
 def _ledger_fuzzy(ctx: _Ctx, entry: LedgerEntry, lref: str) -> None:
     best: tuple[float, RzPayment] | None = None
-    for pid in sorted(ctx.payments):
-        p = ctx.payments[pid]
-        if pid in ctx.ledger_matched_payments or not p.captured_at:
+    rupee = entry.gross // 100
+    span = ctx.cfg.ledger_tolerance_paise // 100 + 1
+    candidates = [
+        p
+        for bucket in range(rupee - span, rupee + span + 1)
+        for p in ctx.payments_by_rupee.get(bucket, ())
+    ]
+    for p in sorted(candidates, key=lambda x: x.payment_id):
+        if p.payment_id in ctx.ledger_matched_payments or not p.captured_at:
             continue
         amt_diff = abs(p.amount - entry.gross)
         day_diff = abs((_ist_date(p.captured_at) - entry.date).days)  # type: ignore[operator]

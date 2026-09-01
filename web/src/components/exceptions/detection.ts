@@ -1,0 +1,30 @@
+import type { ExceptionType } from "@/lib/types";
+
+/** Detection rules, verbatim from docs/EXCEPTIONS.md (rendered from core/exceptions.py). */
+export const DETECTION: Record<ExceptionType, string> = {
+  TIMING_NOT_YET_SETTLED: "captured_at + cycle(calendar) > as_of",
+  TIMING_BANK_LAG: "settlement.processed exists, no bank credit within lag window",
+  TIMING_HOLIDAY_SHIFT: "Calendar-aware re-date resolves it",
+  FEE_VARIANCE: "abs(fee - expected_fee) > 1 paise",
+  TAX_VARIANCE: "abs(tax - round(fee × 0.18)) > 1 paise",
+  ROUNDING: "0 < abs(residual) <= tolerance_paise",
+  REFUND_NETTED: "Refund line in batch with no ledger credit note",
+  REFUND_PENDING_NET: "Refund exists; no recon line",
+  DISPUTE_DEBIT: "Recon line with dispute_id, debit",
+  DISPUTE_REVERSAL: "Credit line with dispute_id",
+  ADJUSTMENT: "type == adjustment",
+  ON_HOLD: "on_hold == true",
+  PARTIAL_SETTLEMENT: "settlement.type == partial or residual equals a later batch",
+  INSTANT_SETTLEMENT_FEE: "Fee line without payment",
+  MULTI_UTR_SPLIT: "Bounded subset-sum over same-day credits equals batch net",
+  MISSING_BANK_CREDIT: "Window exceeded",
+  UNKNOWN_BANK_CREDIT: "Narration parser tags source = razorpay, no batch",
+  DUPLICATE_BANK_CREDIT: "UTR seen twice",
+  NARRATION_TRUNCATED_UTR: "Prefix match >= 10 chars + exact amount + window",
+  SETTLEMENT_FAILED_RETURNED: "Settlement status failed then reprocessed",
+  ORPHAN_LEDGER_ENTRY: "No payment by receipt/amount/date",
+  AMOUNT_MISMATCH_LEDGER: "Payment != invoice gross",
+  DUPLICATE_LEDGER_ENTRY: "Duplicate invoice_no/amount/date",
+  INTL_FX: "currency != INR",
+  MARKETPLACE_TDS_TCS: "Source = marketplace",
+};

@@ -2,17 +2,18 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Sidebar } from "@/components/shell/sidebar";
 import { Topbar } from "@/components/shell/topbar";
 import { CommandPaletteProvider } from "@/components/shell/command-palette";
+import { Onboarding } from "@/components/shell/onboarding";
 import { activeRunId } from "@/lib/run";
 import { getClosePack, listExceptions, listRuns, source } from "@/lib/api";
 
 export default async function AppLayout({ children }: LayoutProps<"/app">) {
+  const [runs, src] = await Promise.all([listRuns(), source()]);
+  // A reachable API with an empty store (the hosted one is ephemeral) gets the
+  // one-click demo month instead of a shell with nothing behind it.
+  if (src === "live" && runs.length === 0) return <Onboarding />;
+
   const runId = await activeRunId();
-  const [runs, pack, exceptions, src] = await Promise.all([
-    listRuns(),
-    getClosePack(runId),
-    listExceptions(runId),
-    source(),
-  ]);
+  const [pack, exceptions] = await Promise.all([getClosePack(runId), listExceptions(runId)]);
   const active = runs.find((r) => r.run_id === runId) ?? pack.run;
 
   // Open, confident exceptions are money a person still has to decide on; the

@@ -51,9 +51,9 @@ def content_hash(obj: Any) -> str:
 
 def code_version() -> str:
     """``BARABAR_CODE_VERSION`` if set, else the git short SHA (+``-dirty``), else ``unknown``."""
-    env = os.environ.get("BARABAR_CODE_VERSION")
+    env = os.environ.get("BARABAR_CODE_VERSION") or os.environ.get("VERCEL_GIT_COMMIT_SHA")
     if env:
-        return env
+        return env[:12]
     try:
         sha = subprocess.run(
             ["git", "rev-parse", "--short=12", "HEAD"], capture_output=True, text=True, check=True

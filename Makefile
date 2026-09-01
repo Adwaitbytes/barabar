@@ -1,7 +1,7 @@
 PY := .venv/bin/python
 BARABAR := .venv/bin/barabar
 
-.PHONY: install test test-all lint typecheck demo evals generate docs api web seed clean
+.PHONY: install test test-all lint typecheck demo evals evals-large perf generate docs api web seed clean
 
 install:
 	uv venv --python 3.12 .venv
@@ -26,6 +26,12 @@ demo:
 
 evals:
 	$(BARABAR) evals --sizes 60,600,6000
+
+evals-large:
+	$(BARABAR) evals --sizes 60000
+
+perf:
+	$(PY) -m pytest -q -m perf
 
 generate:
 	$(BARABAR) generate --n 60 --out evals/datasets/60

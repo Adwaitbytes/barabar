@@ -24,7 +24,8 @@ import type {
  * `source()` tells the UI which one it is looking at.
  */
 
-const API_URL = process.env.BARABAR_API_URL ?? "http://localhost:8000";
+const API_URL =
+  process.env.BARABAR_API_URL ?? process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
 const TIMEOUT_MS = 2500;
 
 export type DataSource = "live" | "demo";
@@ -38,9 +39,13 @@ export class ApiError extends Error {
   }
 }
 
-async function request<T>(path: string, init?: RequestInit): Promise<T> {
+async function request<T>(
+  path: string,
+  init?: RequestInit,
+  timeoutMs: number = TIMEOUT_MS,
+): Promise<T> {
   const ctrl = new AbortController();
-  const timer = setTimeout(() => ctrl.abort(), TIMEOUT_MS);
+  const timer = setTimeout(() => ctrl.abort(), timeoutMs);
   try {
     const res = await fetch(`${API_URL}${path}`, {
       ...init,
@@ -214,7 +219,7 @@ export interface CreateRunBody {
 }
 
 export async function createRun(body: CreateRunBody): Promise<Run> {
-  return request<Run>("/runs", { method: "POST", body: JSON.stringify(body) });
+  return request<Run>("/runs", { method: "POST", body: JSON.stringify(body) }, 60_000);
 }
 
 export async function createRunUpload(form: FormData): Promise<Run> {
@@ -237,7 +242,7 @@ export async function createRunUpload(form: FormData): Promise<Run> {
 }
 
 export async function rerun(runId: string): Promise<RerunResult> {
-  return request<RerunResult>(`/runs/${runId}/rerun`, { method: "POST" });
+  return request<RerunResult>(`/runs/${runId}/rerun`, { method: "POST" }, 60_000);
 }
 
 export async function deleteRun(runId: string): Promise<void> {
@@ -256,14 +261,27 @@ export async function resolveException(
 }
 
 export async function investigate(runId: string, excId: string): Promise<InvestigateResult> {
-  return request<InvestigateResult>(`/runs/${runId}/exceptions/${excId}/investigate`, {
-    method: "POST",
-  });
+  return request<InvestigateResult>(
+    `/runs/${runId}/exceptions/${excId}/investigate`,
+    { method: "POST" },
+    90_000,
+  );
+}
+
+export async function getHypothesis(runId: string, excId: string): Promise<InvestigateResult | null> {
+  try {
+    return await request<InvestigateResult>(`/runs/${runId}/exceptions/${excId}/hypothesis`);
+  } catch (err) {
+    if (err instanceof ApiError && err.status === 404) return null;
+    if (isUnreachable(err)) return null;
+    throw err;
+  }
 }
 
 export async function ask(runId: string, question: string): Promise<AskResult> {
-  return request<AskResult>(`/runs/${runId}/ask`, {
-    method: "POST",
-    body: JSON.stringify({ question }),
-  });
+  return request<AskResult>(
+    `/runs/${runId}/ask`,
+    { method: "POST", body: JSON.stringify({ question }) },
+    90_000,
+  );
 }
