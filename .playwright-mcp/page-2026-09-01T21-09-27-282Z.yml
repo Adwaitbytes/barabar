@@ -1,0 +1,629 @@
+- generic [active] [ref=f15e1]:
+  - generic [ref=f15e2]:
+    - complementary [ref=f15e3]:
+      - link "Barabar home" [ref=f15e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f15e6]: barabar
+      - navigation "Primary" [ref=f15e9]:
+        - generic [ref=f15e10]:
+          - generic [ref=f15e11]: Close
+          - list [ref=f15e12]:
+            - listitem [ref=f15e13]:
+              - link "Close pack" [ref=f15e14] [cursor=pointer]:
+                - /url: /app
+            - listitem [ref=f15e21]:
+              - link "Exceptions 45" [ref=f15e22] [cursor=pointer]:
+                - /url: /app/exceptions
+                - generic [ref=f15e26]: Exceptions
+                - generic [ref=f15e27]: "45"
+            - listitem [ref=f15e28]:
+              - link "Ask the books" [ref=f15e29] [cursor=pointer]:
+                - /url: /app/ask
+        - generic [ref=f15e33]:
+          - generic [ref=f15e34]: Three legs
+          - list [ref=f15e35]:
+            - listitem [ref=f15e36]:
+              - link "Settlements" [ref=f15e38] [cursor=pointer]:
+                - /url: /app/settlements
+            - listitem [ref=f15e43]:
+              - link "Bank statement" [ref=f15e44] [cursor=pointer]:
+                - /url: /app/bank
+            - listitem [ref=f15e48]:
+              - link "Sales ledger" [ref=f15e49] [cursor=pointer]:
+                - /url: /app/ledger
+        - generic [ref=f15e53]:
+          - generic [ref=f15e54]: Output
+          - list [ref=f15e55]:
+            - listitem [ref=f15e56]:
+              - link "Journal entries" [ref=f15e57] [cursor=pointer]:
+                - /url: /app/journal
+            - listitem [ref=f15e62]:
+              - link "Sources" [ref=f15e63] [cursor=pointer]:
+                - /url: /app/sources
+            - listitem [ref=f15e68]:
+              - link "Runs & audit" [ref=f15e69] [cursor=pointer]:
+                - /url: /app/runs
+            - listitem [ref=f15e75]:
+              - link "Rate card & rules" [ref=f15e76] [cursor=pointer]:
+                - /url: /app/settings
+      - generic [ref=f15e81]: Deterministic where money is decided.
+    - generic [ref=f15e87]:
+      - banner [ref=f15e88]:
+        - button "hosted demo month August 2026 · as of 2026-09-01" [ref=f15e89] [cursor=pointer]:
+          - generic [ref=f15e90]:
+            - generic [ref=f15e91]: hosted demo month
+            - generic [ref=f15e92]: August 2026 · as of 2026-09-01
+        - generic [ref=f15e93]:
+          - img "Explained ₹7,48,368.01, open ₹2,56,070.82, unexplained ₹80,855.20" [ref=f15e95]
+          - generic [ref=f15e98]:
+            - generic [ref=f15e99]: 92.55%
+            - text: explained
+        - generic [ref=f15e100]:
+          - generic [ref=f15e101]: live
+          - button "Ask or jump to… ⌘K" [ref=f15e105] [cursor=pointer]:
+            - generic [ref=f15e106]: Ask or jump to…
+            - generic [ref=f15e107]: ⌘K
+          - button "Switch to light theme" [ref=f15e108] [cursor=pointer]
+      - main [ref=f15e109]:
+        - generic [ref=f15e111]:
+          - generic [ref=f15e113]:
+            - generic [ref=f15e114]: Three legs · Razorpay
+            - heading "Settlements" [level=1] [ref=f15e115]
+            - paragraph [ref=f15e116]: Every batch Razorpay paid out this month, its arithmetic, and which bank credit it became. Click a row for the proof.
+          - generic [ref=f15e117]:
+            - generic [ref=f15e118]:
+              - generic [ref=f15e119]: Processed
+              - generic [ref=f15e120]: "21"
+              - generic [ref=f15e121]: 1 created, not yet paid
+            - generic [ref=f15e122]:
+              - generic [ref=f15e123]: Matched to bank
+              - generic [ref=f15e124]: 16 / 21
+              - generic [ref=f15e125]: 4 need attention
+            - generic [ref=f15e126]:
+              - generic [ref=f15e127]: Net paid out
+              - generic "₹9,29,712.29" [ref=f15e129]:
+                - text: ₹9,29,712
+                - generic [ref=f15e130]: ".29"
+            - generic [ref=f15e131]:
+              - generic [ref=f15e132]: Fees + GST
+              - generic "₹9,628.82" [ref=f15e134]:
+                - text: ₹9,628
+                - generic [ref=f15e135]: ".82"
+              - generic [ref=f15e136]: GST on fees is claimable as ITC
+          - generic [ref=f15e137]:
+            - group "Filter" [ref=f15e138]:
+              - link "All 22" [ref=f15e139] [cursor=pointer]:
+                - /url: /app/settlements
+                - text: All
+                - generic [ref=f15e140]: "22"
+              - link "Matched 16" [ref=f15e141] [cursor=pointer]:
+                - /url: /app/settlements?status=matched
+                - text: Matched
+                - generic [ref=f15e142]: "16"
+              - link "Needs attention 4" [ref=f15e143] [cursor=pointer]:
+                - /url: /app/settlements?status=attention
+                - text: Needs attention
+                - generic [ref=f15e144]: "4"
+            - search [ref=f15e145]:
+              - textbox "Settlement, UTR, payment or receipt…" [ref=f15e146]
+          - table [ref=f15e149]:
+            - rowgroup [ref=f15e150]:
+              - row [ref=f15e151]:
+                - columnheader "Settled on" [ref=f15e152]
+                - columnheader "Settlement" [ref=f15e153]
+                - columnheader "Type" [ref=f15e154]
+                - columnheader "UTR" [ref=f15e155]
+                - columnheader "Lines" [ref=f15e156]
+                - columnheader "Gross" [ref=f15e157]
+                - columnheader "Fee" [ref=f15e158]
+                - columnheader "GST" [ref=f15e159]
+                - columnheader "Net to bank" [ref=f15e160]
+                - columnheader "Status" [ref=f15e161]
+            - rowgroup [ref=f15e162]:
+              - row [ref=f15e163] [cursor=pointer]:
+                - cell "05 AugWed" [ref=f15e164]
+                - cell "setl_2Jj4aF8gMQjDGO" [ref=f15e165]
+                - cell "standard" [ref=f15e166]
+                - cell "HDFCN26217000102" [ref=f15e168]
+                - cell "68" [ref=f15e169]
+                - cell "₹1,16,243.67" [ref=f15e170]:
+                  - generic "₹1,16,243.67" [ref=f15e171]:
+                    - text: ₹1,16,243
+                    - generic [ref=f15e172]: ".67"
+                - cell "₹983.17" [ref=f15e173]:
+                  - generic "₹983.17" [ref=f15e174]:
+                    - text: ₹983
+                    - generic [ref=f15e175]: ".17"
+                - cell "₹176.96" [ref=f15e176]:
+                  - generic "₹176.96" [ref=f15e177]:
+                    - text: ₹176
+                    - generic [ref=f15e178]: ".96"
+                - cell "₹1,13,149.51" [ref=f15e179]:
+                  - generic "₹1,13,149.51" [ref=f15e180]:
+                    - text: ₹1,13,149
+                    - generic [ref=f15e181]: ".51"
+                - cell "Matched" [ref=f15e182]
+              - row [ref=f15e185] [cursor=pointer]:
+                - cell "06 AugThu" [ref=f15e186]
+                - cell "setl_u4Yv3S3JyxNnrj" [ref=f15e187]
+                - cell "standard" [ref=f15e188]
+                - cell "HDFCN26218000103" [ref=f15e190]
+                - cell "18" [ref=f15e191]
+                - cell "₹24,836.09" [ref=f15e192]:
+                  - generic "₹24,836.09" [ref=f15e193]:
+                    - text: ₹24,836
+                    - generic [ref=f15e194]: ".09"
+                - cell "₹195.69" [ref=f15e195]:
+                  - generic "₹195.69" [ref=f15e196]:
+                    - text: ₹195
+                    - generic [ref=f15e197]: ".69"
+                - cell "₹35.22" [ref=f15e198]:
+                  - generic "₹35.22" [ref=f15e199]:
+                    - text: ₹35
+                    - generic [ref=f15e200]: ".22"
+                - cell "₹24,605.18" [ref=f15e201]:
+                  - generic "₹24,605.18" [ref=f15e202]:
+                    - text: ₹24,605
+                    - generic [ref=f15e203]: ".18"
+                - cell "Matched" [ref=f15e204]
+              - row [ref=f15e207] [cursor=pointer]:
+                - cell "07 AugFri" [ref=f15e208]
+                - cell "setl_OuZT1c2BusAKnN" [ref=f15e209]
+                - cell "standard" [ref=f15e210]
+                - cell "HDFCN26219000104" [ref=f15e212]
+                - cell "22" [ref=f15e213]
+                - cell "₹33,866.10" [ref=f15e214]:
+                  - generic "₹33,866.10" [ref=f15e215]:
+                    - text: ₹33,866
+                    - generic [ref=f15e216]: ".10"
+                - cell "₹346.84" [ref=f15e217]:
+                  - generic "₹346.84" [ref=f15e218]:
+                    - text: ₹346
+                    - generic [ref=f15e219]: ".84"
+                - cell "₹62.42" [ref=f15e220]:
+                  - generic "₹62.42" [ref=f15e221]:
+                    - text: ₹62
+                    - generic [ref=f15e222]: ".42"
+                - cell "₹32,897.64" [ref=f15e223]:
+                  - generic "₹32,897.64" [ref=f15e224]:
+                    - text: ₹32,897
+                    - generic [ref=f15e225]: ".64"
+                - cell "Proposed" [ref=f15e226]
+              - row [ref=f15e229] [cursor=pointer]:
+                - cell "10 AugMon" [ref=f15e230]
+                - cell "setl_qJNa4wZkbnl9qu" [ref=f15e231]
+                - cell "standard" [ref=f15e232]
+                - cell "HDFCN26222000105" [ref=f15e234]
+                - cell "31" [ref=f15e235]
+                - cell "₹43,891.69" [ref=f15e236]:
+                  - generic "₹43,891.69" [ref=f15e237]:
+                    - text: ₹43,891
+                    - generic [ref=f15e238]: ".69"
+                - cell "₹238.45" [ref=f15e239]:
+                  - generic "₹238.45" [ref=f15e240]:
+                    - text: ₹238
+                    - generic [ref=f15e241]: ".45"
+                - cell "₹42.93" [ref=f15e242]:
+                  - generic "₹42.93" [ref=f15e243]:
+                    - text: ₹42
+                    - generic [ref=f15e244]: ".93"
+                - cell "₹39,916.71" [ref=f15e245]:
+                  - generic "₹39,916.71" [ref=f15e246]:
+                    - text: ₹39,916
+                    - generic [ref=f15e247]: ".71"
+                - cell "Matched" [ref=f15e248]
+              - row [ref=f15e251] [cursor=pointer]:
+                - cell "11 AugTue" [ref=f15e252]
+                - cell "setl_N7fW2hvwYkaEWm" [ref=f15e253]
+                - cell "standard" [ref=f15e254]
+                - cell "HDFCN26223000106" [ref=f15e256]
+                - cell "20" [ref=f15e257]
+                - cell "₹35,280.85" [ref=f15e258]:
+                  - generic "₹35,280.85" [ref=f15e259]:
+                    - text: ₹35,280
+                    - generic [ref=f15e260]: ".85"
+                - cell "₹161.64" [ref=f15e261]:
+                  - generic "₹161.64" [ref=f15e262]:
+                    - text: ₹161
+                    - generic [ref=f15e263]: ".64"
+                - cell "₹29.10" [ref=f15e264]:
+                  - generic "₹29.10" [ref=f15e265]:
+                    - text: ₹29
+                    - generic [ref=f15e266]: ".10"
+                - cell "₹41,859.11" [ref=f15e267]:
+                  - generic "₹41,859.11" [ref=f15e268]:
+                    - text: ₹41,859
+                    - generic [ref=f15e269]: ".11"
+                - cell "Matched" [ref=f15e270]
+              - row [ref=f15e273] [cursor=pointer]:
+                - cell "12 AugWed" [ref=f15e274]
+                - cell "setl_jON5EzWJWhd67B" [ref=f15e275]
+                - cell "standard" [ref=f15e276]
+                - cell "HDFCN26224000107" [ref=f15e278]
+                - cell "0" [ref=f15e279]
+                - cell "₹0.00" [ref=f15e280]:
+                  - generic "₹0.00" [ref=f15e281]:
+                    - text: ₹0
+                    - generic [ref=f15e282]: ".00"
+                - cell "₹0.00" [ref=f15e283]:
+                  - generic "₹0.00" [ref=f15e284]:
+                    - text: ₹0
+                    - generic [ref=f15e285]: ".00"
+                - cell "₹0.00" [ref=f15e286]:
+                  - generic "₹0.00" [ref=f15e287]:
+                    - text: ₹0
+                    - generic [ref=f15e288]: ".00"
+                - cell "₹1,01,136.20" [ref=f15e289]:
+                  - generic "₹1,01,136.20" [ref=f15e290]:
+                    - text: ₹1,01,136
+                    - generic [ref=f15e291]: ".20"
+                - cell "Returned" [ref=f15e292]
+              - row [ref=f15e295] [cursor=pointer]:
+                - cell "13 AugThu" [ref=f15e296]
+                - cell "setl_63gpUZjQmDL1Cd" [ref=f15e297]
+                - cell "standard" [ref=f15e298]
+                - cell "HDFCN26225000109" [ref=f15e300]
+                - cell "25" [ref=f15e301]
+                - cell "₹35,920.00" [ref=f15e302]:
+                  - generic "₹35,920.00" [ref=f15e303]:
+                    - text: ₹35,920
+                    - generic [ref=f15e304]: ".00"
+                - cell "₹325.60" [ref=f15e305]:
+                  - generic "₹325.60" [ref=f15e306]:
+                    - text: ₹325
+                    - generic [ref=f15e307]: ".60"
+                - cell "₹58.61" [ref=f15e308]:
+                  - generic "₹58.61" [ref=f15e309]:
+                    - text: ₹58
+                    - generic [ref=f15e310]: ".61"
+                - cell "₹33,476.79" [ref=f15e311]:
+                  - generic "₹33,476.79" [ref=f15e312]:
+                    - text: ₹33,476
+                    - generic [ref=f15e313]: ".79"
+                - cell "Matched" [ref=f15e314]
+              - row [ref=f15e317] [cursor=pointer]:
+                - cell "14 AugFri" [ref=f15e318]
+                - cell "setl_TsWNt3r4kXNpFq" [ref=f15e319]
+                - cell "standard" [ref=f15e320]
+                - cell "HDFCN26226000108" [ref=f15e322]
+                - cell "54" [ref=f15e323]
+                - cell "₹1,02,233.93" [ref=f15e324]:
+                  - generic "₹1,02,233.93" [ref=f15e325]:
+                    - text: ₹1,02,233
+                    - generic [ref=f15e326]: ".93"
+                - cell "₹930.28" [ref=f15e327]:
+                  - generic "₹930.28" [ref=f15e328]:
+                    - text: ₹930
+                    - generic [ref=f15e329]: ".28"
+                - cell "₹167.45" [ref=f15e330]:
+                  - generic "₹167.45" [ref=f15e331]:
+                    - text: ₹167
+                    - generic [ref=f15e332]: ".45"
+                - cell "₹1,01,136.20" [ref=f15e333]:
+                  - generic "₹1,01,136.20" [ref=f15e334]:
+                    - text: ₹1,01,136
+                    - generic [ref=f15e335]: ".20"
+                - cell "Matched" [ref=f15e336]
+              - row [ref=f15e339] [cursor=pointer]:
+                - cell "14 AugFri" [ref=f15e340]
+                - cell "setl_eg79MZlNJ1TZmo" [ref=f15e341]
+                - cell "standard" [ref=f15e342]
+                - cell "HDFCN26226000110" [ref=f15e344]
+                - cell "21" [ref=f15e345]
+                - cell "₹34,976.00" [ref=f15e346]:
+                  - generic "₹34,976.00" [ref=f15e347]:
+                    - text: ₹34,976
+                    - generic [ref=f15e348]: ".00"
+                - cell "₹310.98" [ref=f15e349]:
+                  - generic "₹310.98" [ref=f15e350]:
+                    - text: ₹310
+                    - generic [ref=f15e351]: ".98"
+                - cell "₹55.99" [ref=f15e352]:
+                  - generic "₹55.99" [ref=f15e353]:
+                    - text: ₹55
+                    - generic [ref=f15e354]: ".99"
+                - cell "₹30,984.03" [ref=f15e355]:
+                  - generic "₹30,984.03" [ref=f15e356]:
+                    - text: ₹30,984
+                    - generic [ref=f15e357]: ".03"
+                - cell "Split UTRs" [ref=f15e358]
+              - row [ref=f15e361] [cursor=pointer]:
+                - cell "17 AugMon" [ref=f15e362]
+                - cell "setl_4phWZhrUKuBruk" [ref=f15e363]
+                - cell "standard" [ref=f15e364]
+                - cell "HDFCN26229000112" [ref=f15e366]
+                - cell "20" [ref=f15e367]
+                - cell "₹25,532.82" [ref=f15e368]:
+                  - generic "₹25,532.82" [ref=f15e369]:
+                    - text: ₹25,532
+                    - generic [ref=f15e370]: ".82"
+                - cell "₹166.08" [ref=f15e371]:
+                  - generic "₹166.08" [ref=f15e372]:
+                    - text: ₹166
+                    - generic [ref=f15e373]: ".08"
+                - cell "₹29.91" [ref=f15e374]:
+                  - generic "₹29.91" [ref=f15e375]:
+                    - text: ₹29
+                    - generic [ref=f15e376]: ".91"
+                - cell "₹24,628.03" [ref=f15e377]:
+                  - generic "₹24,628.03" [ref=f15e378]:
+                    - text: ₹24,628
+                    - generic [ref=f15e379]: ".03"
+                - cell "Matched" [ref=f15e380]
+              - row [ref=f15e383] [cursor=pointer]:
+                - cell "18 AugTue" [ref=f15e384]
+                - cell "setl_SoHXwyAZOhsQdj" [ref=f15e385]
+                - cell "standard" [ref=f15e386]
+                - cell "HDFCN26230000113" [ref=f15e388]
+                - cell "18" [ref=f15e389]
+                - cell "₹26,331.48" [ref=f15e390]:
+                  - generic "₹26,331.48" [ref=f15e391]:
+                    - text: ₹26,331
+                    - generic [ref=f15e392]: ".48"
+                - cell "₹254.78" [ref=f15e393]:
+                  - generic "₹254.78" [ref=f15e394]:
+                    - text: ₹254
+                    - generic [ref=f15e395]: ".78"
+                - cell "₹45.85" [ref=f15e396]:
+                  - generic "₹45.85" [ref=f15e397]:
+                    - text: ₹45
+                    - generic [ref=f15e398]: ".85"
+                - cell "₹26,454.14" [ref=f15e399]:
+                  - generic "₹26,454.14" [ref=f15e400]:
+                    - text: ₹26,454
+                    - generic [ref=f15e401]: ".14"
+                - cell "Matched" [ref=f15e402]
+              - row [ref=f15e405] [cursor=pointer]:
+                - cell "19 AugWed" [ref=f15e406]
+                - cell "setl_CbC8snACx4h5YT" [ref=f15e407]
+                - cell "standard" [ref=f15e408]
+                - cell "HDFCN26231000114" [ref=f15e410]
+                - cell "51" [ref=f15e411]
+                - cell "₹88,258.73" [ref=f15e412]:
+                  - generic "₹88,258.73" [ref=f15e413]:
+                    - text: ₹88,258
+                    - generic [ref=f15e414]: ".73"
+                - cell "₹732.33" [ref=f15e415]:
+                  - generic "₹732.33" [ref=f15e416]:
+                    - text: ₹732
+                    - generic [ref=f15e417]: ".33"
+                - cell "₹131.85" [ref=f15e418]:
+                  - generic "₹131.85" [ref=f15e419]:
+                    - text: ₹131
+                    - generic [ref=f15e420]: ".85"
+                - cell "₹85,241.15" [ref=f15e421]:
+                  - generic "₹85,241.15" [ref=f15e422]:
+                    - text: ₹85,241
+                    - generic [ref=f15e423]: ".15"
+                - cell "Matched" [ref=f15e424]
+              - row [ref=f15e427] [cursor=pointer]:
+                - cell "20 AugThu" [ref=f15e428]
+                - cell "setl_AU1oSJd0v148jl" [ref=f15e429]
+                - cell "partial" [ref=f15e430]
+                - cell "HDFCN26232000115" [ref=f15e432]
+                - cell "7" [ref=f15e433]
+                - cell "₹10,910.00" [ref=f15e434]:
+                  - generic "₹10,910.00" [ref=f15e435]:
+                    - text: ₹10,910
+                    - generic [ref=f15e436]: ".00"
+                - cell "₹90.40" [ref=f15e437]:
+                  - generic "₹90.40" [ref=f15e438]:
+                    - text: ₹90
+                    - generic [ref=f15e439]: ".40"
+                - cell "₹16.27" [ref=f15e440]:
+                  - generic "₹16.27" [ref=f15e441]:
+                    - text: ₹16
+                    - generic [ref=f15e442]: ".27"
+                - cell "₹10,803.33" [ref=f15e443]:
+                  - generic "₹10,803.33" [ref=f15e444]:
+                    - text: ₹10,803
+                    - generic [ref=f15e445]: ".33"
+                - cell "Partial" [ref=f15e446]
+              - row [ref=f15e449] [cursor=pointer]:
+                - cell "21 AugFri" [ref=f15e450]
+                - cell "setl_CLABPFF44mXpxZ" [ref=f15e451]
+                - cell "standard" [ref=f15e452]
+                - cell "HDFCN26233000116" [ref=f15e454]
+                - cell "4" [ref=f15e455]
+                - cell "₹8,830.15" [ref=f15e456]:
+                  - generic "₹8,830.15" [ref=f15e457]:
+                    - text: ₹8,830
+                    - generic [ref=f15e458]: ".15"
+                - cell "₹108.42" [ref=f15e459]:
+                  - generic "₹108.42" [ref=f15e460]:
+                    - text: ₹108
+                    - generic [ref=f15e461]: ".42"
+                - cell "₹19.51" [ref=f15e462]:
+                  - generic "₹19.51" [ref=f15e463]:
+                    - text: ₹19
+                    - generic [ref=f15e464]: ".51"
+                - cell "₹8,702.22" [ref=f15e465]:
+                  - generic "₹8,702.22" [ref=f15e466]:
+                    - text: ₹8,702
+                    - generic [ref=f15e467]: ".22"
+                - cell "Partial" [ref=f15e468]
+              - row [ref=f15e471] [cursor=pointer]:
+                - cell "21 AugFri" [ref=f15e472]
+                - cell "setl_XxH0lLIik6dLLH" [ref=f15e473]
+                - cell "standard" [ref=f15e474]
+                - cell "HDFCN26233000117" [ref=f15e476]
+                - cell "20" [ref=f15e477]
+                - cell "₹34,728.90" [ref=f15e478]:
+                  - generic "₹34,728.90" [ref=f15e479]:
+                    - text: ₹34,728
+                    - generic [ref=f15e480]: ".90"
+                - cell "₹281.44" [ref=f15e481]:
+                  - generic "₹281.44" [ref=f15e482]:
+                    - text: ₹281
+                    - generic [ref=f15e483]: ".44"
+                - cell "₹50.66" [ref=f15e484]:
+                  - generic "₹50.66" [ref=f15e485]:
+                    - text: ₹50
+                    - generic [ref=f15e486]: ".66"
+                - cell "₹34,134.80" [ref=f15e487]:
+                  - generic "₹34,134.80" [ref=f15e488]:
+                    - text: ₹34,134
+                    - generic [ref=f15e489]: ".80"
+                - cell "Matched" [ref=f15e490]
+              - row [ref=f15e493] [cursor=pointer]:
+                - cell "22 AugSat" [ref=f15e494]
+                - cell "setl_NgHQITueSE5Ib7" [ref=f15e495]
+                - cell "instant" [ref=f15e496]
+                - cell "HDFCN26234000101" [ref=f15e498]
+                - cell "2" [ref=f15e499]
+                - cell "₹3,404.00" [ref=f15e500]:
+                  - generic "₹3,404.00" [ref=f15e501]:
+                    - text: ₹3,404
+                    - generic [ref=f15e502]: ".00"
+                - cell "₹68.08" [ref=f15e503]:
+                  - generic "₹68.08" [ref=f15e504]:
+                    - text: ₹68
+                    - generic [ref=f15e505]: ".08"
+                - cell "₹12.25" [ref=f15e506]:
+                  - generic "₹12.25" [ref=f15e507]:
+                    - text: ₹12
+                    - generic [ref=f15e508]: ".25"
+                - cell "₹3,315.36" [ref=f15e509]:
+                  - generic "₹3,315.36" [ref=f15e510]:
+                    - text: ₹3,315
+                    - generic [ref=f15e511]: ".36"
+                - cell "Matched" [ref=f15e512]
+              - row [ref=f15e515] [cursor=pointer]:
+                - cell "24 AugMon" [ref=f15e516]
+                - cell "setl_XTOOCOwpxXgG8w" [ref=f15e517]
+                - cell "standard" [ref=f15e518]
+                - cell "HDFCN26236000118" [ref=f15e520]
+                - cell "16" [ref=f15e521]
+                - cell "₹23,165.00" [ref=f15e522]:
+                  - generic "₹23,165.00" [ref=f15e523]:
+                    - text: ₹23,165
+                    - generic [ref=f15e524]: ".00"
+                - cell "₹56.94" [ref=f15e525]:
+                  - generic "₹56.94" [ref=f15e526]:
+                    - text: ₹56
+                    - generic [ref=f15e527]: ".94"
+                - cell "₹10.24" [ref=f15e528]:
+                  - generic "₹10.24" [ref=f15e529]:
+                    - text: ₹10
+                    - generic [ref=f15e530]: ".24"
+                - cell "₹23,097.82" [ref=f15e531]:
+                  - generic "₹23,097.82" [ref=f15e532]:
+                    - text: ₹23,097
+                    - generic [ref=f15e533]: ".82"
+                - cell "Missing credit" [ref=f15e534]
+              - row [ref=f15e537] [cursor=pointer]:
+                - cell "25 AugTue" [ref=f15e538]
+                - cell "setl_90yytBBHMgHwO0" [ref=f15e539]
+                - cell "standard" [ref=f15e540]
+                - cell "HDFCN26237000119" [ref=f15e542]
+                - cell "18" [ref=f15e543]
+                - cell "₹29,313.00" [ref=f15e544]:
+                  - generic "₹29,313.00" [ref=f15e545]:
+                    - text: ₹29,313
+                    - generic [ref=f15e546]: ".00"
+                - cell "₹328.32" [ref=f15e547]:
+                  - generic "₹328.32" [ref=f15e548]:
+                    - text: ₹328
+                    - generic [ref=f15e549]: ".32"
+                - cell "₹59.09" [ref=f15e550]:
+                  - generic "₹59.09" [ref=f15e551]:
+                    - text: ₹59
+                    - generic [ref=f15e552]: ".09"
+                - cell "₹24,600.99" [ref=f15e553]:
+                  - generic "₹24,600.99" [ref=f15e554]:
+                    - text: ₹24,600
+                    - generic [ref=f15e555]: ".99"
+                - cell "Matched" [ref=f15e556]
+              - row [ref=f15e559] [cursor=pointer]:
+                - cell "27 AugThu" [ref=f15e560]
+                - cell "setl_UdfpVvhIBaxsdz" [ref=f15e561]
+                - cell "standard" [ref=f15e562]
+                - cell "HDFCN26239000120" [ref=f15e564]
+                - cell "52" [ref=f15e565]
+                - cell "₹1,05,812.10" [ref=f15e566]:
+                  - generic "₹1,05,812.10" [ref=f15e567]:
+                    - text: ₹1,05,812
+                    - generic [ref=f15e568]: ".10"
+                - cell "₹1,110.96" [ref=f15e569]:
+                  - generic "₹1,110.96" [ref=f15e570]:
+                    - text: ₹1,110
+                    - generic [ref=f15e571]: ".96"
+                - cell "₹200.02" [ref=f15e572]:
+                  - generic "₹200.02" [ref=f15e573]:
+                    - text: ₹200
+                    - generic [ref=f15e574]: ".02"
+                - cell "₹1,04,501.12" [ref=f15e575]:
+                  - generic "₹1,04,501.12" [ref=f15e576]:
+                    - text: ₹1,04,501
+                    - generic [ref=f15e577]: ".12"
+                - cell "Matched" [ref=f15e578]
+              - row [ref=f15e581] [cursor=pointer]:
+                - cell "28 AugFri" [ref=f15e582]
+                - cell "setl_K6ySB0dZCbApX8" [ref=f15e583]
+                - cell "standard" [ref=f15e584]
+                - cell "HDFCN26240000121" [ref=f15e586]
+                - cell "23" [ref=f15e587]
+                - cell "₹34,152.98" [ref=f15e588]:
+                  - generic "₹34,152.98" [ref=f15e589]:
+                    - text: ₹34,152
+                    - generic [ref=f15e590]: ".98"
+                - cell "₹169.86" [ref=f15e591]:
+                  - generic "₹169.86" [ref=f15e592]:
+                    - text: ₹169
+                    - generic [ref=f15e593]: ".86"
+                - cell "₹30.57" [ref=f15e594]:
+                  - generic "₹30.57" [ref=f15e595]:
+                    - text: ₹30
+                    - generic [ref=f15e596]: ".57"
+                - cell "₹30,870.95" [ref=f15e597]:
+                  - generic "₹30,870.95" [ref=f15e598]:
+                    - text: ₹30,870
+                    - generic [ref=f15e599]: ".95"
+                - cell "Matched" [ref=f15e600]
+              - row [ref=f15e603] [cursor=pointer]:
+                - cell "31 AugMon" [ref=f15e604]
+                - cell "setl_BOeqKKkyEitjz9" [ref=f15e605]
+                - cell "standard" [ref=f15e606]
+                - cell "HDFCN26243000122" [ref=f15e608]
+                - cell "32" [ref=f15e609]
+                - cell "₹61,306.15" [ref=f15e610]:
+                  - generic "₹61,306.15" [ref=f15e611]:
+                    - text: ₹61,306
+                    - generic [ref=f15e612]: ".15"
+                - cell "₹644.69" [ref=f15e613]:
+                  - generic "₹644.69" [ref=f15e614]:
+                    - text: ₹644
+                    - generic [ref=f15e615]: ".69"
+                - cell "₹116.05" [ref=f15e616]:
+                  - generic "₹116.05" [ref=f15e617]:
+                    - text: ₹116
+                    - generic [ref=f15e618]: ".05"
+                - cell "₹60,545.41" [ref=f15e619]:
+                  - generic "₹60,545.41" [ref=f15e620]:
+                    - text: ₹60,545
+                    - generic [ref=f15e621]: ".41"
+                - cell "Matched" [ref=f15e622]
+              - row [ref=f15e625] [cursor=pointer]:
+                - cell "01 SeptTue" [ref=f15e626]
+                - cell "setl_OsoSPSgn3OxshH" [ref=f15e627]
+                - cell "standard" [ref=f15e628]
+                - cell "HDFCN26244000123" [ref=f15e630]
+                - cell "34" [ref=f15e631]
+                - cell "₹75,564.72" [ref=f15e632]:
+                  - generic "₹75,564.72" [ref=f15e633]:
+                    - text: ₹75,564
+                    - generic [ref=f15e634]: ".72"
+                - cell "₹655.02" [ref=f15e635]:
+                  - generic "₹655.02" [ref=f15e636]:
+                    - text: ₹655
+                    - generic [ref=f15e637]: ".02"
+                - cell "₹117.90" [ref=f15e638]:
+                  - generic "₹117.90" [ref=f15e639]:
+                    - text: ₹117
+                    - generic [ref=f15e640]: ".90"
+                - cell "₹74,791.80" [ref=f15e641]:
+                  - generic "₹74,791.80" [ref=f15e642]:
+                    - text: ₹74,791
+                    - generic [ref=f15e643]: ".80"
+                - cell "Bank lag" [ref=f15e644]
+  - alert [ref=f15e647]

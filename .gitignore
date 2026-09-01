@@ -26,3 +26,5 @@ data/local/
 # misc
 .DS_Store
 .vercel
+/review-*.jpeg
+/settlements-boxes.md

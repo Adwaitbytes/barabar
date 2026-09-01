@@ -50,3 +50,15 @@ Only real entries. Nothing here was invented for the video.
 - **Believed:** shape validation (16 characters, bank code, `N`, digits) was enough to reject invented values.
 - **True:** a hallucinated UTR can be perfectly well-formed. Shape says nothing about provenance.
 - **Changed:** any UTR the model returns must appear verbatim in the narration text, or it is discarded before shape validation even runs. The grammar decides; the model only points.
+
+## 9. The UI mixed a demo run into a live session
+- **Saw:** `/app` returned a 500 on the hosted product while every API route answered.
+- **Believed:** the API had a broken run.
+- **True:** the UI's API timeout was 2.5 seconds. A cold Vercel start plus a Neon round trip took longer, so the *run list* fell back to fixtures (whose captured run id no longer existed), while the next request reached the now-warm API and got a 404 for that id. Two data sources in one page render.
+- **Changed:** 20-second timeout; the fixture-only run id is never sent to the API; a run that lost its result to an interrupted request is finished on first read instead of raising.
+
+## 10. A pseudo-element became a table column
+- **Saw:** on the Settlements table every body row was shifted one column right of its header; status chips were clipped off the edge.
+- **Believed:** a header/body column-count mismatch in the JSX.
+- **True:** the hover accent was a `::before` on the `<tr>`. Chromium lays out generated content on a table row as an anonymous table cell, so every row grew an invisible first column.
+- **Changed:** the accent is an inset box-shadow on the first cell. Diagnosed from accessibility-tree bounding boxes, not from the JSX, which was fine.
