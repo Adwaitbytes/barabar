@@ -14,6 +14,7 @@ Recorded at kickoff, updated as the build learned things.
 | 8 | Settlement weekends | Saturdays and Sundays are non-working for settlement (`all_weekends`) | Razorpay processes on working days; the 2nd/4th-Saturday bank policy is available as an option for bank-side semantics. |
 | 9 | "Unexplained" | Open exceptions below the auto-accept threshold, **money-flow types only** | Ledger hygiene (orphans, mismatches, missing credit notes) is reported separately. See FAILURES.md #5. |
 | 10 | Tier C | Capped at 0.85, threshold 0.92 → proposals only by default | A human click creates the link; the click is audited. |
+| 11 | Model routing | Anthropic SDK pointed at OpenRouter (speaks the Messages format); `BARABAR_MODEL=anthropic/claude-sonnet-5` for the investigator and ask-the-books, `BARABAR_MODEL_CHEAP=openai/gpt-4o-mini` for narration extraction | Quality-critical reasoning over money gets a strong model; a cheap model only does extraction that the grammar re-validates. Anthropic-only request features (refusal fallbacks) are skipped on gateways. All investigator outputs are cached by `(outputs_hash, exc_id, model, prompt_version)`. |
 
 ## Name
 

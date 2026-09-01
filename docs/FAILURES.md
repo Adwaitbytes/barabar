@@ -44,3 +44,9 @@ Only real entries. Nothing here was invented for the video.
 - **Believed:** the metric definition was still wrong.
 - **True:** the patch script anchored on a source line that the formatter had since wrapped; the script aborted at the first anchor and nothing after it ran, but the error scrolled past.
 - **Changed:** patch scripts assert every anchor before writing; we re-ran the suite and the CLI, not just the patch, before believing anything.
+
+## 8. The narration fallback trusted a well-formed lie
+- **Saw:** a test fed the LLM fallback a narration with no UTR and scripted the model to return `HDFCN99999999999`; the parser accepted it as a full UTR.
+- **Believed:** shape validation (16 characters, bank code, `N`, digits) was enough to reject invented values.
+- **True:** a hallucinated UTR can be perfectly well-formed. Shape says nothing about provenance.
+- **Changed:** any UTR the model returns must appear verbatim in the narration text, or it is discarded before shape validation even runs. The grammar decides; the model only points.

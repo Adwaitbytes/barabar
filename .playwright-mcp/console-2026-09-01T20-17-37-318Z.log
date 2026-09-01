@@ -6,3 +6,9 @@
 [    2379ms] [WARNING] cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation @ https://cdn.tailwindcss.com/:63
 [    2491ms] [WARNING] cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation @ https://cdn.tailwindcss.com/:63
 [    2601ms] [WARNING] cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation @ https://cdn.tailwindcss.com/:63
+[   27364ms] [WARNING] cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation @ https://cdn.tailwindcss.com/:63
+[   27366ms] [WARNING] cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation @ https://cdn.tailwindcss.com/:63
+[   27500ms] [WARNING] cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation @ https://cdn.tailwindcss.com/:63
+[   27509ms] [WARNING] GSAP target [object NodeList] not found. https://greensock.com @ https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js:9
+[   27510ms] [WARNING] GSAP target [object NodeList] not found. https://greensock.com @ https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js:9
+[   27510ms] [WARNING] GSAP target [object NodeList] not found. https://greensock.com @ https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js:9
