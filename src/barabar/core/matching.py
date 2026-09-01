@@ -9,13 +9,13 @@ from __future__ import annotations
 
 from collections import defaultdict
 from dataclasses import dataclass, field
-from datetime import UTC, date, datetime, timedelta
+from datetime import UTC, date, datetime
 from itertools import combinations
 
 from rapidfuzz import fuzz
 
 from barabar.core.audit import AuditChain
-from barabar.core.calendar import IST
+from barabar.core.calendar import IST, weekday_only_add
 from barabar.core.config import MatchConfig
 from barabar.core.exceptions import EXCEPTION_SPECS, ExceptionType
 from barabar.core.hashing import content_hash
@@ -558,7 +558,7 @@ def _holiday_shift(ctx: _Ctx, s: RzSettlement, lines: list[RzReconLine]) -> None
         if not p or not p.captured_at:
             continue
         t0 = cal.capture_day_ist(p.captured_at)
-        weekday_only = _weekday_only_expected(t0, cal.cycle_working_days)
+        weekday_only = weekday_only_add(t0, cal.cycle_working_days)
         holidays_hit = [d for d in cal.holidays if weekday_only <= d <= sd]
         if holidays_hit and sd > weekday_only:
             ctx.exc(
@@ -569,17 +569,6 @@ def _holiday_shift(ctx: _Ctx, s: RzSettlement, lines: list[RzReconLine]) -> None
                 status=ExceptionStatus.AUTO_RESOLVED,
             )
             return
-
-
-def _weekday_only_expected(t0: date, n: int) -> date:
-    d = t0
-    while d.weekday() >= 5:
-        d += timedelta(days=1)
-    while n > 0:
-        d += timedelta(days=1)
-        if d.weekday() < 5:
-            n -= 1
-    return d
 
 
 def _match_lines_to_settlements(ctx: _Ctx) -> None:
@@ -702,6 +691,7 @@ def _refund_line(ctx: _Ctx, ln: RzReconLine, lref: str, setl_refs: list[str]) ->
 def _match_lines_to_payments(ctx: _Ctx) -> None:
     cal = ctx.cfg.calendar
     rc = ctx.cfg.rate_card
+    pending: dict[date, list[RzPayment]] = {}
     for pid in sorted(ctx.payments):
         p = ctx.payments[pid]
         pref = ref(EntityKind.PAYMENT, pid)
@@ -739,22 +729,27 @@ def _match_lines_to_payments(ctx: _Ctx) -> None:
         ):
             expected = cal.expected_settlement_date(p.captured_at)
             if expected > ctx.month.as_of:
-                ctx.exc(
-                    ExceptionType.TIMING_NOT_YET_SETTLED,
-                    [pref],
-                    p.amount,
-                    f"captured {cal.capture_day_ist(p.captured_at).isoformat()}; settlement due {expected.isoformat()}",
-                )
+                pending.setdefault(expected, []).append(p)
             else:
                 overdue = cal.working_days_between(expected, ctx.month.as_of)
                 ctx.exc(
                     ExceptionType.TIMING_NOT_YET_SETTLED,
                     [pref],
                     p.amount,
-                    f"settlement was due {expected.isoformat()}; overdue by {overdue} working day(s) — raise with Razorpay",
+                    f"settlement was due {expected.isoformat()}; overdue by {overdue} working day(s) - raise with Razorpay",
                     confidence=0.5,
                     subtype="overdue",
                 )
+    # one exception per due date, not one per payment: "14 payments due 2 Sep" is the fact
+    for expected in sorted(pending):
+        group = pending[expected]
+        days = [cal.capture_day_ist(p.captured_at) for p in group if p.captured_at]
+        ctx.exc(
+            ExceptionType.TIMING_NOT_YET_SETTLED,
+            [ref(EntityKind.PAYMENT, p.payment_id) for p in group],
+            sum(p.amount for p in group),
+            f"{len(group)} payment(s) captured {min(days).isoformat()}..{max(days).isoformat()}; settlement due {expected.isoformat()}",
+        )
 
 
 # --- step 5: refunds without lines ---------------------------------------------
@@ -854,15 +849,32 @@ def _ledger_fuzzy(ctx: _Ctx, entry: LedgerEntry, lref: str) -> None:
 # --- metrics -----------------------------------------------------------------------
 
 
+LEDGER_TYPES: frozenset[ExceptionType] = frozenset(
+    {
+        ExceptionType.ORPHAN_LEDGER_ENTRY,
+        ExceptionType.AMOUNT_MISMATCH_LEDGER,
+        ExceptionType.DUPLICATE_LEDGER_ENTRY,
+        ExceptionType.REFUND_NETTED,
+    }
+)
+"""Ledger-side hygiene: these do not change how much Razorpay money is explained,
+they change what the books say about it. Reported as ``ledger_open_paise``."""
+
+
 def _metrics(ctx: _Ctx) -> dict[str, float | int | str]:
     m = ctx.month
     gross = m.gross_captured
-    open_below = [
+    low_conf_open = [
         e
         for e in ctx.exceptions
         if e.status == ExceptionStatus.OPEN and e.confidence < ctx.cfg.auto_accept_threshold
     ]
-    unexplained = sum(e.amount for e in open_below)
+    unexplained = min(sum(e.amount for e in low_conf_open if e.type not in LEDGER_TYPES), gross)
+    ledger_open = sum(
+        e.amount
+        for e in ctx.exceptions
+        if e.status == ExceptionStatus.OPEN and e.type in LEDGER_TYPES
+    )
     by_tier = {t.value: sum(1 for link in ctx.links if link.tier == t) for t in Tier}
     processed = [s for s in ctx.settlements.values() if s.status == SettlementStatus.PROCESSED]
     return {
@@ -881,10 +893,9 @@ def _metrics(ctx: _Ctx) -> dict[str, float | int | str]:
             1 for e in ctx.exceptions if e.status == ExceptionStatus.AUTO_RESOLVED
         ),
         "unexplained_paise": unexplained,
-        "explained_paise": max(gross - unexplained, 0),
-        "rupees_explained_pct": round(100.0 * max(gross - unexplained, 0) / gross, 4)
-        if gross
-        else 100.0,
+        "explained_paise": gross - unexplained,
+        "rupees_explained_pct": round(100.0 * (gross - unexplained) / gross, 4) if gross else 100.0,
+        "ledger_open_paise": ledger_open,
         "payments_with_ledger_match": len(ctx.ledger_matched_payments),
     }
 

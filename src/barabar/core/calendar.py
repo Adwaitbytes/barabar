@@ -132,6 +132,18 @@ class SettlementCalendar:
         }
 
 
+def weekday_only_add(d: date, n: int) -> date:
+    """Naive T+n that skips only weekends (no holidays). Used to *detect* holiday
+    shifts by comparing against the calendar-aware expectation."""
+    while d.weekday() >= 5:
+        d += timedelta(days=1)
+    while n > 0:
+        d += timedelta(days=1)
+        if d.weekday() < 5:
+            n -= 1
+    return d
+
+
 def ist(
     year: int, month: int, day: int, hour: int = 0, minute: int = 0, second: int = 0
 ) -> datetime:
