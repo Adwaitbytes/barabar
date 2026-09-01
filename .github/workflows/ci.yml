@@ -1,0 +1,46 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv venv --python 3.12 .venv && uv pip install -e ".[dev]"
+      - name: lint
+        run: .venv/bin/ruff check src tests && .venv/bin/ruff format --check src tests
+      - name: import boundaries
+        run: .venv/bin/lint-imports
+      - name: typecheck
+        run: .venv/bin/pyright src
+      - name: tests (unit, property, golden, idempotency)
+        run: .venv/bin/pytest -q -m "not perf and not agent"
+      - name: evals smoke (60-order set, strict targets)
+        run: .venv/bin/barabar evals --sizes 60,600 --strict --out /tmp/evals
+      - name: docs in sync
+        run: .venv/bin/python -m barabar.core.exceptions --write /tmp/EXCEPTIONS.md && diff -q /tmp/EXCEPTIONS.md docs/EXCEPTIONS.md
+
+  web:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: apps/web/pnpm-lock.yaml
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm build
