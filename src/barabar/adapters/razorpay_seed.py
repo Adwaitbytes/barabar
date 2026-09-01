@@ -11,6 +11,10 @@ from __future__ import annotations
 import argparse
 import random
 import sys
+import time
+
+import httpx
+from dotenv import load_dotenv
 
 from barabar.adapters.razorpay_api import RazorpayClient
 from barabar.core.money import format_inr
@@ -24,6 +28,7 @@ def main(argv: list[str] | None = None) -> int:
         "--refund-paid", action="store_true", help="refund the first two captured payments found"
     )
     args = p.parse_args(argv)
+    load_dotenv()
     client = RazorpayClient()
     rng = random.Random(args.seed)
     print(f"Creating {args.n} test-mode orders + payment links…")
@@ -31,7 +36,19 @@ def main(argv: list[str] | None = None) -> int:
         amount = rng.choice([49900, 99900, 149900, 249900, 599900, 1299900])
         receipt = f"rcpt_seed_{args.seed}_{i:03d}"
         order = client.create_order(amount, receipt)
-        link = client.create_payment_link(amount, receipt, f"Barabar seed order {i}")
+        link = None
+        for attempt in range(
+            4
+        ):  # Razorpay rate-limits payment-link creation on fresh test accounts
+            try:
+                link = client.create_payment_link(amount, receipt, f"Barabar seed order {i}")
+                break
+            except httpx.HTTPStatusError as exc:
+                if exc.response.status_code != 429 or attempt == 3:
+                    raise
+                time.sleep(3 * (attempt + 1))
+        assert link is not None
+        time.sleep(1.5)
         print(
             f"  {receipt}  {format_inr(amount):>12}  order {order['id']}  pay at {link['short_url']}"
         )

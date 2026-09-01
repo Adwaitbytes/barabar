@@ -213,8 +213,9 @@ class Store:
                 .values(stage="reconciled", metrics=result.metrics)
             )
             cx.execute(delete(audit).where(audit.c.run_id == run_id))
-            for ev in result.audit:
-                cx.execute(insert(audit).values(**ev.model_dump()))
+            rows = [ev.model_dump() for ev in result.audit]
+            for i in range(0, len(rows), 500):  # one round trip per 500 rows, not one per row
+                cx.execute(insert(audit), rows[i : i + 500])
             cx.execute(
                 update(runs)
                 .where(runs.c.run_id == run_id)

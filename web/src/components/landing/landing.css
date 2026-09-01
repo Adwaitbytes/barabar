@@ -240,10 +240,11 @@
 /* Giant word bleeding off the bottom of the hero */
 .landing-giant {
   position: absolute;
-  left: 50%;
-  bottom: -0.22em;
-  transform: translateX(-50%);
-  font-size: clamp(120px, 22vw, 340px);
+  left: 0;
+  right: 0;
+  bottom: -0.3em;
+  text-align: center;
+  font-size: clamp(88px, 15.5vw, 236px);
   font-weight: 600;
   letter-spacing: -0.06em;
   line-height: 1;

@@ -1,0 +1,440 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - link "Skip to content" [ref=e3] [cursor=pointer]:
+      - /url: "#legs"
+    - generic [ref=e5]:
+      - generic [ref=e6]: बराबर
+      - generic [ref=e7]: Raising the month's books
+    - banner [ref=e8]:
+      - generic [ref=e9]:
+        - link "Barabar home" [ref=e10] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e11]: barabar
+        - navigation "Chapters" [ref=e15]:
+          - link "Settlements 22" [ref=e16] [cursor=pointer]:
+            - /url: "#legs"
+            - text: Settlements
+            - generic [ref=e17]: "22"
+          - link "Exceptions 25 types" [ref=e18] [cursor=pointer]:
+            - /url: "#names"
+            - text: Exceptions
+            - generic [ref=e19]: 25 types
+          - link "Proof Σ" [ref=e20] [cursor=pointer]:
+            - /url: "#proof"
+            - text: Proof
+            - generic [ref=e21]: Σ
+          - link "Close T+2" [ref=e22] [cursor=pointer]:
+            - /url: "#match"
+            - text: Close
+            - generic [ref=e23]: T+2
+        - link "Open app" [ref=e25] [cursor=pointer]:
+          - /url: /app
+    - navigation "Chapter progress" [ref=e30]:
+      - link "Chapter 00" [ref=e31] [cursor=pointer]:
+        - /url: "#hero"
+        - generic: "00"
+      - link "Chapter 01" [ref=e33] [cursor=pointer]:
+        - /url: "#legs"
+        - generic: "01"
+      - link "Chapter 02" [ref=e35] [cursor=pointer]:
+        - /url: "#match"
+        - generic: "02"
+      - link "Chapter 03" [ref=e37] [cursor=pointer]:
+        - /url: "#names"
+        - generic: "03"
+      - link "Chapter 04" [ref=e39] [cursor=pointer]:
+        - /url: "#proof"
+        - generic: "04"
+    - region [ref=e41]:
+      - generic [aria-hidden]: BARABAR
+      - generic [aria-hidden] [ref=e42]: बराबर · हर रुपये का हिसाब
+      - generic [ref=e43]:
+        - generic [ref=e45]:
+          - paragraph [ref=e46]: Chapter 00 — The question
+          - heading "Why did ₹1,89,000.00 land in my bank?" [level=1] [ref=e48]:
+            - generic [ref=e49]: Why did
+            - generic [ref=e51]:
+              - text: ₹1,89,000.00
+              - generic [aria-hidden] [ref=e52]: gross captured
+            - generic [ref=e53]: land in my bank?
+          - paragraph [ref=e54]: Barabar reads the Razorpay settlement, the bank statement and the sales ledger, and answers to the paise. Every link names the rule that made it. Every unmatched rupee gets a typed exception. Deterministic where money is decided, AI only on the tail.
+          - generic [ref=e55]:
+            - link "Open the close pack" [ref=e57] [cursor=pointer]:
+              - /url: /app
+            - link "Scroll to reconcile" [ref=e62] [cursor=pointer]:
+              - /url: "#legs"
+        - list [ref=e66]:
+          - listitem [ref=e67]:
+            - link "01 Three legs" [ref=e68] [cursor=pointer]:
+              - /url: "#legs"
+              - generic [ref=e69]: "01"
+              - generic [ref=e70]: Three legs
+          - listitem [ref=e72]:
+            - link "02 The match" [ref=e73] [cursor=pointer]:
+              - /url: "#match"
+              - generic [ref=e74]: "02"
+              - generic [ref=e75]: The match
+          - listitem [ref=e77]:
+            - link "03 Every rupee named" [ref=e78] [cursor=pointer]:
+              - /url: "#names"
+              - generic [ref=e79]: "03"
+              - generic [ref=e80]: Every rupee named
+          - listitem [ref=e82]:
+            - link "04 The proof" [ref=e83] [cursor=pointer]:
+              - /url: "#proof"
+              - generic [ref=e84]: "04"
+              - generic [ref=e85]: The proof
+    - main [ref=e87]:
+      - region "Three sources, one paise-exact number." [ref=e88]:
+        - generic [ref=e89]:
+          - generic [ref=e90]:
+            - generic [ref=e91]:
+              - paragraph [ref=e93]: Chapter 01 — Three legs
+              - heading "Three sources, one paise-exact number." [level=2] [ref=e95]
+              - paragraph [ref=e97]: A settlement is only true when the bank agrees with Razorpay and the ledger agrees with both.
+              - paragraph [ref=e99]: Barabar reads all three, normalises money to integer paise, and walks the month with an RBI settlement calendar in hand, so T+2 means the next working day, not the next calendar one.
+              - link "Cross into the ledger" [ref=e102] [cursor=pointer]:
+                - /url: /app/settlements
+            - generic [ref=e107]:
+              - generic [ref=e109]:
+                - generic [ref=e110]: "0"
+                - generic [ref=e111]: Legs
+              - generic [ref=e113]:
+                - generic [ref=e114]: "0"
+                - generic [ref=e115]: Records
+              - generic [ref=e117]:
+                - generic [ref=e118]: "0.0"
+                - generic [ref=e119]: Seconds
+              - generic [ref=e121]:
+                - generic [ref=e122]: ₹0.00
+                - generic [ref=e123]: Residual
+          - generic [ref=e124]:
+            - generic [ref=e129]:
+              - generic [ref=e130]:
+                - generic [ref=e131]: 01 / 03
+                - generic [ref=e132]: GET /v1/settlements/recon · integer paise
+              - heading "Razorpay settlements" [level=3] [ref=e133]
+              - paragraph [ref=e134]: "Every batch and its recon lines: gross, fee, GST, refunds, disputes, adjustments, on-hold."
+            - generic [ref=e139]:
+              - generic [ref=e140]:
+                - generic [ref=e141]: 02 / 03
+                - generic [ref=e142]: NEFT CR-RAZORPAY…-HDFCN26217000102
+              - heading "Bank statement" [level=3] [ref=e143]
+              - paragraph [ref=e144]: HDFC, ICICI, SBI, Axis, Kotak, RazorpayX. A narration grammar per bank recovers UTRs the export truncated.
+            - generic [ref=e149]:
+              - generic [ref=e150]:
+                - generic [ref=e151]: 03 / 03
+                - generic [ref=e152]: INV/26-27/00001 ↔ rcpt_202608_00332
+              - heading "Sales ledger" [level=3] [ref=e153]
+              - paragraph [ref=e154]: Tally, Zoho or CSV. Invoices meet payments by receipt, then amount and date; orphans get a name.
+      - region "Three tiers. No model touches a rupee." [ref=e155]:
+        - generic [ref=e156]:
+          - generic [ref=e157]:
+            - paragraph [ref=e159]: Chapter 02 — The match
+            - heading "Three tiers. No model touches a rupee." [level=2] [ref=e161]
+            - paragraph [ref=e163]: Matching is a ladder. Each rung names the rule that made the link, and the ladder stops before anything is guessed.
+            - paragraph [ref=e165]: "Tier D exists too: a person accepting a proposal, signed into the audit chain with their name."
+          - generic [ref=e166]:
+            - generic [ref=e171]:
+              - generic [ref=e172]:
+                - generic [ref=e173]: 01 / 03
+                - generic [ref=e174]: confidence 1.00
+              - heading "Tier A · Exact UTR" [level=3] [ref=e175]
+              - paragraph [ref=e176]: The bank narration carries the full UTR. One credit, one settlement, no judgement.
+              - generic [ref=e177]:
+                - code [ref=e178]: A1-UTR-EXACT
+                - code [ref=e179]: A4-RECEIPT-LEDGER
+            - generic [ref=e184]:
+              - generic [ref=e185]:
+                - generic [ref=e186]: 02 / 03
+                - generic [ref=e187]: residual ≤ 1 paise per line
+              - heading "Tier B · Batch arithmetic" [level=3] [ref=e188]
+              - paragraph [ref=e189]: Gross − fee − 18% GST − refunds − disputes ± adjustments must equal the batch net to the paise.
+              - generic [ref=e190]:
+                - code [ref=e191]: B1-BATCH-NET
+                - code [ref=e192]: B2-GROSS-FEE-TAX-DECOMP
+                - code [ref=e193]: B3-REFUND-NET
+            - generic [ref=e198]:
+              - generic [ref=e199]:
+                - generic [ref=e200]: 03 / 03
+                - generic [ref=e201]: confidence 0.72 → a person decides
+              - heading "Tier C · Truncated UTR" [level=3] [ref=e202]
+              - paragraph [ref=e203]: A 13-character prefix, an exact amount and a three-working-day window. Proposed, never auto-accepted below 0.92.
+              - generic [ref=e204]:
+                - code [ref=e205]: C1-UTR-PREFIX
+                - code [ref=e206]: C2-SPLIT-CREDITS
+      - region "Twenty-five names. Five resolve themselves. One quiet close." [ref=e207]:
+        - generic [ref=e208]:
+          - generic [ref=e209]:
+            - paragraph [ref=e211]: Chapter 03 — Every rupee named
+            - heading "Twenty-five names. Five resolve themselves. One quiet close." [level=2] [ref=e213]
+            - paragraph [ref=e215]: "This month: 50 typed exceptions, 5 auto-resolved by rule, 45 open for a person."
+            - paragraph [ref=e217]: Unexplained is not a type. It is the sum of what is still open below the confidence threshold, and it is the one number a controller signs.
+          - list [ref=e218]:
+            - listitem [ref=e219]:
+              - generic [ref=e220]:
+                - generic [ref=e221]: "01"
+                - generic [ref=e222]:
+                  - heading "Timing" [level=3] [ref=e223]
+                  - paragraph [ref=e224]: "Money that is on its way: T+2 not elapsed, bank lag, or a holiday shifted the date."
+                  - generic [ref=e225]:
+                    - code [ref=e226]: TIMING_NOT_YET_SETTLED
+                    - code [ref=e227]: TIMING_BANK_LAG
+                    - code [ref=e228]: TIMING_HOLIDAY_SHIFT
+                - generic [ref=e230]:
+                  - text: 2 open
+                  - generic [ref=e231]: ₹2,02,863.35
+            - listitem [ref=e232]:
+              - generic [ref=e233]:
+                - generic [ref=e234]: "02"
+                - generic [ref=e235]:
+                  - heading "Fees & tax" [level=3] [ref=e236]
+                  - paragraph [ref=e237]: The fee or its GST differs from the rate card by more than rounding.
+                  - generic [ref=e238]:
+                    - code [ref=e239]: FEE_VARIANCE
+                    - code [ref=e240]: TAX_VARIANCE
+                    - code [ref=e241]: ROUNDING
+                    - code [ref=e243]: INSTANT_SETTLEMENT_FEE
+                - generic [ref=e244]:
+                  - text: 5 open
+                  - generic [ref=e245]: ₹22.38
+            - listitem [ref=e246]:
+              - generic [ref=e247]:
+                - generic [ref=e248]: "03"
+                - generic [ref=e249]:
+                  - heading "Refunds" [level=3] [ref=e250]
+                  - paragraph [ref=e251]: A refund netted inside a batch, or processed and not yet netted.
+                  - generic [ref=e252]:
+                    - code [ref=e253]: REFUND_NETTED
+                    - code [ref=e254]: REFUND_PENDING_NET
+                - generic [ref=e255]:
+                  - text: 11 open
+                  - generic [ref=e256]: ₹13,629.20
+            - listitem [ref=e257]:
+              - generic [ref=e258]:
+                - generic [ref=e259]: "04"
+                - generic [ref=e260]:
+                  - heading "Disputes" [level=3] [ref=e261]
+                  - paragraph [ref=e262]: Chargebacks debited and disputes won and re-credited.
+                  - generic [ref=e263]:
+                    - code [ref=e264]: DISPUTE_DEBIT
+                    - code [ref=e265]: DISPUTE_REVERSAL
+                - generic [ref=e266]:
+                  - text: 2 open
+                  - generic [ref=e267]: ₹3,017.89
+            - listitem [ref=e268]:
+              - generic [ref=e269]:
+                - generic [ref=e270]: "05"
+                - generic [ref=e271]:
+                  - heading "Bank" [level=3] [ref=e272]
+                  - paragraph [ref=e273]: Missing, unknown, duplicate or truncated credits on the statement.
+                  - generic [ref=e274]:
+                    - code [ref=e275]: MULTI_UTR_SPLIT
+                    - code [ref=e277]: MISSING_BANK_CREDIT
+                    - code [ref=e278]: UNKNOWN_BANK_CREDIT
+                    - code [ref=e279]: DUPLICATE_BANK_CREDIT
+                    - code [ref=e280]: NARRATION_TRUNCATED_UTR
+                    - code [ref=e281]: SETTLEMENT_FAILED_RETURNED
+                - generic [ref=e282]:
+                  - text: 4 open
+                  - generic [ref=e283]: ₹99,212.08
+            - listitem [ref=e284]:
+              - generic [ref=e285]:
+                - generic [ref=e286]: "06"
+                - generic [ref=e287]:
+                  - heading "Ledger" [level=3] [ref=e288]
+                  - paragraph [ref=e289]: Invoices with no payment, a different amount, or entered twice.
+                  - generic [ref=e290]:
+                    - code [ref=e291]: ORPHAN_LEDGER_ENTRY
+                    - code [ref=e292]: AMOUNT_MISMATCH_LEDGER
+                    - code [ref=e293]: DUPLICATE_LEDGER_ENTRY
+                - generic [ref=e294]:
+                  - text: 17 open
+                  - generic [ref=e295]: ₹29,457.00
+            - listitem [ref=e296]:
+              - generic [ref=e297]:
+                - generic [ref=e298]: "07"
+                - generic [ref=e299]:
+                  - heading "Razorpay" [level=3] [ref=e300]
+                  - paragraph [ref=e301]: Adjustments, holds, partial batches, instant fees, FX and marketplace TDS.
+                  - generic [ref=e302]:
+                    - code [ref=e303]: ADJUSTMENT
+                    - code [ref=e304]: ON_HOLD
+                    - code [ref=e305]: PARTIAL_SETTLEMENT
+                    - code [ref=e306]: INTL_FX
+                    - code [ref=e307]: MARKETPLACE_TDS_TCS
+                - generic [ref=e308]:
+                  - text: 4 open
+                  - generic [ref=e309]: ₹15,164.12
+      - region "The proof" [ref=e310]:
+        - generic [ref=e311]:
+          - generic [ref=e312]:
+            - generic [ref=e313]:
+              - paragraph [ref=e315]: Chapter 04 — The proof
+              - heading "The proof" [level=2] [ref=e317]
+              - paragraph [ref=e319]: Same inputs, same configuration, same answer, same hash.
+              - paragraph [ref=e321]: Every run is three hashes. Change a tolerance and the config hash changes. Re-run the same month and the outputs hash is byte-identical. Behind it, 1,782 audit events are chained by hash and verified on read.
+              - generic [ref=e323]:
+                - link "Open the close pack" [ref=e325] [cursor=pointer]:
+                  - /url: /app
+                - link "Read the exception taxonomy" [ref=e330] [cursor=pointer]:
+                  - /url: /app/exceptions
+            - generic [ref=e332]:
+              - generic [ref=e333]:
+                - generic [ref=e334]:
+                  - generic [ref=e335]: run · a1bc1a03c094-dirty
+                  - button "Re-run the month" [ref=e337] [cursor=pointer]
+                - generic [ref=e341]:
+                  - generic [ref=e342]: inputs_hash
+                  - generic [ref=e343]:
+                    - generic [ref=e344]: a42f293698d460df4b40e1dd791b677391c0f40c9c7fcded2c74310d3b193e8f
+                    - generic [ref=e345]: The three legs, canonicalised and hashed before matching begins.
+                - generic [ref=e346]:
+                  - generic [ref=e347]: config_hash
+                  - generic [ref=e348]:
+                    - generic [ref=e349]: 86ceae355ed4176fb3b2c8e6e59e0cc2c4b30aba1b92f3b4720629c8b2944496
+                    - generic [ref=e350]: Tolerances, windows, calendar and rate card. A different knob is a different run.
+                - generic [ref=e351]:
+                  - generic [ref=e352]: outputs_hash
+                  - generic [ref=e353]:
+                    - generic [ref=e354]: 5f96a2a4472ee2672ff17ffd046de2d09c35540e4cba614830c00ab8c06415db
+                    - generic [ref=e355]: Links, exceptions and proof trees, minus wall-clock fields.
+                - generic [ref=e356]:
+                  - generic [ref=e357]: identical outputs
+                  - generic [ref=e360]: press re-run to replay the hash
+              - generic [ref=e361]:
+                - generic [ref=e362]:
+                  - generic [ref=e363]: a42f29
+                  - generic [ref=e366]: f29369
+                  - generic [ref=e369]: 3698d4
+                  - generic [ref=e372]: 8d460d
+                  - generic [ref=e375]: 60df4b
+                  - generic [ref=e378]: f4b40e
+                  - generic [ref=e381]: 40e1dd
+                  - generic [ref=e384]: 1dd791
+                  - generic [ref=e387]: 791b67
+                  - generic [ref=e390]: b67739
+                  - generic [ref=e393]: 7391c0
+                  - generic [ref=e396]: 1c0f40
+                  - generic [ref=e399]: f40c9c
+                  - generic [ref=e402]: c9c7fc
+                  - generic [ref=e405]: 7fcded
+                  - generic [ref=e408]: ded2c7
+                  - generic [ref=e411]: 2c7431
+                  - generic [ref=e414]: 4310d3
+                  - generic [ref=e417]: 0d3b19
+                  - generic [ref=e420]: 42f293
+                  - generic [ref=e423]: "293698"
+                  - generic [ref=e426]: 698d46
+                  - generic [ref=e429]: d460df
+                  - generic [ref=e432]: 0df4b4
+                  - generic [ref=e435]: 4b40e1
+                  - generic [ref=e438]: 0e1dd7
+                  - generic [ref=e441]: dd791b
+                  - generic [ref=e444]: 91b677
+                  - generic [ref=e447]: a42f29
+                  - generic [ref=e450]: f29369
+                  - generic [ref=e453]: 3698d4
+                  - generic [ref=e456]: 8d460d
+                  - generic [ref=e459]: 60df4b
+                  - generic [ref=e462]: f4b40e
+                  - generic [ref=e465]: 40e1dd
+                  - generic [ref=e468]: 1dd791
+                  - generic [ref=e471]: 791b67
+                  - generic [ref=e474]: b67739
+                  - generic [ref=e477]: 7391c0
+                  - generic [ref=e480]: 1c0f40
+                  - generic [ref=e483]: f40c9c
+                  - generic [ref=e486]: c9c7fc
+                  - generic [ref=e489]: 7fcded
+                  - generic [ref=e492]: ded2c7
+                  - generic [ref=e495]: 2c7431
+                  - generic [ref=e498]: 4310d3
+                  - generic [ref=e501]: 0d3b19
+                  - generic [ref=e504]: 42f293
+                  - generic [ref=e507]: "293698"
+                  - generic [ref=e510]: 698d46
+                  - generic [ref=e513]: d460df
+                  - generic [ref=e516]: 0df4b4
+                  - generic [ref=e519]: 4b40e1
+                  - generic [ref=e522]: 0e1dd7
+                  - generic [ref=e525]: dd791b
+                  - generic [ref=e528]: 91b677
+                - paragraph [ref=e531]: "1,782 events · head verified · actor: system / agent / user"
+          - generic [ref=e532]:
+            - generic [ref=e533]:
+              - generic [ref=e534]: Gross captured
+              - generic "₹10,85,294.03" [ref=e535]:
+                - text: ₹10,85,294
+                - generic [ref=e536]: ".03"
+            - generic [ref=e537]:
+              - generic [ref=e538]: Explained to the paise
+              - generic "₹10,04,438.83" [ref=e539]:
+                - text: ₹10,04,438
+                - generic [ref=e540]: ".83"
+              - generic [ref=e541]: 92.55%
+            - generic [ref=e542]:
+              - generic [ref=e543]: GST on fees · ITC
+              - generic "₹1,468.85" [ref=e544]:
+                - text: ₹1,468
+                - generic [ref=e545]: ".85"
+              - generic [ref=e546]: GSTR-3B 4A(5)
+            - generic [ref=e547]:
+              - generic [ref=e548]: Still unexplained
+              - generic "₹80,855.20" [ref=e549]:
+                - text: ₹80,855
+                - generic [ref=e550]: ".20"
+              - generic [ref=e551]: 45 open exceptions
+    - contentinfo [ref=e552]:
+      - generic [ref=e553]:
+        - generic [ref=e554]:
+          - link "Barabar home" [ref=e555] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e556]: barabar
+          - paragraph [ref=e560]: Deterministic where money is decided. AI only on the tail.
+        - generic [ref=e561]:
+          - heading "Product" [level=3] [ref=e562]
+          - list [ref=e563]:
+            - listitem [ref=e564]:
+              - link "Close pack" [ref=e565] [cursor=pointer]:
+                - /url: /app
+            - listitem [ref=e566]:
+              - link "Exceptions" [ref=e567] [cursor=pointer]:
+                - /url: /app/exceptions
+            - listitem [ref=e568]:
+              - link "Proof trees" [ref=e569] [cursor=pointer]:
+                - /url: /app/settlements
+            - listitem [ref=e570]:
+              - link "Ask the books" [ref=e571] [cursor=pointer]:
+                - /url: /app/ask
+        - generic [ref=e572]:
+          - heading "Explore" [level=3] [ref=e573]
+          - list [ref=e574]:
+            - listitem [ref=e575]:
+              - link "Exception taxonomy" [ref=e576] [cursor=pointer]:
+                - /url: "#names"
+            - listitem [ref=e577]:
+              - link "Matching tiers" [ref=e578] [cursor=pointer]:
+                - /url: "#match"
+            - listitem [ref=e579]:
+              - link "Determinism" [ref=e580] [cursor=pointer]:
+                - /url: "#proof"
+            - listitem [ref=e581]:
+              - link "GST on fees" [ref=e582] [cursor=pointer]:
+                - /url: /app/journal
+        - generic [ref=e583]:
+          - heading "More" [level=3] [ref=e584]
+          - list [ref=e585]:
+            - listitem [ref=e586]:
+              - link "GitHub" [ref=e587] [cursor=pointer]:
+                - /url: https://github.com/Adwaitbytes/barabar
+            - listitem [ref=e588]:
+              - link "API" [ref=e589] [cursor=pointer]:
+                - /url: https://barabar-api.vercel.app/health
+            - listitem [ref=e590]:
+              - link "Docs" [ref=e591] [cursor=pointer]:
+                - /url: /app/settings
+      - generic [ref=e593]:
+        - generic [ref=e594]: हर रुपये का हिसाब
+        - generic [ref=e595]: WebGL · Geist · India
+  - button "Open Next.js Dev Tools" [ref=e601] [cursor=pointer]

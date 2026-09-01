@@ -203,7 +203,7 @@ const TIERS: { variant: SceneVariant; hue: number; tier: string; title: string; 
 export function ChapterMatch() {
   return (
     <section id="match" className="relative scroll-mt-16 overflow-hidden py-28 sm:py-36" aria-labelledby="match-title">
-      <HalftoneBackground className="opacity-60" />
+      <HalftoneBackground className="opacity-30 [mask-image:radial-gradient(ellipse_80%_70%_at_50%_30%,black_30%,transparent_85%)]" />
       <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-8">
         <ChapterHead
           n="02"
@@ -215,7 +215,7 @@ export function ChapterMatch() {
         <Stagger className="mt-16 grid gap-5 lg:grid-cols-3">
           {TIERS.map((t, i) => (
             <Item key={t.tier}>
-              <TiltCard className="flex h-full flex-col overflow-hidden">
+              <TiltCard className="flex h-full flex-col overflow-hidden bg-surface">
                 <StructureScene variant={t.variant} hue={t.hue} className="h-52 rounded-t-2xl" />
                 <div className="flex flex-1 flex-col p-6">
                   <div className="mb-4 flex items-center justify-between">
