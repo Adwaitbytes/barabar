@@ -144,3 +144,16 @@ def test_upload_run_with_bank_and_ledger(client: TestClient, tmp_path) -> None: 
     r = client.post("/runs/upload", data={"as_of": gen.month.as_of.isoformat()}, files=files)
     assert r.status_code == 201, r.text
     assert r.json()["metrics"]["settlements_matched_to_bank"] > 0
+
+
+def test_interrupted_run_self_heals_on_read(client: TestClient) -> None:
+    from barabar.core.config import MatchConfig
+    from barabar.generator.engine import generate
+
+    s = app_module._store
+    assert s is not None
+    run = s.create_run(generate(seed=9, n_orders=50).month, MatchConfig(), source={"kind": "test"})
+    r = client.get(f"/runs/{run.run_id}/exceptions", params={"status": "open"})
+    assert r.status_code == 200 and r.json()
+    assert client.get(f"/runs/{run.run_id}").json()["stage"] == "finished"
+    assert client.get("/runs/run_doesnotexist/exceptions").status_code == 404

@@ -84,6 +84,13 @@ class ResolveBody(BaseModel):
 # --- helpers -----------------------------------------------------------------------
 
 
+def _result(s: Store, run_id: str) -> ReconResult:
+    try:
+        return s.get_result(run_id, _cfg)
+    except KeyError as exc:
+        raise HTTPException(404, "run not found") from exc
+
+
 def _run_payload(s: Store, run_id: str) -> dict[str, Any]:
     meta = s.run_meta(run_id)
     return {
@@ -340,7 +347,7 @@ def rerun(run_id: str, s: Store = Depends(store), c: MatchConfig = Depends(cfg))
     s.reconcile_run(new.run_id, c)
     payload = _run_payload(s, new.run_id)
     payload["identical_outputs"] = payload["outputs_hash"] == old.outputs_hash
-    payload["diff"] = _diff(s.get_result(run_id), s.get_result(new.run_id))
+    payload["diff"] = _diff(_result(s, run_id), _result(s, new.run_id))
     return payload
 
 
@@ -356,7 +363,7 @@ def _diff(a: ReconResult, b: ReconResult) -> dict[str, Any]:
 
 @app.get("/runs/{run_id}/diff/{other_id}")
 def diff_runs(run_id: str, other_id: str, s: Store = Depends(store)) -> dict[str, Any]:
-    return _diff(s.get_result(run_id), s.get_result(other_id))
+    return _diff(_result(s, run_id), _result(s, other_id))
 
 
 @app.get("/runs/{run_id}/close-pack")
@@ -367,7 +374,7 @@ def close_pack(run_id: str, s: Store = Depends(store)) -> dict[str, Any]:
         raise HTTPException(404, "run not found") from exc
     return {
         "run": _run_payload(s, run_id),
-        **_close_pack(s.get_month(run.inputs_hash), s.get_result(run_id)),
+        **_close_pack(s.get_month(run.inputs_hash), _result(s, run_id)),
     }
 
 
@@ -375,7 +382,7 @@ def close_pack(run_id: str, s: Store = Depends(store)) -> dict[str, Any]:
 def list_exceptions(
     run_id: str, status: str | None = None, type: str | None = None, s: Store = Depends(store)
 ) -> list[dict[str, Any]]:
-    result = s.get_result(run_id)
+    result = _result(s, run_id)
     items = [
         e
         for e in result.exceptions
@@ -386,7 +393,7 @@ def list_exceptions(
 
 @app.get("/runs/{run_id}/exceptions/{exc_id}")
 def get_exception(run_id: str, exc_id: str, s: Store = Depends(store)) -> dict[str, Any]:
-    result = s.get_result(run_id)
+    result = _result(s, run_id)
     item = next((e for e in result.exceptions if e.exc_id == exc_id), None)
     if item is None:
         raise HTTPException(404, "exception not found")
@@ -413,7 +420,7 @@ def investigate_exception(
     from barabar.agent.investigator import InvestigatorUnavailableError, investigate
 
     run = s.get_run(run_id)
-    result = s.get_result(run_id)
+    result = _result(s, run_id)
     if not any(e.exc_id == exc_id for e in result.exceptions):
         raise HTTPException(404, "exception not found")
     try:
@@ -452,7 +459,7 @@ def ask_the_books(
     try:
         answer, model = ask(
             s.get_month(run.inputs_hash),
-            s.get_result(run_id),
+            _result(s, run_id),
             c,
             body.question,
             client=_agent_client(),
@@ -478,7 +485,7 @@ def _agent_client() -> Any:
 
 @app.get("/runs/{run_id}/proof/{settlement_id}")
 def proof_tree(run_id: str, settlement_id: str, s: Store = Depends(store)) -> dict[str, Any]:
-    result = s.get_result(run_id)
+    result = _result(s, run_id)
     node = result.proof_trees.get(settlement_id)
     if node is None:
         raise HTTPException(404, "no proof tree for that settlement")
@@ -487,7 +494,7 @@ def proof_tree(run_id: str, settlement_id: str, s: Store = Depends(store)) -> di
 
 @app.get("/runs/{run_id}/proof-by-bank/{bank_txn_id}")
 def proof_by_bank(run_id: str, bank_txn_id: str, s: Store = Depends(store)) -> dict[str, Any]:
-    result = s.get_result(run_id)
+    result = _result(s, run_id)
     for link in result.links:
         if link.from_entity == f"bank:{bank_txn_id}" and link.to_entity.startswith("settlement:"):
             return result.proof_trees[link.to_entity.split(":", 1)[1]].model_dump(mode="json")
@@ -498,7 +505,7 @@ def proof_by_bank(run_id: str, bank_txn_id: str, s: Store = Depends(store)) -> d
 def links(
     run_id: str, entity: str | None = None, s: Store = Depends(store)
 ) -> list[dict[str, Any]]:
-    result = s.get_result(run_id)
+    result = _result(s, run_id)
     return [
         link.model_dump(mode="json")
         for link in result.links
@@ -540,7 +547,7 @@ def month_entities(run_id: str, kind: str, s: Store = Depends(store)) -> list[di
 @app.get("/runs/{run_id}/export/journal.csv")
 def export_journal_csv(run_id: str, s: Store = Depends(store)) -> Response:
     run = s.get_run(run_id)
-    text = journal_csv(vouchers_for_run(s.get_month(run.inputs_hash), s.get_result(run_id)))
+    text = journal_csv(vouchers_for_run(s.get_month(run.inputs_hash), _result(s, run_id)))
     return Response(
         text,
         media_type="text/csv",
@@ -554,7 +561,7 @@ def export_tally(run_id: str, gst_split: str = "igst", s: Store = Depends(store)
     text = tally_xml(
         vouchers_for_run(
             s.get_month(run.inputs_hash),
-            s.get_result(run_id),
+            _result(s, run_id),
             gst_split="cgst_sgst" if gst_split == "cgst_sgst" else "igst",
         )
     )
@@ -568,7 +575,7 @@ def export_tally(run_id: str, gst_split: str = "igst", s: Store = Depends(store)
 @app.get("/runs/{run_id}/export/memo.md", response_class=PlainTextResponse)
 def export_memo(run_id: str, s: Store = Depends(store)) -> str:
     run = s.get_run(run_id)
-    return controller_memo(s.get_month(run.inputs_hash), s.get_result(run_id))
+    return controller_memo(s.get_month(run.inputs_hash), _result(s, run_id))
 
 
 @app.get("/runs/{run_id}/export/close-pack.html")
@@ -577,7 +584,7 @@ def export_close_pack_html(run_id: str, s: Store = Depends(store)) -> Response:
 
     run = s.get_run(run_id)
     month = s.get_month(run.inputs_hash)
-    result = s.get_result(run_id)
+    result = _result(s, run_id)
     pack = _close_pack(month, result)
     memo = controller_memo(month, result)
     rows = "".join(
@@ -603,7 +610,7 @@ def export_close_pack_html(run_id: str, s: Store = Depends(store)) -> Response:
 
 @app.get("/runs/{run_id}/export/exceptions.csv")
 def export_exceptions(run_id: str, s: Store = Depends(store)) -> Response:
-    result = s.get_result(run_id)
+    result = _result(s, run_id)
     buf = io.StringIO()
     w = csv.writer(buf, lineterminator="\n")
     w.writerow(

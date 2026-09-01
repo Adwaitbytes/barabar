@@ -122,6 +122,9 @@ def default_sqlite_url() -> str:
     return "sqlite:///./data/local/barabar.db"
 
 
+_DEFAULT_CFG = MatchConfig()
+
+
 def _now() -> datetime:
     return datetime.now(tz=UTC)
 
@@ -273,7 +276,9 @@ class Store:
 
     # --- results + exception state ---------------------------------------------------
 
-    def get_result(self, run_id: str) -> ReconResult:
+    def get_result(self, run_id: str, cfg: MatchConfig | None = None) -> ReconResult:
+        """The stored result; if the run was interrupted before its result landed and a
+        config is given, finish it now - determinism makes that the same run."""
         with self.engine.begin() as cx:
             row = cx.execute(select(results.c.payload).where(results.c.run_id == run_id)).first()
             states = (
@@ -282,11 +287,15 @@ class Store:
                 .all()
             )
         if row is None:
-            raise KeyError(run_id)
+            if cfg is None:
+                raise KeyError(run_id)
+            self.get_run(run_id)  # raises KeyError if the run itself is unknown
+            self.reconcile_run(run_id, cfg)
+            return self.get_result(run_id)
         result = ReconResult.model_validate_json(row[0])
         if not states:
             return result
-        overlay = {s["exc_id"]: s for s in states}
+        overlay = {st["exc_id"]: st for st in states}
         patched = tuple(
             e.model_copy(
                 update={
@@ -314,7 +323,7 @@ class Store:
         note: str | None,
         accepted_link: dict[str, Any] | None = None,
     ) -> ExceptionItem:
-        result = self.get_result(run_id)
+        result = self.get_result(run_id, _DEFAULT_CFG)
         item = next((e for e in result.exceptions if e.exc_id == exc_id), None)
         if item is None:
             raise KeyError(exc_id)
