@@ -69,3 +69,6 @@ contracts = [
   { name = "simulator/generator never import api or agent", type = "forbidden", source_modules = ["barabar.simulator", "barabar.generator"], forbidden_modules = ["barabar.api", "barabar.agent", "barabar.adapters", "barabar.exports"] },
   { name = "adapters/exports never import api or agent", type = "forbidden", source_modules = ["barabar.adapters", "barabar.exports"], forbidden_modules = ["barabar.api", "barabar.agent"] },
 ]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["E501"]
