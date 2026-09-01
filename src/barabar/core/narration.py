@@ -16,7 +16,7 @@ from barabar.core.models import Bank, NarrationParsed, TransferMode
 from barabar.core.utr import IMPS_RE, NEFT_RE, RTGS_RE
 
 _MODE_RE: Final = re.compile(
-    r"^(?:(?:BY|TO)\s+TRANSFER\s*[-/*: ]\s*)?(?P<mode>NEFT|RTGS|IMPS|UPI)\s*(?:CR|DR)?\s*(?P<sep>[-/*:])?\s*(?P<rest>.*)$",  # noqa: E501
+    r"^(?:(?:BY|TO)\s+TRANSFER\s*[-/*: ]\s*)?(?P<mode>NEFT|RTGS|IMPS|UPI)\s*(?:CR|DR)?\s*(?P<sep>[-/*:])?\s*(?P<rest>.*)$",
     re.IGNORECASE,
 )
 _IFSC_RE: Final = re.compile(r"^[A-Z]{4}0[A-Z0-9]{6}$")
