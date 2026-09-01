@@ -1,0 +1,1073 @@
+- generic [active] [ref=f11e1]:
+  - generic [ref=f11e2]:
+    - complementary [ref=f11e3]:
+      - link "Barabar home" [ref=f11e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f11e6]: barabar
+      - navigation "Primary" [ref=f11e9]:
+        - generic [ref=f11e10]:
+          - generic [ref=f11e11]: Close
+          - list [ref=f11e12]:
+            - listitem [ref=f11e13]:
+              - link "Close pack" [ref=f11e14] [cursor=pointer]:
+                - /url: /app
+            - listitem [ref=f11e21]:
+              - link "Exceptions 45" [ref=f11e22] [cursor=pointer]:
+                - /url: /app/exceptions
+                - generic [ref=f11e26]: Exceptions
+                - generic [ref=f11e27]: "45"
+            - listitem [ref=f11e28]:
+              - link "Ask the books" [ref=f11e29] [cursor=pointer]:
+                - /url: /app/ask
+        - generic [ref=f11e33]:
+          - generic [ref=f11e34]: Three legs
+          - list [ref=f11e35]:
+            - listitem [ref=f11e36]:
+              - link "Settlements" [ref=f11e38] [cursor=pointer]:
+                - /url: /app/settlements
+            - listitem [ref=f11e43]:
+              - link "Bank statement" [ref=f11e44] [cursor=pointer]:
+                - /url: /app/bank
+            - listitem [ref=f11e48]:
+              - link "Sales ledger" [ref=f11e49] [cursor=pointer]:
+                - /url: /app/ledger
+        - generic [ref=f11e53]:
+          - generic [ref=f11e54]: Output
+          - list [ref=f11e55]:
+            - listitem [ref=f11e56]:
+              - link "Journal entries" [ref=f11e57] [cursor=pointer]:
+                - /url: /app/journal
+            - listitem [ref=f11e62]:
+              - link "Sources" [ref=f11e63] [cursor=pointer]:
+                - /url: /app/sources
+            - listitem [ref=f11e68]:
+              - link "Runs & audit" [ref=f11e69] [cursor=pointer]:
+                - /url: /app/runs
+            - listitem [ref=f11e75]:
+              - link "Rate card & rules" [ref=f11e76] [cursor=pointer]:
+                - /url: /app/settings
+      - generic [ref=f11e81]: Deterministic where money is decided.
+    - generic [ref=f11e87]:
+      - banner [ref=f11e88]:
+        - button "hosted demo month August 2026 · as of 2026-09-01" [ref=f11e89] [cursor=pointer]:
+          - generic [ref=f11e90]:
+            - generic [ref=f11e91]: hosted demo month
+            - generic [ref=f11e92]: August 2026 · as of 2026-09-01
+        - generic [ref=f11e93]:
+          - img "Explained ₹7,48,368.01, open ₹2,56,070.82, unexplained ₹80,855.20" [ref=f11e95]
+          - generic [ref=f11e98]:
+            - generic [ref=f11e99]: 92.55%
+            - text: explained
+        - generic [ref=f11e100]:
+          - generic [ref=f11e101]: live
+          - button "Ask or jump to… ⌘K" [ref=f11e105] [cursor=pointer]:
+            - generic [ref=f11e106]: Ask or jump to…
+            - generic [ref=f11e107]: ⌘K
+          - button "Switch to light theme" [ref=f11e108] [cursor=pointer]
+      - main [ref=f11e109]:
+        - generic [ref=f11e111]:
+          - link "Settlements" [ref=f11e112] [cursor=pointer]:
+            - /url: /app/settlements
+          - generic [ref=f11e115]:
+            - generic [ref=f11e116]:
+              - generic [ref=f11e117]: Why did this land in the bank?
+              - generic [ref=f11e118]:
+                - heading "setl_2Jj4aF8gMQjDGO" [level=1] [ref=f11e119]
+                - button "Copy settlement id" [ref=f11e120] [cursor=pointer]
+                - generic [ref=f11e124]: Matched
+              - generic [ref=f11e126]:
+                - generic [ref=f11e127]:
+                  - term [ref=f11e128]: UTR
+                  - definition [ref=f11e129]: HDFCN26217000102
+                  - button "Copy UTR" [ref=f11e130] [cursor=pointer]
+                - generic [ref=f11e134]:
+                  - term [ref=f11e135]: Mode
+                  - definition [ref=f11e136]: NEFT
+                - generic [ref=f11e137]:
+                  - term [ref=f11e138]: Type
+                  - definition [ref=f11e139]:
+                    - generic [ref=f11e140]: standard
+                - generic [ref=f11e141]:
+                  - term [ref=f11e142]: Processed
+                  - definition [ref=f11e143]:
+                    - text: 05 Aug, 06:12
+                    - generic [ref=f11e144]: Wed IST
+                - generic [ref=f11e145]:
+                  - term [ref=f11e146]: Lines
+                  - definition [ref=f11e147]: "68"
+            - generic [ref=f11e148]:
+              - generic [ref=f11e149]: Net to bank
+              - generic "₹1,13,149.51" [ref=f11e150]:
+                - text: ₹1,13,149
+                - generic [ref=f11e151]: ".51"
+          - generic [ref=f11e152]:
+            - region "Proof tree" [ref=f11e153]:
+              - generic [ref=f11e154]:
+                - generic [ref=f11e155]:
+                  - generic [ref=f11e156]: Bank credit(s)
+                  - generic [ref=f11e157]: rule · confidence
+                - list [ref=f11e158]:
+                  - listitem [ref=f11e159]:
+                    - generic [ref=f11e160]:
+                      - generic [aria-hidden] [ref=f11e161]: ◆
+                      - generic [ref=f11e162]:
+                        - link "HDFC · 2026-08-05" [ref=f11e163] [cursor=pointer]:
+                          - /url: /app/bank?focus=bank_00002
+                        - generic "NEFT CR-HDFC0000060-RAZORPAY SOFTWARE PRIVATE LIMITED-SETTLEMENT-HDFCN26217000102" [ref=f11e164]
+                      - generic [ref=f11e165]:
+                        - code [ref=f11e166]: A1-UTR-EXACT
+                        - generic [ref=f11e167]: 100%
+                        - generic "₹1,13,149.51" [ref=f11e169]:
+                          - text: ₹1,13,149
+                          - generic [ref=f11e170]: ".51"
+                  - listitem [ref=f11e171]:
+                    - generic [ref=f11e172]:
+                      - generic [aria-hidden] [ref=f11e173]: ■
+                      - generic [ref=f11e174]:
+                        - link "Settlement setl_2Jj4aF8gMQjDGO" [ref=f11e175] [cursor=pointer]:
+                          - /url: /app/settlements/setl_2Jj4aF8gMQjDGO
+                        - generic "processed 2026-08-05T00:42:00+00:00" [ref=f11e176]
+                      - generic [ref=f11e177]:
+                        - code [ref=f11e178]: B1-BATCH-NET
+                        - generic "₹1,13,149.51" [ref=f11e180]:
+                          - text: ₹1,13,149
+                          - generic [ref=f11e181]: ".51"
+                    - list [ref=f11e183]:
+                      - listitem [ref=f11e184]:
+                        - generic [ref=f11e185]:
+                          - button "Expand" [ref=f11e188] [cursor=pointer]
+                          - generic [ref=f11e191]:
+                            - generic [ref=f11e192]: 66 payments
+                            - button "show all 66" [ref=f11e193] [cursor=pointer]
+                          - generic [ref=f11e194]:
+                            - code [ref=f11e195]: B2-GROSS-FEE-TAX-DECOMP
+                            - generic "₹1,15,083.54" [ref=f11e197]:
+                              - text: ₹1,15,083
+                              - generic [ref=f11e198]: ".54"
+                        - generic:
+                          - list:
+                            - listitem [ref=f11e199]:
+                              - generic [ref=f11e200]:
+                                - generic [aria-hidden] [ref=f11e203]: ·
+                                - generic [ref=f11e204]:
+                                  - generic [ref=f11e205]: payment
+                                  - generic "pay_LHb0JfbK8Fjuba" [ref=f11e206]
+                                - generic [ref=f11e207]:
+                                  - code [ref=f11e208]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹1,182.00" [ref=f11e210]:
+                                    - text: ₹1,182
+                                    - generic [ref=f11e211]: ".00"
+                            - listitem [ref=f11e212]:
+                              - generic [ref=f11e213]:
+                                - generic [aria-hidden] [ref=f11e216]: ·
+                                - generic [ref=f11e217]:
+                                  - generic [ref=f11e218]: payment
+                                  - generic "pay_p6yyZtFnNLP3Me" [ref=f11e219]
+                                - generic [ref=f11e220]:
+                                  - code [ref=f11e221]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹1,133.60" [ref=f11e223]:
+                                    - text: ₹1,133
+                                    - generic [ref=f11e224]: ".60"
+                            - listitem [ref=f11e225]:
+                              - generic [ref=f11e226]:
+                                - generic [aria-hidden] [ref=f11e229]: ·
+                                - generic [ref=f11e230]:
+                                  - generic [ref=f11e231]: payment
+                                  - generic "pay_VNIza1DM5rCAIm" [ref=f11e232]
+                                - generic [ref=f11e233]:
+                                  - code [ref=f11e234]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹1,711.63" [ref=f11e236]:
+                                    - text: ₹1,711
+                                    - generic [ref=f11e237]: ".63"
+                            - listitem [ref=f11e238]:
+                              - generic [ref=f11e239]:
+                                - generic [aria-hidden] [ref=f11e242]: ·
+                                - generic [ref=f11e243]:
+                                  - generic [ref=f11e244]: payment
+                                  - generic "pay_5jrrehBmlTF7Jd" [ref=f11e245]
+                                - generic [ref=f11e246]:
+                                  - code [ref=f11e247]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹2,139.29" [ref=f11e249]:
+                                    - text: ₹2,139
+                                    - generic [ref=f11e250]: ".29"
+                            - listitem [ref=f11e251]:
+                              - generic [ref=f11e252]:
+                                - generic [aria-hidden] [ref=f11e255]: ·
+                                - generic [ref=f11e256]:
+                                  - generic [ref=f11e257]: payment
+                                  - generic "pay_GzksSQnPB9igNC" [ref=f11e258]
+                                - generic [ref=f11e259]:
+                                  - code [ref=f11e260]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹1,858.00" [ref=f11e262]:
+                                    - text: ₹1,858
+                                    - generic [ref=f11e263]: ".00"
+                            - listitem [ref=f11e264]:
+                              - generic [ref=f11e265]:
+                                - generic [aria-hidden] [ref=f11e268]: ·
+                                - generic [ref=f11e269]:
+                                  - generic [ref=f11e270]: payment
+                                  - generic "pay_TtgwPYxdAGlfbr" [ref=f11e271]
+                                - generic [ref=f11e272]:
+                                  - code [ref=f11e273]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹2,620.00" [ref=f11e275]:
+                                    - text: ₹2,620
+                                    - generic [ref=f11e276]: ".00"
+                            - listitem [ref=f11e277]:
+                              - generic [ref=f11e278]:
+                                - generic [aria-hidden] [ref=f11e281]: ·
+                                - generic [ref=f11e282]:
+                                  - generic [ref=f11e283]: payment
+                                  - generic "pay_tQErTXP7BYoij6" [ref=f11e284]
+                                - generic [ref=f11e285]:
+                                  - code [ref=f11e286]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹2,629.53" [ref=f11e288]:
+                                    - text: ₹2,629
+                                    - generic [ref=f11e289]: ".53"
+                            - listitem [ref=f11e290]:
+                              - generic [ref=f11e291]:
+                                - generic [aria-hidden] [ref=f11e294]: ·
+                                - generic [ref=f11e295]:
+                                  - generic [ref=f11e296]: payment
+                                  - generic "pay_MRYsoMxchDgIJx" [ref=f11e297]
+                                - generic [ref=f11e298]:
+                                  - code [ref=f11e299]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹1,232.11" [ref=f11e301]:
+                                    - text: ₹1,232
+                                    - generic [ref=f11e302]: ".11"
+                            - listitem [ref=f11e303]:
+                              - generic [ref=f11e304]:
+                                - generic [aria-hidden] [ref=f11e307]: ·
+                                - generic [ref=f11e308]:
+                                  - generic [ref=f11e309]: payment
+                                  - generic "pay_8fALLhMt3rzcpr" [ref=f11e310]
+                                - generic [ref=f11e311]:
+                                  - code [ref=f11e312]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹811.00" [ref=f11e314]:
+                                    - text: ₹811
+                                    - generic [ref=f11e315]: ".00"
+                            - listitem [ref=f11e316]:
+                              - generic [ref=f11e317]:
+                                - generic [aria-hidden] [ref=f11e320]: ·
+                                - generic [ref=f11e321]:
+                                  - generic [ref=f11e322]: payment
+                                  - generic "pay_311J0T2f0CWHmM" [ref=f11e323]
+                                - generic [ref=f11e324]:
+                                  - code [ref=f11e325]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹1,898.37" [ref=f11e327]:
+                                    - text: ₹1,898
+                                    - generic [ref=f11e328]: ".37"
+                            - listitem [ref=f11e329]:
+                              - generic [ref=f11e330]:
+                                - generic [aria-hidden] [ref=f11e333]: ·
+                                - generic [ref=f11e334]:
+                                  - generic [ref=f11e335]: payment
+                                  - generic "pay_TiGIX7v96dtP87" [ref=f11e336]
+                                - generic [ref=f11e337]:
+                                  - code [ref=f11e338]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹1,280.06" [ref=f11e340]:
+                                    - text: ₹1,280
+                                    - generic [ref=f11e341]: ".06"
+                            - listitem [ref=f11e342]:
+                              - generic [ref=f11e343]:
+                                - generic [aria-hidden] [ref=f11e346]: ·
+                                - generic [ref=f11e347]:
+                                  - generic [ref=f11e348]: payment
+                                  - generic "pay_owHlghzY5q9nQc" [ref=f11e349]
+                                - generic [ref=f11e350]:
+                                  - code [ref=f11e351]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹2,295.00" [ref=f11e353]:
+                                    - text: ₹2,295
+                                    - generic [ref=f11e354]: ".00"
+                            - listitem [ref=f11e355]:
+                              - generic [ref=f11e356]:
+                                - generic [aria-hidden] [ref=f11e359]: ·
+                                - generic [ref=f11e360]:
+                                  - generic [ref=f11e361]: payment
+                                  - generic "pay_3SLvUvPs75btAG" [ref=f11e362]
+                                - generic [ref=f11e363]:
+                                  - code [ref=f11e364]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹1,444.10" [ref=f11e366]:
+                                    - text: ₹1,444
+                                    - generic [ref=f11e367]: ".10"
+                            - listitem [ref=f11e368]:
+                              - generic [ref=f11e369]:
+                                - generic [aria-hidden] [ref=f11e372]: ·
+                                - generic [ref=f11e373]:
+                                  - generic [ref=f11e374]: payment
+                                  - generic "pay_FBgR76nO8mQS64" [ref=f11e375]
+                                - generic [ref=f11e376]:
+                                  - code [ref=f11e377]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹984.00" [ref=f11e379]:
+                                    - text: ₹984
+                                    - generic [ref=f11e380]: ".00"
+                            - listitem [ref=f11e381]:
+                              - generic [ref=f11e382]:
+                                - generic [aria-hidden] [ref=f11e385]: ·
+                                - generic [ref=f11e386]:
+                                  - generic [ref=f11e387]: payment
+                                  - generic "pay_cUhlKqmB3f9WVr" [ref=f11e388]
+                                - generic [ref=f11e389]:
+                                  - code [ref=f11e390]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹1,722.00" [ref=f11e392]:
+                                    - text: ₹1,722
+                                    - generic [ref=f11e393]: ".00"
+                            - listitem [ref=f11e394]:
+                              - generic [ref=f11e395]:
+                                - generic [aria-hidden] [ref=f11e398]: ·
+                                - generic [ref=f11e399]:
+                                  - generic [ref=f11e400]: payment
+                                  - generic "pay_tLLGxJcpvzGXXA" [ref=f11e401]
+                                - generic [ref=f11e402]:
+                                  - code [ref=f11e403]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹1,419.69" [ref=f11e405]:
+                                    - text: ₹1,419
+                                    - generic [ref=f11e406]: ".69"
+                            - listitem [ref=f11e407]:
+                              - generic [ref=f11e408]:
+                                - generic [aria-hidden] [ref=f11e411]: ·
+                                - generic [ref=f11e412]:
+                                  - generic [ref=f11e413]: payment
+                                  - generic "pay_mPOtuLWNugnVLe" [ref=f11e414]
+                                - generic [ref=f11e415]:
+                                  - code [ref=f11e416]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹2,660.00" [ref=f11e418]:
+                                    - text: ₹2,660
+                                    - generic [ref=f11e419]: ".00"
+                            - listitem [ref=f11e420]:
+                              - generic [ref=f11e421]:
+                                - generic [aria-hidden] [ref=f11e424]: ·
+                                - generic [ref=f11e425]:
+                                  - generic [ref=f11e426]: payment
+                                  - generic "pay_uMzNRZ9Kfv8lI7" [ref=f11e427]
+                                - generic [ref=f11e428]:
+                                  - code [ref=f11e429]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹2,548.40" [ref=f11e431]:
+                                    - text: ₹2,548
+                                    - generic [ref=f11e432]: ".40"
+                            - listitem [ref=f11e433]:
+                              - generic [ref=f11e434]:
+                                - generic [aria-hidden] [ref=f11e437]: ·
+                                - generic [ref=f11e438]:
+                                  - generic [ref=f11e439]: payment
+                                  - generic "pay_MNswp9SnsLv1NS" [ref=f11e440]
+                                - generic [ref=f11e441]:
+                                  - code [ref=f11e442]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹3,197.00" [ref=f11e444]:
+                                    - text: ₹3,197
+                                    - generic [ref=f11e445]: ".00"
+                            - listitem [ref=f11e446]:
+                              - generic [ref=f11e447]:
+                                - generic [aria-hidden] [ref=f11e450]: ·
+                                - generic [ref=f11e451]:
+                                  - generic [ref=f11e452]: payment
+                                  - generic "pay_IFqwZvisKXi8dT" [ref=f11e453]
+                                - generic [ref=f11e454]:
+                                  - code [ref=f11e455]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹3,258.26" [ref=f11e457]:
+                                    - text: ₹3,258
+                                    - generic [ref=f11e458]: ".26"
+                            - listitem [ref=f11e459]:
+                              - generic [ref=f11e460]:
+                                - generic [aria-hidden] [ref=f11e463]: ·
+                                - generic [ref=f11e464]:
+                                  - generic [ref=f11e465]: payment
+                                  - generic "pay_FS1JnQUothLyv1" [ref=f11e466]
+                                - generic [ref=f11e467]:
+                                  - code [ref=f11e468]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹2,211.00" [ref=f11e470]:
+                                    - text: ₹2,211
+                                    - generic [ref=f11e471]: ".00"
+                            - listitem [ref=f11e472]:
+                              - generic [ref=f11e473]:
+                                - generic [aria-hidden] [ref=f11e476]: ·
+                                - generic [ref=f11e477]:
+                                  - generic [ref=f11e478]: payment
+                                  - generic "pay_Uu11mhzd3PHF0V" [ref=f11e479]
+                                - generic [ref=f11e480]:
+                                  - code [ref=f11e481]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹3,074.68" [ref=f11e483]:
+                                    - text: ₹3,074
+                                    - generic [ref=f11e484]: ".68"
+                            - listitem [ref=f11e485]:
+                              - generic [ref=f11e486]:
+                                - generic [aria-hidden] [ref=f11e489]: ·
+                                - generic [ref=f11e490]:
+                                  - generic [ref=f11e491]: payment
+                                  - generic "pay_tAMZ20yBx73qs6" [ref=f11e492]
+                                - generic [ref=f11e493]:
+                                  - code [ref=f11e494]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹1,871.76" [ref=f11e496]:
+                                    - text: ₹1,871
+                                    - generic [ref=f11e497]: ".76"
+                            - listitem [ref=f11e498]:
+                              - generic [ref=f11e499]:
+                                - generic [aria-hidden] [ref=f11e502]: ·
+                                - generic [ref=f11e503]:
+                                  - generic [ref=f11e504]: payment
+                                  - generic "pay_Hn1zCj7uDQ9X8X" [ref=f11e505]
+                                - generic [ref=f11e506]:
+                                  - code [ref=f11e507]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹2,219.00" [ref=f11e509]:
+                                    - text: ₹2,219
+                                    - generic [ref=f11e510]: ".00"
+                            - listitem [ref=f11e511]:
+                              - generic [ref=f11e512]:
+                                - generic [aria-hidden] [ref=f11e515]: ·
+                                - generic [ref=f11e516]:
+                                  - generic [ref=f11e517]: payment
+                                  - generic "pay_l0PzhjC66o4g5x" [ref=f11e518]
+                                - generic [ref=f11e519]:
+                                  - code [ref=f11e520]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹1,115.05" [ref=f11e522]:
+                                    - text: ₹1,115
+                                    - generic [ref=f11e523]: ".05"
+                            - listitem [ref=f11e524]:
+                              - generic [ref=f11e525]:
+                                - generic [aria-hidden] [ref=f11e528]: ·
+                                - generic [ref=f11e529]:
+                                  - generic [ref=f11e530]: payment
+                                  - generic "pay_Ng4b0iAOpsvWh5" [ref=f11e531]
+                                - generic [ref=f11e532]:
+                                  - code [ref=f11e533]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹1,201.00" [ref=f11e535]:
+                                    - text: ₹1,201
+                                    - generic [ref=f11e536]: ".00"
+                            - listitem [ref=f11e537]:
+                              - generic [ref=f11e538]:
+                                - generic [aria-hidden] [ref=f11e541]: ·
+                                - generic [ref=f11e542]:
+                                  - generic [ref=f11e543]: payment
+                                  - generic "pay_yRetyvbWyd4cV3" [ref=f11e544]
+                                - generic [ref=f11e545]:
+                                  - code [ref=f11e546]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹1,365.01" [ref=f11e548]:
+                                    - text: ₹1,365
+                                    - generic [ref=f11e549]: ".01"
+                            - listitem [ref=f11e550]:
+                              - generic [ref=f11e551]:
+                                - generic [aria-hidden] [ref=f11e554]: ·
+                                - generic [ref=f11e555]:
+                                  - generic [ref=f11e556]: payment
+                                  - generic "pay_aI2QLpo6DNE7Jx" [ref=f11e557]
+                                - generic [ref=f11e558]:
+                                  - code [ref=f11e559]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹1,100.00" [ref=f11e561]:
+                                    - text: ₹1,100
+                                    - generic [ref=f11e562]: ".00"
+                            - listitem [ref=f11e563]:
+                              - generic [ref=f11e564]:
+                                - generic [aria-hidden] [ref=f11e567]: ·
+                                - generic [ref=f11e568]:
+                                  - generic [ref=f11e569]: payment
+                                  - generic "pay_JwgHG1AyQCUjkx" [ref=f11e570]
+                                - generic [ref=f11e571]:
+                                  - code [ref=f11e572]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹223.60" [ref=f11e574]:
+                                    - text: ₹223
+                                    - generic [ref=f11e575]: ".60"
+                            - listitem [ref=f11e576]:
+                              - generic [ref=f11e577]:
+                                - generic [aria-hidden] [ref=f11e580]: ·
+                                - generic [ref=f11e581]:
+                                  - generic [ref=f11e582]: payment
+                                  - generic "pay_wmoUErveZH8AzB" [ref=f11e583]
+                                - generic [ref=f11e584]:
+                                  - code [ref=f11e585]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹1,975.00" [ref=f11e587]:
+                                    - text: ₹1,975
+                                    - generic [ref=f11e588]: ".00"
+                            - listitem [ref=f11e589]:
+                              - generic [ref=f11e590]:
+                                - generic [aria-hidden] [ref=f11e593]: ·
+                                - generic [ref=f11e594]:
+                                  - generic [ref=f11e595]: payment
+                                  - generic "pay_HFKthxqbTXW52T" [ref=f11e596]
+                                - generic [ref=f11e597]:
+                                  - code [ref=f11e598]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹678.00" [ref=f11e600]:
+                                    - text: ₹678
+                                    - generic [ref=f11e601]: ".00"
+                            - listitem [ref=f11e602]:
+                              - generic [ref=f11e603]:
+                                - generic [aria-hidden] [ref=f11e606]: ·
+                                - generic [ref=f11e607]:
+                                  - generic [ref=f11e608]: payment
+                                  - generic "pay_ozf30bgF9flvXX" [ref=f11e609]
+                                - generic [ref=f11e610]:
+                                  - code [ref=f11e611]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹1,375.75" [ref=f11e613]:
+                                    - text: ₹1,375
+                                    - generic [ref=f11e614]: ".75"
+                            - listitem [ref=f11e615]:
+                              - generic [ref=f11e616]:
+                                - generic [aria-hidden] [ref=f11e619]: ·
+                                - generic [ref=f11e620]:
+                                  - generic [ref=f11e621]: payment
+                                  - generic "pay_DpkiYdvpDBf3pp" [ref=f11e622]
+                                - generic [ref=f11e623]:
+                                  - code [ref=f11e624]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹2,872.57" [ref=f11e626]:
+                                    - text: ₹2,872
+                                    - generic [ref=f11e627]: ".57"
+                            - listitem [ref=f11e628]:
+                              - generic [ref=f11e629]:
+                                - generic [aria-hidden] [ref=f11e632]: ·
+                                - generic [ref=f11e633]:
+                                  - generic [ref=f11e634]: payment
+                                  - generic "pay_8Mr3WmzG7giLe6" [ref=f11e635]
+                                - generic [ref=f11e636]:
+                                  - code [ref=f11e637]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹1,282.99" [ref=f11e639]:
+                                    - text: ₹1,282
+                                    - generic [ref=f11e640]: ".99"
+                            - listitem [ref=f11e641]:
+                              - generic [ref=f11e642]:
+                                - generic [aria-hidden] [ref=f11e645]: ·
+                                - generic [ref=f11e646]:
+                                  - generic [ref=f11e647]: payment
+                                  - generic "pay_sn02m7Iv3qGxxT" [ref=f11e648]
+                                - generic [ref=f11e649]:
+                                  - code [ref=f11e650]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹900.00" [ref=f11e652]:
+                                    - text: ₹900
+                                    - generic [ref=f11e653]: ".00"
+                            - listitem [ref=f11e654]:
+                              - generic [ref=f11e655]:
+                                - generic [aria-hidden] [ref=f11e658]: ·
+                                - generic [ref=f11e659]:
+                                  - generic [ref=f11e660]: payment
+                                  - generic "pay_ZFOfiPhZ8Mf8Sl" [ref=f11e661]
+                                - generic [ref=f11e662]:
+                                  - code [ref=f11e663]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹2,445.00" [ref=f11e665]:
+                                    - text: ₹2,445
+                                    - generic [ref=f11e666]: ".00"
+                            - listitem [ref=f11e667]:
+                              - generic [ref=f11e668]:
+                                - generic [aria-hidden] [ref=f11e671]: ·
+                                - generic [ref=f11e672]:
+                                  - generic [ref=f11e673]: payment
+                                  - generic "pay_nI9MMiVEC50XaX" [ref=f11e674]
+                                - generic [ref=f11e675]:
+                                  - code [ref=f11e676]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹2,850.00" [ref=f11e678]:
+                                    - text: ₹2,850
+                                    - generic [ref=f11e679]: ".00"
+                            - listitem [ref=f11e680]:
+                              - generic [ref=f11e681]:
+                                - generic [aria-hidden] [ref=f11e684]: ·
+                                - generic [ref=f11e685]:
+                                  - generic [ref=f11e686]: payment
+                                  - generic "pay_pLmg85LSKyGzBz" [ref=f11e687]
+                                - generic [ref=f11e688]:
+                                  - code [ref=f11e689]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹1,656.95" [ref=f11e691]:
+                                    - text: ₹1,656
+                                    - generic [ref=f11e692]: ".95"
+                            - listitem [ref=f11e693]:
+                              - generic [ref=f11e694]:
+                                - generic [aria-hidden] [ref=f11e697]: ·
+                                - generic [ref=f11e698]:
+                                  - generic [ref=f11e699]: payment
+                                  - generic "pay_8cZZ7Uhqr7oJ7S" [ref=f11e700]
+                                - generic [ref=f11e701]:
+                                  - code [ref=f11e702]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹657.00" [ref=f11e704]:
+                                    - text: ₹657
+                                    - generic [ref=f11e705]: ".00"
+                            - listitem [ref=f11e706]:
+                              - generic [ref=f11e707]:
+                                - generic [aria-hidden] [ref=f11e710]: ·
+                                - generic [ref=f11e711]:
+                                  - generic [ref=f11e712]: payment
+                                  - generic "pay_wtxxUdIFHWDbs1" [ref=f11e713]
+                                - generic [ref=f11e714]:
+                                  - code [ref=f11e715]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹961.75" [ref=f11e717]:
+                                    - text: ₹961
+                                    - generic [ref=f11e718]: ".75"
+                            - listitem [ref=f11e719]:
+                              - generic [ref=f11e720]:
+                                - generic [aria-hidden] [ref=f11e723]: ·
+                                - generic [ref=f11e724]:
+                                  - generic [ref=f11e725]: payment
+                                  - generic "pay_HB2UdWJwoZyp7d" [ref=f11e726]
+                                - generic [ref=f11e727]:
+                                  - code [ref=f11e728]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹647.00" [ref=f11e730]:
+                                    - text: ₹647
+                                    - generic [ref=f11e731]: ".00"
+                            - listitem [ref=f11e732]:
+                              - generic [ref=f11e733]:
+                                - generic [aria-hidden] [ref=f11e736]: ·
+                                - generic [ref=f11e737]:
+                                  - generic [ref=f11e738]: payment
+                                  - generic "pay_7Acb6cvuRruYqW" [ref=f11e739]
+                                - generic [ref=f11e740]:
+                                  - code [ref=f11e741]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹2,285.00" [ref=f11e743]:
+                                    - text: ₹2,285
+                                    - generic [ref=f11e744]: ".00"
+                            - listitem [ref=f11e745]:
+                              - generic [ref=f11e746]:
+                                - generic [aria-hidden] [ref=f11e749]: ·
+                                - generic [ref=f11e750]:
+                                  - generic [ref=f11e751]: payment
+                                  - generic "pay_fWoOHJXgDkFcs0" [ref=f11e752]
+                                - generic [ref=f11e753]:
+                                  - code [ref=f11e754]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹5,034.74" [ref=f11e756]:
+                                    - text: ₹5,034
+                                    - generic [ref=f11e757]: ".74"
+                            - listitem [ref=f11e758]:
+                              - generic [ref=f11e759]:
+                                - generic [aria-hidden] [ref=f11e762]: ·
+                                - generic [ref=f11e763]:
+                                  - generic [ref=f11e764]: payment
+                                  - generic "pay_7gbJCRNWOpFvcb" [ref=f11e765]
+                                - generic [ref=f11e766]:
+                                  - code [ref=f11e767]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹1,383.00" [ref=f11e769]:
+                                    - text: ₹1,383
+                                    - generic [ref=f11e770]: ".00"
+                            - listitem [ref=f11e771]:
+                              - generic [ref=f11e772]:
+                                - generic [aria-hidden] [ref=f11e775]: ·
+                                - generic [ref=f11e776]:
+                                  - generic [ref=f11e777]: payment
+                                  - generic "pay_ESDxF0MPHa06Gf" [ref=f11e778]
+                                - generic [ref=f11e779]:
+                                  - code [ref=f11e780]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹493.00" [ref=f11e782]:
+                                    - text: ₹493
+                                    - generic [ref=f11e783]: ".00"
+                            - listitem [ref=f11e784]:
+                              - generic [ref=f11e785]:
+                                - generic [aria-hidden] [ref=f11e788]: ·
+                                - generic [ref=f11e789]:
+                                  - generic [ref=f11e790]: payment
+                                  - generic "pay_LsPHa205BnhQxP" [ref=f11e791]
+                                - generic [ref=f11e792]:
+                                  - code [ref=f11e793]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹1,321.72" [ref=f11e795]:
+                                    - text: ₹1,321
+                                    - generic [ref=f11e796]: ".72"
+                            - listitem [ref=f11e797]:
+                              - generic [ref=f11e798]:
+                                - generic [aria-hidden] [ref=f11e801]: ·
+                                - generic [ref=f11e802]:
+                                  - generic [ref=f11e803]: payment
+                                  - generic "pay_AwwVvZulca8Tkf" [ref=f11e804]
+                                - generic [ref=f11e805]:
+                                  - code [ref=f11e806]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹1,215.07" [ref=f11e808]:
+                                    - text: ₹1,215
+                                    - generic [ref=f11e809]: ".07"
+                            - listitem [ref=f11e810]:
+                              - generic [ref=f11e811]:
+                                - generic [aria-hidden] [ref=f11e814]: ·
+                                - generic [ref=f11e815]:
+                                  - generic [ref=f11e816]: payment
+                                  - generic "pay_wSkVtcwmnRXWV2" [ref=f11e817]
+                                - generic [ref=f11e818]:
+                                  - code [ref=f11e819]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹1,069.00" [ref=f11e821]:
+                                    - text: ₹1,069
+                                    - generic [ref=f11e822]: ".00"
+                            - listitem [ref=f11e823]:
+                              - generic [ref=f11e824]:
+                                - generic [aria-hidden] [ref=f11e827]: ·
+                                - generic [ref=f11e828]:
+                                  - generic [ref=f11e829]: payment
+                                  - generic "pay_tQJgwecp9hAshU" [ref=f11e830]
+                                - generic [ref=f11e831]:
+                                  - code [ref=f11e832]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹882.00" [ref=f11e834]:
+                                    - text: ₹882
+                                    - generic [ref=f11e835]: ".00"
+                            - listitem [ref=f11e836]:
+                              - generic [ref=f11e837]:
+                                - generic [aria-hidden] [ref=f11e840]: ·
+                                - generic [ref=f11e841]:
+                                  - generic [ref=f11e842]: payment
+                                  - generic "pay_EcHg9QdwFvRiQy" [ref=f11e843]
+                                - generic [ref=f11e844]:
+                                  - code [ref=f11e845]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹627.00" [ref=f11e847]:
+                                    - text: ₹627
+                                    - generic [ref=f11e848]: ".00"
+                            - listitem [ref=f11e849]:
+                              - generic [ref=f11e850]:
+                                - generic [aria-hidden] [ref=f11e853]: ·
+                                - generic [ref=f11e854]:
+                                  - generic [ref=f11e855]: payment
+                                  - generic "pay_4P1C9JUA4OQSUy" [ref=f11e856]
+                                - generic [ref=f11e857]:
+                                  - code [ref=f11e858]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹427.00" [ref=f11e860]:
+                                    - text: ₹427
+                                    - generic [ref=f11e861]: ".00"
+                            - listitem [ref=f11e862]:
+                              - generic [ref=f11e863]:
+                                - generic [aria-hidden] [ref=f11e866]: ·
+                                - generic [ref=f11e867]:
+                                  - generic [ref=f11e868]: payment
+                                  - generic "pay_s3HmHRfuwhUuTv" [ref=f11e869]
+                                - generic [ref=f11e870]:
+                                  - code [ref=f11e871]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹1,715.00" [ref=f11e873]:
+                                    - text: ₹1,715
+                                    - generic [ref=f11e874]: ".00"
+                            - listitem [ref=f11e875]:
+                              - generic [ref=f11e876]:
+                                - generic [aria-hidden] [ref=f11e879]: ·
+                                - generic [ref=f11e880]:
+                                  - generic [ref=f11e881]: payment
+                                  - generic "pay_CJe870dv9R34eW" [ref=f11e882]
+                                - generic [ref=f11e883]:
+                                  - code [ref=f11e884]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹422.78" [ref=f11e886]:
+                                    - text: ₹422
+                                    - generic [ref=f11e887]: ".78"
+                            - listitem [ref=f11e888]:
+                              - generic [ref=f11e889]:
+                                - generic [aria-hidden] [ref=f11e892]: ·
+                                - generic [ref=f11e893]:
+                                  - generic [ref=f11e894]: payment
+                                  - generic "pay_i6eofN1MiF6FVm" [ref=f11e895]
+                                - generic [ref=f11e896]:
+                                  - code [ref=f11e897]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹672.74" [ref=f11e899]:
+                                    - text: ₹672
+                                    - generic [ref=f11e900]: ".74"
+                            - listitem [ref=f11e901]:
+                              - generic [ref=f11e902]:
+                                - generic [aria-hidden] [ref=f11e905]: ·
+                                - generic [ref=f11e906]:
+                                  - generic [ref=f11e907]: payment
+                                  - generic "pay_BJcn89JrIkvItm" [ref=f11e908]
+                                - generic [ref=f11e909]:
+                                  - code [ref=f11e910]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹2,900.88" [ref=f11e912]:
+                                    - text: ₹2,900
+                                    - generic [ref=f11e913]: ".88"
+                            - listitem [ref=f11e914]:
+                              - generic [ref=f11e915]:
+                                - generic [aria-hidden] [ref=f11e918]: ·
+                                - generic [ref=f11e919]:
+                                  - generic [ref=f11e920]: payment
+                                  - generic "pay_SROmqQDyqqOero" [ref=f11e921]
+                                - generic [ref=f11e922]:
+                                  - code [ref=f11e923]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹6,460.84" [ref=f11e925]:
+                                    - text: ₹6,460
+                                    - generic [ref=f11e926]: ".84"
+                            - listitem [ref=f11e927]:
+                              - generic [ref=f11e928]:
+                                - generic [aria-hidden] [ref=f11e931]: ·
+                                - generic [ref=f11e932]:
+                                  - generic [ref=f11e933]: payment
+                                  - generic "pay_qGBlYyH3rWbLNx" [ref=f11e934]
+                                - generic [ref=f11e935]:
+                                  - code [ref=f11e936]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹1,501.00" [ref=f11e938]:
+                                    - text: ₹1,501
+                                    - generic [ref=f11e939]: ".00"
+                            - listitem [ref=f11e940]:
+                              - generic [ref=f11e941]:
+                                - generic [aria-hidden] [ref=f11e944]: ·
+                                - generic [ref=f11e945]:
+                                  - generic [ref=f11e946]: payment
+                                  - generic "pay_EeXPxtvOJ9CeJI" [ref=f11e947]
+                                - generic [ref=f11e948]:
+                                  - code [ref=f11e949]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹1,507.00" [ref=f11e951]:
+                                    - text: ₹1,507
+                                    - generic [ref=f11e952]: ".00"
+                            - listitem [ref=f11e953]:
+                              - generic [ref=f11e954]:
+                                - generic [aria-hidden] [ref=f11e957]: ·
+                                - generic [ref=f11e958]:
+                                  - generic [ref=f11e959]: payment
+                                  - generic "pay_kpIp8k0PMiGYN0" [ref=f11e960]
+                                - generic [ref=f11e961]:
+                                  - code [ref=f11e962]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹882.00" [ref=f11e964]:
+                                    - text: ₹882
+                                    - generic [ref=f11e965]: ".00"
+                            - listitem [ref=f11e966]:
+                              - generic [ref=f11e967]:
+                                - generic [aria-hidden] [ref=f11e970]: ·
+                                - generic [ref=f11e971]:
+                                  - generic [ref=f11e972]: payment
+                                  - generic "pay_YKf2prdmDviBc2" [ref=f11e973]
+                                - generic [ref=f11e974]:
+                                  - code [ref=f11e975]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹1,417.00" [ref=f11e977]:
+                                    - text: ₹1,417
+                                    - generic [ref=f11e978]: ".00"
+                            - listitem [ref=f11e979]:
+                              - generic [ref=f11e980]:
+                                - generic [aria-hidden] [ref=f11e983]: ·
+                                - generic [ref=f11e984]:
+                                  - generic [ref=f11e985]: payment
+                                  - generic "pay_rnJzQp25wljbNG" [ref=f11e986]
+                                - generic [ref=f11e987]:
+                                  - code [ref=f11e988]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹1,091.62" [ref=f11e990]:
+                                    - text: ₹1,091
+                                    - generic [ref=f11e991]: ".62"
+                            - listitem [ref=f11e992]:
+                              - generic [ref=f11e993]:
+                                - generic [aria-hidden] [ref=f11e996]: ·
+                                - generic [ref=f11e997]:
+                                  - generic [ref=f11e998]: payment
+                                  - generic "pay_V79qSNY4jkm9go" [ref=f11e999]
+                                - generic [ref=f11e1000]:
+                                  - code [ref=f11e1001]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹959.00" [ref=f11e1003]:
+                                    - text: ₹959
+                                    - generic [ref=f11e1004]: ".00"
+                            - listitem [ref=f11e1005]:
+                              - generic [ref=f11e1006]:
+                                - generic [aria-hidden] [ref=f11e1009]: ·
+                                - generic [ref=f11e1010]:
+                                  - generic [ref=f11e1011]: payment
+                                  - generic "pay_4lpz3Yhf0aBTRz" [ref=f11e1012]
+                                - generic [ref=f11e1013]:
+                                  - code [ref=f11e1014]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹2,243.00" [ref=f11e1016]:
+                                    - text: ₹2,243
+                                    - generic [ref=f11e1017]: ".00"
+                            - listitem [ref=f11e1018]:
+                              - generic [ref=f11e1019]:
+                                - generic [aria-hidden] [ref=f11e1022]: ·
+                                - generic [ref=f11e1023]:
+                                  - generic [ref=f11e1024]: payment
+                                  - generic "pay_4tTKlMnlvSrBAy" [ref=f11e1025]
+                                - generic [ref=f11e1026]:
+                                  - code [ref=f11e1027]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹2,183.00" [ref=f11e1029]:
+                                    - text: ₹2,183
+                                    - generic [ref=f11e1030]: ".00"
+                            - listitem [ref=f11e1031]:
+                              - generic [ref=f11e1032]:
+                                - generic [aria-hidden] [ref=f11e1035]: ·
+                                - generic [ref=f11e1036]:
+                                  - generic [ref=f11e1037]: payment
+                                  - generic "pay_YvKZEhtu4jgV0o" [ref=f11e1038]
+                                - generic [ref=f11e1039]:
+                                  - code [ref=f11e1040]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹1,997.00" [ref=f11e1042]:
+                                    - text: ₹1,997
+                                    - generic [ref=f11e1043]: ".00"
+                            - listitem [ref=f11e1044]:
+                              - generic [ref=f11e1045]:
+                                - generic [aria-hidden] [ref=f11e1048]: ·
+                                - generic [ref=f11e1049]:
+                                  - generic [ref=f11e1050]: payment
+                                  - generic "pay_yd4GqDNVhO6YuW" [ref=f11e1051]
+                                - generic [ref=f11e1052]:
+                                  - code [ref=f11e1053]: B2-GROSS-FEE-TAX-DECOMP
+                                  - generic "₹3,686.00" [ref=f11e1055]:
+                                    - text: ₹3,686
+                                    - generic [ref=f11e1056]: ".00"
+                      - listitem [ref=f11e1057]:
+                        - generic [ref=f11e1058]:
+                          - button "Collapse" [expanded] [ref=f11e1061] [cursor=pointer]
+                          - generic [ref=f11e1064]: 2 refunds
+                          - generic [ref=f11e1066]:
+                            - code [ref=f11e1067]: B3-REFUND-NET
+                            - generic "-₹1,934.00" [ref=f11e1069]:
+                              - text: "-₹1,934"
+                              - generic [ref=f11e1070]: ".00"
+                        - list [ref=f11e1072]:
+                          - listitem [ref=f11e1073]:
+                            - generic [ref=f11e1074]:
+                              - generic [aria-hidden] [ref=f11e1077]: ·
+                              - generic [ref=f11e1078]:
+                                - generic [ref=f11e1079]: refund
+                                - generic "rfnd_8X1Duo9QfnwNMt" [ref=f11e1080]
+                              - generic [ref=f11e1081]:
+                                - code [ref=f11e1082]: B3-REFUND-NET
+                                - generic "-₹433.00" [ref=f11e1084]:
+                                  - text: "-₹433"
+                                  - generic [ref=f11e1085]: ".00"
+                          - listitem [ref=f11e1086]:
+                            - generic [ref=f11e1087]:
+                              - generic [aria-hidden] [ref=f11e1090]: ·
+                              - generic [ref=f11e1091]:
+                                - generic [ref=f11e1092]: refund
+                                - generic "rfnd_Levrbm6idTSGkp" [ref=f11e1093]
+                              - generic [ref=f11e1094]:
+                                - code [ref=f11e1095]: B3-REFUND-NET
+                                - generic "-₹1,501.00" [ref=f11e1097]:
+                                  - text: "-₹1,501"
+                                  - generic [ref=f11e1098]: ".00"
+                      - listitem [ref=f11e1099]:
+                        - generic [ref=f11e1100]:
+                          - generic [aria-hidden] [ref=f11e1103]: =
+                          - generic [ref=f11e1104]: Σ batch total
+                          - generic "₹1,13,149.54" [ref=f11e1108]:
+                            - text: ₹1,13,149
+                            - generic [ref=f11e1109]: ".54"
+                        - generic [ref=f11e1110]:
+                          - generic [ref=f11e1111]: Residual against bank credit
+                          - generic "+₹0.03" [ref=f11e1112]:
+                            - text: +₹0
+                            - generic [ref=f11e1113]: ".03"
+                      - listitem [ref=f11e1114]:
+                        - generic [ref=f11e1115]:
+                          - generic [aria-hidden] [ref=f11e1118]: "!"
+                          - generic [ref=f11e1119]:
+                            - 'link "ROUNDING: batch net differs from settlement by -3 paise" [ref=f11e1120] [cursor=pointer]':
+                              - /url: /app/exceptions/exc_e6513081a4edaf24
+                            - generic [ref=f11e1121]: auto resolved
+                          - generic [ref=f11e1122]:
+                            - generic [ref=f11e1123]: 100%
+                            - generic "₹0.03" [ref=f11e1125]:
+                              - text: ₹0
+                              - generic [ref=f11e1126]: ".03"
+                      - listitem [ref=f11e1127]:
+                        - generic [ref=f11e1128]:
+                          - generic [aria-hidden] [ref=f11e1131]: "!"
+                          - generic [ref=f11e1132]:
+                            - 'link "REFUND_NETTED: refund rfnd_8X1Duo9QfnwNMt netted in batch; ledger has no credit note" [ref=f11e1133] [cursor=pointer]':
+                              - /url: /app/exceptions/exc_0c249c4f5310b9a1
+                            - generic [ref=f11e1134]: open
+                          - generic [ref=f11e1135]:
+                            - generic [ref=f11e1136]: 100%
+                            - generic "₹433.00" [ref=f11e1138]:
+                              - text: ₹433
+                              - generic [ref=f11e1139]: ".00"
+                      - listitem [ref=f11e1140]:
+                        - generic [ref=f11e1141]:
+                          - generic [aria-hidden] [ref=f11e1144]: "!"
+                          - generic [ref=f11e1145]:
+                            - 'link "REFUND_NETTED: refund rfnd_Levrbm6idTSGkp netted in batch; ledger has no credit note" [ref=f11e1146] [cursor=pointer]':
+                              - /url: /app/exceptions/exc_1df720715e2bc418
+                            - generic [ref=f11e1147]: open
+                          - generic [ref=f11e1148]:
+                            - generic [ref=f11e1149]: 100%
+                            - generic "₹1,501.00" [ref=f11e1151]:
+                              - text: ₹1,501
+                              - generic [ref=f11e1152]: ".00"
+            - complementary [ref=f11e1153]:
+              - generic [ref=f11e1154]:
+                - generic [ref=f11e1155]:
+                  - heading "Arithmetic" [level=3] [ref=f11e1156]
+                  - generic [ref=f11e1157]: from recon lines
+                - generic [ref=f11e1159]:
+                  - generic [ref=f11e1160]:
+                    - term [ref=f11e1161]: Gross captured
+                    - definition [ref=f11e1162]:
+                      - generic "₹1,16,243.67" [ref=f11e1163]:
+                        - text: ₹1,16,243
+                        - generic [ref=f11e1164]: ".67"
+                  - generic [ref=f11e1165]:
+                    - term [ref=f11e1166]:
+                      - generic [ref=f11e1167]: −
+                      - text: Razorpay fee
+                    - definition [ref=f11e1168]:
+                      - generic "-₹983.17" [ref=f11e1169]:
+                        - text: "-₹983"
+                        - generic [ref=f11e1170]: ".17"
+                  - generic [ref=f11e1171]:
+                    - term [ref=f11e1172]:
+                      - generic [ref=f11e1173]: −
+                      - text: GST on fee (18%)
+                    - definition [ref=f11e1174]:
+                      - generic "-₹176.96" [ref=f11e1175]:
+                        - text: "-₹176"
+                        - generic [ref=f11e1176]: ".96"
+                  - generic [ref=f11e1177]:
+                    - term [ref=f11e1178]:
+                      - generic [ref=f11e1179]: −
+                      - text: Refunds netted
+                    - definition [ref=f11e1180]:
+                      - generic "-₹1,934.00" [ref=f11e1181]:
+                        - text: "-₹1,934"
+                        - generic [ref=f11e1182]: ".00"
+                  - generic [ref=f11e1183]:
+                    - term [ref=f11e1184]:
+                      - generic [ref=f11e1185]: =
+                      - text: Batch net
+                    - definition [ref=f11e1186]:
+                      - generic "₹1,13,149.54" [ref=f11e1187]:
+                        - text: ₹1,13,149
+                        - generic [ref=f11e1188]: ".54"
+                  - generic [ref=f11e1189]:
+                    - term [ref=f11e1190]: Settlement says
+                    - definition [ref=f11e1191]:
+                      - generic "₹1,13,149.51" [ref=f11e1192]:
+                        - text: ₹1,13,149
+                        - generic [ref=f11e1193]: ".51"
+                  - generic [ref=f11e1194]:
+                    - term [ref=f11e1195]: Bank received
+                    - definition [ref=f11e1196]:
+                      - generic "₹1,13,149.51" [ref=f11e1197]:
+                        - text: ₹1,13,149
+                        - generic [ref=f11e1198]: ".51"
+                  - generic [ref=f11e1199]:
+                    - term [ref=f11e1200]: Residual
+                    - definition [ref=f11e1201]:
+                      - generic "+₹0.03" [ref=f11e1202]:
+                        - text: +₹0
+                        - generic [ref=f11e1203]: ".03"
+              - generic [ref=f11e1204]:
+                - generic [ref=f11e1205]:
+                  - heading "Links" [level=3] [ref=f11e1206]
+                  - generic [ref=f11e1207]: "69"
+                - generic [ref=f11e1208]:
+                  - generic [ref=f11e1209]:
+                    - generic [ref=f11e1210]: A
+                    - generic [ref=f11e1212]: ←
+                    - link "bank bank_00002" [ref=f11e1213] [cursor=pointer]:
+                      - /url: /app/bank?focus=bank_00002
+                      - generic [ref=f11e1214]: bank
+                      - generic [ref=f11e1215]: bank_00002
+                    - code [ref=f11e1216]: A1-UTR-EXACT
+                    - generic "100% confidence" [ref=f11e1217]: 100%
+                  - generic [ref=f11e1221]:
+                    - generic [ref=f11e1222]: B
+                    - generic [ref=f11e1224]: 68 recon lines
+                    - code [ref=f11e1225]: B1-BATCH-NET
+                    - generic "₹1,13,149.54" [ref=f11e1227]:
+                      - text: ₹1,13,149
+                      - generic [ref=f11e1228]: ".54"
+              - generic [ref=f11e1229]:
+                - generic [ref=f11e1230]:
+                  - heading "Exceptions on this settlement" [level=3] [ref=f11e1231]
+                  - generic [ref=f11e1232]: "3"
+                - generic [ref=f11e1233]:
+                  - link "Refund netted Open refund rfnd_Levrbm6idTSGkp netted in batch; ledger has no credit note ₹1,501.00" [ref=f11e1234] [cursor=pointer]:
+                    - /url: /app/exceptions/exc_1df720715e2bc418
+                    - generic [ref=f11e1235]:
+                      - generic [ref=f11e1236]:
+                        - generic [ref=f11e1237]: Refund netted
+                        - generic [ref=f11e1238]: Open
+                      - paragraph [ref=f11e1239]: refund rfnd_Levrbm6idTSGkp netted in batch; ledger has no credit note
+                    - generic "₹1,501.00" [ref=f11e1240]:
+                      - text: ₹1,501
+                      - generic [ref=f11e1241]: ".00"
+                  - link "Refund netted Open refund rfnd_8X1Duo9QfnwNMt netted in batch; ledger has no credit note ₹433.00" [ref=f11e1244] [cursor=pointer]:
+                    - /url: /app/exceptions/exc_0c249c4f5310b9a1
+                    - generic [ref=f11e1245]:
+                      - generic [ref=f11e1246]:
+                        - generic [ref=f11e1247]: Refund netted
+                        - generic [ref=f11e1248]: Open
+                      - paragraph [ref=f11e1249]: refund rfnd_8X1Duo9QfnwNMt netted in batch; ledger has no credit note
+                    - generic "₹433.00" [ref=f11e1250]:
+                      - text: ₹433
+                      - generic [ref=f11e1251]: ".00"
+                  - link "Rounding Auto-resolved batch net differs from settlement by -3 paise ₹0.03" [ref=f11e1254] [cursor=pointer]:
+                    - /url: /app/exceptions/exc_e6513081a4edaf24
+                    - generic [ref=f11e1255]:
+                      - generic [ref=f11e1256]:
+                        - generic [ref=f11e1257]: Rounding
+                        - generic [ref=f11e1258]: Auto-resolved
+                      - paragraph [ref=f11e1259]: batch net differs from settlement by -3 paise
+                    - generic "₹0.03" [ref=f11e1260]:
+                      - text: ₹0
+                      - generic [ref=f11e1261]: ".03"
+  - alert [ref=f11e1264]

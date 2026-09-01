@@ -1,0 +1,1464 @@
+- generic [active] [ref=f12e1]:
+  - generic [ref=f12e2]:
+    - complementary [ref=f12e3]:
+      - link "Barabar home" [ref=f12e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f12e6]: barabar
+      - navigation "Primary" [ref=f12e9]:
+        - generic [ref=f12e10]:
+          - generic [ref=f12e11]: Close
+          - list [ref=f12e12]:
+            - listitem [ref=f12e13]:
+              - link "Close pack" [ref=f12e14] [cursor=pointer]:
+                - /url: /app
+            - listitem [ref=f12e21]:
+              - link "Exceptions 45" [ref=f12e23] [cursor=pointer]:
+                - /url: /app/exceptions
+                - generic [ref=f12e27]: Exceptions
+                - generic [ref=f12e28]: "45"
+            - listitem [ref=f12e29]:
+              - link "Ask the books" [ref=f12e30] [cursor=pointer]:
+                - /url: /app/ask
+        - generic [ref=f12e34]:
+          - generic [ref=f12e35]: Three legs
+          - list [ref=f12e36]:
+            - listitem [ref=f12e37]:
+              - link "Settlements" [ref=f12e38] [cursor=pointer]:
+                - /url: /app/settlements
+            - listitem [ref=f12e43]:
+              - link "Bank statement" [ref=f12e44] [cursor=pointer]:
+                - /url: /app/bank
+            - listitem [ref=f12e48]:
+              - link "Sales ledger" [ref=f12e49] [cursor=pointer]:
+                - /url: /app/ledger
+        - generic [ref=f12e53]:
+          - generic [ref=f12e54]: Output
+          - list [ref=f12e55]:
+            - listitem [ref=f12e56]:
+              - link "Journal entries" [ref=f12e57] [cursor=pointer]:
+                - /url: /app/journal
+            - listitem [ref=f12e62]:
+              - link "Sources" [ref=f12e63] [cursor=pointer]:
+                - /url: /app/sources
+            - listitem [ref=f12e68]:
+              - link "Runs & audit" [ref=f12e69] [cursor=pointer]:
+                - /url: /app/runs
+            - listitem [ref=f12e75]:
+              - link "Rate card & rules" [ref=f12e76] [cursor=pointer]:
+                - /url: /app/settings
+      - generic [ref=f12e81]: Deterministic where money is decided.
+    - generic [ref=f12e87]:
+      - banner [ref=f12e88]:
+        - button "hosted demo month August 2026 · as of 2026-09-01" [ref=f12e89] [cursor=pointer]:
+          - generic [ref=f12e90]:
+            - generic [ref=f12e91]: hosted demo month
+            - generic [ref=f12e92]: August 2026 · as of 2026-09-01
+        - generic [ref=f12e93]:
+          - img "Explained ₹7,48,368.01, open ₹2,56,070.82, unexplained ₹80,855.20" [ref=f12e95]
+          - generic [ref=f12e100]:
+            - generic [ref=f12e101]: 92.55%
+            - text: explained
+        - generic [ref=f12e102]:
+          - generic [ref=f12e103]: live
+          - button "Ask or jump to… ⌘K" [ref=f12e107] [cursor=pointer]:
+            - generic [ref=f12e108]: Ask or jump to…
+            - generic [ref=f12e109]: ⌘K
+          - button "Switch to light theme" [ref=f12e110] [cursor=pointer]
+      - main [ref=f12e111]:
+        - generic [ref=f12e113]:
+          - generic [ref=f12e115]:
+            - generic [ref=f12e116]: Exceptions
+            - heading "45 open ₹3,63,366.02" [level=1] [ref=f12e117]:
+              - generic [ref=f12e118]:
+                - generic [ref=f12e119]: 45 open
+                - generic "₹3,63,366.02" [ref=f12e120]:
+                  - text: ₹3,63,366
+                  - generic [ref=f12e121]: ".02"
+            - paragraph [ref=f12e122]: Every unmatched or partially matched rupee has exactly one primary type, a rule that raised it, and a suggested action. Unexplained is what is still open below the confidence threshold.
+          - generic [ref=f12e123]:
+            - link "Open 45" [ref=f12e124] [cursor=pointer]:
+              - /url: /app/exceptions
+              - text: Open
+              - generic [ref=f12e125]: "45"
+            - link "Investigating 0" [ref=f12e126] [cursor=pointer]:
+              - /url: /app/exceptions?status=investigating
+              - text: Investigating
+              - generic [ref=f12e127]: "0"
+            - link "Resolved 0" [ref=f12e128] [cursor=pointer]:
+              - /url: /app/exceptions?status=resolved
+              - text: Resolved
+              - generic [ref=f12e129]: "0"
+            - link "Accepted 0" [ref=f12e130] [cursor=pointer]:
+              - /url: /app/exceptions?status=accepted
+              - text: Accepted
+              - generic [ref=f12e131]: "0"
+            - link "Auto-resolved 5" [ref=f12e132] [cursor=pointer]:
+              - /url: /app/exceptions?status=auto_resolved
+              - text: Auto-resolved
+              - generic [ref=f12e133]: "5"
+            - link "All 50" [ref=f12e134] [cursor=pointer]:
+              - /url: /app/exceptions?status=all
+              - text: All
+              - generic [ref=f12e135]: "50"
+          - generic [ref=f12e136]:
+            - navigation "Exception families" [ref=f12e137]:
+              - link "All families 45" [ref=f12e138] [cursor=pointer]:
+                - /url: /app/exceptions
+                - text: All families
+                - generic [ref=f12e139]: "45"
+              - list [ref=f12e140]:
+                - listitem [ref=f12e141]:
+                  - link "Timing 2" [ref=f12e142] [cursor=pointer]:
+                    - /url: /app/exceptions?family=timing
+                    - generic [ref=f12e143]: Timing
+                    - generic "₹2,02,863.35" [ref=f12e144]: "2"
+                - listitem [ref=f12e145]:
+                  - link "Fees & tax 5" [ref=f12e146] [cursor=pointer]:
+                    - /url: /app/exceptions?family=pricing
+                    - generic [ref=f12e147]: Fees & tax
+                    - generic "₹22.38" [ref=f12e148]: "5"
+                - listitem [ref=f12e149]:
+                  - link "Refunds 11" [ref=f12e150] [cursor=pointer]:
+                    - /url: /app/exceptions?family=refund
+                    - generic [ref=f12e151]: Refunds
+                    - generic "₹13,629.20" [ref=f12e152]: "11"
+                - listitem [ref=f12e153]:
+                  - link "Disputes 2" [ref=f12e154] [cursor=pointer]:
+                    - /url: /app/exceptions?family=dispute
+                    - generic [ref=f12e155]: Disputes
+                    - generic "₹3,017.89" [ref=f12e156]: "2"
+                - listitem [ref=f12e157]:
+                  - link "Bank 4" [ref=f12e158] [cursor=pointer]:
+                    - /url: /app/exceptions?family=bank
+                    - generic [ref=f12e159]: Bank
+                    - generic "₹99,212.08" [ref=f12e160]: "4"
+                - listitem [ref=f12e161]:
+                  - link "Ledger 17" [ref=f12e162] [cursor=pointer]:
+                    - /url: /app/exceptions?family=ledger
+                    - generic [ref=f12e163]: Ledger
+                    - generic "₹29,457.00" [ref=f12e164]: "17"
+                - listitem [ref=f12e165]:
+                  - link "Razorpay 4" [ref=f12e166] [cursor=pointer]:
+                    - /url: /app/exceptions?family=razorpay
+                    - generic [ref=f12e167]: Razorpay
+                    - generic "₹15,164.12" [ref=f12e168]: "4"
+            - generic [ref=f12e169]:
+              - generic [ref=f12e170]:
+                - generic [ref=f12e171]:
+                  - generic [ref=f12e172]: j
+                  - generic [ref=f12e173]: k
+                  - text: move
+                - generic [ref=f12e174]:
+                  - generic [ref=f12e175]: x
+                  - text: select
+                - generic [ref=f12e176]:
+                  - generic [ref=f12e177]: ↵
+                  - text: open
+                - button "Select all 45" [ref=f12e178] [cursor=pointer]
+              - generic [ref=f12e179]:
+                - generic [ref=f12e180]:
+                  - generic [ref=f12e181]:
+                    - generic [ref=f12e182]:
+                      - generic [ref=f12e183]:
+                        - heading "Not yet settled" [level=2] [ref=f12e184]
+                        - code [ref=f12e185]: TIMING_NOT_YET_SETTLED
+                        - generic [ref=f12e186]: "1"
+                      - paragraph [ref=f12e187]: Payment captured, settlement not yet due (T+2 working days not elapsed).
+                      - paragraph [ref=f12e188]: "Suggested: Wait; show expected settlement date."
+                    - generic "₹1,28,071.55" [ref=f12e190]:
+                      - text: ₹1,28,071
+                      - generic [ref=f12e191]: ".55"
+                  - table [ref=f12e192]:
+                    - rowgroup [ref=f12e193]:
+                      - row [ref=f12e194]:
+                        - cell [ref=f12e195]:
+                          - checkbox "Select exc_7b35ff0b898dfb14" [ref=f12e196]
+                        - cell "₹1,28,071.55" [ref=f12e197]:
+                          - generic "₹1,28,071.55" [ref=f12e198]:
+                            - text: ₹1,28,071
+                            - generic [ref=f12e199]: ".55"
+                        - cell "pay pay_0Oz1o8ijhY6Oc3 +64" [ref=f12e200]:
+                          - generic [ref=f12e201]:
+                            - link "pay pay_0Oz1o8ijhY6Oc3" [ref=f12e202] [cursor=pointer]:
+                              - /url: /app/settlements?q=pay_0Oz1o8ijhY6Oc3
+                              - generic [ref=f12e203]: pay
+                              - generic [ref=f12e204]: pay_0Oz1o8ijhY6Oc3
+                            - generic [ref=f12e205]: "+64"
+                        - cell [ref=f12e206]:
+                          - link "65 payment(s) captured 2026-08-29..2026-08-31; settlement due 2026-09-02" [ref=f12e207] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_7b35ff0b898dfb14
+                        - cell "100%" [ref=f12e208]:
+                          - generic "100% confidence" [ref=f12e209]: 100%
+                        - cell [ref=f12e213]
+                        - cell "Open" [ref=f12e214]
+                        - cell [ref=f12e216]:
+                          - link "Open exc_7b35ff0b898dfb14" [ref=f12e217] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_7b35ff0b898dfb14
+                - generic [ref=f12e220]:
+                  - generic [ref=f12e221]:
+                    - generic [ref=f12e222]:
+                      - generic [ref=f12e223]:
+                        - heading "Bank lag" [level=2] [ref=f12e224]
+                        - code [ref=f12e225]: TIMING_BANK_LAG
+                        - generic [ref=f12e226]: "1"
+                      - paragraph [ref=f12e227]: Settlement processed by Razorpay, bank credit not yet visible (≤ 1 working day).
+                      - paragraph [ref=f12e228]: "Suggested: Wait; re-check next statement."
+                    - generic "₹74,791.80" [ref=f12e230]:
+                      - text: ₹74,791
+                      - generic [ref=f12e231]: ".80"
+                  - table [ref=f12e232]:
+                    - rowgroup [ref=f12e233]:
+                      - row [ref=f12e234]:
+                        - cell [ref=f12e235]:
+                          - checkbox "Select exc_5052e3a8f8b3172e" [ref=f12e236]
+                        - cell "₹74,791.80" [ref=f12e237]:
+                          - generic "₹74,791.80" [ref=f12e238]:
+                            - text: ₹74,791
+                            - generic [ref=f12e239]: ".80"
+                        - cell [ref=f12e240]:
+                          - link "setl setl_OsoSPSgn3OxshH" [ref=f12e242] [cursor=pointer]:
+                            - /url: /app/settlements/setl_OsoSPSgn3OxshH
+                            - generic [ref=f12e243]: setl
+                            - generic [ref=f12e244]: setl_OsoSPSgn3OxshH
+                        - cell [ref=f12e245]:
+                          - link "processed 2026-09-01; bank credit expected by 2026-09-02" [ref=f12e246] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_5052e3a8f8b3172e
+                        - cell "100%" [ref=f12e247]:
+                          - generic "100% confidence" [ref=f12e248]: 100%
+                        - cell [ref=f12e252]
+                        - cell "Open" [ref=f12e253]
+                        - cell [ref=f12e255]:
+                          - link "Open exc_5052e3a8f8b3172e" [ref=f12e256] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_5052e3a8f8b3172e
+                - generic [ref=f12e259]:
+                  - generic [ref=f12e260]:
+                    - generic [ref=f12e261]:
+                      - generic [ref=f12e262]:
+                        - heading "Truncated UTR" [level=2] [ref=f12e263]
+                        - code [ref=f12e264]: NARRATION_TRUNCATED_UTR
+                        - generic [ref=f12e265]: "1"
+                      - paragraph [ref=f12e266]: UTR cut by bank export; matched by prefix + amount + date.
+                      - paragraph [ref=f12e267]: "Suggested: Accept with confidence; note."
+                    - generic "₹32,897.64" [ref=f12e269]:
+                      - text: ₹32,897
+                      - generic [ref=f12e270]: ".64"
+                  - table [ref=f12e271]:
+                    - rowgroup [ref=f12e272]:
+                      - row [ref=f12e273]:
+                        - cell [ref=f12e274]:
+                          - checkbox "Select exc_b43105f9a99cb306" [ref=f12e275]
+                        - cell "₹32,897.64" [ref=f12e276]:
+                          - generic "₹32,897.64" [ref=f12e277]:
+                            - text: ₹32,897
+                            - generic [ref=f12e278]: ".64"
+                        - cell "setl setl_OuZT1c2BusAKnN +1" [ref=f12e279]:
+                          - generic [ref=f12e280]:
+                            - link "setl setl_OuZT1c2BusAKnN" [ref=f12e281] [cursor=pointer]:
+                              - /url: /app/settlements/setl_OuZT1c2BusAKnN
+                              - generic [ref=f12e282]: setl
+                              - generic [ref=f12e283]: setl_OuZT1c2BusAKnN
+                            - generic [ref=f12e284]: "+1"
+                        - cell [ref=f12e285]:
+                          - link "UTR prefix HDFCN26219000 (13 chars) + exact amount + date within window" [ref=f12e286] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_b43105f9a99cb306
+                        - cell "72%" [ref=f12e287]:
+                          - generic "72% confidence" [ref=f12e288]: 72%
+                        - cell "C" [ref=f12e292]
+                        - cell "Open" [ref=f12e295]
+                        - cell [ref=f12e297]:
+                          - link "Open exc_b43105f9a99cb306" [ref=f12e298] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_b43105f9a99cb306
+                - generic [ref=f12e301]:
+                  - generic [ref=f12e302]:
+                    - generic [ref=f12e303]:
+                      - generic [ref=f12e304]:
+                        - heading "Duplicate bank credit" [level=2] [ref=f12e305]
+                        - code [ref=f12e306]: DUPLICATE_BANK_CREDIT
+                        - generic [ref=f12e307]: "1"
+                      - paragraph [ref=f12e308]: Same UTR credited twice.
+                      - paragraph [ref=f12e309]: "Suggested: Flag for bank reversal."
+                    - generic "₹30,870.95" [ref=f12e311]:
+                      - text: ₹30,870
+                      - generic [ref=f12e312]: ".95"
+                  - table [ref=f12e313]:
+                    - rowgroup [ref=f12e314]:
+                      - row [ref=f12e315]:
+                        - cell [ref=f12e316]:
+                          - checkbox "Select exc_31a5b566f53d7853" [ref=f12e317]
+                        - cell "₹30,870.95" [ref=f12e318]:
+                          - generic "₹30,870.95" [ref=f12e319]:
+                            - text: ₹30,870
+                            - generic [ref=f12e320]: ".95"
+                        - cell "bank bank_00023 +1" [ref=f12e321]:
+                          - generic [ref=f12e322]:
+                            - link "bank bank_00023" [ref=f12e323] [cursor=pointer]:
+                              - /url: /app/bank?focus=bank_00023
+                              - generic [ref=f12e324]: bank
+                              - generic [ref=f12e325]: bank_00023
+                            - generic [ref=f12e326]: "+1"
+                        - cell [ref=f12e327]:
+                          - link "UTR HDFCN26240000121 credited twice (rows 22 and 23)" [ref=f12e328] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_31a5b566f53d7853
+                        - cell "95%" [ref=f12e329]:
+                          - generic "95% confidence" [ref=f12e330]: 95%
+                        - cell [ref=f12e334]
+                        - cell "Open" [ref=f12e335]
+                        - cell [ref=f12e337]:
+                          - link "Open exc_31a5b566f53d7853" [ref=f12e338] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_31a5b566f53d7853
+                - generic [ref=f12e341]:
+                  - generic [ref=f12e342]:
+                    - generic [ref=f12e343]:
+                      - generic [ref=f12e344]:
+                        - heading "Orphan ledger entry" [level=2] [ref=f12e345]
+                        - code [ref=f12e346]: ORPHAN_LEDGER_ENTRY
+                        - generic [ref=f12e347]: "9"
+                      - paragraph [ref=f12e348]: Ledger invoice with no Razorpay payment (COD? other gateway? manual?).
+                      - paragraph [ref=f12e349]: "Suggested: Ask user; tag channel."
+                    - generic "₹25,596.00" [ref=f12e351]:
+                      - text: ₹25,596
+                      - generic [ref=f12e352]: ".00"
+                  - table [ref=f12e353]:
+                    - rowgroup [ref=f12e354]:
+                      - row [ref=f12e355]:
+                        - cell [ref=f12e356]:
+                          - checkbox "Select exc_b92884b62b648ec0" [ref=f12e357]
+                        - cell "₹6,207.00" [ref=f12e358]:
+                          - generic "₹6,207.00" [ref=f12e359]:
+                            - text: ₹6,207
+                            - generic [ref=f12e360]: ".00"
+                        - cell [ref=f12e361]:
+                          - link "ledger led_00614" [ref=f12e363] [cursor=pointer]:
+                            - /url: /app/ledger?focus=led_00614
+                            - generic [ref=f12e364]: ledger
+                            - generic [ref=f12e365]: led_00614
+                        - cell [ref=f12e366]:
+                          - link "invoice INV/26-27/00614 has no Razorpay payment (COD / other gateway / manual?)" [ref=f12e367] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_b92884b62b648ec0
+                        - cell "40%" [ref=f12e368]:
+                          - generic "40% confidence" [ref=f12e369]: 40%
+                        - cell [ref=f12e373]
+                        - cell "Open" [ref=f12e374]
+                        - cell [ref=f12e376]:
+                          - link "Open exc_b92884b62b648ec0" [ref=f12e377] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_b92884b62b648ec0
+                      - row [ref=f12e380]:
+                        - cell [ref=f12e381]:
+                          - checkbox "Select exc_a1678cad31303a9e" [ref=f12e382]
+                        - cell "₹5,827.00" [ref=f12e383]:
+                          - generic "₹5,827.00" [ref=f12e384]:
+                            - text: ₹5,827
+                            - generic [ref=f12e385]: ".00"
+                        - cell [ref=f12e386]:
+                          - link "ledger led_00612" [ref=f12e388] [cursor=pointer]:
+                            - /url: /app/ledger?focus=led_00612
+                            - generic [ref=f12e389]: ledger
+                            - generic [ref=f12e390]: led_00612
+                        - cell [ref=f12e391]:
+                          - link "invoice INV/26-27/00612 has no Razorpay payment (COD / other gateway / manual?)" [ref=f12e392] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_a1678cad31303a9e
+                        - cell "40%" [ref=f12e393]:
+                          - generic "40% confidence" [ref=f12e394]: 40%
+                        - cell [ref=f12e398]
+                        - cell "Open" [ref=f12e399]
+                        - cell [ref=f12e401]:
+                          - link "Open exc_a1678cad31303a9e" [ref=f12e402] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_a1678cad31303a9e
+                      - row [ref=f12e405]:
+                        - cell [ref=f12e406]:
+                          - checkbox "Select exc_0e0863689930e42b" [ref=f12e407]
+                        - cell "₹4,047.00" [ref=f12e408]:
+                          - generic "₹4,047.00" [ref=f12e409]:
+                            - text: ₹4,047
+                            - generic [ref=f12e410]: ".00"
+                        - cell [ref=f12e411]:
+                          - link "ledger led_00613" [ref=f12e413] [cursor=pointer]:
+                            - /url: /app/ledger?focus=led_00613
+                            - generic [ref=f12e414]: ledger
+                            - generic [ref=f12e415]: led_00613
+                        - cell [ref=f12e416]:
+                          - link "invoice INV/26-27/00613 has no Razorpay payment (COD / other gateway / manual?)" [ref=f12e417] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_0e0863689930e42b
+                        - cell "40%" [ref=f12e418]:
+                          - generic "40% confidence" [ref=f12e419]: 40%
+                        - cell [ref=f12e423]
+                        - cell "Open" [ref=f12e424]
+                        - cell [ref=f12e426]:
+                          - link "Open exc_0e0863689930e42b" [ref=f12e427] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_0e0863689930e42b
+                      - row [ref=f12e430]:
+                        - cell [ref=f12e431]:
+                          - checkbox "Select exc_2caaf8fa8415a7f7" [ref=f12e432]
+                        - cell "₹2,560.00" [ref=f12e433]:
+                          - generic "₹2,560.00" [ref=f12e434]:
+                            - text: ₹2,560
+                            - generic [ref=f12e435]: ".00"
+                        - cell [ref=f12e436]:
+                          - link "ledger led_00610" [ref=f12e438] [cursor=pointer]:
+                            - /url: /app/ledger?focus=led_00610
+                            - generic [ref=f12e439]: ledger
+                            - generic [ref=f12e440]: led_00610
+                        - cell [ref=f12e441]:
+                          - link "invoice INV/26-27/00610 has no Razorpay payment (COD / other gateway / manual?)" [ref=f12e442] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_2caaf8fa8415a7f7
+                        - cell "40%" [ref=f12e443]:
+                          - generic "40% confidence" [ref=f12e444]: 40%
+                        - cell [ref=f12e448]
+                        - cell "Open" [ref=f12e449]
+                        - cell [ref=f12e451]:
+                          - link "Open exc_2caaf8fa8415a7f7" [ref=f12e452] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_2caaf8fa8415a7f7
+                      - row [ref=f12e455]:
+                        - cell [ref=f12e456]:
+                          - checkbox "Select exc_11c4481837cbc2e9" [ref=f12e457]
+                        - cell "₹2,269.00" [ref=f12e458]:
+                          - generic "₹2,269.00" [ref=f12e459]:
+                            - text: ₹2,269
+                            - generic [ref=f12e460]: ".00"
+                        - cell [ref=f12e461]:
+                          - link "ledger led_00611" [ref=f12e463] [cursor=pointer]:
+                            - /url: /app/ledger?focus=led_00611
+                            - generic [ref=f12e464]: ledger
+                            - generic [ref=f12e465]: led_00611
+                        - cell [ref=f12e466]:
+                          - link "invoice INV/26-27/00611 has no Razorpay payment (COD / other gateway / manual?)" [ref=f12e467] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_11c4481837cbc2e9
+                        - cell "40%" [ref=f12e468]:
+                          - generic "40% confidence" [ref=f12e469]: 40%
+                        - cell [ref=f12e473]
+                        - cell "Open" [ref=f12e474]
+                        - cell [ref=f12e476]:
+                          - link "Open exc_11c4481837cbc2e9" [ref=f12e477] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_11c4481837cbc2e9
+                      - row [ref=f12e480]:
+                        - cell [ref=f12e481]:
+                          - checkbox "Select exc_7b7fa6dee88c5e76" [ref=f12e482]
+                        - cell "₹1,579.00" [ref=f12e483]:
+                          - generic "₹1,579.00" [ref=f12e484]:
+                            - text: ₹1,579
+                            - generic [ref=f12e485]: ".00"
+                        - cell [ref=f12e486]:
+                          - link "ledger led_00615" [ref=f12e488] [cursor=pointer]:
+                            - /url: /app/ledger?focus=led_00615
+                            - generic [ref=f12e489]: ledger
+                            - generic [ref=f12e490]: led_00615
+                        - cell [ref=f12e491]:
+                          - link "invoice INV/26-27/00615 has no Razorpay payment (COD / other gateway / manual?)" [ref=f12e492] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_7b7fa6dee88c5e76
+                        - cell "40%" [ref=f12e493]:
+                          - generic "40% confidence" [ref=f12e494]: 40%
+                        - cell [ref=f12e498]
+                        - cell "Open" [ref=f12e499]
+                        - cell [ref=f12e501]:
+                          - link "Open exc_7b7fa6dee88c5e76" [ref=f12e502] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_7b7fa6dee88c5e76
+                      - row [ref=f12e505]:
+                        - cell [ref=f12e506]:
+                          - checkbox "Select exc_8bdabc01c3205ea4" [ref=f12e507]
+                        - cell "₹1,222.00" [ref=f12e508]:
+                          - generic "₹1,222.00" [ref=f12e509]:
+                            - text: ₹1,222
+                            - generic [ref=f12e510]: ".00"
+                        - cell [ref=f12e511]:
+                          - link "ledger led_00618" [ref=f12e513] [cursor=pointer]:
+                            - /url: /app/ledger?focus=led_00618
+                            - generic [ref=f12e514]: ledger
+                            - generic [ref=f12e515]: led_00618
+                        - cell [ref=f12e516]:
+                          - link "invoice INV/26-27/00618 has no Razorpay payment (COD / other gateway / manual?)" [ref=f12e517] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_8bdabc01c3205ea4
+                        - cell "40%" [ref=f12e518]:
+                          - generic "40% confidence" [ref=f12e519]: 40%
+                        - cell [ref=f12e523]
+                        - cell "Open" [ref=f12e524]
+                        - cell [ref=f12e526]:
+                          - link "Open exc_8bdabc01c3205ea4" [ref=f12e527] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_8bdabc01c3205ea4
+                      - row [ref=f12e530]:
+                        - cell [ref=f12e531]:
+                          - checkbox "Select exc_c80d77721c9587e4" [ref=f12e532]
+                        - cell "₹946.00" [ref=f12e533]:
+                          - generic "₹946.00" [ref=f12e534]:
+                            - text: ₹946
+                            - generic [ref=f12e535]: ".00"
+                        - cell [ref=f12e536]:
+                          - link "ledger led_00616" [ref=f12e538] [cursor=pointer]:
+                            - /url: /app/ledger?focus=led_00616
+                            - generic [ref=f12e539]: ledger
+                            - generic [ref=f12e540]: led_00616
+                        - cell [ref=f12e541]:
+                          - link "invoice INV/26-27/00616 has no Razorpay payment (COD / other gateway / manual?)" [ref=f12e542] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_c80d77721c9587e4
+                        - cell "40%" [ref=f12e543]:
+                          - generic "40% confidence" [ref=f12e544]: 40%
+                        - cell [ref=f12e548]
+                        - cell "Open" [ref=f12e549]
+                        - cell [ref=f12e551]:
+                          - link "Open exc_c80d77721c9587e4" [ref=f12e552] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_c80d77721c9587e4
+                      - row [ref=f12e555]:
+                        - cell [ref=f12e556]:
+                          - checkbox "Select exc_521dc079221b3626" [ref=f12e557]
+                        - cell "₹939.00" [ref=f12e558]:
+                          - generic "₹939.00" [ref=f12e559]:
+                            - text: ₹939
+                            - generic [ref=f12e560]: ".00"
+                        - cell [ref=f12e561]:
+                          - link "ledger led_00617" [ref=f12e563] [cursor=pointer]:
+                            - /url: /app/ledger?focus=led_00617
+                            - generic [ref=f12e564]: ledger
+                            - generic [ref=f12e565]: led_00617
+                        - cell [ref=f12e566]:
+                          - link "invoice INV/26-27/00617 has no Razorpay payment (COD / other gateway / manual?)" [ref=f12e567] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_521dc079221b3626
+                        - cell "40%" [ref=f12e568]:
+                          - generic "40% confidence" [ref=f12e569]: 40%
+                        - cell [ref=f12e573]
+                        - cell "Open" [ref=f12e574]
+                        - cell [ref=f12e576]:
+                          - link "Open exc_521dc079221b3626" [ref=f12e577] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_521dc079221b3626
+                - generic [ref=f12e580]:
+                  - generic [ref=f12e581]:
+                    - generic [ref=f12e582]:
+                      - generic [ref=f12e583]:
+                        - heading "Missing bank credit" [level=2] [ref=f12e584]
+                        - code [ref=f12e585]: MISSING_BANK_CREDIT
+                        - generic [ref=f12e586]: "1"
+                      - paragraph [ref=f12e587]: Settlement processed beyond the lag window, no bank credit found.
+                      - paragraph [ref=f12e588]: "Suggested: Raise with bank / Razorpay; draft ticket."
+                    - generic "₹23,097.82" [ref=f12e590]:
+                      - text: ₹23,097
+                      - generic [ref=f12e591]: ".82"
+                  - table [ref=f12e592]:
+                    - rowgroup [ref=f12e593]:
+                      - row [ref=f12e594]:
+                        - cell [ref=f12e595]:
+                          - checkbox "Select exc_969ac0c1f7741742" [ref=f12e596]
+                        - cell "₹23,097.82" [ref=f12e597]:
+                          - generic "₹23,097.82" [ref=f12e598]:
+                            - text: ₹23,097
+                            - generic [ref=f12e599]: ".82"
+                        - cell [ref=f12e600]:
+                          - link "setl setl_XTOOCOwpxXgG8w" [ref=f12e602] [cursor=pointer]:
+                            - /url: /app/settlements/setl_XTOOCOwpxXgG8w
+                            - generic [ref=f12e603]: setl
+                            - generic [ref=f12e604]: setl_XTOOCOwpxXgG8w
+                        - cell [ref=f12e605]:
+                          - link "processed 2026-08-24, no bank credit by 2026-09-01" [ref=f12e606] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_969ac0c1f7741742
+                        - cell "50%" [ref=f12e607]:
+                          - generic "50% confidence" [ref=f12e608]: 50%
+                        - cell [ref=f12e612]
+                        - cell "Open" [ref=f12e613]
+                        - cell [ref=f12e615]:
+                          - link "Open exc_969ac0c1f7741742" [ref=f12e616] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_969ac0c1f7741742
+                - generic [ref=f12e619]:
+                  - generic [ref=f12e620]:
+                    - generic [ref=f12e621]:
+                      - generic [ref=f12e622]:
+                        - heading "Manual adjustment" [level=2] [ref=f12e623]
+                        - code [ref=f12e624]: ADJUSTMENT
+                        - generic [ref=f12e625]: "2"
+                      - paragraph [ref=f12e626]: Razorpay manual adjustment.
+                      - paragraph [ref=f12e627]: "Suggested: Verify with Razorpay support note."
+                    - generic "₹12,500.00" [ref=f12e629]:
+                      - text: ₹12,500
+                      - generic [ref=f12e630]: ".00"
+                  - table [ref=f12e631]:
+                    - rowgroup [ref=f12e632]:
+                      - row [ref=f12e633]:
+                        - cell [ref=f12e634]:
+                          - checkbox "Select exc_7f2489d00245e89f" [ref=f12e635]
+                        - cell "₹10,000.00" [ref=f12e636]:
+                          - generic "₹10,000.00" [ref=f12e637]:
+                            - text: ₹10,000
+                            - generic [ref=f12e638]: ".00"
+                        - cell "line adj_HosOOH1KlSPTq9 +1" [ref=f12e639]:
+                          - generic [ref=f12e640]:
+                            - link "line adj_HosOOH1KlSPTq9" [ref=f12e641] [cursor=pointer]:
+                              - /url: /app/settlements?q=adj_HosOOH1KlSPTq9
+                              - generic [ref=f12e642]: line
+                              - generic [ref=f12e643]: adj_HosOOH1KlSPTq9
+                            - generic [ref=f12e644]: "+1"
+                        - cell [ref=f12e645]:
+                          - 'link "Razorpay adjustment: Manual credit: promo reimbursement" [ref=f12e646] [cursor=pointer]':
+                            - /url: /app/exceptions/exc_7f2489d00245e89f
+                        - cell "80%" [ref=f12e647]:
+                          - generic "80% confidence" [ref=f12e648]: 80%
+                        - cell [ref=f12e652]
+                        - cell "Open" [ref=f12e653]
+                        - cell [ref=f12e655]:
+                          - link "Open exc_7f2489d00245e89f" [ref=f12e656] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_7f2489d00245e89f
+                      - row [ref=f12e659]:
+                        - cell [ref=f12e660]:
+                          - checkbox "Select exc_473da48ec0a782f8" [ref=f12e661]
+                        - cell "₹2,500.00" [ref=f12e662]:
+                          - generic "₹2,500.00" [ref=f12e663]:
+                            - text: ₹2,500
+                            - generic [ref=f12e664]: ".00"
+                        - cell "line adj_1ThxQiXXqSbLBy +1" [ref=f12e665]:
+                          - generic [ref=f12e666]:
+                            - link "line adj_1ThxQiXXqSbLBy" [ref=f12e667] [cursor=pointer]:
+                              - /url: /app/settlements?q=adj_1ThxQiXXqSbLBy
+                              - generic [ref=f12e668]: line
+                              - generic [ref=f12e669]: adj_1ThxQiXXqSbLBy
+                            - generic [ref=f12e670]: "+1"
+                        - cell [ref=f12e671]:
+                          - 'link "Razorpay adjustment: Manual debit: excess settlement recovery" [ref=f12e672] [cursor=pointer]':
+                            - /url: /app/exceptions/exc_473da48ec0a782f8
+                        - cell "80%" [ref=f12e673]:
+                          - generic "80% confidence" [ref=f12e674]: 80%
+                        - cell [ref=f12e678]
+                        - cell "Open" [ref=f12e679]
+                        - cell [ref=f12e681]:
+                          - link "Open exc_473da48ec0a782f8" [ref=f12e682] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_473da48ec0a782f8
+                - generic [ref=f12e685]:
+                  - generic [ref=f12e686]:
+                    - generic [ref=f12e687]:
+                      - generic [ref=f12e688]:
+                        - heading "Unknown bank credit" [level=2] [ref=f12e689]
+                        - code [ref=f12e690]: UNKNOWN_BANK_CREDIT
+                        - generic [ref=f12e691]: "1"
+                      - paragraph [ref=f12e692]: Bank credit with Razorpay-like narration and no matching settlement.
+                      - paragraph [ref=f12e693]: "Suggested: Investigate (tier D)."
+                    - generic "₹12,345.67" [ref=f12e695]:
+                      - text: ₹12,345
+                      - generic [ref=f12e696]: ".67"
+                  - table [ref=f12e697]:
+                    - rowgroup [ref=f12e698]:
+                      - row [ref=f12e699]:
+                        - cell [ref=f12e700]:
+                          - checkbox "Select exc_44b29921abf6d2ed" [ref=f12e701]
+                        - cell "₹12,345.67" [ref=f12e702]:
+                          - generic "₹12,345.67" [ref=f12e703]:
+                            - text: ₹12,345
+                            - generic [ref=f12e704]: ".67"
+                        - cell [ref=f12e705]:
+                          - link "bank bank_00008" [ref=f12e707] [cursor=pointer]:
+                            - /url: /app/bank?focus=bank_00008
+                            - generic [ref=f12e708]: bank
+                            - generic [ref=f12e709]: bank_00008
+                        - cell [ref=f12e710]:
+                          - link "Razorpay-like credit on 2026-08-11 matches no settlement" [ref=f12e711] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_44b29921abf6d2ed
+                        - cell "30%" [ref=f12e712]:
+                          - generic "30% confidence" [ref=f12e713]: 30%
+                        - cell [ref=f12e717]
+                        - cell "Open" [ref=f12e718]
+                        - cell [ref=f12e720]:
+                          - link "Open exc_44b29921abf6d2ed" [ref=f12e721] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_44b29921abf6d2ed
+                - generic [ref=f12e724]:
+                  - generic [ref=f12e725]:
+                    - generic [ref=f12e726]:
+                      - generic [ref=f12e727]:
+                        - heading "Refund netted" [level=2] [ref=f12e728]
+                        - code [ref=f12e729]: REFUND_NETTED
+                        - generic [ref=f12e730]: "10"
+                      - paragraph [ref=f12e731]: A refund reduced this batch; ledger still shows the sale as fully paid.
+                      - paragraph [ref=f12e732]: "Suggested: Post credit note / journal."
+                    - generic "₹11,667.20" [ref=f12e734]:
+                      - text: ₹11,667
+                      - generic [ref=f12e735]: ".20"
+                  - table [ref=f12e736]:
+                    - rowgroup [ref=f12e737]:
+                      - row [ref=f12e738]:
+                        - cell [ref=f12e739]:
+                          - checkbox "Select exc_51e47410d58ff5af" [ref=f12e740]
+                        - cell "₹3,231.00" [ref=f12e741]:
+                          - generic "₹3,231.00" [ref=f12e742]:
+                            - text: ₹3,231
+                            - generic [ref=f12e743]: ".00"
+                        - cell "line rfnd_TUpbMe16CM14Go +2" [ref=f12e744]:
+                          - generic [ref=f12e745]:
+                            - link "line rfnd_TUpbMe16CM14Go" [ref=f12e746] [cursor=pointer]:
+                              - /url: /app/settlements?q=rfnd_TUpbMe16CM14Go
+                              - generic [ref=f12e747]: line
+                              - generic [ref=f12e748]: rfnd_TUpbMe16CM14Go
+                            - generic [ref=f12e749]: "+2"
+                        - cell [ref=f12e750]:
+                          - link "refund rfnd_TUpbMe16CM14Go netted in batch; ledger has no credit note" [ref=f12e751] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_51e47410d58ff5af
+                        - cell "100%" [ref=f12e752]:
+                          - generic "100% confidence" [ref=f12e753]: 100%
+                        - cell [ref=f12e757]
+                        - cell "Open" [ref=f12e758]
+                        - cell [ref=f12e760]:
+                          - link "Open exc_51e47410d58ff5af" [ref=f12e761] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_51e47410d58ff5af
+                      - row [ref=f12e764]:
+                        - cell [ref=f12e765]:
+                          - checkbox "Select exc_d1e64655195ac860" [ref=f12e766]
+                        - cell "₹2,598.00" [ref=f12e767]:
+                          - generic "₹2,598.00" [ref=f12e768]:
+                            - text: ₹2,598
+                            - generic [ref=f12e769]: ".00"
+                        - cell "line rfnd_YCYPLLFoofRuXR +2" [ref=f12e770]:
+                          - generic [ref=f12e771]:
+                            - link "line rfnd_YCYPLLFoofRuXR" [ref=f12e772] [cursor=pointer]:
+                              - /url: /app/settlements?q=rfnd_YCYPLLFoofRuXR
+                              - generic [ref=f12e773]: line
+                              - generic [ref=f12e774]: rfnd_YCYPLLFoofRuXR
+                            - generic [ref=f12e775]: "+2"
+                        - cell [ref=f12e776]:
+                          - link "refund rfnd_YCYPLLFoofRuXR netted in batch; ledger has no credit note" [ref=f12e777] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_d1e64655195ac860
+                        - cell "100%" [ref=f12e778]:
+                          - generic "100% confidence" [ref=f12e779]: 100%
+                        - cell [ref=f12e783]
+                        - cell "Open" [ref=f12e784]
+                        - cell [ref=f12e786]:
+                          - link "Open exc_d1e64655195ac860" [ref=f12e787] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_d1e64655195ac860
+                      - row [ref=f12e790]:
+                        - cell [ref=f12e791]:
+                          - checkbox "Select exc_2797bf427980f5b5" [ref=f12e792]
+                        - cell "₹1,915.00" [ref=f12e793]:
+                          - generic "₹1,915.00" [ref=f12e794]:
+                            - text: ₹1,915
+                            - generic [ref=f12e795]: ".00"
+                        - cell "line rfnd_3qVcAkfhyCpxdF +2" [ref=f12e796]:
+                          - generic [ref=f12e797]:
+                            - link "line rfnd_3qVcAkfhyCpxdF" [ref=f12e798] [cursor=pointer]:
+                              - /url: /app/settlements?q=rfnd_3qVcAkfhyCpxdF
+                              - generic [ref=f12e799]: line
+                              - generic [ref=f12e800]: rfnd_3qVcAkfhyCpxdF
+                            - generic [ref=f12e801]: "+2"
+                        - cell [ref=f12e802]:
+                          - link "refund rfnd_3qVcAkfhyCpxdF netted in batch; ledger has no credit note" [ref=f12e803] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_2797bf427980f5b5
+                        - cell "100%" [ref=f12e804]:
+                          - generic "100% confidence" [ref=f12e805]: 100%
+                        - cell [ref=f12e809]
+                        - cell "Open" [ref=f12e810]
+                        - cell [ref=f12e812]:
+                          - link "Open exc_2797bf427980f5b5" [ref=f12e813] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_2797bf427980f5b5
+                      - row [ref=f12e816]:
+                        - cell [ref=f12e817]:
+                          - checkbox "Select exc_1df720715e2bc418" [ref=f12e818]
+                        - cell "₹1,501.00" [ref=f12e819]:
+                          - generic "₹1,501.00" [ref=f12e820]:
+                            - text: ₹1,501
+                            - generic [ref=f12e821]: ".00"
+                        - cell "line rfnd_Levrbm6idTSGkp +2" [ref=f12e822]:
+                          - generic [ref=f12e823]:
+                            - link "line rfnd_Levrbm6idTSGkp" [ref=f12e824] [cursor=pointer]:
+                              - /url: /app/settlements?q=rfnd_Levrbm6idTSGkp
+                              - generic [ref=f12e825]: line
+                              - generic [ref=f12e826]: rfnd_Levrbm6idTSGkp
+                            - generic [ref=f12e827]: "+2"
+                        - cell [ref=f12e828]:
+                          - link "refund rfnd_Levrbm6idTSGkp netted in batch; ledger has no credit note" [ref=f12e829] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_1df720715e2bc418
+                        - cell "100%" [ref=f12e830]:
+                          - generic "100% confidence" [ref=f12e831]: 100%
+                        - cell [ref=f12e835]
+                        - cell "Open" [ref=f12e836]
+                        - cell [ref=f12e838]:
+                          - link "Open exc_1df720715e2bc418" [ref=f12e839] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_1df720715e2bc418
+                      - row [ref=f12e842]:
+                        - cell [ref=f12e843]:
+                          - checkbox "Select exc_d1c5f63882ec668b" [ref=f12e844]
+                        - cell "₹559.20" [ref=f12e845]:
+                          - generic "₹559.20" [ref=f12e846]:
+                            - text: ₹559
+                            - generic [ref=f12e847]: ".20"
+                        - cell "line rfnd_WNI3lclM2WtA9P +2" [ref=f12e848]:
+                          - generic [ref=f12e849]:
+                            - link "line rfnd_WNI3lclM2WtA9P" [ref=f12e850] [cursor=pointer]:
+                              - /url: /app/settlements?q=rfnd_WNI3lclM2WtA9P
+                              - generic [ref=f12e851]: line
+                              - generic [ref=f12e852]: rfnd_WNI3lclM2WtA9P
+                            - generic [ref=f12e853]: "+2"
+                        - cell [ref=f12e854]:
+                          - link "refund rfnd_WNI3lclM2WtA9P netted in batch; ledger has no credit note" [ref=f12e855] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_d1c5f63882ec668b
+                        - cell "100%" [ref=f12e856]:
+                          - generic "100% confidence" [ref=f12e857]: 100%
+                        - cell [ref=f12e861]
+                        - cell "Open" [ref=f12e862]
+                        - cell [ref=f12e864]:
+                          - link "Open exc_d1c5f63882ec668b" [ref=f12e865] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_d1c5f63882ec668b
+                      - row [ref=f12e868]:
+                        - cell [ref=f12e869]:
+                          - checkbox "Select exc_434a308a3f9266e1" [ref=f12e870]
+                        - cell "₹535.60" [ref=f12e871]:
+                          - generic "₹535.60" [ref=f12e872]:
+                            - text: ₹535
+                            - generic [ref=f12e873]: ".60"
+                        - cell "line rfnd_ons4dmdcgXN5Al +2" [ref=f12e874]:
+                          - generic [ref=f12e875]:
+                            - link "line rfnd_ons4dmdcgXN5Al" [ref=f12e876] [cursor=pointer]:
+                              - /url: /app/settlements?q=rfnd_ons4dmdcgXN5Al
+                              - generic [ref=f12e877]: line
+                              - generic [ref=f12e878]: rfnd_ons4dmdcgXN5Al
+                            - generic [ref=f12e879]: "+2"
+                        - cell [ref=f12e880]:
+                          - link "refund rfnd_ons4dmdcgXN5Al netted in batch; ledger has no credit note" [ref=f12e881] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_434a308a3f9266e1
+                        - cell "100%" [ref=f12e882]:
+                          - generic "100% confidence" [ref=f12e883]: 100%
+                        - cell [ref=f12e887]
+                        - cell "Open" [ref=f12e888]
+                        - cell [ref=f12e890]:
+                          - link "Open exc_434a308a3f9266e1" [ref=f12e891] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_434a308a3f9266e1
+                      - row [ref=f12e894]:
+                        - cell [ref=f12e895]:
+                          - checkbox "Select exc_0c249c4f5310b9a1" [ref=f12e896]
+                        - cell "₹433.00" [ref=f12e897]:
+                          - generic "₹433.00" [ref=f12e898]:
+                            - text: ₹433
+                            - generic [ref=f12e899]: ".00"
+                        - cell "line rfnd_8X1Duo9QfnwNMt +2" [ref=f12e900]:
+                          - generic [ref=f12e901]:
+                            - link "line rfnd_8X1Duo9QfnwNMt" [ref=f12e902] [cursor=pointer]:
+                              - /url: /app/settlements?q=rfnd_8X1Duo9QfnwNMt
+                              - generic [ref=f12e903]: line
+                              - generic [ref=f12e904]: rfnd_8X1Duo9QfnwNMt
+                            - generic [ref=f12e905]: "+2"
+                        - cell [ref=f12e906]:
+                          - link "refund rfnd_8X1Duo9QfnwNMt netted in batch; ledger has no credit note" [ref=f12e907] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_0c249c4f5310b9a1
+                        - cell "100%" [ref=f12e908]:
+                          - generic "100% confidence" [ref=f12e909]: 100%
+                        - cell [ref=f12e913]
+                        - cell "Open" [ref=f12e914]
+                        - cell [ref=f12e916]:
+                          - link "Open exc_0c249c4f5310b9a1" [ref=f12e917] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_0c249c4f5310b9a1
+                      - row [ref=f12e920]:
+                        - cell [ref=f12e921]:
+                          - checkbox "Select exc_39530c2c6e662d4e" [ref=f12e922]
+                        - cell "₹394.00" [ref=f12e923]:
+                          - generic "₹394.00" [ref=f12e924]:
+                            - text: ₹394
+                            - generic [ref=f12e925]: ".00"
+                        - cell "line rfnd_mEF20ch0FIj1Fk +2" [ref=f12e926]:
+                          - generic [ref=f12e927]:
+                            - link "line rfnd_mEF20ch0FIj1Fk" [ref=f12e928] [cursor=pointer]:
+                              - /url: /app/settlements?q=rfnd_mEF20ch0FIj1Fk
+                              - generic [ref=f12e929]: line
+                              - generic [ref=f12e930]: rfnd_mEF20ch0FIj1Fk
+                            - generic [ref=f12e931]: "+2"
+                        - cell [ref=f12e932]:
+                          - link "refund rfnd_mEF20ch0FIj1Fk netted in batch; ledger has no credit note" [ref=f12e933] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_39530c2c6e662d4e
+                        - cell "100%" [ref=f12e934]:
+                          - generic "100% confidence" [ref=f12e935]: 100%
+                        - cell [ref=f12e939]
+                        - cell "Open" [ref=f12e940]
+                        - cell [ref=f12e942]:
+                          - link "Open exc_39530c2c6e662d4e" [ref=f12e943] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_39530c2c6e662d4e
+                      - row [ref=f12e946]:
+                        - cell [ref=f12e947]:
+                          - checkbox "Select exc_b304608d7d0950cb" [ref=f12e948]
+                        - cell "₹262.00" [ref=f12e949]:
+                          - generic "₹262.00" [ref=f12e950]:
+                            - text: ₹262
+                            - generic [ref=f12e951]: ".00"
+                        - cell "line rfnd_UbQzczegZorSa4 +2" [ref=f12e952]:
+                          - generic [ref=f12e953]:
+                            - link "line rfnd_UbQzczegZorSa4" [ref=f12e954] [cursor=pointer]:
+                              - /url: /app/settlements?q=rfnd_UbQzczegZorSa4
+                              - generic [ref=f12e955]: line
+                              - generic [ref=f12e956]: rfnd_UbQzczegZorSa4
+                            - generic [ref=f12e957]: "+2"
+                        - cell [ref=f12e958]:
+                          - link "refund rfnd_UbQzczegZorSa4 netted in batch; ledger has no credit note" [ref=f12e959] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_b304608d7d0950cb
+                        - cell "100%" [ref=f12e960]:
+                          - generic "100% confidence" [ref=f12e961]: 100%
+                        - cell [ref=f12e965]
+                        - cell "Open" [ref=f12e966]
+                        - cell [ref=f12e968]:
+                          - link "Open exc_b304608d7d0950cb" [ref=f12e969] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_b304608d7d0950cb
+                      - row [ref=f12e972]:
+                        - cell [ref=f12e973]:
+                          - checkbox "Select exc_e3c74c5b02a2389d" [ref=f12e974]
+                        - cell "₹238.40" [ref=f12e975]:
+                          - generic "₹238.40" [ref=f12e976]:
+                            - text: ₹238
+                            - generic [ref=f12e977]: ".40"
+                        - cell "line rfnd_aNulJVZ8XFy2rt +2" [ref=f12e978]:
+                          - generic [ref=f12e979]:
+                            - link "line rfnd_aNulJVZ8XFy2rt" [ref=f12e980] [cursor=pointer]:
+                              - /url: /app/settlements?q=rfnd_aNulJVZ8XFy2rt
+                              - generic [ref=f12e981]: line
+                              - generic [ref=f12e982]: rfnd_aNulJVZ8XFy2rt
+                            - generic [ref=f12e983]: "+2"
+                        - cell [ref=f12e984]:
+                          - link "refund rfnd_aNulJVZ8XFy2rt netted in batch; ledger has no credit note" [ref=f12e985] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_e3c74c5b02a2389d
+                        - cell "100%" [ref=f12e986]:
+                          - generic "100% confidence" [ref=f12e987]: 100%
+                        - cell [ref=f12e991]
+                        - cell "Open" [ref=f12e992]
+                        - cell [ref=f12e994]:
+                          - link "Open exc_e3c74c5b02a2389d" [ref=f12e995] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_e3c74c5b02a2389d
+                - generic [ref=f12e998]:
+                  - generic [ref=f12e999]:
+                    - generic [ref=f12e1000]:
+                      - generic [ref=f12e1001]:
+                        - heading "Duplicate ledger entry" [level=2] [ref=f12e1002]
+                        - code [ref=f12e1003]: DUPLICATE_LEDGER_ENTRY
+                        - generic [ref=f12e1004]: "2"
+                      - paragraph [ref=f12e1005]: Same invoice twice.
+                      - paragraph [ref=f12e1006]: "Suggested: Merge."
+                    - generic "₹3,017.00" [ref=f12e1008]:
+                      - text: ₹3,017
+                      - generic [ref=f12e1009]: ".00"
+                  - table [ref=f12e1010]:
+                    - rowgroup [ref=f12e1011]:
+                      - row [ref=f12e1012]:
+                        - cell [ref=f12e1013]:
+                          - checkbox "Select exc_2edb67c1efeb162f" [ref=f12e1014]
+                        - cell "₹2,480.00" [ref=f12e1015]:
+                          - generic "₹2,480.00" [ref=f12e1016]:
+                            - text: ₹2,480
+                            - generic [ref=f12e1017]: ".00"
+                        - cell "ledger led_00620 +1" [ref=f12e1018]:
+                          - generic [ref=f12e1019]:
+                            - link "ledger led_00620" [ref=f12e1020] [cursor=pointer]:
+                              - /url: /app/ledger?focus=led_00620
+                              - generic [ref=f12e1021]: ledger
+                              - generic [ref=f12e1022]: led_00620
+                            - generic [ref=f12e1023]: "+1"
+                        - cell [ref=f12e1024]:
+                          - link "invoice INV/26-27/00430 appears twice" [ref=f12e1025] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_2edb67c1efeb162f
+                        - cell "95%" [ref=f12e1026]:
+                          - generic "95% confidence" [ref=f12e1027]: 95%
+                        - cell [ref=f12e1031]
+                        - cell "Open" [ref=f12e1032]
+                        - cell [ref=f12e1034]:
+                          - link "Open exc_2edb67c1efeb162f" [ref=f12e1035] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_2edb67c1efeb162f
+                      - row [ref=f12e1038]:
+                        - cell [ref=f12e1039]:
+                          - checkbox "Select exc_16e7ee77dcd7565a" [ref=f12e1040]
+                        - cell "₹537.00" [ref=f12e1041]:
+                          - generic "₹537.00" [ref=f12e1042]:
+                            - text: ₹537
+                            - generic [ref=f12e1043]: ".00"
+                        - cell "ledger led_00619 +1" [ref=f12e1044]:
+                          - generic [ref=f12e1045]:
+                            - link "ledger led_00619" [ref=f12e1046] [cursor=pointer]:
+                              - /url: /app/ledger?focus=led_00619
+                              - generic [ref=f12e1047]: ledger
+                              - generic [ref=f12e1048]: led_00619
+                            - generic [ref=f12e1049]: "+1"
+                        - cell [ref=f12e1050]:
+                          - link "invoice INV/26-27/00459 appears twice" [ref=f12e1051] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_16e7ee77dcd7565a
+                        - cell "95%" [ref=f12e1052]:
+                          - generic "95% confidence" [ref=f12e1053]: 95%
+                        - cell [ref=f12e1057]
+                        - cell "Open" [ref=f12e1058]
+                        - cell [ref=f12e1060]:
+                          - link "Open exc_16e7ee77dcd7565a" [ref=f12e1061] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_16e7ee77dcd7565a
+                - generic [ref=f12e1064]:
+                  - generic [ref=f12e1065]:
+                    - generic [ref=f12e1066]:
+                      - generic [ref=f12e1067]:
+                        - heading "On hold" [level=2] [ref=f12e1068]
+                        - code [ref=f12e1069]: ON_HOLD
+                        - generic [ref=f12e1070]: "2"
+                      - paragraph [ref=f12e1071]: Line marked on_hold by Razorpay.
+                      - paragraph [ref=f12e1072]: "Suggested: Explain; expect a later batch."
+                    - generic "₹2,664.12" [ref=f12e1074]:
+                      - text: ₹2,664
+                      - generic [ref=f12e1075]: ".12"
+                  - table [ref=f12e1076]:
+                    - rowgroup [ref=f12e1077]:
+                      - row [ref=f12e1078]:
+                        - cell [ref=f12e1079]:
+                          - checkbox "Select exc_ea1beb5704c9e217" [ref=f12e1080]
+                        - cell "₹1,523.00" [ref=f12e1081]:
+                          - generic "₹1,523.00" [ref=f12e1082]:
+                            - text: ₹1,523
+                            - generic [ref=f12e1083]: ".00"
+                        - cell [ref=f12e1084]:
+                          - link "line pay_cfZihKAZJTK5cL" [ref=f12e1086] [cursor=pointer]:
+                            - /url: /app/settlements?q=pay_cfZihKAZJTK5cL
+                            - generic [ref=f12e1087]: line
+                            - generic [ref=f12e1088]: pay_cfZihKAZJTK5cL
+                        - cell [ref=f12e1089]:
+                          - link "line held by Razorpay; expect a later batch" [ref=f12e1090] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_ea1beb5704c9e217
+                        - cell "100%" [ref=f12e1091]:
+                          - generic "100% confidence" [ref=f12e1092]: 100%
+                        - cell [ref=f12e1096]
+                        - cell "Open" [ref=f12e1097]
+                        - cell [ref=f12e1099]:
+                          - link "Open exc_ea1beb5704c9e217" [ref=f12e1100] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_ea1beb5704c9e217
+                      - row [ref=f12e1103]:
+                        - cell [ref=f12e1104]:
+                          - checkbox "Select exc_ef70c2a8e4821865" [ref=f12e1105]
+                        - cell "₹1,141.12" [ref=f12e1106]:
+                          - generic "₹1,141.12" [ref=f12e1107]:
+                            - text: ₹1,141
+                            - generic [ref=f12e1108]: ".12"
+                        - cell [ref=f12e1109]:
+                          - link "line pay_e6t0lT2FSg8dBC" [ref=f12e1111] [cursor=pointer]:
+                            - /url: /app/settlements?q=pay_e6t0lT2FSg8dBC
+                            - generic [ref=f12e1112]: line
+                            - generic [ref=f12e1113]: pay_e6t0lT2FSg8dBC
+                        - cell [ref=f12e1114]:
+                          - link "line held by Razorpay; expect a later batch" [ref=f12e1115] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_ef70c2a8e4821865
+                        - cell "100%" [ref=f12e1116]:
+                          - generic "100% confidence" [ref=f12e1117]: 100%
+                        - cell [ref=f12e1121]
+                        - cell "Open" [ref=f12e1122]
+                        - cell [ref=f12e1124]:
+                          - link "Open exc_ef70c2a8e4821865" [ref=f12e1125] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_ef70c2a8e4821865
+                - generic [ref=f12e1128]:
+                  - generic [ref=f12e1129]:
+                    - generic [ref=f12e1130]:
+                      - generic [ref=f12e1131]:
+                        - heading "Chargeback debited" [level=2] [ref=f12e1132]
+                        - code [ref=f12e1133]: DISPUTE_DEBIT
+                        - generic [ref=f12e1134]: "1"
+                      - paragraph [ref=f12e1135]: Chargeback debited inside a batch.
+                      - paragraph [ref=f12e1136]: "Suggested: Surface dispute with evidence; hand off."
+                    - generic "₹2,059.00" [ref=f12e1138]:
+                      - text: ₹2,059
+                      - generic [ref=f12e1139]: ".00"
+                  - table [ref=f12e1140]:
+                    - rowgroup [ref=f12e1141]:
+                      - row [ref=f12e1142]:
+                        - cell [ref=f12e1143]:
+                          - checkbox "Select exc_2c165febc9da86a1" [ref=f12e1144]
+                        - cell "₹2,059.00" [ref=f12e1145]:
+                          - generic "₹2,059.00" [ref=f12e1146]:
+                            - text: ₹2,059
+                            - generic [ref=f12e1147]: ".00"
+                        - cell "line disp_d4VVo2ujnNyzVp +2" [ref=f12e1148]:
+                          - generic [ref=f12e1149]:
+                            - link "line disp_d4VVo2ujnNyzVp" [ref=f12e1150] [cursor=pointer]:
+                              - /url: /app/settlements?q=disp_d4VVo2ujnNyzVp
+                              - generic [ref=f12e1151]: line
+                              - generic [ref=f12e1152]: disp_d4VVo2ujnNyzVp
+                            - generic [ref=f12e1153]: "+2"
+                        - cell [ref=f12e1154]:
+                          - link "chargeback disp_d4VVo2ujnNyzVp debited in batch" [ref=f12e1155] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_2c165febc9da86a1
+                        - cell "100%" [ref=f12e1156]:
+                          - generic "100% confidence" [ref=f12e1157]: 100%
+                        - cell [ref=f12e1161]
+                        - cell "Open" [ref=f12e1162]
+                        - cell [ref=f12e1164]:
+                          - link "Open exc_2c165febc9da86a1" [ref=f12e1165] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_2c165febc9da86a1
+                - generic [ref=f12e1168]:
+                  - generic [ref=f12e1169]:
+                    - generic [ref=f12e1170]:
+                      - generic [ref=f12e1171]:
+                        - heading "Refund pending" [level=2] [ref=f12e1172]
+                        - code [ref=f12e1173]: REFUND_PENDING_NET
+                        - generic [ref=f12e1174]: "1"
+                      - paragraph [ref=f12e1175]: Refund processed but not yet netted in any batch.
+                      - paragraph [ref=f12e1176]: "Suggested: Wait; expect debit in next batch."
+                    - generic "₹1,962.00" [ref=f12e1178]:
+                      - text: ₹1,962
+                      - generic [ref=f12e1179]: ".00"
+                  - table [ref=f12e1180]:
+                    - rowgroup [ref=f12e1181]:
+                      - row [ref=f12e1182]:
+                        - cell [ref=f12e1183]:
+                          - checkbox "Select exc_e8be7997dbad3405" [ref=f12e1184]
+                        - cell "₹1,962.00" [ref=f12e1185]:
+                          - generic "₹1,962.00" [ref=f12e1186]:
+                            - text: ₹1,962
+                            - generic [ref=f12e1187]: ".00"
+                        - cell "rfnd rfnd_BmF1GqgZNj9hMw +1" [ref=f12e1188]:
+                          - generic [ref=f12e1189]:
+                            - link "rfnd rfnd_BmF1GqgZNj9hMw" [ref=f12e1190] [cursor=pointer]:
+                              - /url: /app/settlements?q=rfnd_BmF1GqgZNj9hMw
+                              - generic [ref=f12e1191]: rfnd
+                              - generic [ref=f12e1192]: rfnd_BmF1GqgZNj9hMw
+                            - generic [ref=f12e1193]: "+1"
+                        - cell [ref=f12e1194]:
+                          - link "refund processed 2026-09-01; not yet netted in a batch" [ref=f12e1195] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_e8be7997dbad3405
+                        - cell "100%" [ref=f12e1196]:
+                          - generic "100% confidence" [ref=f12e1197]: 100%
+                        - cell [ref=f12e1201]
+                        - cell "Open" [ref=f12e1202]
+                        - cell [ref=f12e1204]:
+                          - link "Open exc_e8be7997dbad3405" [ref=f12e1205] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_e8be7997dbad3405
+                - generic [ref=f12e1208]:
+                  - generic [ref=f12e1209]:
+                    - generic [ref=f12e1210]:
+                      - generic [ref=f12e1211]:
+                        - heading "Dispute reversal" [level=2] [ref=f12e1212]
+                        - code [ref=f12e1213]: DISPUTE_REVERSAL
+                        - generic [ref=f12e1214]: "1"
+                      - paragraph [ref=f12e1215]: Dispute won; amount re-credited.
+                      - paragraph [ref=f12e1216]: "Suggested: Post reversal."
+                    - generic "₹958.89" [ref=f12e1218]:
+                      - text: ₹958
+                      - generic [ref=f12e1219]: ".89"
+                  - table [ref=f12e1220]:
+                    - rowgroup [ref=f12e1221]:
+                      - row [ref=f12e1222]:
+                        - cell [ref=f12e1223]:
+                          - checkbox "Select exc_04a174d680f50150" [ref=f12e1224]
+                        - cell "₹958.89" [ref=f12e1225]:
+                          - generic "₹958.89" [ref=f12e1226]:
+                            - text: ₹958
+                            - generic [ref=f12e1227]: ".89"
+                        - cell "line disp_tRWfLJLoN1rYtu +2" [ref=f12e1228]:
+                          - generic [ref=f12e1229]:
+                            - link "line disp_tRWfLJLoN1rYtu" [ref=f12e1230] [cursor=pointer]:
+                              - /url: /app/settlements?q=disp_tRWfLJLoN1rYtu
+                              - generic [ref=f12e1231]: line
+                              - generic [ref=f12e1232]: disp_tRWfLJLoN1rYtu
+                            - generic [ref=f12e1233]: "+2"
+                        - cell [ref=f12e1234]:
+                          - link "dispute disp_tRWfLJLoN1rYtu won; amount re-credited" [ref=f12e1235] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_04a174d680f50150
+                        - cell "100%" [ref=f12e1236]:
+                          - generic "100% confidence" [ref=f12e1237]: 100%
+                        - cell [ref=f12e1241]
+                        - cell "Open" [ref=f12e1242]
+                        - cell [ref=f12e1244]:
+                          - link "Open exc_04a174d680f50150" [ref=f12e1245] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_04a174d680f50150
+                - generic [ref=f12e1248]:
+                  - generic [ref=f12e1249]:
+                    - generic [ref=f12e1250]:
+                      - generic [ref=f12e1251]:
+                        - heading "Ledger amount mismatch" [level=2] [ref=f12e1252]
+                        - code [ref=f12e1253]: AMOUNT_MISMATCH_LEDGER
+                        - generic [ref=f12e1254]: "6"
+                      - paragraph [ref=f12e1255]: Payment and invoice differ (discount, shipping, partial).
+                      - paragraph [ref=f12e1256]: "Suggested: Suggest partial-payment entry."
+                    - generic "₹844.00" [ref=f12e1258]:
+                      - text: ₹844
+                      - generic [ref=f12e1259]: ".00"
+                  - table [ref=f12e1260]:
+                    - rowgroup [ref=f12e1261]:
+                      - row [ref=f12e1262]:
+                        - cell [ref=f12e1263]:
+                          - checkbox "Select exc_5d6c2d9c284ceb51" [ref=f12e1264]
+                        - cell "₹149.00" [ref=f12e1265]:
+                          - generic "₹149.00" [ref=f12e1266]:
+                            - text: ₹149
+                            - generic [ref=f12e1267]: ".00"
+                        - cell "ledger led_00136 +1" [ref=f12e1268]:
+                          - generic [ref=f12e1269]:
+                            - link "ledger led_00136" [ref=f12e1270] [cursor=pointer]:
+                              - /url: /app/ledger?focus=led_00136
+                              - generic [ref=f12e1271]: ledger
+                              - generic [ref=f12e1272]: led_00136
+                            - generic [ref=f12e1273]: "+1"
+                        - cell [ref=f12e1274]:
+                          - link "invoice 131125 vs payment 116225 (diff -14900)" [ref=f12e1275] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_5d6c2d9c284ceb51
+                        - cell "60%" [ref=f12e1276]:
+                          - generic "60% confidence" [ref=f12e1277]: 60%
+                        - cell "C" [ref=f12e1281]
+                        - cell "Open" [ref=f12e1284]
+                        - cell [ref=f12e1286]:
+                          - link "Open exc_5d6c2d9c284ceb51" [ref=f12e1287] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_5d6c2d9c284ceb51
+                      - row [ref=f12e1290]:
+                        - cell [ref=f12e1291]:
+                          - checkbox "Select exc_f8c6172ae249a373" [ref=f12e1292]
+                        - cell "₹149.00" [ref=f12e1293]:
+                          - generic "₹149.00" [ref=f12e1294]:
+                            - text: ₹149
+                            - generic [ref=f12e1295]: ".00"
+                        - cell "ledger led_00190 +1" [ref=f12e1296]:
+                          - generic [ref=f12e1297]:
+                            - link "ledger led_00190" [ref=f12e1298] [cursor=pointer]:
+                              - /url: /app/ledger?focus=led_00190
+                              - generic [ref=f12e1299]: ledger
+                              - generic [ref=f12e1300]: led_00190
+                            - generic [ref=f12e1301]: "+1"
+                        - cell [ref=f12e1302]:
+                          - link "invoice 99800 vs payment 84900 (diff -14900)" [ref=f12e1303] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_f8c6172ae249a373
+                        - cell "60%" [ref=f12e1304]:
+                          - generic "60% confidence" [ref=f12e1305]: 60%
+                        - cell "C" [ref=f12e1309]
+                        - cell "Open" [ref=f12e1312]
+                        - cell [ref=f12e1314]:
+                          - link "Open exc_f8c6172ae249a373" [ref=f12e1315] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_f8c6172ae249a373
+                      - row [ref=f12e1318]:
+                        - cell [ref=f12e1319]:
+                          - checkbox "Select exc_28544d39b01f42b4" [ref=f12e1320]
+                        - cell "₹149.00" [ref=f12e1321]:
+                          - generic "₹149.00" [ref=f12e1322]:
+                            - text: ₹149
+                            - generic [ref=f12e1323]: ".00"
+                        - cell "ledger led_00221 +1" [ref=f12e1324]:
+                          - generic [ref=f12e1325]:
+                            - link "ledger led_00221" [ref=f12e1326] [cursor=pointer]:
+                              - /url: /app/ledger?focus=led_00221
+                              - generic [ref=f12e1327]: ledger
+                              - generic [ref=f12e1328]: led_00221
+                            - generic [ref=f12e1329]: "+1"
+                        - cell [ref=f12e1330]:
+                          - link "invoice 316300 vs payment 301400 (diff -14900)" [ref=f12e1331] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_28544d39b01f42b4
+                        - cell "60%" [ref=f12e1332]:
+                          - generic "60% confidence" [ref=f12e1333]: 60%
+                        - cell "C" [ref=f12e1337]
+                        - cell "Open" [ref=f12e1340]
+                        - cell [ref=f12e1342]:
+                          - link "Open exc_28544d39b01f42b4" [ref=f12e1343] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_28544d39b01f42b4
+                      - row [ref=f12e1346]:
+                        - cell [ref=f12e1347]:
+                          - checkbox "Select exc_9a8bc7b856043a21" [ref=f12e1348]
+                        - cell "₹149.00" [ref=f12e1349]:
+                          - generic "₹149.00" [ref=f12e1350]:
+                            - text: ₹149
+                            - generic [ref=f12e1351]: ".00"
+                        - cell "ledger led_00429 +1" [ref=f12e1352]:
+                          - generic [ref=f12e1353]:
+                            - link "ledger led_00429" [ref=f12e1354] [cursor=pointer]:
+                              - /url: /app/ledger?focus=led_00429
+                              - generic [ref=f12e1355]: ledger
+                              - generic [ref=f12e1356]: led_00429
+                            - generic [ref=f12e1357]: "+1"
+                        - cell [ref=f12e1358]:
+                          - link "invoice 68900 vs payment 54000 (diff -14900)" [ref=f12e1359] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_9a8bc7b856043a21
+                        - cell "60%" [ref=f12e1360]:
+                          - generic "60% confidence" [ref=f12e1361]: 60%
+                        - cell "C" [ref=f12e1365]
+                        - cell "Open" [ref=f12e1368]
+                        - cell [ref=f12e1370]:
+                          - link "Open exc_9a8bc7b856043a21" [ref=f12e1371] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_9a8bc7b856043a21
+                      - row [ref=f12e1374]:
+                        - cell [ref=f12e1375]:
+                          - checkbox "Select exc_ff47fdc8bd45a9dc" [ref=f12e1376]
+                        - cell "₹149.00" [ref=f12e1377]:
+                          - generic "₹149.00" [ref=f12e1378]:
+                            - text: ₹149
+                            - generic [ref=f12e1379]: ".00"
+                        - cell "ledger led_00580 +1" [ref=f12e1380]:
+                          - generic [ref=f12e1381]:
+                            - link "ledger led_00580" [ref=f12e1382] [cursor=pointer]:
+                              - /url: /app/ledger?focus=led_00580
+                              - generic [ref=f12e1383]: ledger
+                              - generic [ref=f12e1384]: led_00580
+                            - generic [ref=f12e1385]: "+1"
+                        - cell [ref=f12e1386]:
+                          - link "invoice 215500 vs payment 200600 (diff -14900)" [ref=f12e1387] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_ff47fdc8bd45a9dc
+                        - cell "60%" [ref=f12e1388]:
+                          - generic "60% confidence" [ref=f12e1389]: 60%
+                        - cell "C" [ref=f12e1393]
+                        - cell "Open" [ref=f12e1396]
+                        - cell [ref=f12e1398]:
+                          - link "Open exc_ff47fdc8bd45a9dc" [ref=f12e1399] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_ff47fdc8bd45a9dc
+                      - row [ref=f12e1402]:
+                        - cell [ref=f12e1403]:
+                          - checkbox "Select exc_17183b505a9bb8ef" [ref=f12e1404]
+                        - cell "₹99.00" [ref=f12e1405]:
+                          - generic "₹99.00" [ref=f12e1406]:
+                            - text: ₹99
+                            - generic [ref=f12e1407]: ".00"
+                        - cell "ledger led_00295 +1" [ref=f12e1408]:
+                          - generic [ref=f12e1409]:
+                            - link "ledger led_00295" [ref=f12e1410] [cursor=pointer]:
+                              - /url: /app/ledger?focus=led_00295
+                              - generic [ref=f12e1411]: ledger
+                              - generic [ref=f12e1412]: led_00295
+                            - generic [ref=f12e1413]: "+1"
+                        - cell [ref=f12e1414]:
+                          - link "invoice 124800 vs payment 114900 (diff -9900)" [ref=f12e1415] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_17183b505a9bb8ef
+                        - cell "60%" [ref=f12e1416]:
+                          - generic "60% confidence" [ref=f12e1417]: 60%
+                        - cell "C" [ref=f12e1421]
+                        - cell "Open" [ref=f12e1424]
+                        - cell [ref=f12e1426]:
+                          - link "Open exc_17183b505a9bb8ef" [ref=f12e1427] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_17183b505a9bb8ef
+                - generic [ref=f12e1430]:
+                  - generic [ref=f12e1431]:
+                    - generic [ref=f12e1432]:
+                      - generic [ref=f12e1433]:
+                        - heading "Fee variance" [level=2] [ref=f12e1434]
+                        - code [ref=f12e1435]: FEE_VARIANCE
+                        - generic [ref=f12e1436]: "3"
+                      - paragraph [ref=f12e1437]: Fee differs from rate card × amount beyond rounding.
+                      - paragraph [ref=f12e1438]: "Suggested: Verify rate card; raise with Razorpay if persistent."
+                    - generic "₹14.00" [ref=f12e1440]:
+                      - text: ₹14
+                      - generic [ref=f12e1441]: ".00"
+                  - table [ref=f12e1442]:
+                    - rowgroup [ref=f12e1443]:
+                      - row [ref=f12e1444]:
+                        - cell [ref=f12e1445]:
+                          - checkbox "Select exc_465607184b15b29a" [ref=f12e1446]
+                        - cell "₹10.29" [ref=f12e1447]:
+                          - generic "₹10.29" [ref=f12e1448]:
+                            - text: ₹10
+                            - generic [ref=f12e1449]: ".29"
+                        - cell "line pay_fWoOHJXgDkFcs0 +1" [ref=f12e1450]:
+                          - generic [ref=f12e1451]:
+                            - link "line pay_fWoOHJXgDkFcs0" [ref=f12e1452] [cursor=pointer]:
+                              - /url: /app/settlements?q=pay_fWoOHJXgDkFcs0
+                              - generic [ref=f12e1453]: line
+                              - generic [ref=f12e1454]: pay_fWoOHJXgDkFcs0
+                            - generic [ref=f12e1455]: "+1"
+                        - cell [ref=f12e1456]:
+                          - link "fee 9259 vs rate-card 10288 (card @ 200 bps)" [ref=f12e1457] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_465607184b15b29a
+                        - cell "60%" [ref=f12e1458]:
+                          - generic "60% confidence" [ref=f12e1459]: 60%
+                        - cell [ref=f12e1463]
+                        - cell "Open" [ref=f12e1464]
+                        - cell [ref=f12e1466]:
+                          - link "Open exc_465607184b15b29a" [ref=f12e1467] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_465607184b15b29a
+                      - row [ref=f12e1470]:
+                        - cell [ref=f12e1471]:
+                          - checkbox "Select exc_d97e637ff1c410d2" [ref=f12e1472]
+                        - cell "₹2.19" [ref=f12e1473]:
+                          - generic "₹2.19" [ref=f12e1474]:
+                            - text: ₹2
+                            - generic [ref=f12e1475]: ".19"
+                        - cell "line pay_0EuUr9sBa8UGaE +1" [ref=f12e1476]:
+                          - generic [ref=f12e1477]:
+                            - link "line pay_0EuUr9sBa8UGaE" [ref=f12e1478] [cursor=pointer]:
+                              - /url: /app/settlements?q=pay_0EuUr9sBa8UGaE
+                              - generic [ref=f12e1479]: line
+                              - generic [ref=f12e1480]: pay_0EuUr9sBa8UGaE
+                            - generic [ref=f12e1481]: "+1"
+                        - cell [ref=f12e1482]:
+                          - link "fee 1969 vs rate-card 2188 (card @ 200 bps)" [ref=f12e1483] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_d97e637ff1c410d2
+                        - cell "60%" [ref=f12e1484]:
+                          - generic "60% confidence" [ref=f12e1485]: 60%
+                        - cell [ref=f12e1489]
+                        - cell "Open" [ref=f12e1490]
+                        - cell [ref=f12e1492]:
+                          - link "Open exc_d97e637ff1c410d2" [ref=f12e1493] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_d97e637ff1c410d2
+                      - row [ref=f12e1496]:
+                        - cell [ref=f12e1497]:
+                          - checkbox "Select exc_5858a6cc79a0a10b" [ref=f12e1498]
+                        - cell "₹1.52" [ref=f12e1499]:
+                          - generic "₹1.52" [ref=f12e1500]:
+                            - text: ₹1
+                            - generic [ref=f12e1501]: ".52"
+                        - cell "line pay_FTQXnb03GMXpWP +1" [ref=f12e1502]:
+                          - generic [ref=f12e1503]:
+                            - link "line pay_FTQXnb03GMXpWP" [ref=f12e1504] [cursor=pointer]:
+                              - /url: /app/settlements?q=pay_FTQXnb03GMXpWP
+                              - generic [ref=f12e1505]: line
+                              - generic [ref=f12e1506]: pay_FTQXnb03GMXpWP
+                            - generic [ref=f12e1507]: "+1"
+                        - cell [ref=f12e1508]:
+                          - link "fee 1370 vs rate-card 1522 (card @ 200 bps)" [ref=f12e1509] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_5858a6cc79a0a10b
+                        - cell "60%" [ref=f12e1510]:
+                          - generic "60% confidence" [ref=f12e1511]: 60%
+                        - cell [ref=f12e1515]
+                        - cell "Open" [ref=f12e1516]
+                        - cell [ref=f12e1518]:
+                          - link "Open exc_5858a6cc79a0a10b" [ref=f12e1519] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_5858a6cc79a0a10b
+                - generic [ref=f12e1522]:
+                  - generic [ref=f12e1523]:
+                    - generic [ref=f12e1524]:
+                      - generic [ref=f12e1525]:
+                        - heading "Instant settlement fee" [level=2] [ref=f12e1526]
+                        - code [ref=f12e1527]: INSTANT_SETTLEMENT_FEE
+                        - generic [ref=f12e1528]: "1"
+                      - paragraph [ref=f12e1529]: Extra fee line for instant settlement.
+                      - paragraph [ref=f12e1530]: "Suggested: Post to bank charges."
+                    - generic "₹8.31" [ref=f12e1532]:
+                      - text: ₹8
+                      - generic [ref=f12e1533]: ".31"
+                  - table [ref=f12e1534]:
+                    - rowgroup [ref=f12e1535]:
+                      - row [ref=f12e1536]:
+                        - cell [ref=f12e1537]:
+                          - checkbox "Select exc_eedff3112c60b716" [ref=f12e1538]
+                        - cell "₹8.31" [ref=f12e1539]:
+                          - generic "₹8.31" [ref=f12e1540]:
+                            - text: ₹8
+                            - generic [ref=f12e1541]: ".31"
+                        - cell "line adj_wYp1ngw9gMD51A +1" [ref=f12e1542]:
+                          - generic [ref=f12e1543]:
+                            - link "line adj_wYp1ngw9gMD51A" [ref=f12e1544] [cursor=pointer]:
+                              - /url: /app/settlements?q=adj_wYp1ngw9gMD51A
+                              - generic [ref=f12e1545]: line
+                              - generic [ref=f12e1546]: adj_wYp1ngw9gMD51A
+                            - generic [ref=f12e1547]: "+1"
+                        - cell [ref=f12e1548]:
+                          - link "Instant settlement fee" [ref=f12e1549] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_eedff3112c60b716
+                        - cell "100%" [ref=f12e1550]:
+                          - generic "100% confidence" [ref=f12e1551]: 100%
+                        - cell [ref=f12e1555]
+                        - cell "Open" [ref=f12e1556]
+                        - cell [ref=f12e1558]:
+                          - link "Open exc_eedff3112c60b716" [ref=f12e1559] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_eedff3112c60b716
+                - generic [ref=f12e1562]:
+                  - generic [ref=f12e1563]:
+                    - generic [ref=f12e1564]:
+                      - generic [ref=f12e1565]:
+                        - heading "Tax variance" [level=2] [ref=f12e1566]
+                        - code [ref=f12e1567]: TAX_VARIANCE
+                        - generic [ref=f12e1568]: "1"
+                      - paragraph [ref=f12e1569]: Tax differs from 18% × fee beyond rounding.
+                      - paragraph [ref=f12e1570]: "Suggested: Verify GST invoice."
+                    - generic "₹0.07" [ref=f12e1572]:
+                      - text: ₹0
+                      - generic [ref=f12e1573]: ".07"
+                  - table [ref=f12e1574]:
+                    - rowgroup [ref=f12e1575]:
+                      - row [ref=f12e1576]:
+                        - cell [ref=f12e1577]:
+                          - checkbox "Select exc_caa99d3041a5448f" [ref=f12e1578]
+                        - cell "₹0.07" [ref=f12e1579]:
+                          - generic "₹0.07" [ref=f12e1580]:
+                            - text: ₹0
+                            - generic [ref=f12e1581]: ".07"
+                        - cell "line pay_KOZv90LNC6CPxF +1" [ref=f12e1582]:
+                          - generic [ref=f12e1583]:
+                            - link "line pay_KOZv90LNC6CPxF" [ref=f12e1584] [cursor=pointer]:
+                              - /url: /app/settlements?q=pay_KOZv90LNC6CPxF
+                              - generic [ref=f12e1585]: line
+                              - generic [ref=f12e1586]: pay_KOZv90LNC6CPxF
+                            - generic [ref=f12e1587]: "+1"
+                        - cell [ref=f12e1588]:
+                          - link "tax 1402 vs 18% of fee 1395" [ref=f12e1589] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_caa99d3041a5448f
+                        - cell "60%" [ref=f12e1590]:
+                          - generic "60% confidence" [ref=f12e1591]: 60%
+                        - cell [ref=f12e1595]
+                        - cell "Open" [ref=f12e1596]
+                        - cell [ref=f12e1598]:
+                          - link "Open exc_caa99d3041a5448f" [ref=f12e1599] [cursor=pointer]:
+                            - /url: /app/exceptions/exc_caa99d3041a5448f
+              - paragraph [ref=f12e1602]: Low-confidence rows are what the close pack calls unexplained. Decide them first.
+  - alert [ref=f12e1606]

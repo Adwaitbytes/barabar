@@ -342,6 +342,55 @@ class ToolBelt:
     def tool_get_metrics(self) -> dict[str, Any]:
         return dict(self.result.metrics)
 
+    def tool_get_facts(self) -> dict[str, Any]:
+        """Month-level controller facts: PG fees, GST on fees (ITC), refunds, chargebacks,
+        explained/unexplained. Answer month-level questions from here, not by summing."""
+        from barabar.exports.memo import memo_facts
+
+        facts = memo_facts(self.month, self.result)
+        return {
+            **facts,
+            **{
+                f"{k}_display": format_inr(int(v))
+                for k, v in facts.items()
+                if isinstance(v, int)
+                and k
+                not in (
+                    "settlements_processed",
+                    "settlements_matched",
+                    "exceptions_total",
+                    "exceptions_open",
+                    "exceptions_auto_resolved",
+                )
+            },
+        }
+
+    def tool_list_settlements(self, limit: int = 50) -> dict[str, Any]:
+        matched = {
+            link.to_entity.split(":", 1)[1]
+            for link in self.result.links
+            if link.from_entity.startswith("bank:") and link.to_entity.startswith("settlement:")
+        }
+        rows = sorted(
+            self.month.settlements, key=lambda x: (x.settled_at or x.created_at, x.settlement_id)
+        )
+        return {
+            "count": len(rows),
+            "settlements": [
+                {
+                    "settlement_id": x.settlement_id,
+                    "settled_on": (x.settled_at or x.created_at).astimezone(IST).date().isoformat(),
+                    "amount": x.amount,
+                    "amount_display": format_inr(x.amount),
+                    "status": x.status.value,
+                    "type": x.type.value,
+                    "utr": x.utr,
+                    "bank_matched": x.settlement_id in matched,
+                }
+                for x in rows[:limit]
+            ],
+        }
+
 
 def _compact(node: ProofNode, depth: int) -> dict[str, Any]:
     out: dict[str, Any] = {
@@ -459,4 +508,16 @@ TOOL_SCHEMAS: tuple[dict[str, Any], ...] = (
         ["settlement_id"],
     ),
     _schema("get_metrics", "Run-level metrics: gross, explained, unexplained, counts.", {}, []),
+    _schema(
+        "get_facts",
+        "Month-level controller facts already computed by rule: gross captured, explained, unexplained, payment-gateway fees, GST on fees claimable as ITC, refunds netted, chargebacks debited, settlement and exception counts. Use this for any month-level total.",
+        {},
+        [],
+    ),
+    _schema(
+        "list_settlements",
+        "Every settlement this month with date, net amount, status and whether a bank credit matched it.",
+        {"limit": _I},
+        ["limit"],
+    ),
 )

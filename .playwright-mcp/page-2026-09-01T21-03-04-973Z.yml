@@ -1,0 +1,89 @@
+- generic [active] [ref=f13e1]:
+  - generic [ref=f13e2]:
+    - complementary [ref=f13e3]:
+      - link "Barabar home" [ref=f13e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f13e6]: barabar
+      - navigation "Primary" [ref=f13e9]:
+        - generic [ref=f13e10]:
+          - generic [ref=f13e11]: Close
+          - list [ref=f13e12]:
+            - listitem [ref=f13e13]:
+              - link "Close pack" [ref=f13e14] [cursor=pointer]:
+                - /url: /app
+            - listitem [ref=f13e21]:
+              - link "Exceptions 45" [ref=f13e22] [cursor=pointer]:
+                - /url: /app/exceptions
+                - generic [ref=f13e26]: Exceptions
+                - generic [ref=f13e27]: "45"
+            - listitem [ref=f13e28]:
+              - link "Ask the books" [ref=f13e30] [cursor=pointer]:
+                - /url: /app/ask
+        - generic [ref=f13e34]:
+          - generic [ref=f13e35]: Three legs
+          - list [ref=f13e36]:
+            - listitem [ref=f13e37]:
+              - link "Settlements" [ref=f13e38] [cursor=pointer]:
+                - /url: /app/settlements
+            - listitem [ref=f13e43]:
+              - link "Bank statement" [ref=f13e44] [cursor=pointer]:
+                - /url: /app/bank
+            - listitem [ref=f13e48]:
+              - link "Sales ledger" [ref=f13e49] [cursor=pointer]:
+                - /url: /app/ledger
+        - generic [ref=f13e53]:
+          - generic [ref=f13e54]: Output
+          - list [ref=f13e55]:
+            - listitem [ref=f13e56]:
+              - link "Journal entries" [ref=f13e57] [cursor=pointer]:
+                - /url: /app/journal
+            - listitem [ref=f13e62]:
+              - link "Sources" [ref=f13e63] [cursor=pointer]:
+                - /url: /app/sources
+            - listitem [ref=f13e68]:
+              - link "Runs & audit" [ref=f13e69] [cursor=pointer]:
+                - /url: /app/runs
+            - listitem [ref=f13e75]:
+              - link "Rate card & rules" [ref=f13e76] [cursor=pointer]:
+                - /url: /app/settings
+      - generic [ref=f13e81]: Deterministic where money is decided.
+    - generic [ref=f13e87]:
+      - banner [ref=f13e88]:
+        - button "hosted demo month August 2026 · as of 2026-09-01" [ref=f13e89] [cursor=pointer]:
+          - generic [ref=f13e90]:
+            - generic [ref=f13e91]: hosted demo month
+            - generic [ref=f13e92]: August 2026 · as of 2026-09-01
+        - generic [ref=f13e93]:
+          - img "Explained ₹7,48,368.01, open ₹2,56,070.82, unexplained ₹80,855.20" [ref=f13e95]
+          - generic [ref=f13e100]:
+            - generic [ref=f13e101]: 92.55%
+            - text: explained
+        - generic [ref=f13e102]:
+          - generic [ref=f13e103]: live
+          - button "Ask or jump to… ⌘K" [ref=f13e107] [cursor=pointer]:
+            - generic [ref=f13e108]: Ask or jump to…
+            - generic [ref=f13e109]: ⌘K
+          - button "Switch to light theme" [ref=f13e110] [cursor=pointer]
+      - main [ref=f13e111]:
+        - generic [ref=f13e113]:
+          - generic [ref=f13e115]:
+            - generic [ref=f13e116]: Ask the books
+            - heading "Questions answered with proof, not prose" [level=1] [ref=f13e117]
+            - paragraph [ref=f13e118]: Scoped to this run. Answers resolve to settlements, exceptions and rule IDs you can open.
+          - generic [ref=f13e119]:
+            - generic [ref=f13e120]:
+              - generic [ref=f13e121]: hosted demo month
+              - textbox "Ask a question about this run" [ref=f13e122]:
+                - /placeholder: Why did ₹1,13,149.51 land on 5 Aug?
+              - button "Ask" [disabled]
+            - generic [ref=f13e123]:
+              - generic [ref=f13e124]: Try one
+              - generic [ref=f13e125]:
+                - button "Why did the largest settlement land in my bank?" [ref=f13e126] [cursor=pointer]
+                - button "What is the largest open exception and what should I do?" [ref=f13e127] [cursor=pointer]
+                - button "How much was netted for refunds this month?" [ref=f13e128] [cursor=pointer]
+                - button "What GST input credit can I claim on Razorpay fees?" [ref=f13e129] [cursor=pointer]
+                - button "Which settlement has no bank credit yet?" [ref=f13e130] [cursor=pointer]
+              - paragraph [ref=f13e131]: Answers cite proof trees and exceptions. Every figure in an answer is checked against the run before it is shown; a blocked answer means a number did not survive that check.
+            - list
+  - alert [ref=f13e132]

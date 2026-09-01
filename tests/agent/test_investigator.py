@@ -222,3 +222,15 @@ def test_live_investigator_on_truncated_utr(tmp_path: Path) -> None:
     card, _, _ = investigate(month, result, CFG, exc.exc_id, cache=AgentCache(tmp_path))
     assert card.type_proposed == ExceptionType.NARRATION_TRUNCATED_UTR
     assert len(card.evidence) >= 2
+
+
+def test_month_level_tools_exist() -> None:
+    from barabar.agent.tools import ToolBelt
+
+    month, result, _ = _truncated_case()
+    belt = ToolBelt(month, result, CFG)
+    facts = belt.call("get_facts", {})
+    assert facts["gst_on_fees_itc"] > 0 and facts["gst_on_fees_itc_display"].startswith("₹")
+    listing = belt.call("list_settlements", {"limit": 5})
+    assert listing["count"] == len(month.settlements) and len(listing["settlements"]) == 5
+    assert {"get_facts", "list_settlements"} <= {t["name"] for t in belt.schemas()}
