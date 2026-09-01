@@ -7,12 +7,12 @@ bug (it shifts a Friday-night capture into the wrong week); see FAILURES.md.
 
 from __future__ import annotations
 
-import json
 from dataclasses import dataclass
 from datetime import date, datetime, time, timedelta
-from importlib import resources
 from typing import Literal
 from zoneinfo import ZoneInfo
+
+from barabar.core.rbi_holidays import HOLIDAYS_2026
 
 IST = ZoneInfo("Asia/Kolkata")
 UTC = ZoneInfo("UTC")
@@ -33,12 +33,12 @@ class Holiday:
 
 
 def load_rbi_holidays(year: int = 2026) -> tuple[Holiday, ...]:
-    """Load the committed RBI holiday list for ``year`` from package data."""
-    path = resources.files("barabar.core").joinpath("data", f"rbi_holidays_{year}.json")
-    raw = json.loads(path.read_text(encoding="utf-8"))
+    """The committed RBI holiday list for ``year`` (``barabar.core.rbi_holidays``)."""
+    if year != 2026:
+        raise ValueError(f"no RBI holiday list committed for {year}; add it to rbi_holidays.py")
     return tuple(
-        Holiday(date=date.fromisoformat(h["date"]), name=h["name"], scope=h["scope"])
-        for h in raw["holidays"]
+        Holiday(date=date.fromisoformat(d), name=name, scope=scope)  # type: ignore[arg-type]
+        for d, name, scope in HOLIDAYS_2026
     )
 
 
