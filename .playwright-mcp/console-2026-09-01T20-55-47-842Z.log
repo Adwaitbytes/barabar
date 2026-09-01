@@ -1,0 +1,2 @@
+[    6612ms] [ERROR] Failed to load resource: the server responded with a status of 500 () @ https://barabar-xi.vercel.app/app:0
+[    6632ms] Minified React error #441; visit https://react.dev/errors/441 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.

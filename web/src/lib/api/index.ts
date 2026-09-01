@@ -26,7 +26,9 @@ import type {
 
 const API_URL =
   process.env.BARABAR_API_URL ?? process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
-const TIMEOUT_MS = 2500;
+// Cold Vercel start + a Neon round trip can exceed 5s; a short timeout used to flip the UI
+// into fixture mode mid-request and mix live and demo run ids.
+const TIMEOUT_MS = 20_000;
 
 export type DataSource = "live" | "demo";
 
@@ -39,11 +41,15 @@ export class ApiError extends Error {
   }
 }
 
+/** The captured demo run only exists in fixtures: never ask the API about it. */
+class FixtureOnlyRun extends Error {}
+
 async function request<T>(
   path: string,
   init?: RequestInit,
   timeoutMs: number = TIMEOUT_MS,
 ): Promise<T> {
+  if (path.includes(`/runs/${FIXTURE_RUN_ID}`)) throw new FixtureOnlyRun(path);
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), timeoutMs);
   try {
