@@ -1,0 +1,9 @@
+{
+ "seed": 0,
+ "profile": "testmode",
+ "n_orders": 0,
+ "fault_plan": {},
+ "gross_captured": 0,
+ "links": [],
+ "exceptions": []
+}

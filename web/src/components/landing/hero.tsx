@@ -117,7 +117,7 @@ export function Hero() {
       <ArcBackground variant="signal-particles" mobile fade={false} />
       <StructureScene
         variant="logic-core"
-        className="pointer-events-none absolute -right-[10%] bottom-[-6%] hidden h-[70vh] w-[62vw] opacity-70 [mask-image:radial-gradient(ellipse_60%_60%_at_50%_55%,black_30%,transparent_75%)] md:block"
+        className="pointer-events-none absolute -right-[6%] bottom-[-4%] hidden h-[78vh] w-[66vw] opacity-90 [mask-image:radial-gradient(ellipse_65%_65%_at_50%_55%,black_40%,transparent_80%)] md:block"
       />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_30%_40%,transparent_20%,var(--bg)_100%)]" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-bg to-transparent" />

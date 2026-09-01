@@ -51,6 +51,8 @@ class RazorpayClient:
         skip = 0
         while True:
             r = self.http.get(path, params={**(params or {}), "count": PAGE, "skip": skip})
+            if r.status_code == 404 and path.endswith("/settlements/recon"):
+                return items  # Razorpay answers 404 when a month has no settlement data
             r.raise_for_status()
             batch = r.json().get("items", [])
             items.extend(batch)

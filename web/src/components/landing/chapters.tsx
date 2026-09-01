@@ -271,7 +271,7 @@ export function ChapterNames({ data }: { data: LandingData }) {
 
   return (
     <section id="names" className="relative scroll-mt-16 overflow-hidden py-28 sm:py-36" aria-labelledby="names-title">
-      <ArcBackground variant="override-grid" speed={0.5} brightness={0.75} />
+      <ArcBackground variant="override-grid" speed={0.5} brightness={0.6} className="opacity-70" />
       <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-8">
         <ChapterHead
           n="03"
@@ -388,7 +388,7 @@ export function ChapterProof({ data }: { data: LandingData }) {
 
   return (
     <section id="proof" className="relative scroll-mt-16 overflow-hidden py-28 sm:py-40" aria-labelledby="proof-title">
-      <ArcBackground variant="data-pixel" />
+      <ArcBackground variant="data-pixel" className="opacity-45 [mask-image:radial-gradient(ellipse_70%_60%_at_70%_45%,black_20%,transparent_75%)]" />
       <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-8">
         <div className="grid gap-16 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
           <ChapterHead
