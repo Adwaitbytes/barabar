@@ -30,7 +30,7 @@ export function LinkRow({
         if (e.key === "Enter") go(e);
       }}
       className={cn(
-        "cursor-pointer border-b border-line transition-colors hover:bg-raised/70 focus-visible:bg-raised/70 focus-visible:outline-none focus-visible:shadow-[inset_2px_0_0_var(--ring)]",
+        "row-accent cursor-pointer border-b border-line transition-colors hover:bg-raised/70 focus-visible:bg-raised/70 focus-visible:outline-none focus-visible:shadow-[inset_2px_0_0_var(--ring)]",
         className,
       )}
     >

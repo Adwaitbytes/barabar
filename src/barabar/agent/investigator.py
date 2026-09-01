@@ -135,7 +135,23 @@ def make_client() -> ClientLike:
 
 
 def model_name() -> str:
+    """Investigator + ask-the-books: the strong model (quality-critical reasoning over money)."""
     return os.environ.get("BARABAR_MODEL", DEFAULT_MODEL)
+
+
+def cheap_model_name() -> str:
+    """Simple extraction (narration fallback): a cheap model is fine because the
+    grammar re-validates every field it returns."""
+    return os.environ.get("BARABAR_MODEL_CHEAP", model_name())
+
+
+def request_extras() -> dict[str, Any]:
+    """Anthropic-only request features (server-side refusal fallbacks) are skipped
+    when the SDK is pointed at a gateway such as OpenRouter."""
+    base = os.environ.get("ANTHROPIC_BASE_URL", "")
+    if base and "anthropic.com" not in base:
+        return {}
+    return {"betas": [FALLBACK_BETA], "fallbacks": "default"}
 
 
 @dataclass
@@ -184,8 +200,7 @@ def _run_loop(
             messages=messages,
             tools=tools,
             output_config={"effort": effort},
-            betas=[FALLBACK_BETA],
-            fallbacks="default",
+            **request_extras(),
         )
         if getattr(response, "stop_reason", None) == "refusal":
             raise InvestigatorUnavailableError("the model declined this request")

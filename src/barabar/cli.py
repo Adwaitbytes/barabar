@@ -6,6 +6,8 @@ import argparse
 import sys
 from pathlib import Path
 
+from dotenv import load_dotenv
+
 from barabar.core.config import MatchConfig
 from barabar.core.hashing import code_version
 from barabar.core.matching import reconcile
@@ -173,7 +175,20 @@ def cmd_fetch(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_investigator_evals(args: argparse.Namespace) -> int:
+    from barabar.evals.investigator_evals import run_investigator_evals
+    from barabar.evals.investigator_evals import write_report as write_inv
+
+    report = run_investigator_evals(limit=args.limit)
+    path = write_inv(report, Path(args.out))
+    print(
+        f"wrote {path}: accuracy {report['accuracy_pct']}% over {report['scored']} scored ({report['errors']} errors)"
+    )
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
+    load_dotenv()
     p = argparse.ArgumentParser(prog="barabar")
     sub = p.add_subparsers(dest="cmd", required=True)
     d = sub.add_parser(
@@ -205,6 +220,13 @@ def main(argv: list[str] | None = None) -> int:
     f.add_argument("--bank", default="HDFC")
     f.add_argument("--out", required=True)
     f.set_defaults(fn=cmd_fetch)
+    iv = sub.add_parser(
+        "investigator-evals",
+        help="run tier D over open exceptions of the 600-order month and score vs truth (needs ANTHROPIC_API_KEY once; cached after)",
+    )
+    iv.add_argument("--limit", type=int, default=40)
+    iv.add_argument("--out", default="evals/reports")
+    iv.set_defaults(fn=cmd_investigator_evals)
     args = p.parse_args(argv)
     return int(args.fn(args))
 

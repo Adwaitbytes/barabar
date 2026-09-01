@@ -6,7 +6,7 @@ import type { ClosePackFacts, RunMetrics } from "@/lib/types";
 function Row({ label, hint, children }: { label: string; hint?: string; children: React.ReactNode }) {
   return (
     <div className="flex items-baseline justify-between gap-4 border-b border-line py-2.5 last:border-0">
-      <dt className="min-w-0">
+      <dt className="min-w-0 whitespace-nowrap">
         <span className="text-[13px] text-text">{label}</span>
         {hint && <span className="ml-1.5 text-[11px] text-faint">{hint}</span>}
       </dt>
@@ -52,16 +52,20 @@ export function ControllerFacts({ facts, metrics }: { facts: ClosePackFacts; met
             <span className="text-faint"> / {fmtInt(metrics.payments)}</span>
           </span>
         </Row>
-        <Row label="Links by tier" hint={`${fmtInt(metrics.links_total)} total`}>
-          <span className="inline-flex items-center gap-2.5">
+        <div className="border-b border-line py-2.5">
+          <dt className="whitespace-nowrap">
+            <span className="text-[13px] text-text">Links by tier</span>
+            <span className="ml-1.5 text-[11px] text-faint">{fmtInt(metrics.links_total)} total</span>
+          </dt>
+          <dd className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1.5">
             {tiers.map((t) => (
-              <span key={t.tier} className="inline-flex items-center gap-1">
+              <span key={t.tier} className="inline-flex items-center gap-1.5">
                 <TierBadge tier={t.tier} />
                 <span className="mono text-[12.5px] text-muted">{fmtInt(t.n)}</span>
               </span>
             ))}
-          </span>
-        </Row>
+          </dd>
+        </div>
         <Row label="Bank credits seen">
           <span className="mono text-[13.5px]">{fmtInt(metrics.bank_credits)}</span>
         </Row>

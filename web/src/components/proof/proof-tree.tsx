@@ -19,6 +19,16 @@ import type { ProofNode } from "@/lib/types";
 
 const COLLAPSE_OVER = 12;
 
+/** Nodes in a subtree, for pre-order row numbering (drives the mount cascade). */
+function countNodes(n: ProofNode): number {
+  return 1 + (n.children ?? []).reduce((s, c) => s + countNodes(c), 0);
+}
+function childOrder(parent: number, siblings: ProofNode[], i: number): number {
+  let o = parent + 1;
+  for (let k = 0; k < i; k++) o += countNodes(siblings[k]);
+  return o;
+}
+
 /** The backend also emits "exception" nodes that the shared type does not name yet. */
 type Kind = ProofNode["kind"] | "exception";
 
@@ -82,9 +92,9 @@ export function ProofTree({ root, bankAmount }: { root: ProofNode; bankAmount: n
         <span className="text-[12px] font-medium text-muted">{root.label}</span>
         <span className="mono text-[11px] uppercase tracking-[0.08em] text-faint">rule · confidence</span>
       </div>
-      <ol className="mono px-2 py-2 text-[12.5px]" role="tree">
+      <ol className="mono px-2 py-2 text-[12.5px]">
         {ordered.map((n, i) => (
-          <Node key={i} node={n} depth={0} last={i === ordered.length - 1} bankAmount={bankAmount} />
+          <Node key={i} node={n} depth={0} last={i === ordered.length - 1} bankAmount={bankAmount} order={childOrder(-1, ordered, i)} />
         ))}
       </ol>
     </div>
@@ -96,11 +106,13 @@ function Node({
   depth,
   last,
   bankAmount,
+  order,
 }: {
   node: ProofNode;
   depth: number;
   last: boolean;
   bankAmount: number | null;
+  order: number;
 }) {
   const kids = node.children ?? [];
   const collapsible = node.kind === "group" && kids.length > 0;
@@ -114,13 +126,13 @@ function Node({
   const excStatus = kind === "exception" ? String(node.meta.status ?? "") : "";
 
   return (
-    <li role="treeitem" aria-expanded={collapsible ? open : undefined} className="relative">
+    <li className="relative">
       <div
         className={cn(
-          "group relative flex min-h-8 items-center gap-2 rounded-md pr-2 hover:bg-raised/70",
+          "cascade group relative flex min-h-8 items-center gap-2 rounded-md pr-2 hover:bg-raised/70",
           isTotal && "mt-1 border-t border-line-strong pt-1.5 font-medium",
         )}
-        style={{ paddingLeft: `${depth * 22 + 8}px` }}
+        style={{ paddingLeft: `${depth * 22 + 8}px`, "--i": Math.min(order, 40) } as React.CSSProperties}
       >
         {/* tree guides drawn with borders so the row can wrap */}
         {depth > 0 && (
@@ -143,6 +155,7 @@ function Node({
             type="button"
             onClick={() => setOpen((v) => !v)}
             aria-label={open ? "Collapse" : "Expand"}
+            aria-expanded={open}
             className="flex size-5 shrink-0 items-center justify-center rounded text-faint hover:bg-sunken hover:text-text"
           >
             <ChevronRight
@@ -245,9 +258,9 @@ function Node({
             open ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
           )}
         >
-          <ol role="group" className="overflow-hidden">
+          <ol className="overflow-hidden">
             {kids.map((k, i) => (
-              <Node key={i} node={k} depth={depth + 1} last={i === kids.length - 1} bankAmount={bankAmount} />
+              <Node key={i} node={k} depth={depth + 1} last={i === kids.length - 1} bankAmount={bankAmount} order={childOrder(order, kids, i)} />
             ))}
           </ol>
         </div>

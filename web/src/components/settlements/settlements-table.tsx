@@ -15,6 +15,19 @@ const TYPE_TONE: Record<SettlementType, "neutral" | "signal" | "outline"> = {
   partial: "outline",
 };
 
+const ACCENT: Record<ClosePackSettlement["match_status"], "settled" | "open" | "critical" | "signal"> = {
+  matched: "settled",
+  split: "settled",
+  partial: "signal",
+  proposed: "open",
+  pending: "open",
+  open: "open",
+  missing: "critical",
+  failed: "critical",
+  duplicate: "critical",
+  unmatched: "signal",
+};
+
 export function SettlementsTable({
   rows,
   highlight,
@@ -34,7 +47,7 @@ export function SettlementsTable({
   return (
     <div className="overflow-hidden rounded-lg bg-surface hairline">
       <Table>
-        <THead className="sticky top-14 z-10 bg-surface">
+        <THead className="bg-surface">
           <tr>
             <Th>Settled on</Th>
             <Th>Settlement</Th>
@@ -49,14 +62,15 @@ export function SettlementsTable({
           </tr>
         </THead>
         <tbody className="[&_tr:last-child]:border-0">
-          {rows.map((s) => {
+          {rows.map((s, i) => {
             const hit = highlight?.has(s.settlement_id);
             return (
               <LinkRow
                 key={s.settlement_id}
                 id={`row-${s.settlement_id}`}
                 href={routes.settlement(s.settlement_id)}
-                className={cn(hit && "bg-signal-dim/40 hover:bg-signal-dim/60")}
+                style={{ "--i": i } as React.CSSProperties}
+                className={cn("cascade", `accent-${ACCENT[s.match_status]}`, hit && "bg-signal-dim/40 hover:bg-signal-dim/60")}
               >
                 <Td>
                   <span className="text-text">{fmtDate(s.settled_on)}</span>

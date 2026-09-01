@@ -35,6 +35,8 @@ def test_run_lifecycle_close_pack_and_exports(client: TestClient) -> None:
     assert "<ENVELOPE>" in client.get(f"/runs/{rid}/export/tally.xml").text
     assert "controller's memo" in client.get(f"/runs/{rid}/export/memo.md").text
     assert client.get(f"/runs/{rid}/export/exceptions.csv").status_code == 200
+    html = client.get(f"/runs/{rid}/export/close-pack.html").text
+    assert "<title>Barabar close pack" in html and "Audit chain head" in html
     audit = client.get(f"/runs/{rid}/audit").json()
     assert audit["verified"] is True and len(audit["events"]) > 0
 

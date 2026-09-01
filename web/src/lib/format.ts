@@ -29,6 +29,13 @@ export function fmtMonth(iso: string): string {
   return new Intl.DateTimeFormat("en-IN", { month: "long", year: "numeric", timeZone: IST }).format(d);
 }
 
+/** The month a close covers: the month containing the day before as_of. */
+export function closeMonth(asOf: string): string {
+  const d = new Date(`${asOf.slice(0, 10)}T00:00:00+05:30`);
+  d.setDate(d.getDate() - 1);
+  return fmtMonth(d.toISOString());
+}
+
 export function weekday(iso: string): string {
   const d = new Date(`${iso.slice(0, 10)}T00:00:00+05:30`);
   return new Intl.DateTimeFormat("en-IN", { weekday: "short", timeZone: IST }).format(d);

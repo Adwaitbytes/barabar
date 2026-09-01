@@ -19,19 +19,34 @@ const CHAR_MS = 14;
 const LINE_PAUSE_MS = 260;
 const START_DELAY_MS = 700;
 
-function nextPhase(p: Phase, lines: ProofLine[]): Phase {
-  if (p.kind === "idle") return { kind: "typing", line: 0, chars: 0 };
-  if (p.kind === "settled") return p;
-  const len = lines[p.line].text.length;
-  if (p.chars < len) return { kind: "typing", line: p.line, chars: p.chars + 1 };
-  if (p.line + 1 < lines.length) return { kind: "typing", line: p.line + 1, chars: 0 };
-  return { kind: "settled" };
+/** Wall-clock schedule: when each line starts typing, in ms from mount. */
+function schedule(lines: ProofLine[]): { start: number; end: number }[] {
+  let t = START_DELAY_MS;
+  return lines.map((l) => {
+    const start = t;
+    const end = start + l.text.length * CHAR_MS;
+    t = end + LINE_PAUSE_MS;
+    return { start, end };
+  });
 }
 
-function delayFor(p: Phase): number {
-  if (p.kind === "idle") return START_DELAY_MS;
-  if (p.kind === "settled") return 0;
-  return p.chars === 0 ? LINE_PAUSE_MS : CHAR_MS;
+const SCHEDULE = schedule(proofLines);
+const TOTAL_MS = SCHEDULE[SCHEDULE.length - 1].end + LINE_PAUSE_MS;
+
+/** Derive the phase from elapsed time so throttled timers cannot slow the typing. */
+function phaseAt(elapsed: number): Phase {
+  if (elapsed < START_DELAY_MS) return { kind: "idle" };
+  if (elapsed >= TOTAL_MS) return { kind: "settled" };
+  for (let i = 0; i < SCHEDULE.length; i++) {
+    const { start, end } = SCHEDULE[i];
+    if (elapsed < end) {
+      const chars = Math.max(0, Math.min(proofLines[i].text.length, Math.floor((elapsed - start) / CHAR_MS)));
+      return { kind: "typing", line: i, chars };
+    }
+    const next = SCHEDULE[i + 1];
+    if (!next || elapsed < next.start) return { kind: "typing", line: i, chars: proofLines[i].text.length };
+  }
+  return { kind: "settled" };
 }
 
 export function ProofTyper({ className }: { className?: string }) {
@@ -39,10 +54,17 @@ export function ProofTyper({ className }: { className?: string }) {
   const [phase, setPhase] = useState<Phase>({ kind: "idle" });
 
   useEffect(() => {
-    if (reduced || phase.kind === "settled") return;
-    const t = setTimeout(() => setPhase((p) => nextPhase(p, proofLines)), delayFor(phase));
-    return () => clearTimeout(t);
-  }, [phase, reduced]);
+    if (reduced) return;
+    let raf = 0;
+    const t0 = performance.now();
+    const tick = (now: number) => {
+      const next = phaseAt(now - t0);
+      setPhase((prev) => (samePhase(prev, next) ? prev : next));
+      if (next.kind !== "settled") raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [reduced]);
 
   const effective: Phase = reduced ? { kind: "settled" } : phase;
 
@@ -61,13 +83,19 @@ export function ProofTyper({ className }: { className?: string }) {
         </span>
         <span className="mono text-[11px] text-faint">rules that produced each link →</span>
       </div>
-      <ol className="mono px-4 py-3 text-[12.5px] leading-[1.9] sm:text-[13px]">
+      <ol className="mono px-4 py-3 text-[12px] leading-[1.9] sm:text-[12.5px] xl:text-[13px]">
         {proofLines.map((line, i) => (
           <Line key={i} line={line} index={i} phase={effective} />
         ))}
       </ol>
     </div>
   );
+}
+
+function samePhase(a: Phase, b: Phase): boolean {
+  if (a.kind !== b.kind) return false;
+  if (a.kind === "typing" && b.kind === "typing") return a.line === b.line && a.chars === b.chars;
+  return true;
 }
 
 function Line({ line, index, phase }: { line: ProofLine; index: number; phase: Phase }) {
@@ -96,7 +124,7 @@ function Line({ line, index, phase }: { line: ProofLine; index: number; phase: P
     >
       <span
         className={cn(
-          "whitespace-pre text-text",
+          "min-w-0 overflow-hidden text-ellipsis whitespace-pre text-text",
           line.depth > 0 && !line.sigma && "text-muted",
           line.sigma && (settled ? "text-settled-fg" : "text-text"),
         )}

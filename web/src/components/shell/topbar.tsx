@@ -15,7 +15,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { fmtMonth, relTime } from "@/lib/format";
+import { closeMonth, relTime } from "@/lib/format";
 import { routes } from "@/lib/routes";
 import type { Run } from "@/lib/types";
 import type { DataSource } from "@/lib/api";
@@ -53,7 +53,7 @@ export function Topbar({
             <span className="flex flex-col items-start leading-tight">
               <span className="text-[13px] font-medium">{active.name}</span>
               <span className="text-[11px] text-faint">
-                {fmtMonth(active.as_of)} · as of {active.as_of}
+                {closeMonth(active.as_of)} · as of {active.as_of}
               </span>
             </span>
             <ChevronsUpDown className="size-3.5 text-faint" />
@@ -108,14 +108,17 @@ export function Topbar({
           </Badge>
         ) : (
           <Badge tone="settled" className="hidden sm:inline-flex">
-            <span className="size-1.5 rounded-full bg-settled animate-[pulse-dot_2s_ease-in-out_infinite]" />
+            <span className="relative flex size-1.5">
+              <span className="absolute inline-flex size-full rounded-full bg-settled breathe" />
+              <span className="relative inline-flex size-1.5 rounded-full bg-settled" />
+            </span>
             live
           </Badge>
         )}
-        <Button variant="secondary" size="sm" onClick={open} className="gap-2 pr-1.5">
-          <Search className="size-3.5 text-faint" />
+        <Button variant="secondary" size="sm" onClick={open} className="group/k gap-2 pr-1.5">
+          <Search className="size-3.5 text-faint transition-colors group-hover/k:text-signal" />
           <span className="hidden text-muted sm:inline">Ask or jump to…</span>
-          <Kbd>⌘K</Kbd>
+          <Kbd className="transition-colors group-hover/k:bg-signal-dim group-hover/k:text-signal-fg">⌘K</Kbd>
         </Button>
         <ThemeToggle />
       </div>

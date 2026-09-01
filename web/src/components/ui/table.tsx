@@ -29,7 +29,7 @@ export function Tr({ className, ...props }: React.HTMLAttributes<HTMLTableRowEle
   return (
     <tr
       className={cn(
-        "border-b border-line transition-colors data-[href]:cursor-pointer hover:bg-raised/70",
+        "row-accent border-b border-line transition-colors data-[href]:cursor-pointer hover:bg-raised/70",
         className,
       )}
       {...props}

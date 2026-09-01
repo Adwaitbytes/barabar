@@ -51,14 +51,14 @@ export interface ProofLine {
 export const proofLines: ProofLine[] = [
   {
     depth: 0,
-    text: `bank credit  ${proofFigures.bank} · ${proofFigures.settledOn} · ${proofFigures.mode}`,
+    text: `bank credit  ${proofFigures.bank} · ${proofFigures.settledOn.slice(0, 6)} · ${proofFigures.mode}`,
     amount: formatInr(NET),
     rule: "A1-UTR-EXACT",
   },
   { depth: 1, text: `↳ UTR ${proofFigures.utr} = ${proofFigures.settlementId}` },
   {
     depth: 0,
-    text: `settlement   ${proofFigures.settlementId}  net`,
+    text: `settlement   ${proofFigures.settlementId}`,
     amount: formatInr(NET),
     rule: "B1-BATCH-NET",
   },

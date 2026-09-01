@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { motion, useReducedMotion } from "motion/react";
 import {
   ArrowLeftRight,
   BookOpenText,
@@ -23,6 +24,7 @@ type Item = { href: string; label: string; icon: React.ElementType; count?: numb
 
 export function Sidebar({ openExceptions }: { openExceptions: number }) {
   const pathname = usePathname();
+  const reduced = useReducedMotion();
 
   const groups: { title: string; items: Item[] }[] = [
     {
@@ -69,26 +71,41 @@ export function Sidebar({ openExceptions }: { openExceptions: number }) {
               {g.items.map((it) => {
                 const active = it.exact ? pathname === it.href : pathname.startsWith(it.href);
                 return (
-                  <li key={it.href}>
+                  <li key={it.href} className="relative">
+                    {active && (
+                      <motion.span
+                        layoutId={reduced ? undefined : "sidebar-active"}
+                        transition={{ type: "spring", stiffness: 520, damping: 42 }}
+                        className="absolute inset-0 rounded-md bg-surface shadow-1 hairline"
+                        aria-hidden
+                      />
+                    )}
                     <Link
                       href={it.href}
                       aria-current={active ? "page" : undefined}
                       className={cn(
-                        "group flex h-8 items-center gap-2.5 rounded-md px-2 text-[13px] transition-colors",
-                        active
-                          ? "bg-surface text-text shadow-1 hairline"
-                          : "text-muted hover:bg-raised hover:text-text",
+                        "group relative flex h-8 items-center gap-2.5 rounded-md px-2 text-[13px] transition-colors",
+                        active ? "text-text" : "text-muted hover:bg-raised hover:text-text",
                       )}
                     >
                       <it.icon
-                        className={cn("size-4 shrink-0", active ? "text-text" : "text-faint group-hover:text-muted")}
+                        className={cn(
+                          "size-4 shrink-0 transition-transform duration-200 ease-out-quart group-hover:-translate-y-px group-hover:scale-110",
+                          active ? "text-text" : "text-faint group-hover:text-muted",
+                        )}
                         strokeWidth={1.75}
                       />
                       <span className="flex-1 truncate">{it.label}</span>
                       {typeof it.count === "number" && it.count > 0 && (
-                        <span className="mono rounded-full bg-open-dim px-1.5 text-[11px] leading-5 text-open-fg">
+                        <motion.span
+                          key={it.count}
+                          initial={reduced ? false : { scale: 1.35 }}
+                          animate={{ scale: 1 }}
+                          transition={{ type: "spring", stiffness: 500, damping: 18 }}
+                          className="mono rounded-full bg-open-dim px-1.5 text-[11px] leading-5 text-open-fg"
+                        >
                           {it.count}
-                        </span>
+                        </motion.span>
                       )}
                     </Link>
                   </li>

@@ -126,12 +126,13 @@ export function SettlementCalendar({ days }: { days: CalendarDay[] }) {
                 tabIndex={0}
                 aria-label={`${fmtDate(d.date)}: expected ${formatInr(d.expected)}, landed ${formatInr(d.actual)}`}
               />
-              <Bar x={xE} yTop={y(d.expected)} base={baseline} w={bar} className="fill-[#3f5fe0] dark:fill-[#6079e8]" />
+              <Bar x={xE} yTop={y(d.expected)} base={baseline} w={bar} index={i} className="fill-[#3f5fe0] dark:fill-[#6079e8]" />
               <Bar
                 x={xA}
                 yTop={y(d.actual)}
                 base={baseline}
                 w={bar}
+                index={i}
                 className={cn(
                   status === null && "fill-[#1f9d68] dark:fill-[#26a670]",
                   status === "surplus" && "fill-open",
@@ -140,9 +141,9 @@ export function SettlementCalendar({ days }: { days: CalendarDay[] }) {
               />
               {status && (
                 <text
-                  x={xA + bar / 2}
+                  x={i >= days.length - 2 ? xA + bar : i <= 1 ? xE : xA + bar / 2}
                   y={Math.min(y(d.actual), y(d.expected)) - 6}
-                  textAnchor="middle"
+                  textAnchor={i >= days.length - 2 ? "end" : i <= 1 ? "start" : "middle"}
                   className="fill-text font-mono text-[10px] font-medium"
                 >
                   {status === "surplus" ? "▲" : "▼"} {formatInrCompact(Math.abs(d.delta))}
@@ -213,12 +214,14 @@ function Bar({
   yTop,
   base,
   w,
+  index,
   className,
 }: {
   x: number;
   yTop: number;
   base: number;
   w: number;
+  index: number;
   className?: string;
 }) {
   const h = Math.max(base - yTop, 0);
@@ -226,7 +229,8 @@ function Bar({
   const r = Math.min(4, h, w / 2);
   // rounded data-end, square at the baseline
   const d = `M${x},${base} V${yTop + r} Q${x},${yTop} ${x + r},${yTop} H${x + w - r} Q${x + w},${yTop} ${x + w},${yTop + r} V${base} Z`;
-  return <path d={d} className={className} />;
+  return <path d={d} className={cn("bar-grow", className)}
+      style={{ "--i": index } as React.CSSProperties} />;
 }
 
 function LegendKey({ className, children }: { className: string; children: React.ReactNode }) {

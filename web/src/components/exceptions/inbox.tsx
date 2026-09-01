@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "motion/react";
+
 import * as React from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -40,8 +42,13 @@ export function ExceptionInbox({
   status: ExceptionStatus | "all";
 }) {
   const router = useRouter();
+  // Server data wins whenever it changes; local edits are only optimistic in between.
   const [items, setItems] = React.useState(exceptions);
-  React.useEffect(() => setItems(exceptions), [exceptions]);
+  const [seen, setSeen] = React.useState(exceptions);
+  if (seen !== exceptions) {
+    setSeen(exceptions);
+    setItems(exceptions);
+  }
 
   const [selected, setSelected] = React.useState<Set<string>>(() => new Set());
   const [cursor, setCursor] = React.useState(0);
@@ -89,7 +96,6 @@ export function ExceptionInbox({
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [flat, cursor, router]);
 
   React.useEffect(() => {
@@ -295,7 +301,12 @@ export function ExceptionInbox({
       </div>
 
       {selected.size > 0 && (
-        <div className="sticky bottom-4 z-20 mt-6 flex flex-wrap items-center gap-3 rounded-xl bg-surface p-3 shadow-3 hairline fade-up">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ type: "spring", stiffness: 420, damping: 32 }}
+          className="sticky bottom-4 z-20 mt-6 flex flex-wrap items-center gap-3 rounded-xl bg-surface/95 p-3 shadow-3 hairline backdrop-blur-md"
+        >
           <span className="text-[13px] font-medium">
             {selected.size} selected ·{" "}
             <Amount
@@ -336,7 +347,7 @@ export function ExceptionInbox({
           >
             <X />
           </Button>
-        </div>
+        </motion.div>
       )}
 
       {status === "open" && items.some((e) => e.confidence < 0.92) && (

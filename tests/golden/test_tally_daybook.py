@@ -1,0 +1,31 @@
+from barabar.adapters.tally_xml import read_tally_daybook
+
+DAYBOOK = """<?xml version="1.0"?>
+<ENVELOPE><BODY><DATA><TALLYMESSAGE>
+<VOUCHER VCHTYPE="Sales" ACTION="Create">
+  <DATE>20260812</DATE><VOUCHERNUMBER>INV/26-27/00042</VOUCHERNUMBER><PARTYLEDGERNAME>Riya Sharma</PARTYLEDGERNAME>
+  <NARRATION>Online order rcpt_202608_00042 via Razorpay pay_AbCdEfGhIjKlMn</NARRATION>
+  <ALLLEDGERENTRIES.LIST><LEDGERNAME>Riya Sharma</LEDGERNAME><ISDEEMEDPOSITIVE>Yes</ISDEEMEDPOSITIVE><AMOUNT>-1499.00</AMOUNT></ALLLEDGERENTRIES.LIST>
+  <ALLLEDGERENTRIES.LIST><LEDGERNAME>Sales - Online</LEDGERNAME><ISDEEMEDPOSITIVE>No</ISDEEMEDPOSITIVE><AMOUNT>1499.00</AMOUNT></ALLLEDGERENTRIES.LIST>
+</VOUCHER>
+<VOUCHER VCHTYPE="Credit Note" ACTION="Create">
+  <DATE>20260815</DATE><VOUCHERNUMBER>CN/26-27/00007</VOUCHERNUMBER>
+  <NARRATION>Refund rfnd_ZyXwVuTsRqPoNm against INV/26-27/00042</NARRATION>
+  <ALLLEDGERENTRIES.LIST><LEDGERNAME>Sales - Online</LEDGERNAME><AMOUNT>-599.00</AMOUNT></ALLLEDGERENTRIES.LIST>
+  <ALLLEDGERENTRIES.LIST><LEDGERNAME>Riya Sharma</LEDGERNAME><AMOUNT>599.00</AMOUNT></ALLLEDGERENTRIES.LIST>
+</VOUCHER>
+<VOUCHER VCHTYPE="Payment"><DATE>20260816</DATE><ALLLEDGERENTRIES.LIST><LEDGERNAME>Rent</LEDGERNAME><AMOUNT>-50000.00</AMOUNT></ALLLEDGERENTRIES.LIST></VOUCHER>
+</TALLYMESSAGE></DATA></BODY></ENVELOPE>"""
+
+
+def test_daybook_sales_and_credit_notes() -> None:
+    entries = read_tally_daybook(DAYBOOK)
+    assert len(entries) == 2
+    inv, cn = entries
+    assert (
+        inv.gross == 149_900
+        and inv.order_receipt == "rcpt_202608_00042"
+        and inv.payment_ref == "pay_AbCdEfGhIjKlMn"
+    )
+    assert inv.invoice_no == "INV/26-27/00042" and inv.source == "tally"
+    assert cn.gross == -59_900 and cn.payment_ref == "rfnd_ZyXwVuTsRqPoNm"

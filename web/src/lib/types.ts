@@ -236,6 +236,7 @@ export type ProofKind =
   | "refund"
   | "dispute"
   | "adjustment"
+  | "exception"
   | "note";
 
 export interface ProofNode {

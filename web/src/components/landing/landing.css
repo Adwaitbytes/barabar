@@ -1,0 +1,304 @@
+/* Landing-only effects. Scoped with `landing-` prefixes; the app never loads this. */
+
+.landing-shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    transparent 40%,
+    rgba(255, 255, 255, 0.55) 50%,
+    transparent 60%,
+    transparent 100%
+  );
+  transform: translateX(-120%);
+  transition: transform 0s;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+.landing-cta:hover .landing-shine {
+  transform: translateX(120%);
+  transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Animated conic border for outline CTAs */
+.landing-cta-outline {
+  background: var(--surface);
+  isolation: isolate;
+}
+.landing-cta-outline::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--angle, 0deg),
+    rgba(255, 255, 255, 0.08),
+    var(--settled) 20%,
+    rgba(255, 255, 255, 0.08) 40%,
+    var(--signal) 70%,
+    rgba(255, 255, 255, 0.08)
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: landing-spin 4s linear infinite;
+  z-index: -1;
+}
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes landing-spin {
+  to {
+    --angle: 360deg;
+  }
+}
+
+/* Cursor spotlight border on cards: --mx/--my are set by TiltCard */
+.landing-spot {
+  --mx: 50%;
+  --my: 50%;
+  background: rgba(255, 255, 255, 0.025);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.07);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+.landing-spot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(
+    260px circle at var(--mx) var(--my),
+    rgba(255, 255, 255, 0.45),
+    rgba(123, 147, 255, 0.25) 35%,
+    transparent 70%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.landing-spot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(420px circle at var(--mx) var(--my), rgba(255, 255, 255, 0.06), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.landing-spot:hover::before,
+.landing-spot:hover::after {
+  opacity: 1;
+}
+.landing-spot:hover {
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12),
+    0 30px 60px -30px rgba(0, 0, 0, 0.8);
+}
+
+/* Marquee */
+.landing-marquee {
+  display: flex;
+  width: max-content;
+  animation: landing-marquee 60s linear infinite;
+}
+.landing-marquee-wrap:hover .landing-marquee {
+  animation-play-state: paused;
+}
+@keyframes landing-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Audit chain: blocks sliding endlessly */
+.landing-chain {
+  display: flex;
+  width: max-content;
+  animation: landing-marquee 28s linear infinite;
+}
+
+/* Nav link underline */
+.landing-navlink {
+  position: relative;
+}
+.landing-navlink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.landing-navlink:hover::after,
+.landing-navlink[aria-current="true"]::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Scroll cue */
+@keyframes landing-cue {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(14px);
+    opacity: 0;
+  }
+}
+.landing-cue {
+  animation: landing-cue 1.8s ease-in-out infinite;
+}
+
+/* Pulse for auto-resolvable dots */
+@keyframes landing-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(62, 207, 142, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(62, 207, 142, 0);
+  }
+}
+.landing-pulse {
+  animation: landing-pulse 2.2s ease-out infinite;
+}
+
+/* Wordmark bars settle to equal on hover */
+.landing-mark path:first-child {
+  transition: transform 0.4s cubic-bezier(0.34, 1.3, 0.64, 1);
+  transform: translateY(-2px) rotate(-6deg);
+  transform-origin: 50% 50%;
+}
+.landing-mark:hover path:first-child {
+  transform: none;
+}
+
+/* Grain */
+.landing-grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landing-marquee,
+  .landing-chain,
+  .landing-cue,
+  .landing-pulse,
+  .landing-cta-outline::before {
+    animation: none !important;
+  }
+}
+
+/* ---------- Kage-style chrome ---------- */
+
+/* Preloader */
+.landing-preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+  transition: opacity 0.5s ease, visibility 0.5s;
+}
+.landing-preloader[data-done="true"] {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Giant word bleeding off the bottom of the hero */
+.landing-giant {
+  position: absolute;
+  left: 50%;
+  bottom: -0.22em;
+  transform: translateX(-50%);
+  font-size: clamp(120px, 22vw, 340px);
+  font-weight: 600;
+  letter-spacing: -0.06em;
+  line-height: 1;
+  white-space: nowrap;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.12);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.02) 70%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Vertical Devanagari on the right edge */
+.landing-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  letter-spacing: 0.4em;
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+/* Chapter dot rail */
+.landing-rail-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.22);
+  transition: transform 0.3s cubic-bezier(0.34, 1.3, 0.64, 1), background 0.3s ease;
+}
+.landing-rail-dot[data-active="true"] {
+  background: var(--settled);
+  transform: scale(1.6);
+  box-shadow: 0 0 12px var(--settled);
+}
+
+/* Hairline rule with a tracked label */
+.landing-rule {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--text-faint);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.landing-rule::before,
+.landing-rule::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+/* Scramble text */
+.landing-scramble {
+  font-variant-ligatures: none;
+}

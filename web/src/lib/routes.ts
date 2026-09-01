@@ -1,4 +1,4 @@
-import { parseRef } from "./types";
+import { parseRef, type EntityKind } from "./types";
 
 export const routes = {
   landing: "/",
@@ -19,9 +19,11 @@ export const routes = {
 /** Where a "kind:id" entity reference should take the reader. */
 export function entityHref(ref: string): string {
   const { kind, id } = parseRef(ref);
-  switch (kind) {
+  switch (kind as EntityKind | "exception") {
     case "settlement":
       return routes.settlement(id);
+    case "exception":
+      return routes.exception(id);
     case "bank":
       return `${routes.bank}?focus=${encodeURIComponent(id)}`;
     case "ledger":

@@ -12,6 +12,7 @@ from datetime import date
 from pathlib import Path
 from typing import Any
 
+from dotenv import load_dotenv
 from fastapi import Depends, FastAPI, File, Form, Header, HTTPException, Request, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import PlainTextResponse, Response
@@ -34,6 +35,8 @@ from barabar.exports.memo import controller_memo, memo_facts
 from barabar.exports.tally_xml import tally_xml
 from barabar.generator.engine import generate
 from barabar.generator.profiles import MerchantProfile
+
+load_dotenv()
 
 APP_NAME = "Barabar"
 
@@ -566,6 +569,36 @@ def export_tally(run_id: str, gst_split: str = "igst", s: Store = Depends(store)
 def export_memo(run_id: str, s: Store = Depends(store)) -> str:
     run = s.get_run(run_id)
     return controller_memo(s.get_month(run.inputs_hash), s.get_result(run_id))
+
+
+@app.get("/runs/{run_id}/export/close-pack.html")
+def export_close_pack_html(run_id: str, s: Store = Depends(store)) -> Response:
+    from html import escape
+
+    run = s.get_run(run_id)
+    month = s.get_month(run.inputs_hash)
+    result = s.get_result(run_id)
+    pack = _close_pack(month, result)
+    memo = controller_memo(month, result)
+    rows = "".join(
+        f"<tr><td><code>{escape(e.type.value)}</code></td><td class=n>{escape(format_inr(e.amount))}</td><td class=n>{e.confidence:.2f}</td><td>{escape(e.reason_text)}</td><td>{escape(e.suggested_action)}</td><td>{escape(e.status.value)}</td></tr>"
+        for e in sorted(result.exceptions, key=lambda x: (x.status.value != "open", -x.amount))
+    )
+    setl = "".join(
+        f"<tr><td>{x['settled_on']}</td><td><code>{x['settlement_id']}</code></td><td><code>{x['utr'] or ''}</code></td><td class=n>{x['amount_display']}</td><td>{x['match_status']}</td></tr>"
+        for x in pack["settlements"]
+    )
+    h = pack["headline"]
+    html = f"""<!doctype html><html lang=en><meta charset=utf-8><title>Barabar close pack {run_id}</title>
+<style>body{{font:15px/1.5 -apple-system,Inter,system-ui,sans-serif;max-width:1100px;margin:40px auto;padding:0 24px;color:#111}}h1,h2{{letter-spacing:-.01em}}table{{border-collapse:collapse;width:100%;margin:16px 0;font-size:13px}}td,th{{border-bottom:1px solid #e5e7eb;padding:6px 8px;text-align:left;vertical-align:top}}td.n{{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}}code{{font:12px ui-monospace,Menlo,monospace}}.band{{display:flex;gap:32px;margin:24px 0}}.band div{{flex:1}}.band b{{display:block;font-size:26px;font-variant-numeric:tabular-nums}}.hash{{font:11px ui-monospace,monospace;color:#555}}</style>
+<h1>Close pack — {escape(run.as_of.isoformat())}</h1>
+<p class=hash>inputs {run.inputs_hash[:16]} · config {run.config_hash[:16]} · code {escape(run.code_version)} · outputs {(run.outputs_hash or "")[:16]}</p>
+<div class=band><div>Gross captured<b>{escape(h["gross_captured_display"])}</b></div><div>Explained<b>{escape(h["explained_display"])}</b><span>{h["rupees_explained_pct"]}%</span></div><div>Unexplained<b>{escape(h["unexplained_display"])}</b></div></div>
+<h2>Settlements</h2><table><tr><th>Settled</th><th>Settlement</th><th>UTR</th><th>Net</th><th>Status</th></tr>{setl}</table>
+<h2>Exceptions ({pack["exceptions_open"]} open of {pack["exceptions_total"]})</h2><table><tr><th>Type</th><th>Amount</th><th>Conf</th><th>Reason</th><th>Suggested action</th><th>Status</th></tr>{rows}</table>
+<h2>Controller's memo</h2><pre style="white-space:pre-wrap;font:inherit">{escape(memo)}</pre>
+<p class=hash>Audit chain head: {escape(s.audit_chain(run_id).head)}</p></html>"""
+    return Response(html, media_type="text/html")
 
 
 @app.get("/runs/{run_id}/export/exceptions.csv")

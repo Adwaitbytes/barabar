@@ -16,8 +16,12 @@ export function StatStrip({ stats, className }: { stats: Stat[]; className?: str
         className,
       )}
     >
-      {stats.map((s) => (
-        <div key={s.label} className="bg-surface px-4 py-3">
+      {stats.map((s, i) => (
+        <div
+          key={s.label}
+          style={{ "--i": i } as React.CSSProperties}
+          className="cascade bg-surface px-4 py-3 transition-colors hover:bg-raised/60"
+        >
           <div className="text-[11px] font-medium uppercase tracking-[0.08em] text-faint">{s.label}</div>
           <div
             className={cn(

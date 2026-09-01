@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { ArrowUpRight, FileText } from "lucide-react";
 import { activeRunId } from "@/lib/run";
 import { exportUrl, getClosePack, listExceptions, source } from "@/lib/api";
-import { fmtMonth, fmtDate, fmtInt } from "@/lib/format";
+import { closeMonth, fmtDate, fmtInt } from "@/lib/format";
 import { routes } from "@/lib/routes";
 import { Amount } from "@/components/domain/amount";
 import { Band } from "@/components/domain/band";
@@ -16,6 +16,7 @@ import { NeedsHuman } from "@/components/overview/needs-human";
 import { ControllerFacts } from "@/components/overview/facts";
 import { RecentSettlements } from "@/components/overview/recent-settlements";
 import { DeterminismStrip } from "@/components/overview/determinism-strip";
+import { CountUp, NumberTicker, Reveal, Stagger } from "@/components/motion";
 
 export const metadata: Metadata = { title: "Close pack" };
 
@@ -37,7 +38,7 @@ export default async function ClosePackPage() {
   return (
     <div className="mx-auto max-w-[1280px]">
       <PageHeader
-        eyebrow={`Close pack · ${fmtMonth(run.as_of)}`}
+        eyebrow={`Close pack · ${closeMonth(run.as_of)}`}
         title={run.name}
         description={
           <>
@@ -67,11 +68,11 @@ export default async function ClosePackPage() {
         <h2 id="headline" className="sr-only">
           Headline
         </h2>
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+        <Stagger className="grid grid-cols-1 gap-6 lg:grid-cols-[1.4fr_1fr_1fr_1fr]" gap={0.09} amount={0.05}>
           <div>
             <div className="text-[12px] font-medium uppercase tracking-[0.1em] text-faint">Unexplained</div>
             <div className="mt-2">
-              <Amount paise={headline.unexplained} size="display" tone={unexplainedTone} />
+              <CountUp paise={headline.unexplained} size="display" tone={unexplainedTone} duration={1.4} />
             </div>
             <div className="mt-2 text-[13px] text-muted">
               of <Amount paise={headline.gross_captured} tone="muted" /> gross captured
@@ -79,14 +80,14 @@ export default async function ClosePackPage() {
           </div>
           <Stat
             label="Explained to the paise"
-            value={<Amount paise={headline.explained} size="xl" tone="settled" />}
+            value={<CountUp paise={headline.explained} size="xl" tone="settled" />}
             caption={`${headline.rupees_explained_pct.toFixed(2)}% of gross`}
           />
           <Stat
             label="Open exceptions"
             value={
               <span className="mono text-2xl tracking-[-0.01em] text-text">
-                {fmtInt(pack.exceptions_open)}
+                <NumberTicker value={pack.exceptions_open} />
                 <span className="text-base text-faint"> / {fmtInt(pack.exceptions_total)}</span>
               </span>
             }
@@ -100,13 +101,13 @@ export default async function ClosePackPage() {
             label="Settlements matched"
             value={
               <span className="mono text-2xl tracking-[-0.01em] text-text">
-                {fmtInt(facts.settlements_matched)}
+                <NumberTicker value={facts.settlements_matched} />
                 <span className="text-base text-faint"> / {fmtInt(facts.settlements_processed)}</span>
               </span>
             }
             caption="processed batches with a bank credit"
           />
-        </div>
+        </Stagger>
         <Band
           explained={explained}
           open={openConfident}
@@ -118,6 +119,7 @@ export default async function ClosePackPage() {
       </section>
 
       {/* Calendar */}
+      <Reveal>
       <Card className="mb-6">
         <CardHeader>
           <div>
@@ -134,8 +136,9 @@ export default async function ClosePackPage() {
           <SettlementCalendar days={pack.calendar} />
         </CardBody>
       </Card>
+      </Reveal>
 
-      <div className="mb-6 grid grid-cols-1 gap-6 xl:grid-cols-[1.1fr_1fr]">
+      <Stagger className="mb-6 grid grid-cols-1 gap-6 xl:grid-cols-[1.1fr_1fr]" gap={0.12} itemClassName="min-w-0">
         <Card>
           <CardHeader>
             <div>
@@ -162,8 +165,9 @@ export default async function ClosePackPage() {
             <ControllerFacts facts={facts} metrics={metrics} />
           </CardBody>
         </Card>
-      </div>
+      </Stagger>
 
+      <Reveal>
       <Card className="mb-6">
         <CardHeader>
           <CardTitle>Recent settlements</CardTitle>
@@ -175,8 +179,11 @@ export default async function ClosePackPage() {
           <RecentSettlements settlements={pack.settlements} />
         </CardBody>
       </Card>
+      </Reveal>
 
-      <DeterminismStrip run={run} />
+      <Reveal>
+        <DeterminismStrip run={run} />
+      </Reveal>
     </div>
   );
 }

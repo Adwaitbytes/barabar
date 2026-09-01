@@ -6,6 +6,19 @@ import { fmtDate } from "@/lib/format";
 import { routes } from "@/lib/routes";
 import type { ClosePackSettlement } from "@/lib/types";
 
+const ACCENT: Record<ClosePackSettlement["match_status"], "settled" | "open" | "critical" | "signal"> = {
+  matched: "settled",
+  split: "settled",
+  partial: "signal",
+  proposed: "open",
+  pending: "open",
+  open: "open",
+  missing: "critical",
+  failed: "critical",
+  duplicate: "critical",
+  unmatched: "signal",
+};
+
 export function RecentSettlements({ settlements }: { settlements: ClosePackSettlement[] }) {
   const rows = [...settlements]
     .sort((a, b) => (a.settled_on < b.settled_on ? 1 : a.settled_on > b.settled_on ? -1 : 0))
@@ -23,8 +36,8 @@ export function RecentSettlements({ settlements }: { settlements: ClosePackSettl
         </tr>
       </THead>
       <TBody>
-        {rows.map((s) => (
-          <Tr key={s.settlement_id}>
+        {rows.map((s, i) => (
+          <Tr key={s.settlement_id} className={`cascade accent-${ACCENT[s.match_status]}`} style={{ "--i": i } as React.CSSProperties}>
             <Td className="text-muted">{fmtDate(s.settled_on)}</Td>
             <Td>
               <Link

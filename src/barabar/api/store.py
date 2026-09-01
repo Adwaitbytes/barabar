@@ -131,6 +131,8 @@ class Store:
         url = url or os.environ.get("DATABASE_URL") or default_sqlite_url()
         if url.startswith("sqlite:///") and not url.endswith(":memory:"):
             os.makedirs(os.path.dirname(url.removeprefix("sqlite:///")) or ".", exist_ok=True)
+        if url.startswith("postgresql://") or url.startswith("postgres://"):
+            url = "postgresql+psycopg://" + url.split("://", 1)[1]  # psycopg 3 driver
         memory = url in ("sqlite://", "sqlite:///:memory:")
         self.engine: Engine = create_engine(
             url,

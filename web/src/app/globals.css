@@ -120,6 +120,7 @@
   }
   html {
     color-scheme: light;
+    scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -134,6 +135,18 @@
     font-feature-settings: "cv11", "ss01", "ss03";
     font-size: 14px;
     line-height: 1.5;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--line-strong);
+    border: 3px solid var(--bg);
+    border-radius: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
   }
   ::selection {
     background: color-mix(in oklab, var(--signal) 30%, transparent);
@@ -179,6 +192,119 @@
     scrollbar-width: thin;
     scrollbar-color: var(--line-strong) transparent;
   }
+  /* Buttons: a light sweep crosses on hover. */
+  .shine::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      105deg,
+      transparent 35%,
+      color-mix(in oklab, currentColor 18%, transparent) 50%,
+      transparent 65%
+    );
+    transform: translateX(-120%);
+    transition: transform 0s;
+  }
+  .shine:hover::after {
+    transform: translateX(120%);
+    transition: transform 0.7s var(--ease-out-quart);
+  }
+  /* Cards: a cursor-tracked spotlight (set --mx/--my from JS). */
+  .spotlight::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: radial-gradient(
+      420px circle at var(--mx, 50%) var(--my, 50%),
+      color-mix(in oklab, var(--signal) 10%, transparent),
+      transparent 60%
+    );
+  }
+  .spotlight:hover::before {
+    opacity: 1;
+  }
+  .tilt {
+    transform-style: preserve-3d;
+    transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+    transition: transform 0.25s var(--ease-out-quart);
+  }
+  /* Table rows: status accent on hover. */
+  .row-accent {
+    position: relative;
+  }
+  .row-accent::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 6px;
+    bottom: 6px;
+    width: 2px;
+    border-radius: 2px;
+    background: var(--accent, var(--signal));
+    opacity: 0;
+    transform: scaleY(0.4);
+    transition:
+      opacity 0.2s ease,
+      transform 0.25s var(--ease-out-quart);
+  }
+  .row-accent:hover::before,
+  .row-accent:focus-within::before {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  .accent-settled {
+    --accent: var(--settled);
+  }
+  .accent-open {
+    --accent: var(--open);
+  }
+  .accent-critical {
+    --accent: var(--critical);
+  }
+  .accent-signal {
+    --accent: var(--signal);
+  }
+  .breathe {
+    animation: breathe 2.4s ease-in-out infinite;
+  }
+  /* Lists and rows: each child rises in after the previous (set --i inline). */
+  .cascade {
+    animation: fade-up 0.5s var(--ease-out-quart) both;
+    animation-delay: calc(min(var(--i, 0), 40) * 32ms);
+  }
+  /* Server-rendered cards: lift on hover without JS. */
+  .card-lift {
+    transition:
+      transform 0.25s var(--ease-out-quart),
+      box-shadow 0.25s var(--ease-out-quart);
+  }
+  .card-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-2);
+  }
+  /* Command palette results rise in one after another on open. */
+  [cmdk-list] [cmdk-item] {
+    animation: fade-up 0.32s var(--ease-out-quart) both;
+  }
+  [cmdk-list] [cmdk-item]:nth-child(2) { animation-delay: 30ms; }
+  [cmdk-list] [cmdk-item]:nth-child(3) { animation-delay: 60ms; }
+  [cmdk-list] [cmdk-item]:nth-child(4) { animation-delay: 90ms; }
+  [cmdk-list] [cmdk-item]:nth-child(5) { animation-delay: 120ms; }
+  [cmdk-list] [cmdk-item]:nth-child(6) { animation-delay: 150ms; }
+  [cmdk-list] [cmdk-item]:nth-child(n + 7) { animation-delay: 180ms; }
+  /* SVG bars grow from the baseline. */
+  .bar-grow {
+    transform-box: fill-box;
+    transform-origin: bottom;
+    animation: grow-y 0.8s var(--ease-out-quart) both;
+    animation-delay: calc(var(--i, 0) * 28ms);
+  }
   .noise::before {
     content: "";
     position: absolute;
@@ -222,6 +348,37 @@
     opacity: 0.35;
   }
 }
+@keyframes ring-pulse {
+  0% {
+    box-shadow:
+      0 0 0 3px color-mix(in oklab, var(--signal) 45%, transparent),
+      0 0 24px -4px var(--signal);
+  }
+  100% {
+    box-shadow:
+      0 0 0 8px color-mix(in oklab, var(--signal) 0%, transparent),
+      0 0 24px -4px var(--signal);
+  }
+}
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.6);
+    opacity: 0.45;
+  }
+}
+@keyframes grow-y {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
 @keyframes caret {
   0%,
   49% {
@@ -242,4 +399,12 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Variant-capable utility (focus-visible:glow-ring). */
+@utility glow-ring {
+  box-shadow:
+    0 0 0 3px color-mix(in oklab, var(--signal) 35%, transparent),
+    0 0 24px -4px var(--signal);
+  animation: ring-pulse 1.6s ease-out infinite;
 }

@@ -6,7 +6,7 @@ export const Input = React.forwardRef<HTMLInputElement, React.InputHTMLAttribute
     <input
       ref={ref}
       className={cn(
-        "h-9 w-full rounded-md bg-surface px-3 text-sm text-text hairline placeholder:text-faint transition-shadow focus:outline-none focus:shadow-[inset_0_0_0_1px_var(--ring)] disabled:opacity-50",
+        "h-9 w-full rounded-md bg-surface px-3 text-sm text-text hairline placeholder:text-faint transition-[box-shadow] duration-300 ease-out-quart focus:outline-none focus:shadow-[inset_0_0_0_1px_var(--ring),0_0_0_3px_color-mix(in_oklab,var(--ring)_22%,transparent)] disabled:opacity-50",
         className,
       )}
       {...props}

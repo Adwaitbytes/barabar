@@ -44,20 +44,20 @@ export function NeedsHuman({ byType }: { byType: ClosePack["exceptions_by_type"]
         </tr>
       </THead>
       <TBody>
-        {rows.map(([type, v]) => {
+        {rows.map(([type, v], i) => {
           const spec = specFor(type);
           const href = `${routes.exceptions}?type=${type}`;
           return (
-            <Tr key={type} className="group">
-              <Td className="max-w-0">
+            <Tr key={type} className="group cascade accent-open" style={{ "--i": i } as React.CSSProperties}>
+              <Td className="w-full whitespace-normal">
                 <Link href={href} className="flex items-center gap-2.5 outline-none">
                   <span className={cn("size-2 shrink-0 rounded-full", FAMILY_DOT[spec.family])} />
-                  <span className="truncate font-medium text-text">{spec.title}</span>
-                  <span className="hidden text-[11px] text-faint xl:inline">{FAMILY_LABEL[spec.family]}</span>
+                  <span className="font-medium text-text">{spec.title}</span>
+                  <span className="text-[11px] text-faint">{FAMILY_LABEL[spec.family]}</span>
                 </Link>
               </Td>
-              <TdNum className="text-muted">{fmtInt(v.count)}</TdNum>
-              <TdNum>
+              <TdNum className="w-px text-muted">{fmtInt(v.count)}</TdNum>
+              <TdNum className="w-px">
                 <Amount paise={v.amount} />
               </TdNum>
               <Td className="w-8 pr-2 text-right">
