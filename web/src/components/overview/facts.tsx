@@ -6,11 +6,11 @@ import type { ClosePackFacts, RunMetrics } from "@/lib/types";
 function Row({ label, hint, children }: { label: string; hint?: string; children: React.ReactNode }) {
   return (
     <div className="flex items-baseline justify-between gap-4 border-b border-line py-2.5 last:border-0">
-      <dt className="min-w-0 whitespace-nowrap">
+      <dt className="min-w-0 flex-1 leading-snug">
         <span className="text-[13px] text-text">{label}</span>
         {hint && <span className="ml-1.5 text-[11px] text-faint">{hint}</span>}
       </dt>
-      <dd className="shrink-0">{children}</dd>
+      <dd className="shrink-0 text-right">{children}</dd>
     </div>
   );
 }
