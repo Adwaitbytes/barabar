@@ -97,6 +97,82 @@ def cmd_generate(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_fetch(args: argparse.Namespace) -> int:
+    """Pull a month from a Razorpay TEST account; simulate settlements where the account has none."""
+    from datetime import date as _date
+
+    from barabar.adapters.razorpay_api import RazorpayClient, fetch_month
+    from barabar.core.calendar import SettlementCalendar
+    from barabar.core.ids import IdGen
+    from barabar.core.models import Bank, BankTxn, Month, RzAdjustment
+    from barabar.evals.datasets import write_dataset
+    from barabar.generator.engine import GeneratedMonth
+    from barabar.simulator.engine import Simulator, SimulatorConfig, SimulatorPlan
+    from barabar.simulator.truth import GroundTruth
+
+    parts = fetch_month(RazorpayClient(), args.year, args.month)
+    as_of = _date.today()
+    payments = tuple(parts["payments"])
+    refunds = tuple(parts["refunds"])
+    disputes = tuple(parts["disputes"])
+    settlements = tuple(parts["settlements"])
+    recon_lines = tuple(parts["recon_lines"])
+    adjustments: tuple[RzAdjustment, ...] = ()
+    bank_txns: tuple[BankTxn, ...] = ()
+    simulated = False
+    if not recon_lines:
+        sim = Simulator(
+            SimulatorConfig(
+                calendar=SettlementCalendar.rbi(args.year),
+                bank=Bank(args.bank),
+                bank_statement_end=as_of,
+            ),
+            SimulatorPlan(),
+            IdGen(args.year * 100 + args.month),
+            as_of,
+        )
+        out = sim.run(list(payments), list(refunds), list(disputes))
+        settlements, recon_lines = tuple(out.settlements), tuple(out.recon_lines)
+        adjustments, bank_txns = tuple(out.adjustments), tuple(out.bank_txns)
+        simulated = True
+    month = Month(
+        as_of=as_of,
+        payments=payments,
+        refunds=refunds,
+        disputes=disputes,
+        adjustments=adjustments,
+        settlements=settlements,
+        recon_lines=recon_lines,
+        bank_txns=bank_txns,
+        ledger=(),
+    )
+    truth = GroundTruth(
+        seed=0,
+        profile="testmode",
+        n_orders=len(month.payments),
+        fault_plan={},
+        gross_captured=month.gross_captured,
+        links=(),
+        exceptions=(),
+    )
+    write_dataset(
+        GeneratedMonth(
+            month=month,
+            truth=truth,
+            config={
+                "source": "razorpay-test-mode",
+                "simulated_settlements": simulated,
+                "as_of": as_of.isoformat(),
+            },
+        ),
+        Path(args.out),
+    )
+    print(
+        f"wrote {args.out}: {len(month.payments)} payments, {len(month.settlements)} settlements ({'simulated' if simulated else 'from /settlements/recon'})"
+    )
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(prog="barabar")
     sub = p.add_subparsers(dest="cmd", required=True)
@@ -121,6 +197,14 @@ def main(argv: list[str] | None = None) -> int:
     g.add_argument("--profile", default="d2c_fashion", choices=[m.value for m in MerchantProfile])
     g.add_argument("--out", required=True)
     g.set_defaults(fn=cmd_generate)
+    f = sub.add_parser(
+        "fetch", help="pull a month from a Razorpay TEST-mode account into a dataset dir"
+    )
+    f.add_argument("--year", type=int, required=True)
+    f.add_argument("--month", type=int, required=True)
+    f.add_argument("--bank", default="HDFC")
+    f.add_argument("--out", required=True)
+    f.set_defaults(fn=cmd_fetch)
     args = p.parse_args(argv)
     return int(args.fn(args))
 

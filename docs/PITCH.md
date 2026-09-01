@@ -1,0 +1,15 @@
+# The five-minute video — timed script
+
+Record at 1440p, dark UI, terminal font 18pt. One take per beat; cut between beats. No slides except the two tables.
+
+| Time | Beat | On screen | Say |
+|---|---|---|---|
+| 0:00–0:25 | Hook | Bank app credit ₹1,83,412 → Barabar proof tree for the same credit | "One payout hides three hundred orders. This merchant sold ₹2,10,000 last week and ₹1,83,412 landed. Here is every paise of the difference, with the rule that proved it." |
+| 0:25–1:10 | Load the month | Terminal: `make demo` → four hashes, then the close pack | "Razorpay test-mode entities, simulated settlements — disclosed — an HDFC statement, a Tally ledger. Six hundred payments, twenty-two settlements, thirty milliseconds. Notice the four hashes print before any match rate. Same inputs, same config, same hash, every time." |
+| 1:10–2:00 | One proof tree | Proof tree viewer; click `A1-UTR-EXACT`, `B1-BATCH-NET`, `B2-GROSS-FEE-TAX-DECOMP` | "Bank credit by exact UTR. Batch nets to zero residual. Two hundred and eighty-seven payments: gross, two percent fee, eighteen percent GST on the fee, six refunds netted, one chargeback debited. Every node names its rule." |
+| 2:00–2:50 | Where we chose not to use AI | README boundary table → exception queue → investigator on the truncated-UTR case | "No LLM has ever decided a match in this system. The LLM works the tail. This bank export cut the UTR to thirteen characters; tier C proposed at 0.72 and refused to auto-link. The investigator gathered two independent evidence items, named the alternative it rejected, and a human accepted. Both steps are in the audit chain." |
+| 2:50–3:35 | What broke | Terminal: webhook replay storm (50 → 1 row, 49 duplicates); kill `make api` mid-run, restart, same `outputs_hash`; `docs/FAILURES.md` #1 | "Fifty replays of the same refund webhook: one row. Kill the API mid-run: it resumes from the persisted stage and the hash is identical. And the failure we read first — our own ground truth called a correct match wrong, because truth came from a flag instead of data." |
+| 3:35–4:20 | Evals | `make evals` on camera → residual list read aloud → ITC figure → Tally import | "Regenerated live. One hundred percent precision on exact and netted tiers at sixty, six hundred, six thousand orders. The residual list is the honest answer to 'the exceptions it could not resolve': a missing bank credit, an unknown credit, two adjustments to verify. GST on fees claimable this month: this figure. The vouchers open in Tally." |
+| 4:20–5:00 | Ask-the-books + close | Chat: "how much GST on fees can I claim in August?" → cited answer, NumberGuard footer → simulated-vs-real table | "Every figure in that answer came from a tool; the guard blocks anything else — including rounding. Everything you saw is regenerable from the repo. Barabar: the books, exactly equal." |
+
+Cut list to keep: the four hashes; the 0.72 proposal *not* auto-linking; the 49 duplicates line; FAILURES #1 on screen for at least four seconds.

@@ -68,6 +68,10 @@ class CreateRun(BaseModel):
     name: str | None = None
 
 
+class AskBody(BaseModel):
+    question: str = Field(min_length=3, max_length=2000)
+
+
 class ResolveBody(BaseModel):
     status: str = Field(pattern="^(resolved|accepted|open|investigating)$")
     note: str | None = None
@@ -397,6 +401,76 @@ def resolve_exception(
     except KeyError as exc:
         raise HTTPException(404, "exception not found") from exc
     return _exception_payload(item)
+
+
+@app.post("/runs/{run_id}/exceptions/{exc_id}/investigate")
+def investigate_exception(
+    run_id: str, exc_id: str, s: Store = Depends(store), c: MatchConfig = Depends(cfg)
+) -> dict[str, Any]:
+    from barabar.agent.investigator import InvestigatorUnavailableError, investigate
+
+    run = s.get_run(run_id)
+    result = s.get_result(run_id)
+    if not any(e.exc_id == exc_id for e in result.exceptions):
+        raise HTTPException(404, "exception not found")
+    try:
+        card, cached, model = investigate(
+            s.get_month(run.inputs_hash), result, c, exc_id, client=_agent_client()
+        )
+    except InvestigatorUnavailableError as exc:
+        raise HTTPException(503, str(exc)) from exc
+    payload = card.as_dict()
+    s.put_hypothesis(run_id, exc_id, payload, model)
+    s.set_exception_status(
+        run_id,
+        exc_id,
+        ExceptionStatus.INVESTIGATING,
+        actor="agent",
+        note=f"hypothesis {card.type_proposed.value} @ {card.confidence:.2f}; {len(card.evidence)} evidence items",
+    )
+    return {"exc_id": exc_id, "hypothesis": payload, "model": model, "cached": cached}
+
+
+@app.get("/runs/{run_id}/exceptions/{exc_id}/hypothesis")
+def get_hypothesis(run_id: str, exc_id: str, s: Store = Depends(store)) -> dict[str, Any]:
+    h = s.get_hypothesis(run_id, exc_id)
+    if h is None:
+        raise HTTPException(404, "no hypothesis yet")
+    return {"exc_id": exc_id, **h, "cached": True}
+
+
+@app.post("/runs/{run_id}/ask")
+def ask_the_books(
+    run_id: str, body: AskBody, s: Store = Depends(store), c: MatchConfig = Depends(cfg)
+) -> dict[str, Any]:
+    from barabar.agent.investigator import InvestigatorUnavailableError, ask
+
+    run = s.get_run(run_id)
+    try:
+        answer, model = ask(
+            s.get_month(run.inputs_hash),
+            s.get_result(run_id),
+            c,
+            body.question,
+            client=_agent_client(),
+        )
+    except InvestigatorUnavailableError as exc:
+        raise HTTPException(503, str(exc)) from exc
+    s.append_audit(
+        run_id,
+        actor="agent",
+        action="ask.answered",
+        target=body.question[:120],
+        rule_or_evidence=f"{len(answer.citations)} tool calls; guard checked {answer.guard.numbers_checked}, blocked={answer.guard.blocked}",
+    )
+    return {**answer.as_dict(), "model": model}
+
+
+_agent_client_override: Any = None
+
+
+def _agent_client() -> Any:
+    return _agent_client_override
 
 
 @app.get("/runs/{run_id}/proof/{settlement_id}")

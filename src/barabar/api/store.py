@@ -94,6 +94,15 @@ audit = Table(
     Column("prev_hash", String(64), nullable=False),
     Column("hash", String(64), nullable=False),
 )
+hypotheses = Table(
+    "hypotheses",
+    metadata,
+    Column("run_id", String(40), primary_key=True),
+    Column("exc_id", String(40), primary_key=True),
+    Column("payload", JSON, nullable=False),
+    Column("model", String(80), nullable=False),
+    Column("created_at", DateTime(timezone=True), nullable=False),
+)
 webhook_events = Table(
     "webhook_events",
     metadata,
@@ -332,6 +341,30 @@ class Store:
                 "resolution_note": note,
             }
         )
+
+    # --- hypotheses ----------------------------------------------------------------------
+
+    def put_hypothesis(self, run_id: str, exc_id: str, payload: dict[str, Any], model: str) -> None:
+        with self.engine.begin() as cx:
+            cx.execute(
+                delete(hypotheses).where(
+                    hypotheses.c.run_id == run_id, hypotheses.c.exc_id == exc_id
+                )
+            )
+            cx.execute(
+                insert(hypotheses).values(
+                    run_id=run_id, exc_id=exc_id, payload=payload, model=model, created_at=_now()
+                )
+            )
+
+    def get_hypothesis(self, run_id: str, exc_id: str) -> dict[str, Any] | None:
+        with self.engine.begin() as cx:
+            row = cx.execute(
+                select(hypotheses.c.payload, hypotheses.c.model).where(
+                    hypotheses.c.run_id == run_id, hypotheses.c.exc_id == exc_id
+                )
+            ).first()
+        return {"hypothesis": row[0], "model": row[1]} if row else None
 
     # --- audit ------------------------------------------------------------------------------
 
