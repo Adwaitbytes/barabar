@@ -142,6 +142,10 @@ class Store:
             future=True,
             connect_args={"check_same_thread": False} if url.startswith("sqlite") else {},
             poolclass=StaticPool if memory else None,
+            # Neon (and any pooled Postgres) drops idle SSL connections; check before reuse
+            # and recycle every few minutes so a long-lived process never hands out a dead one.
+            pool_pre_ping=not url.startswith("sqlite"),
+            pool_recycle=300 if not url.startswith("sqlite") else -1,
         )
         metadata.create_all(self.engine)
 

@@ -1,0 +1,501 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - complementary [ref=e3]:
+      - link "Barabar home" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e6]: barabar
+      - navigation "Primary" [ref=e9]:
+        - generic [ref=e10]:
+          - generic [ref=e11]: Close
+          - list [ref=e12]:
+            - listitem [ref=e13]:
+              - link "Close pack" [ref=e14] [cursor=pointer]:
+                - /url: /app
+            - listitem [ref=e21]:
+              - link "Exceptions 45" [ref=e22] [cursor=pointer]:
+                - /url: /app/exceptions
+                - generic [ref=e26]: Exceptions
+                - generic [ref=e27]: "45"
+            - listitem [ref=e28]:
+              - link "Ask the books" [ref=e29] [cursor=pointer]:
+                - /url: /app/ask
+        - generic [ref=e33]:
+          - generic [ref=e34]: Three legs
+          - list [ref=e35]:
+            - listitem [ref=e36]:
+              - link "Settlements" [ref=e37] [cursor=pointer]:
+                - /url: /app/settlements
+            - listitem [ref=e42]:
+              - link "Bank statement" [ref=e43] [cursor=pointer]:
+                - /url: /app/bank
+            - listitem [ref=e47]:
+              - link "Sales ledger" [ref=e48] [cursor=pointer]:
+                - /url: /app/ledger
+        - generic [ref=e52]:
+          - generic [ref=e53]: Output
+          - list [ref=e54]:
+            - listitem [ref=e55]:
+              - link "Journal entries" [ref=e56] [cursor=pointer]:
+                - /url: /app/journal
+            - listitem [ref=e61]:
+              - link "Sources" [ref=e62] [cursor=pointer]:
+                - /url: /app/sources
+            - listitem [ref=e67]:
+              - link "Runs & audit" [ref=e68] [cursor=pointer]:
+                - /url: /app/runs
+            - listitem [ref=e74]:
+              - link "Rate card & rules" [ref=e75] [cursor=pointer]:
+                - /url: /app/settings
+        - generic [ref=e80]:
+          - generic [ref=e81]: Learn
+          - list [ref=e82]:
+            - listitem [ref=e83]:
+              - link "How Barabar works" [ref=e85] [cursor=pointer]:
+                - /url: /app/guide
+      - generic [ref=e90]: Deterministic where money is decided.
+    - generic [ref=e96]:
+      - banner [ref=e97]:
+        - button "hosted demo month August 2026 · as of 2026-09-01" [ref=e98] [cursor=pointer]:
+          - generic [ref=e99]:
+            - generic [ref=e100]: hosted demo month
+            - generic [ref=e101]: August 2026 · as of 2026-09-01
+        - generic [ref=e102]:
+          - img "Explained ₹7,48,368.01, open ₹2,56,070.82, unexplained ₹80,855.20" [ref=e104]
+          - generic [ref=e105]:
+            - generic [ref=e106]: 92.55%
+            - text: explained
+        - generic [ref=e107]:
+          - generic [ref=e108]: live
+          - button "Ask or jump to… ⌘K" [ref=e112] [cursor=pointer]:
+            - generic [ref=e113]: Ask or jump to…
+            - generic [ref=e114]: ⌘K
+          - button "Switch to light theme" [ref=e115] [cursor=pointer]
+      - main [ref=e116]:
+        - generic [ref=e118]:
+          - generic [ref=e119]:
+            - generic [ref=e120]:
+              - generic [ref=e121]: Learn
+              - heading "How Barabar works, explained from zero" [level=1] [ref=e122]
+              - paragraph [ref=e123]: What this product is, the problem it solves, how a run flows through it, where the AI is and is not, and a guided tour of every screen. Written for someone who has never seen Razorpay or a reconciliation.
+            - generic [ref=e125]:
+              - link "API docs" [ref=e126] [cursor=pointer]:
+                - /url: https://barabar-api.vercel.app/docs
+              - link "Source" [ref=e131] [cursor=pointer]:
+                - /url: https://github.com/Adwaitbytes/barabar
+          - navigation "On this page" [ref=e136]:
+            - link "What it is" [ref=e137] [cursor=pointer]:
+              - /url: "#what"
+            - link "The problem" [ref=e138] [cursor=pointer]:
+              - /url: "#problem"
+            - link "Words to know" [ref=e139] [cursor=pointer]:
+              - /url: "#words"
+            - link "Architecture" [ref=e140] [cursor=pointer]:
+              - /url: "#arch"
+            - link "How a run works" [ref=e141] [cursor=pointer]:
+              - /url: "#flow"
+            - link "Where AI is and is not" [ref=e142] [cursor=pointer]:
+              - /url: "#trust"
+            - link "Guided tour" [ref=e143] [cursor=pointer]:
+              - /url: "#tour"
+            - link "Why it matters" [ref=e144] [cursor=pointer]:
+              - /url: "#useful"
+            - link "Numbers" [ref=e145] [cursor=pointer]:
+              - /url: "#numbers"
+            - link "Run it yourself" [ref=e146] [cursor=pointer]:
+              - /url: "#run"
+            - link "5-minute demo" [ref=e147] [cursor=pointer]:
+              - /url: "#script"
+          - generic [ref=e148]:
+            - generic [ref=e149]:
+              - heading "What it is" [level=2] [ref=e151]
+              - generic [ref=e152]:
+                - paragraph [ref=e153]: Barabar is an AI finance controller for businesses that collect money through Razorpay. It takes three things a merchant already has — Razorpay's settlement records, the bank statement and the sales ledger — matches every rupee across all three, explains every rupee it cannot match, and drafts the accounting entries.
+                - paragraph [ref=e154]: "It answers the question every founder asks at month end: “I sold ₹2,10,000 this week. Why did ₹1,83,412 land in my bank?” — to the paise, with a proof. Barabar (बराबर) means “exactly equal”. When the residual is ₹0.00, the books are barabar."
+              - generic [ref=e155]: Built for Razorpay's AI Buildathon, Track 04 (AI Finance Controller). The brief asks for an agent that “closes one finance-ops loop across a 50+ record batch, reporting its match rate and the exceptions it could not resolve.” Barabar's match rates are measured against known ground truth, not asserted.
+            - generic [ref=e156]:
+              - heading "The problem, in one story" [level=2] [ref=e158]
+              - paragraph [ref=e160]: "A clothing brand's customers pay ₹2,10,000 through Razorpay in a week. Razorpay does not send that money order by order. Every working day it bundles hundreds of payments into one settlement and sends one lump bank transfer. Before it lands, several things are quietly subtracted or shifted:"
+              - table [ref=e163]:
+                - rowgroup [ref=e164]:
+                  - row [ref=e165]:
+                    - columnheader "What happens" [ref=e166]
+                    - columnheader "Why" [ref=e167]
+                    - columnheader "Effect" [ref=e168]
+                - rowgroup [ref=e169]:
+                  - row [ref=e170]:
+                    - cell "Gateway fee (MDR)" [ref=e171]
+                    - cell "About 2% on cards and net-banking, 0% on UPI" [ref=e172]
+                    - cell "−₹3,420.00" [ref=e173]
+                  - row [ref=e174]:
+                    - cell "18% GST on that fee" [ref=e175]
+                    - cell "Tax on the fee, not on the sale. Claimable back as input credit" [ref=e176]
+                    - cell "−₹615.60" [ref=e177]
+                  - row [ref=e178]:
+                    - cell "Refunds netted" [ref=e179]
+                    - cell "Refunds are deducted from a later settlement, never paid separately" [ref=e180]
+                    - cell "−₹18,452.40" [ref=e181]
+                  - row [ref=e182]:
+                    - cell "A chargeback" [ref=e183]
+                    - cell "A customer disputed a payment; the bank pulled the money back" [ref=e184]
+                    - cell "−₹4,200.00" [ref=e185]
+                  - row [ref=e186]:
+                    - cell "A manual adjustment" [ref=e187]
+                    - cell "Razorpay credited ₹100 for a fee waiver" [ref=e188]
+                    - cell "+₹100.00" [ref=e189]
+                  - row [ref=e190]:
+                    - cell "Lands in the bank" [ref=e191]
+                    - cell "One NEFT credit, two working days later, with a 16-character reference (UTR)" [ref=e192]
+                    - cell "₹1,83,412.00" [ref=e193]
+              - paragraph [ref=e195]: Now multiply by 22 settlement days a month, a bank export that cuts the reference number off after 50 characters, refunds that appear a week after the sale, a public holiday that shifts a payout, and a Tally ledger edited by hand. A finance person spends days every month on this and still carries a line called “unexplained”. Barabar deletes that line.
+            - generic [ref=e196]:
+              - heading "Words you need (and nothing more)" [level=2] [ref=e198]
+              - generic [ref=e201]:
+                - generic [ref=e202]:
+                  - term [ref=e203]: Razorpay
+                  - definition [ref=e204]: The payment gateway. Customers pay through it; it pays the merchant later.
+                - generic [ref=e205]:
+                  - term [ref=e206]: Settlement
+                  - definition [ref=e207]: One batch payout from Razorpay to the merchant's bank, covering many payments net of fees, refunds and chargebacks.
+                - generic [ref=e208]:
+                  - term [ref=e209]: UTR
+                  - definition [ref=e210]: The bank's reference for a transfer (16 characters NEFT, 22 RTGS, 12 digits IMPS). The strongest key for matching a settlement to a bank credit.
+                - generic [ref=e211]:
+                  - term [ref=e212]: Recon line
+                  - definition [ref=e213]: "Razorpay's per-payment breakdown inside a settlement: gross, fee, tax and the net credited."
+                - generic [ref=e214]:
+                  - term [ref=e215]: Ledger
+                  - definition [ref=e216]: "The merchant's own sales book (Tally, Zoho, a spreadsheet): invoices and credit notes."
+                - generic [ref=e217]:
+                  - term [ref=e218]: Reconciliation
+                  - definition [ref=e219]: Proving that what Razorpay says, what the bank shows and what the books record are the same money.
+                - generic [ref=e220]:
+                  - term [ref=e221]: Exception
+                  - definition [ref=e222]: Anything that did not match cleanly. Each gets a type (23 of them), an amount, a confidence and a suggested action.
+                - generic [ref=e223]:
+                  - term [ref=e224]: Proof tree
+                  - definition [ref=e225]: The chain from one bank credit down to every payment, fee, refund and chargeback inside it, with the rule that made each link.
+                - generic [ref=e226]:
+                  - term [ref=e227]: Tiers A / B / C / D
+                  - definition [ref=e228]: "The four matching strategies: exact keys (A), derived netting (B), fuzzy proposals (C), the AI investigator (D). Only A and B link automatically."
+            - generic [ref=e229]:
+              - heading "Architecture" [level=2] [ref=e231]
+              - paragraph [ref=e233]: "Three sources go in. Deterministic code does all the matching and money arithmetic. The AI only reads the leftovers and drafts words. Everything that comes out is replayable: same inputs and settings always give the same result, and the result carries a hash to prove it."
+              - generic [ref=e236]:
+                - generic [ref=e237]:
+                  - generic [ref=e238]:
+                    - generic [ref=e239]:
+                      - generic [ref=e240]: Razorpay
+                      - generic [ref=e241]: payments · refunds · disputes · settlements (API, webhooks or recon JSON)
+                    - generic [ref=e242]:
+                      - generic [ref=e243]: Bank statement
+                      - generic [ref=e244]: HDFC · ICICI · SBI · Axis · Kotak, CSV or XLSX, layout auto-detected
+                    - generic [ref=e245]:
+                      - generic [ref=e246]: Sales ledger
+                      - generic [ref=e247]: CSV in a documented schema, or a Tally Day Book XML export
+                  - generic [ref=e251]:
+                    - generic [ref=e252]: Ingest + normalise
+                    - generic [ref=e253]: Every amount becomes integer paise; every timestamp UTC; duplicates removed; inputs hashed.
+                - generic [ref=e260]:
+                  - generic [ref=e261]:
+                    - generic [ref=e262]: Tier A · exact keys
+                    - generic [ref=e263]: UTR = settlement UTR · settlement id in narration · payment id or receipt in ledger. Confidence 1.0.
+                  - generic [ref=e267]:
+                    - generic [ref=e268]: Tier B · derived
+                    - generic [ref=e269]: Batch net = bank credit · gross − fee − 18% GST · refund netting · split UTRs · partial batches · holiday shifts · failed-and-retried.
+                  - generic [ref=e273]:
+                    - generic [ref=e274]: Tier C · fuzzy
+                    - generic [ref=e275]: "UTR prefix, amount + date + narration similarity, ledger tolerance. Capped at 0.85: proposals only, never auto-linked."
+                - generic [ref=e284]:
+                  - generic [ref=e285]:
+                    - generic [ref=e286]: Proof trees + hashes
+                    - generic [ref=e287]: bank credit ← settlement ← lines, every node tagged with its rule id. outputs_hash stamped.
+                  - generic [ref=e289]:
+                    - generic [ref=e290]: Typed exceptions
+                    - generic [ref=e291]: 23 types, each with amount, confidence, reason and suggested action. Unexplained = open items below the threshold.
+                  - generic [ref=e295]:
+                    - generic [ref=e296]: Tier D · AI investigator
+                    - generic [ref=e297]: Reads through read-only tools, proposes a hypothesis with cited evidence, names the alternative it rejected. Cannot write.
+                - generic [ref=e308]:
+                  - generic [ref=e309]:
+                    - generic [ref=e310]: This web app
+                    - generic [ref=e311]: close pack · settlements · proof viewer · exception inbox · ask the books · runs & audit
+                  - generic [ref=e313]:
+                    - generic [ref=e314]: Exports
+                    - generic [ref=e315]: journal CSV · Tally Prime XML · controller's memo · exceptions CSV · evals report
+                  - generic [ref=e317]:
+                    - generic [ref=e318]: Evals
+                    - generic [ref=e319]: a synthetic-month generator injects every exception type with ground truth; make evals scores the run against it
+              - generic [ref=e320]:
+                - generic [ref=e321]:
+                  - heading "Backend" [level=3] [ref=e323]
+                  - generic [ref=e324]: Python 3.12 + FastAPI. Matching, money math, calendar and exceptions live in a pure core package with no other dependencies. Postgres in production, SQLite on a laptop.
+                - generic [ref=e325]:
+                  - heading "Frontend" [level=3] [ref=e327]
+                  - generic [ref=e328]: This Next.js app. If the API is unreachable it falls back to a captured demo month so the product still demos.
+                - generic [ref=e329]:
+                  - heading "AI" [level=3] [ref=e331]
+                  - generic [ref=e332]: Claude through tool calls. A strong model for investigation and answers; a cheap model only extracts fields from unusual bank text, and the grammar re-checks it.
+                - generic [ref=e333]:
+                  - heading "Simulator" [level=3] [ref=e335]
+                  - generic [ref=e336]: Razorpay's test mode does not generate settlements, so Barabar applies Razorpay's documented rules to real test-mode entities and says so in the docs.
+            - generic [ref=e337]:
+              - heading "How one run works" [level=2] [ref=e339]
+              - list [ref=e342]:
+                - listitem [ref=e343]:
+                  - generic [ref=e344]: "01"
+                  - generic [ref=e345]:
+                    - generic [ref=e346]: Load a month
+                    - generic [ref=e347]: Razorpay entities, the bank statement and the ledger are read, normalised and hashed (inputs_hash).
+                - listitem [ref=e348]:
+                  - generic [ref=e349]: "02"
+                  - generic [ref=e350]:
+                    - generic [ref=e351]: Tier A
+                    - generic [ref=e352]: "Exact keys: UTR, settlement id, payment id, receipt. These links are certain."
+                - listitem [ref=e353]:
+                  - generic [ref=e354]: "03"
+                  - generic [ref=e355]:
+                    - generic [ref=e356]: Tier B
+                    - generic [ref=e357]: "Derived facts: a batch's lines net to its bank credit; each payment decomposes as gross − fee − GST; refunds and chargebacks net; split and partial batches are chained; holiday shifts are recognised."
+                - listitem [ref=e358]:
+                  - generic [ref=e359]: "04"
+                  - generic [ref=e360]:
+                    - generic [ref=e361]: Tier C
+                    - generic [ref=e362]: Fuzzy candidates for what is left — a truncated UTR prefix, an exact amount on the expected day. Proposals only.
+                - listitem [ref=e363]:
+                  - generic [ref=e364]: "05"
+                  - generic [ref=e365]:
+                    - generic [ref=e366]: Classify
+                    - generic [ref=e367]: Every residual becomes one of 23 typed exceptions with a confidence and a suggested action.
+                - listitem [ref=e368]:
+                  - generic [ref=e369]: "06"
+                  - generic [ref=e370]:
+                    - generic [ref=e371]: Prove + hash
+                    - generic [ref=e372]: A proof tree per settlement; metrics; the outputs_hash. Re-running gives the same hash.
+                - listitem [ref=e373]:
+                  - generic [ref=e374]: "07"
+                  - generic [ref=e375]:
+                    - generic [ref=e376]: Investigate (on demand)
+                    - generic [ref=e377]: The AI reads an open exception through read-only tools and returns a hypothesis card. A person accepts or resolves; the click is audited.
+                - listitem [ref=e378]:
+                  - generic [ref=e379]: "08"
+                  - generic [ref=e380]:
+                    - generic [ref=e381]: Close
+                    - generic [ref=e382]: Journal entries, Tally XML, the controller's memo and the exceptions list are exported.
+              - paragraph [ref=e384]: "A finished proof for one bank credit looks like this. Every line names the rule that produced it:"
+              - generic [ref=e385]: Bank credit ₹1,83,412.00 HDFC 14-Aug-2026 UTR HDFCN26226004471 [A1-UTR-EXACT] └─ Settlement setl_Q1x… net ₹1,83,412.00 processed 14-Aug 06:12 [B1-BATCH-NET ✓ residual ₹0] ├─ 287 payments gross ₹2,10,000.00 fee ₹3,420.00 GST ₹615.60 [B2-GROSS-FEE-TAX-DECOMP ✓] ├─ 6 refunds −₹18,452.40 [B3-REFUND-NET] ├─ 1 dispute −₹4,200.00 (opened 09-Aug, respond by 23-Aug) [DISPUTE_DEBIT] ├─ 1 adjustment +₹100.00 "manual credit" [ADJUSTMENT] └─ Σ = ₹1,83,412.00
+            - generic [ref=e386]:
+              - heading "Where AI is, and where it is not" [level=2] [ref=e388]
+              - paragraph [ref=e390]: Most “AI finance” tools let a language model decide what matches what. Barabar never does. Money decisions are code with tests; the AI works only on the tail, and every number it writes is checked against the tool results it actually received (NumberGuard). If it tries to round ₹1,83,412.37 to ₹1,83,412, the message is blocked.
+              - table [ref=e393]:
+                - rowgroup [ref=e394]:
+                  - row [ref=e395]:
+                    - columnheader "Task" [ref=e396]
+                    - columnheader "Deterministic code" [ref=e397]
+                    - columnheader "AI" [ref=e398]
+                - rowgroup [ref=e399]:
+                  - row [ref=e400]:
+                    - cell "Deciding two records match" [ref=e401]
+                    - cell "always" [ref=e402]
+                    - cell "never" [ref=e404]
+                  - row [ref=e406]:
+                    - cell "Fee, GST and net arithmetic; calendar and cut-offs" [ref=e407]
+                    - cell "always" [ref=e408]
+                    - cell "never" [ref=e410]
+                  - row [ref=e412]:
+                    - cell "Reading bank narration in known layouts" [ref=e413]
+                    - cell "grammar per bank" [ref=e414]
+                    - cell "unknown layouts only, then re-validated by the grammar" [ref=e416]
+                  - row [ref=e417]:
+                    - cell "Classifying an exception into one of 23 types" [ref=e418]
+                    - cell "always" [ref=e419]
+                    - cell "never" [ref=e421]
+                  - row [ref=e423]:
+                    - cell "Investigating an open exception" [ref=e424]
+                    - cell "—" [ref=e425]
+                    - cell "read-only tools, no writes; a human accepts" [ref=e427]
+                  - row [ref=e428]:
+                    - cell "Explaining a proof in words; drafting the memo" [ref=e429]
+                    - cell "the facts" [ref=e430]
+                    - cell "the prose, every number guarded" [ref=e431]
+              - generic [ref=e432]: "Three rules: money math is deterministic; the LLM works the tail and never mutates a match; every run is replayable. An honest failure log (docs/FAILURES.md, ten real entries) records what broke and what changed."
+            - generic [ref=e433]:
+              - 'heading "Guided tour: every screen, in order" [level=2] [ref=e435]'
+              - paragraph [ref=e437]: Use the sidebar or the links below. If the app shows no runs yet, the first step creates one.
+              - list [ref=e438]:
+                - listitem [ref=e439]:
+                  - generic [ref=e440]: "1"
+                  - generic [ref=e441]:
+                    - heading "Load a month" [level=3] [ref=e442]
+                    - generic [ref=e443]: Click Load demo month. It builds a realistic 600-payment August for a fashion brand with 23 kinds of problems deliberately injected, and reconciles it in well under a second.
+                    - generic [ref=e444]:
+                      - link "/app" [ref=e445] [cursor=pointer]:
+                        - /url: /app
+                      - generic [ref=e446]: ·
+                      - link "/app/sources" [ref=e447] [cursor=pointer]:
+                        - /url: /app/sources
+                      - text: to upload your own Razorpay JSON, bank CSV/XLSX and ledger CSV
+                - listitem [ref=e448]:
+                  - generic [ref=e449]: "2"
+                  - generic [ref=e450]:
+                    - heading "Read the Close Pack" [level=3] [ref=e451]
+                    - generic [ref=e452]: "Three numbers at the top: Gross captured, Explained, Unexplained. Then the settlement calendar (expected credit per day versus what the bank shows), the settlement table with a status chip per batch, and the exception queue. The four hashes under the title prove the run is replayable. 92.5% explained on the demo month is honest: it contains a missing bank credit and manual adjustments that no rule can explain without a person."
+                    - link "/app" [ref=e454] [cursor=pointer]:
+                      - /url: /app
+                - listitem [ref=e455]:
+                  - generic [ref=e456]: "3"
+                  - generic [ref=e457]:
+                    - heading "Open a settlement's proof" [level=3] [ref=e458]
+                    - generic [ref=e459]:
+                      - text: "The bank credit on top, the settlement under it, then groups: payments (gross, fee, GST, net), refunds, disputes, adjustments. Every node carries a rule badge such as"
+                      - generic [ref=e460]: A1-UTR-EXACT
+                      - text: or
+                      - generic [ref=e461]: B1-BATCH-NET
+                      - text: ", and the residual reads ₹0.00 when the batch foots. Try a"
+                      - generic [ref=e462]: Proposed
+                      - text: "row: the bank cut the reference number, so the match is a proposal at 0.72, not an automatic link."
+                    - generic [ref=e463]:
+                      - link "/app/settlements" [ref=e464] [cursor=pointer]:
+                        - /url: /app/settlements
+                      - generic [ref=e465]: → click a row
+                - listitem [ref=e466]:
+                  - generic [ref=e467]: "4"
+                  - generic [ref=e468]:
+                    - heading "Work the exception inbox" [level=3] [ref=e469]
+                    - generic [ref=e470]: "Each item has a type, an amount, a confidence, a one-line reason and a suggested action. Open one to see its evidence and the candidate link if there is one. Statuses: open, investigating, accepted, resolved, auto-resolved. Types you will meet: NARRATION_TRUNCATED_UTR · MISSING_BANK_CREDIT · REFUND_NETTED · DISPUTE_DEBIT · TIMING_NOT_YET_SETTLED."
+                    - link "/app/exceptions" [ref=e472] [cursor=pointer]:
+                      - /url: /app/exceptions
+                - listitem [ref=e473]:
+                  - generic [ref=e474]: "5"
+                  - generic [ref=e475]:
+                    - heading "Ask Barabar to investigate" [level=3] [ref=e476]
+                    - generic [ref=e477]: "The AI reads through tools (the settlement, its recon lines, a bank search, the calendar, a calculator) and returns a hypothesis card: the type it proposes, its confidence, the evidence it cited (each hashed), a suggested action, and the alternative it rejected. It cannot change anything; you click Accept or Resolve with a note, and that click is logged. On the demo month it was right on 24 of 24 cases."
+                    - generic [ref=e478]: exception detail → Investigate
+                - listitem [ref=e480]:
+                  - generic [ref=e481]: "6"
+                  - generic [ref=e482]:
+                    - heading "Ask the books" [level=3] [ref=e483]
+                    - generic [ref=e484]: "Ask “How much GST input credit can I claim on Razorpay fees this month?” The answer comes only from tool results, cites the settlements it used, and shows how many figures NumberGuard verified. If a figure cannot be verified, the answer is withheld and says so. Demo answer: ₹1,468.85 of ITC against ₹8,159.97 of fees."
+                    - link "/app/ask" [ref=e486] [cursor=pointer]:
+                      - /url: /app/ask
+                - listitem [ref=e487]:
+                  - generic [ref=e488]: "7"
+                  - generic [ref=e489]:
+                    - heading "Close the month" [level=3] [ref=e490]
+                    - generic [ref=e491]: Download the journal entries (CSV, or Tally Prime XML that imports as vouchers), the controller's memo, the exceptions CSV and the HTML close pack. Bank, gateway charges, GST input, refunds and chargebacks are already split into the right ledgers.
+                    - link "/app/journal" [ref=e493] [cursor=pointer]:
+                      - /url: /app/journal
+                - listitem [ref=e494]:
+                  - generic [ref=e495]: "8"
+                  - generic [ref=e496]:
+                    - heading "Re-run and audit" [level=3] [ref=e497]
+                    - generic [ref=e498]: "Re-run reconciles the same inputs again and shows “outputs identical” with a diff of exceptions closed or opened. The audit trail is hash-chained: every link, exception, AI proposal and human click, in order, verifiable."
+                    - link "/app/runs" [ref=e500] [cursor=pointer]:
+                      - /url: /app/runs
+            - generic [ref=e501]:
+              - heading "Why it matters" [level=2] [ref=e503]
+              - generic [ref=e504]:
+                - generic [ref=e505]:
+                  - heading "For the founder" [level=3] [ref=e507]
+                  - generic [ref=e508]: “Why is this credit smaller than I expected?” gets an answer in one click, with the arithmetic shown, instead of an hour with three spreadsheets.
+                - generic [ref=e509]:
+                  - heading "For the accountant" [level=3] [ref=e511]
+                  - generic [ref=e512]: "A close pack with only what still needs a human: matched items are done, exceptions are typed and prioritised, journal entries are drafted, the GST-on-fees credit is computed for GSTR-3B."
+                - generic [ref=e513]:
+                  - heading "For the business" [level=3] [ref=e515]
+                  - generic [ref=e516]: Reconciliation is 40–50% of a small finance team's close cycle. Days of matching become seconds, and “unexplained” becomes a short, honest list.
+                - generic [ref=e517]:
+                  - heading "For a judge" [level=3] [ref=e519]
+                  - generic [ref=e520]: Every metric is regenerable with one command against known ground truth. The AI is fenced to where it belongs. The failure log is real.
+            - generic [ref=e521]:
+              - generic [ref=e522]:
+                - heading "Numbers you can quote" [level=2] [ref=e523]
+                - generic [ref=e524]: from make evals, against generator ground truth
+              - table [ref=e527]:
+                - rowgroup [ref=e528]:
+                  - row [ref=e529]:
+                    - columnheader "Month size" [ref=e530]
+                    - columnheader "Auto-match" [ref=e531]
+                    - columnheader "Precision (tiers A/B)" [ref=e532]
+                    - columnheader "Classification" [ref=e533]
+                    - columnheader "Wall clock" [ref=e534]
+                - rowgroup [ref=e535]:
+                  - row [ref=e536]:
+                    - cell "60 payments" [ref=e537]
+                    - cell "100.0%" [ref=e538]
+                    - cell "100%" [ref=e539]
+                    - cell "100%" [ref=e540]
+                    - cell "0.005 s" [ref=e541]
+                  - row [ref=e542]:
+                    - cell "600 payments (the demo)" [ref=e543]
+                    - cell "99.94%" [ref=e544]
+                    - cell "100%" [ref=e545]
+                    - cell "100%" [ref=e546]
+                    - cell "0.03 s" [ref=e547]
+                  - row [ref=e548]:
+                    - cell "6,000 payments" [ref=e549]
+                    - cell "99.99%" [ref=e550]
+                    - cell "100%" [ref=e551]
+                    - cell "100%" [ref=e552]
+                    - cell "0.55 s" [ref=e553]
+                  - row [ref=e554]:
+                    - cell "60,000 payments" [ref=e555]
+                    - cell "—" [ref=e556]
+                    - cell "—" [ref=e557]
+                    - cell "—" [ref=e558]
+                    - cell "5.4 s" [ref=e559]
+              - generic [ref=e560]:
+                - generic [ref=e561]:
+                  - generic [ref=e562]: ₹0
+                  - generic [ref=e563]: money wrongly auto-linked at tiers A/B, at every size
+                - generic [ref=e564]:
+                  - generic [ref=e565]: 24 / 24
+                  - generic [ref=e566]: investigator hypotheses correct on the demo month
+                - generic [ref=e567]:
+                  - generic [ref=e568]: "23"
+                  - generic [ref=e569]: exception types, all injected and all detected
+                - generic [ref=e570]:
+                  - generic [ref=e571]: "171"
+                  - generic [ref=e572]: automated tests, including property tests over random months
+            - generic [ref=e573]:
+              - heading "Run it yourself" [level=2] [ref=e575]
+              - paragraph [ref=e577]: Everything runs on a laptop with Python 3.12 and Node. No keys are needed for the deterministic parts; the AI features need an API key in .env.
+              - generic [ref=e578]: "git clone https://github.com/Adwaitbytes/barabar && cd barabar make install # uv venv + Python deps; pnpm install in web/ make demo # reconcile a 600-payment month; prints the four hashes and the close pack make evals # regenerate every number above make api # FastAPI on :8000 cd web && BARABAR_API_URL=http://localhost:8000 pnpm dev # this app on :3000"
+            - generic [ref=e579]:
+              - heading "A 5-minute demo script" [level=2] [ref=e581]
+              - list [ref=e584]:
+                - listitem [ref=e585]:
+                  - generic [ref=e586]: 0:00
+                  - generic [ref=e587]:
+                    - generic [ref=e588]: The question.
+                    - text: "Open the landing page. Read the headline aloud: “Why did ₹1,83,412 land in my bank?” Point at the proof tree in the hero: this is the answer, with the rules that produced it."
+                - listitem [ref=e589]:
+                  - generic [ref=e590]: 0:40
+                  - generic [ref=e591]:
+                    - generic [ref=e592]: Load the month.
+                    - text: "Open the app, click Load demo month. 600 payments, 22 settlements, three data sources, reconciled in a fraction of a second. Point at the four hashes: same inputs, same hash, every time."
+                - listitem [ref=e593]:
+                  - generic [ref=e594]: 1:20
+                  - generic [ref=e595]:
+                    - generic [ref=e596]: One proof.
+                    - text: "Click a matched settlement. Walk down: bank credit by exact UTR, batch nets to zero, payments minus 2% fee minus 18% GST on the fee, refunds netted, a chargeback. Every node names its rule."
+                - listitem [ref=e597]:
+                  - generic [ref=e598]: 2:20
+                  - generic [ref=e599]:
+                    - generic [ref=e600]: Where AI is not.
+                    - text: "Show the boundary table above. “No language model has ever decided a match here.” Open the Proposed settlement: the bank cut the reference number; the system proposed at 0.72 and refused to auto-link."
+                - listitem [ref=e601]:
+                  - generic [ref=e602]: 3:00
+                  - generic [ref=e603]:
+                    - generic [ref=e604]: Where AI is.
+                    - text: "Click Investigate on that exception: two pieces of cited evidence, the alternative it rejected, the human Accept button. Then Ask the books: “How much GST on fees can I claim this month?” and point at “2 figures verified”."
+                - listitem [ref=e605]:
+                  - generic [ref=e606]: 4:00
+                  - generic [ref=e607]:
+                    - generic [ref=e608]: Close.
+                    - text: "Download the Tally XML and the memo. Open Runs & audit: the chain of every decision, including the click you just made."
+                - listitem [ref=e609]:
+                  - generic [ref=e610]: 4:40
+                  - generic [ref=e611]:
+                    - generic [ref=e612]: Honesty.
+                    - text: "Show the open exceptions and name them: a missing bank credit, an unknown credit, adjustments to verify. Explained is 92.5% because those are genuinely unexplained until a person acts. Close on the failure log."
+  - alert [ref=e613]
