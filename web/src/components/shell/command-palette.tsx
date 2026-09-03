@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { Command } from "cmdk";
 import {
   ArrowLeftRight,
+  BookMarked,
   BookOpenText,
   ClipboardList,
   History,
@@ -74,6 +75,7 @@ export function CommandPaletteProvider({
     { href: routes.sources, label: "Sources", icon: Upload },
     { href: routes.runs, label: "Runs & audit", icon: History },
     { href: routes.settings, label: "Rate card & rules", icon: Settings2 },
+    { href: routes.guide, label: "How Barabar works", icon: BookMarked },
   ];
 
   const looksLikeQuestion = query.trim().split(/\s+/).length >= 3 || /\?$/.test(query);

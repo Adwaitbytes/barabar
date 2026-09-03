@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { motion, useReducedMotion } from "motion/react";
 import {
   ArrowLeftRight,
+  BookMarked,
   BookOpenText,
   Building2,
   ClipboardList,
@@ -51,6 +52,10 @@ export function Sidebar({ openExceptions }: { openExceptions: number }) {
         { href: routes.runs, label: "Runs & audit", icon: History },
         { href: routes.settings, label: "Rate card & rules", icon: Settings2 },
       ],
+    },
+    {
+      title: "Learn",
+      items: [{ href: routes.guide, label: "How Barabar works", icon: BookMarked }],
     },
   ];
 

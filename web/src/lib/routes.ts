@@ -14,6 +14,7 @@ export const routes = {
   journal: "/app/journal",
   runs: "/app/runs",
   settings: "/app/settings",
+  guide: "/app/guide",
 } as const;
 
 /** Where a "kind:id" entity reference should take the reader. */
