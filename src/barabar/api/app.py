@@ -91,8 +91,8 @@ def _result(s: Store, run_id: str) -> ReconResult:
         raise HTTPException(404, "run not found") from exc
 
 
-def _run_payload(s: Store, run_id: str) -> dict[str, Any]:
-    meta = s.run_meta(run_id)
+def _run_payload(s: Store, run_id: str, meta: dict[str, Any] | None = None) -> dict[str, Any]:
+    meta = meta or s.run_meta(run_id)
     return {
         "run_id": run_id,
         "name": meta["name"],
@@ -223,7 +223,7 @@ def health() -> dict[str, str]:
 
 @app.get("/runs")
 def list_runs(s: Store = Depends(store)) -> list[dict[str, Any]]:
-    return [_run_payload(s, r["run_id"]) for r in s.list_runs()]
+    return [_run_payload(s, r["run_id"], r) for r in s.list_runs()]  # one query, not one per run
 
 
 @app.post("/runs", status_code=201)
