@@ -148,6 +148,16 @@ class Store:
             pool_recycle=300 if not url.startswith("sqlite") else -1,
         )
         metadata.create_all(self.engine)
+        # Parsed objects are megabytes of JSON; a warm process must not re-read and
+        # re-validate them for every request a page makes.
+        self._results: dict[str, ReconResult] = {}
+        self._months: dict[str, Month] = {}
+
+    @staticmethod
+    def _remember(cache: dict[str, Any], key: str, value: Any, cap: int = 8) -> None:
+        cache[key] = value
+        while len(cache) > cap:
+            cache.pop(next(iter(cache)))
 
     # --- months ------------------------------------------------------------------
 
@@ -166,13 +176,18 @@ class Store:
         return h
 
     def get_month(self, inputs_hash: str) -> Month:
+        cached = self._months.get(inputs_hash)
+        if cached is not None:
+            return cached
         with self.engine.begin() as cx:
             row = cx.execute(
                 select(months.c.payload).where(months.c.inputs_hash == inputs_hash)
             ).first()
         if row is None:
             raise KeyError(inputs_hash)
-        return Month.model_validate_json(row[0])
+        month = Month.model_validate_json(row[0])
+        self._remember(self._months, inputs_hash, month)
+        return month
 
     # --- runs -----------------------------------------------------------------------
 
@@ -213,7 +228,13 @@ class Store:
         result = reconcile(month, cfg, run_id, clock=run.started_at)
         with self.engine.begin() as cx:
             cx.execute(delete(results).where(results.c.run_id == run_id))
-            cx.execute(insert(results).values(run_id=run_id, payload=result.model_dump_json()))
+            # The audit chain lives in its own table; keeping a second copy inside the
+            # result payload made every read carry thousands of extra rows.
+            cx.execute(
+                insert(results).values(
+                    run_id=run_id, payload=result.model_copy(update={"audit": ()}).model_dump_json()
+                )
+            )
             cx.execute(
                 update(runs)
                 .where(runs.c.run_id == run_id)
@@ -228,6 +249,7 @@ class Store:
                 .where(runs.c.run_id == run_id)
                 .values(stage="finished", outputs_hash=result.outputs_hash(), finished_at=_now())
             )
+        self._remember(self._results, run_id, result)
         return result
 
     def resume_incomplete(self, cfg: MatchConfig) -> list[str]:
@@ -277,26 +299,34 @@ class Store:
             for t in (results, exception_state, audit):
                 cx.execute(delete(t).where(t.c.run_id == run_id))
             cx.execute(delete(runs).where(runs.c.run_id == run_id))
+        self._results.pop(run_id, None)
 
     # --- results + exception state ---------------------------------------------------
 
     def get_result(self, run_id: str, cfg: MatchConfig | None = None) -> ReconResult:
         """The stored result; if the run was interrupted before its result landed and a
         config is given, finish it now - determinism makes that the same run."""
+        base = self._results.get(run_id)
         with self.engine.begin() as cx:
-            row = cx.execute(select(results.c.payload).where(results.c.run_id == run_id)).first()
+            row = (
+                None
+                if base is not None
+                else cx.execute(select(results.c.payload).where(results.c.run_id == run_id)).first()
+            )
             states = (
                 cx.execute(select(exception_state).where(exception_state.c.run_id == run_id))
                 .mappings()
                 .all()
             )
-        if row is None:
+        if base is None and row is None:
             if cfg is None:
                 raise KeyError(run_id)
             self.get_run(run_id)  # raises KeyError if the run itself is unknown
             self.reconcile_run(run_id, cfg)
             return self.get_result(run_id)
-        result = ReconResult.model_validate_json(row[0])
+        result = base if base is not None else ReconResult.model_validate_json(row[0])  # type: ignore[index]
+        if base is None:
+            self._remember(self._results, run_id, result)
         if not states:
             return result
         overlay = {st["exc_id"]: st for st in states}

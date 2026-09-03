@@ -150,7 +150,7 @@ export function ChapterLegs({ data }: { data: LandingData }) {
           {LEGS.map((leg, i) => (
             <Item key={leg.variant}>
               <TiltCard className="h-full overflow-hidden">
-                <LegPanel variant={leg.variant} className="h-56 rounded-t-2xl" />
+                <LegPanel variant={leg.variant} className="h-28 rounded-t-2xl md:h-56" />
                 <div className="p-6">
                   <div className="mb-3 flex items-center justify-between">
                     <span className="mono text-[11px] tracking-[0.18em] text-faint">0{i + 1} / 03</span>
@@ -216,7 +216,7 @@ export function ChapterMatch() {
           {TIERS.map((t, i) => (
             <Item key={t.tier}>
               <TiltCard className="flex h-full flex-col overflow-hidden bg-surface">
-                <StructureScene variant={t.variant} hue={t.hue} className="h-52 rounded-t-2xl" />
+                <StructureScene variant={t.variant} hue={t.hue} className="h-28 rounded-t-2xl md:h-52" />
                 <div className="flex flex-1 flex-col p-6">
                   <div className="mb-4 flex items-center justify-between">
                     <span className="mono text-[11px] tracking-[0.18em] text-faint">0{i + 1} / 03</span>

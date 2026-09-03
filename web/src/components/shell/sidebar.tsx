@@ -23,7 +23,15 @@ import { Wordmark } from "./wordmark";
 
 type Item = { href: string; label: string; icon: React.ElementType; count?: number; exact?: boolean };
 
-export function Sidebar({ openExceptions }: { openExceptions: number }) {
+export function NavGroups({
+  openExceptions,
+  layoutKey = "sidebar-active",
+  onNavigate,
+}: {
+  openExceptions: number;
+  layoutKey?: string;
+  onNavigate?: () => void;
+}) {
   const pathname = usePathname();
   const reduced = useReducedMotion();
 
@@ -60,13 +68,7 @@ export function Sidebar({ openExceptions }: { openExceptions: number }) {
   ];
 
   return (
-    <aside className="sticky top-0 hidden h-screen w-[232px] shrink-0 flex-col border-r border-line bg-sunken/60 lg:flex">
-      <div className="flex h-14 items-center px-4">
-        <Link href={routes.landing} className="flex items-center gap-2.5" aria-label="Barabar home">
-          <Wordmark />
-        </Link>
-      </div>
-      <nav className="flex-1 overflow-y-auto px-2 pb-4 scrollbar-thin" aria-label="Primary">
+    <nav className="flex-1 overflow-y-auto px-2 pb-4 scrollbar-thin" aria-label="Primary">
         {groups.map((g) => (
           <div key={g.title} className="mt-4">
             <div className="px-2 pb-1 text-[10.5px] font-medium uppercase tracking-[0.12em] text-faint">
@@ -79,7 +81,7 @@ export function Sidebar({ openExceptions }: { openExceptions: number }) {
                   <li key={it.href} className="relative">
                     {active && (
                       <motion.span
-                        layoutId={reduced ? undefined : "sidebar-active"}
+                        layoutId={reduced ? undefined : layoutKey}
                         transition={{ type: "spring", stiffness: 520, damping: 42 }}
                         className="absolute inset-0 rounded-md bg-surface shadow-1 hairline"
                         aria-hidden
@@ -87,6 +89,7 @@ export function Sidebar({ openExceptions }: { openExceptions: number }) {
                     )}
                     <Link
                       href={it.href}
+                      onClick={onNavigate}
                       aria-current={active ? "page" : undefined}
                       className={cn(
                         "group relative flex h-8 items-center gap-2.5 rounded-md px-2 text-[13px] transition-colors",
@@ -119,7 +122,19 @@ export function Sidebar({ openExceptions }: { openExceptions: number }) {
             </ul>
           </div>
         ))}
-      </nav>
+    </nav>
+  );
+}
+
+export function Sidebar({ openExceptions }: { openExceptions: number }) {
+  return (
+    <aside className="sticky top-0 hidden h-screen w-[232px] shrink-0 flex-col border-r border-line bg-sunken/60 lg:flex">
+      <div className="flex h-14 items-center px-4">
+        <Link href={routes.landing} className="flex items-center gap-2.5" aria-label="Barabar home">
+          <Wordmark />
+        </Link>
+      </div>
+      <NavGroups openExceptions={openExceptions} />
       <div className="border-t border-line px-4 py-3 text-[11px] text-faint">
         <div className="flex items-center gap-1.5">
           <Building2 className="size-3.5" />

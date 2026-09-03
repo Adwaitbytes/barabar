@@ -21,6 +21,7 @@ import type { Run } from "@/lib/types";
 import type { DataSource } from "@/lib/api";
 import { formatInr } from "@/lib/money";
 import { ThemeToggle } from "./theme-toggle";
+import { MobileNav } from "./mobile-nav";
 import { useCommandPalette } from "./command-palette";
 import { setActiveRun } from "@/app/app/actions";
 
@@ -36,17 +37,20 @@ export function Topbar({
   active,
   band,
   source,
+  openExceptions,
 }: {
   runs: Run[];
   active: Run;
   band: BandFigures;
   source: DataSource;
+  openExceptions: number;
 }) {
   const [pending, start] = useTransition();
   const { open } = useCommandPalette();
 
   return (
-    <header className="sticky top-0 z-30 flex h-14 items-center gap-4 border-b border-line bg-bg/80 px-4 backdrop-blur-md lg:px-6">
+    <header className="sticky top-0 z-30 flex h-14 items-center gap-2 border-b border-line bg-bg/80 px-3 backdrop-blur-md sm:gap-4 sm:px-4 lg:px-6">
+      <MobileNav openExceptions={openExceptions} />
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="ghost" size="sm" className="-ml-2 gap-2 pl-2 pr-1.5" disabled={pending}>

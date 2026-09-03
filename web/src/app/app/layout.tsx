@@ -44,7 +44,7 @@ export default async function AppLayout({ children }: LayoutProps<"/app">) {
         <div className="flex min-h-screen w-full">
           <Sidebar openExceptions={pack.exceptions_open} />
           <div className="flex min-w-0 flex-1 flex-col">
-            <Topbar runs={runs} active={active} band={band} source={src} />
+            <Topbar runs={runs} active={active} band={band} source={src} openExceptions={pack.exceptions_open} />
             <main className="flex-1 px-4 py-6 lg:px-8 lg:py-8">{children}</main>
           </div>
         </div>
