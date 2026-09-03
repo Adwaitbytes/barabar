@@ -1,10 +1,10 @@
-# Barabar evals — 2026-09-01 19:51 UTC
+# Barabar evals: 2026-09-03 09:00 UTC
 
 Regenerate: `make evals`. Every number below is computed against generator ground truth.
 
 ## 60-order month (seed 42, profile `d2c_fashion`)
 
-- inputs_hash `43db6b753b72643a` · config_hash `86ceae355ed4176f` · code `a1bc1a03c094-dirty` · outputs_hash `5c614aeaf790454d`
+- inputs_hash `43db6b753b72643a` · config_hash `86ceae355ed4176f` · code `531c4b4506b6-dirty` · outputs_hash `5c614aeaf790454d`
 
 | Metric | Value | Target | Met |
 |---|---:|---|:--:|
@@ -65,7 +65,7 @@ Regenerate: `make evals`. Every number below is computed against generator groun
 | `TIMING_NOT_YET_SETTLED` | 6 | 6 |
 | `UNKNOWN_BANK_CREDIT` | 1 | 1 |
 
-### Residual list — 21 open exception(s)
+### Residual list, 21 open exception(s)
 
 | Type | Amount | Reason |
 |---|---:|---|
@@ -93,7 +93,7 @@ Regenerate: `make evals`. Every number below is computed against generator groun
 
 ## 600-order month (seed 42, profile `d2c_fashion`)
 
-- inputs_hash `a42f293698d460df` · config_hash `86ceae355ed4176f` · code `a1bc1a03c094-dirty` · outputs_hash `5f96a2a4472ee267`
+- inputs_hash `a42f293698d460df` · config_hash `86ceae355ed4176f` · code `531c4b4506b6-dirty` · outputs_hash `5f96a2a4472ee267`
 
 | Metric | Value | Target | Met |
 |---|---:|---|:--:|
@@ -124,7 +124,7 @@ Regenerate: `make evals`. Every number below is computed against generator groun
 | exceptions_open | 45 | | |
 | exceptions_auto_resolved | 5 | | |
 | v1_types_present | 23 | | |
-| throughput_seconds | 0.033 | | |
+| throughput_seconds | 0.032 | | |
 | determinism_runs_identical | 3/3 | | |
 | injection_state_changes | 0 | == 0 | ✅ |
 
@@ -156,7 +156,7 @@ Regenerate: `make evals`. Every number below is computed against generator groun
 | `TIMING_NOT_YET_SETTLED` | 65 | 65 |
 | `UNKNOWN_BANK_CREDIT` | 1 | 1 |
 
-### Residual list — 45 open exception(s)
+### Residual list, 45 open exception(s)
 
 | Type | Amount | Reason |
 |---|---:|---|
@@ -208,7 +208,7 @@ Regenerate: `make evals`. Every number below is computed against generator groun
 
 ## 6000-order month (seed 42, profile `d2c_fashion`)
 
-- inputs_hash `79ff1c638a48e9a8` · config_hash `86ceae355ed4176f` · code `a1bc1a03c094-dirty` · outputs_hash `bd8bea1235b3f900`
+- inputs_hash `79ff1c638a48e9a8` · config_hash `86ceae355ed4176f` · code `531c4b4506b6-dirty` · outputs_hash `bd8bea1235b3f900`
 
 | Metric | Value | Target | Met |
 |---|---:|---|:--:|
@@ -239,7 +239,7 @@ Regenerate: `make evals`. Every number below is computed against generator groun
 | exceptions_open | 300 | | |
 | exceptions_auto_resolved | 5 | | |
 | v1_types_present | 22 | | |
-| throughput_seconds | 0.572 | | |
+| throughput_seconds | 0.356 | | |
 | determinism_runs_identical | 3/3 | | |
 | injection_state_changes | 0 | == 0 | ✅ |
 
@@ -270,7 +270,7 @@ Regenerate: `make evals`. Every number below is computed against generator groun
 | `TIMING_NOT_YET_SETTLED` | 572 | 572 |
 | `UNKNOWN_BANK_CREDIT` | 1 | 1 |
 
-### Residual list — 300 open exception(s)
+### Residual list, 300 open exception(s)
 
 | Type | Amount | Reason |
 |---|---:|---|

@@ -14,7 +14,7 @@ test:
 test-all:
 	$(PY) -m pytest -q
 
-lint:
+lint: lint-style
 	.venv/bin/ruff check src tests && .venv/bin/ruff format --check src tests
 	.venv/bin/lint-imports
 
@@ -52,3 +52,8 @@ seed:
 
 clean:
 	rm -rf .pytest_cache .hypothesis .ruff_cache data/local/*.db
+
+# House style: no em or en dashes anywhere user-facing.
+lint-style:
+	@! grep -rIn --exclude-dir=node_modules --exclude-dir=fixtures --exclude-dir=.next -e "—" -e "–" README.md docs src web/src evals/reports || (echo "long dashes found (see above)"; exit 1)
+	@echo "style clean"

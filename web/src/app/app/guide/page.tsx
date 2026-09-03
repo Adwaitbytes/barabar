@@ -125,10 +125,10 @@ export default function GuidePage() {
           <SectionTitle>What it is</SectionTitle>
           <Prose>
             <p className="text-[16px] leading-[1.55] text-text">
-              Barabar is an <b>AI finance controller for businesses that collect money through Razorpay</b>. It takes three things a merchant already has — Razorpay&apos;s settlement records, the bank statement and the sales ledger — matches every rupee across all three, explains every rupee it cannot match, and drafts the accounting entries.
+              Barabar is an <b>AI finance controller for businesses that collect money through Razorpay</b>. It takes three things a merchant already has, Razorpay&apos;s settlement records, the bank statement and the sales ledger, matches every rupee across all three, explains every rupee it cannot match, and drafts the accounting entries.
             </p>
             <p>
-              It answers the question every founder asks at month end: <b>&ldquo;I sold ₹2,10,000 this week. Why did ₹1,83,412 land in my bank?&rdquo;</b> — to the paise, with a proof. <i>Barabar</i> (बराबर) means &ldquo;exactly equal&rdquo;. When the residual is ₹0.00, the books are barabar.
+              It answers the question every founder asks at month end: <b>&ldquo;I sold ₹2,10,000 this week. Why did ₹1,83,412 land in my bank?&rdquo;</b>, to the paise, with a proof. <i>Barabar</i> (बराबर) means &ldquo;exactly equal&rdquo;. When the residual is ₹0.00, the books are barabar.
             </p>
           </Prose>
           <div className="mt-4 rounded-lg border-l-2 border-signal bg-signal-dim/60 px-4 py-3 text-[13.5px] text-text">
@@ -256,7 +256,7 @@ export default function GuidePage() {
                   ["Load a month", "Razorpay entities, the bank statement and the ledger are read, normalised and hashed (inputs_hash)."],
                   ["Tier A", "Exact keys: UTR, settlement id, payment id, receipt. These links are certain."],
                   ["Tier B", "Derived facts: a batch's lines net to its bank credit; each payment decomposes as gross − fee − GST; refunds and chargebacks net; split and partial batches are chained; holiday shifts are recognised."],
-                  ["Tier C", "Fuzzy candidates for what is left — a truncated UTR prefix, an exact amount on the expected day. Proposals only."],
+                  ["Tier C", "Fuzzy candidates for what is left, a truncated UTR prefix, an exact amount on the expected day. Proposals only."],
                   ["Classify", "Every residual becomes one of 23 typed exceptions with a confidence and a suggested action."],
                   ["Prove + hash", "A proof tree per settlement; metrics; the outputs_hash. Re-running gives the same hash."],
                   ["Investigate (on demand)", "The AI reads an open exception through read-only tools and returns a hypothesis card. A person accepts or resolves; the click is audited."],
@@ -303,7 +303,7 @@ export default function GuidePage() {
                 <tr><Td className="whitespace-normal">Fee, GST and net arithmetic; calendar and cut-offs</Td><Td><Badge tone="settled">always</Badge></Td><Td><Badge tone="critical">never</Badge></Td></tr>
                 <tr><Td className="whitespace-normal">Reading bank narration in known layouts</Td><Td><Badge tone="settled">grammar per bank</Badge></Td><Td className="whitespace-normal text-muted">unknown layouts only, then re-validated by the grammar</Td></tr>
                 <tr><Td className="whitespace-normal">Classifying an exception into one of 23 types</Td><Td><Badge tone="settled">always</Badge></Td><Td><Badge tone="critical">never</Badge></Td></tr>
-                <tr><Td className="whitespace-normal">Investigating an open exception</Td><Td><Badge tone="neutral">—</Badge></Td><Td className="whitespace-normal text-muted">read-only tools, no writes; a human accepts</Td></tr>
+                <tr><Td className="whitespace-normal">Investigating an open exception</Td><Td><Badge tone="neutral">, </Badge></Td><Td className="whitespace-normal text-muted">read-only tools, no writes; a human accepts</Td></tr>
                 <tr><Td className="whitespace-normal">Explaining a proof in words; drafting the memo</Td><Td className="text-muted">the facts</Td><Td className="whitespace-normal text-muted">the prose, every number guarded</Td></tr>
               </tbody>
             </Table>
@@ -354,7 +354,7 @@ export default function GuidePage() {
             {[
               ["For the founder", "“Why is this credit smaller than I expected?” gets an answer in one click, with the arithmetic shown, instead of an hour with three spreadsheets."],
               ["For the accountant", "A close pack with only what still needs a human: matched items are done, exceptions are typed and prioritised, journal entries are drafted, the GST-on-fees credit is computed for GSTR-3B."],
-              ["For the business", "Reconciliation is 40–50% of a small finance team's close cycle. Days of matching become seconds, and “unexplained” becomes a short, honest list."],
+              ["For the business", "Reconciliation is 40-50% of a small finance team's close cycle. Days of matching become seconds, and “unexplained” becomes a short, honest list."],
               ["For a judge", "Every metric is regenerable with one command against known ground truth. The AI is fenced to where it belongs. The failure log is real."],
             ].map(([t, b]) => (
               <Card key={t} interactive={false}>
@@ -377,7 +377,7 @@ export default function GuidePage() {
                 <tr><Td>60 payments</Td><TdNum>100.0%</TdNum><TdNum>100%</TdNum><TdNum>100%</TdNum><TdNum>0.005 s</TdNum></tr>
                 <tr><Td>600 payments (the demo)</Td><TdNum>99.94%</TdNum><TdNum>100%</TdNum><TdNum>100%</TdNum><TdNum>0.03 s</TdNum></tr>
                 <tr><Td>6,000 payments</Td><TdNum>99.99%</TdNum><TdNum>100%</TdNum><TdNum>100%</TdNum><TdNum>0.55 s</TdNum></tr>
-                <tr><Td>60,000 payments</Td><TdNum className="text-faint">—</TdNum><TdNum className="text-faint">—</TdNum><TdNum className="text-faint">—</TdNum><TdNum>5.4 s</TdNum></tr>
+                <tr><Td>60,000 payments</Td><TdNum className="text-faint">, </TdNum><TdNum className="text-faint">, </TdNum><TdNum className="text-faint">, </TdNum><TdNum>5.4 s</TdNum></tr>
               </tbody>
             </Table>
           </div>

@@ -60,7 +60,7 @@ function ChapterHead({
       <Reveal>
         <p className={cn("mb-7 flex items-center gap-2.5 text-[11px] uppercase tracking-[0.22em] text-muted", align === "center" && "justify-center")}>
           <span className="size-1.5 rounded-full bg-settled shadow-[0_0_10px_var(--settled)]" />
-          Chapter {n} — {name}
+          Chapter {n}: {name}
         </p>
       </Reveal>
       <Wipe className="text-[clamp(34px,4.6vw,60px)] font-normal leading-[1.04] tracking-[-0.018em] text-text">
@@ -93,7 +93,7 @@ function Stat({ label, value, format }: { label: string; value: number; format: 
   );
 }
 
-/* ---------- Chapter 01 — Three legs ---------- */
+/* ---------- Chapter 01: Three legs ---------- */
 
 const LEGS: { variant: LegVariant; title: string; body: string; reads: string }[] = [
   {
@@ -168,7 +168,7 @@ export function ChapterLegs({ data }: { data: LandingData }) {
   );
 }
 
-/* ---------- Chapter 02 — The match ---------- */
+/* ---------- Chapter 02: The match ---------- */
 
 const TIERS: { variant: SceneVariant; hue: number; tier: string; title: string; rules: string[]; body: string; conf: string }[] = [
   {
@@ -243,7 +243,7 @@ export function ChapterMatch() {
   );
 }
 
-/* ---------- Chapter 03 — Every rupee named ---------- */
+/* ---------- Chapter 03: Every rupee named ---------- */
 
 const FAMILY_ORDER: ExceptionFamily[] = ["timing", "pricing", "refund", "dispute", "bank", "ledger", "razorpay"];
 const FAMILY_MEANING: Record<ExceptionFamily, string> = {
@@ -312,7 +312,7 @@ export function ChapterNames({ data }: { data: LandingData }) {
                 </div>
                 <div className="mono text-left text-[13px] text-muted sm:text-right">
                   <span className="text-text">{open.count}</span> open
-                  <span className="block text-[12px] text-faint">{open.count ? formatInr(open.amount) : "—"}</span>
+                  <span className="block text-[12px] text-faint">{open.count ? formatInr(open.amount) : ", "}</span>
                 </div>
               </div>
             </Item>
@@ -323,7 +323,7 @@ export function ChapterNames({ data }: { data: LandingData }) {
   );
 }
 
-/* ---------- Chapter 04 — The proof ---------- */
+/* ---------- Chapter 04: The proof ---------- */
 
 const GLYPHS = "0123456789abcdef";
 

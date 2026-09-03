@@ -80,7 +80,7 @@ export function SettlementsTable({
                 <Td>
                   <Badge tone={TYPE_TONE[s.type]}>{s.type}</Badge>
                 </Td>
-                <Td className="mono text-[12px] text-muted">{s.utr ?? <span className="text-faint">—</span>}</Td>
+                <Td className="mono text-[12px] text-muted">{s.utr ?? <span className="text-faint">, </span>}</Td>
                 <TdNum className="text-muted">{s.lines}</TdNum>
                 <TdNum>
                   <Amount paise={s.gross} tone="muted" size="sm" />

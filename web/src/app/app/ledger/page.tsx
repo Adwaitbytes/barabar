@@ -92,7 +92,7 @@ export default async function LedgerPage({ searchParams }: PageProps<"/app/ledge
 
       <StatStrip
         stats={[
-          { label: "Entries", value: fmtInt(sorted.length), hint: `source: ${sorted[0]?.source ?? "—"}` },
+          { label: "Entries", value: fmtInt(sorted.length), hint: `source: ${sorted[0]?.source ?? ", "}` },
           { label: "Gross invoiced", value: <Amount paise={gross} size="lg" /> },
           {
             label: "Matched to a payment",
@@ -163,8 +163,8 @@ export default async function LedgerPage({ searchParams }: PageProps<"/app/ledge
                   >
                     <Td className="text-text">{fmtDate(e.date)}</Td>
                     <Td className="mono text-[12.5px]">{e.invoice_no}</Td>
-                    <Td className="mono text-[12px] text-muted">{e.order_receipt ?? <span className="text-faint">—</span>}</Td>
-                    <Td className="mono text-[12px] text-muted">{e.customer_ref ?? <span className="text-faint">—</span>}</Td>
+                    <Td className="mono text-[12px] text-muted">{e.order_receipt ?? <span className="text-faint">, </span>}</Td>
+                    <Td className="mono text-[12px] text-muted">{e.customer_ref ?? <span className="text-faint">, </span>}</Td>
                     <TdNum>
                       <Amount paise={e.gross} />
                     </TdNum>
@@ -172,7 +172,7 @@ export default async function LedgerPage({ searchParams }: PageProps<"/app/ledge
                       <Badge tone={STATUS_TONE[e.status]}>{e.status}</Badge>
                     </Td>
                     <Td className="text-[12px] text-muted">{e.source}</Td>
-                    <Td>{to ? <EntityRef refId={to} /> : <span className="text-faint">—</span>}</Td>
+                    <Td>{to ? <EntityRef refId={to} /> : <span className="text-faint">, </span>}</Td>
                     <Td>
                       {fl.length ? (
                         <span className="flex flex-wrap gap-1">

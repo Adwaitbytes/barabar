@@ -1,5 +1,5 @@
 """Tally Prime XML import (Gateway of Tally > Import > Vouchers). Debits are
-negative amounts with ISDEEMEDPOSITIVE=Yes, credits positive with No — Tally's
+negative amounts with ISDEEMEDPOSITIVE=Yes, credits positive with No, Tally's
 convention, not ours."""
 
 from __future__ import annotations

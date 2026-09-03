@@ -1,7 +1,7 @@
 const IST = "Asia/Kolkata";
 
 export function fmtDate(iso: string | null | undefined, opts?: { withYear?: boolean }): string {
-  if (!iso) return "—";
+  if (!iso) return ", ";
   const d = new Date(iso.length === 10 ? `${iso}T00:00:00+05:30` : iso);
   return new Intl.DateTimeFormat("en-IN", {
     day: "2-digit",
@@ -12,7 +12,7 @@ export function fmtDate(iso: string | null | undefined, opts?: { withYear?: bool
 }
 
 export function fmtDateTime(iso: string | null | undefined): string {
-  if (!iso) return "—";
+  if (!iso) return ", ";
   const d = new Date(iso);
   return new Intl.DateTimeFormat("en-IN", {
     day: "2-digit",
@@ -42,7 +42,7 @@ export function weekday(iso: string): string {
 }
 
 export function relTime(iso: string | null | undefined, now = Date.now()): string {
-  if (!iso) return "—";
+  if (!iso) return ", ";
   const diff = (now - new Date(iso).getTime()) / 1000;
   if (diff < 60) return "just now";
   if (diff < 3600) return `${Math.floor(diff / 60)}m ago`;
@@ -51,7 +51,7 @@ export function relTime(iso: string | null | undefined, now = Date.now()): strin
 }
 
 export function shortHash(hash: string | null | undefined, n = 8): string {
-  if (!hash) return "—";
+  if (!hash) return ", ";
   return hash.slice(0, n);
 }
 

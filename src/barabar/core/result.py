@@ -1,5 +1,5 @@
 """Outputs of one reconciliation run: links, typed exceptions, proof trees,
-metrics, audit events — and the canonical projection that becomes ``outputs_hash``."""
+metrics, audit events: and the canonical projection that becomes ``outputs_hash``."""
 
 from __future__ import annotations
 

@@ -17,7 +17,7 @@ import {
 import { LandingFooter } from "@/components/landing/footer";
 
 export const metadata: Metadata = {
-  title: { absolute: "Barabar — every rupee explained" },
+  title: { absolute: "Barabar: every rupee explained" },
   description:
     "Reconciles Razorpay settlements, the bank statement and the sales ledger to the paise. Typed exceptions, proof trees, deterministic hashes.",
 };

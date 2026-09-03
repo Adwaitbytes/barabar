@@ -199,14 +199,14 @@ export default async function BankPage({ searchParams }: PageProps<"/app/bank">)
                     </Td>
                     <TdNum>{t.credit > 0 ? <Amount paise={t.credit} tone={isRz(t) ? "settled" : "default"} /> : null}</TdNum>
                     <TdNum>{t.debit > 0 ? <Amount paise={t.debit} tone="muted" /> : null}</TdNum>
-                    <TdNum>{t.balance_after !== null ? <Amount paise={t.balance_after} tone="muted" size="sm" /> : "—"}</TdNum>
+                    <TdNum>{t.balance_after !== null ? <Amount paise={t.balance_after} tone="muted" size="sm" /> : ", "}</TdNum>
                     <Td>
                       {link ? (
                         <EntityRef refId={link} />
                       ) : rzUnlinked ? (
                         <Badge tone="critical">no batch</Badge>
                       ) : (
-                        <span className="text-faint">—</span>
+                        <span className="text-faint">, </span>
                       )}
                     </Td>
                   </tr>

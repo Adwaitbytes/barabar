@@ -2,7 +2,7 @@
 
 The first fee model assumed 2% on everything and produced hundreds of
 FEE_VARIANCE false positives on UPI. Rates are per method (and per card
-network/type for RuPay debit and international cards) — never a single number.
+network/type for RuPay debit and international cards), never a single number.
 """
 
 from __future__ import annotations

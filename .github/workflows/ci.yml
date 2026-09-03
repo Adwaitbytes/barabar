@@ -22,6 +22,8 @@ jobs:
         run: .venv/bin/pytest -q -m "not perf and not agent"
       - name: evals smoke (60-order set, strict targets)
         run: .venv/bin/barabar evals --sizes 60,600 --strict --out /tmp/evals
+      - name: house style (no long dashes)
+        run: make lint-style
       - name: docs in sync
         run: .venv/bin/python -m barabar.core.exceptions --write /tmp/EXCEPTIONS.md && diff -q /tmp/EXCEPTIONS.md docs/EXCEPTIONS.md
 

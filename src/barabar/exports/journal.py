@@ -124,7 +124,7 @@ def vouchers_for_run(
         status = (
             "bank credit matched"
             if s.settlement_id in matched
-            else "bank credit NOT matched — review before posting"
+            else "bank credit NOT matched, review before posting"
         )
         narration = (
             f"Razorpay settlement {s.settlement_id} UTR {s.utr or 'n/a'}: {len([ln for ln in lines if ln.type == ReconLineType.PAYMENT])} payments gross {format_inr(gross)}, "

@@ -47,7 +47,7 @@ export function RecentSettlements({ settlements }: { settlements: ClosePackSettl
                 {s.settlement_id}
               </Link>
             </Td>
-            <Td className="mono text-[12px] text-muted">{s.utr ?? <span className="text-faint">—</span>}</Td>
+            <Td className="mono text-[12px] text-muted">{s.utr ?? <span className="text-faint">, </span>}</Td>
             <TdNum>
               <Amount paise={s.amount} />
             </TdNum>

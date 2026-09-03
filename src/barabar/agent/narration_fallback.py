@@ -1,4 +1,4 @@
-"""LLM field extraction for bank narrations the grammar cannot parse — and only
+"""LLM field extraction for bank narrations the grammar cannot parse, and only
 those. The model's answer is re-validated by the same grammar: a UTR that does
 not match the NEFT/RTGS/IMPS shape is discarded, never trusted."""
 

@@ -149,7 +149,7 @@ export function Hero() {
               className="mb-6 flex items-center gap-2.5 text-[11px] uppercase tracking-[0.22em] text-muted"
             >
               <span className="size-1.5 rounded-full bg-settled shadow-[0_0_10px_var(--settled)]" />
-              Chapter 00 — The question
+              Chapter 00: The question
             </motion.p>
             <motion.h1
               id="hero-title"

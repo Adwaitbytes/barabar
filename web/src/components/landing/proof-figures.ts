@@ -32,7 +32,7 @@ export const proofFigures = {
   mode: "NEFT",
 } as const;
 
-/** "₹1,83,412.00" — the number in the headline and the last line of the tree. */
+/** "₹1,83,412.00": the number in the headline and the last line of the tree. */
 export const HEADLINE_AMOUNT = formatInr(NET);
 
 export type RuleId = "A1-UTR-EXACT" | "B1-BATCH-NET" | "B2-GROSS-FEE-TAX-DECOMP" | "B3-REFUND-NET";

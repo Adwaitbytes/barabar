@@ -38,8 +38,8 @@ flowchart LR
 
 ```mermaid
 stateDiagram-v2
-  [*] --> ingested: create_run(month) — inputs_hash stored
-  ingested --> reconciled: reconcile(month, config) — result + audit stored
+  [*] --> ingested: create_run(month), inputs_hash stored
+  ingested --> reconciled: reconcile(month, config), result + audit stored
   reconciled --> finished: outputs_hash stamped
   finished --> [*]
   note right of ingested: a killed process resumes here;\ndeterminism gives the same outputs_hash

@@ -1,5 +1,5 @@
 """Materialise a generated month on disk in the shapes a merchant would actually
-upload: Razorpay JSON, the bank's CSV layout, the ledger CSV — plus ground truth."""
+upload: Razorpay JSON, the bank's CSV layout, the ledger CSV, plus ground truth."""
 
 from __future__ import annotations
 

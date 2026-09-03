@@ -112,7 +112,7 @@ export function vouchersForRun(
       narration:
         `Razorpay settlement ${s.settlement_id} UTR ${s.utr ?? "n/a"}: ${pay.length} payments gross ${formatInr(gross)}, ` +
         `PG fee ${formatInr(fee)}, GST ${formatInr(tax)}, refunds ${formatInr(refunds)}, chargebacks ${formatInr(cbDebit)}; ` +
-        `net ${formatInr(s.amount)} (${isMatched ? "bank credit matched" : "bank credit NOT matched — review before posting"})`,
+        `net ${formatInr(s.amount)} (${isMatched ? "bank credit matched" : "bank credit NOT matched, review before posting"})`,
       lines: entries,
       settlement_id: s.settlement_id,
       matched: isMatched,

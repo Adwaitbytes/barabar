@@ -1,5 +1,5 @@
 """FastAPI service: ingest, runs, exceptions, proof trees, exports, chat gateway,
-webhooks. Thin by design — every decision lives in ``barabar.core``."""
+webhooks. Thin by design: every decision lives in ``barabar.core``."""
 
 from __future__ import annotations
 
@@ -598,7 +598,7 @@ def export_close_pack_html(run_id: str, s: Store = Depends(store)) -> Response:
     h = pack["headline"]
     html = f"""<!doctype html><html lang=en><meta charset=utf-8><title>Barabar close pack {run_id}</title>
 <style>body{{font:15px/1.5 -apple-system,Inter,system-ui,sans-serif;max-width:1100px;margin:40px auto;padding:0 24px;color:#111}}h1,h2{{letter-spacing:-.01em}}table{{border-collapse:collapse;width:100%;margin:16px 0;font-size:13px}}td,th{{border-bottom:1px solid #e5e7eb;padding:6px 8px;text-align:left;vertical-align:top}}td.n{{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}}code{{font:12px ui-monospace,Menlo,monospace}}.band{{display:flex;gap:32px;margin:24px 0}}.band div{{flex:1}}.band b{{display:block;font-size:26px;font-variant-numeric:tabular-nums}}.hash{{font:11px ui-monospace,monospace;color:#555}}</style>
-<h1>Close pack — {escape(run.as_of.isoformat())}</h1>
+<h1>Close pack: {escape(run.as_of.isoformat())}</h1>
 <p class=hash>inputs {run.inputs_hash[:16]} · config {run.config_hash[:16]} · code {escape(run.code_version)} · outputs {(run.outputs_hash or "")[:16]}</p>
 <div class=band><div>Gross captured<b>{escape(h["gross_captured_display"])}</b></div><div>Explained<b>{escape(h["explained_display"])}</b><span>{h["rupees_explained_pct"]}%</span></div><div>Unexplained<b>{escape(h["unexplained_display"])}</b></div></div>
 <h2>Settlements</h2><table><tr><th>Settled</th><th>Settlement</th><th>UTR</th><th>Net</th><th>Status</th></tr>{setl}</table>

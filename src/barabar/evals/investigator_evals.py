@@ -92,7 +92,7 @@ def render(report: dict[str, object]) -> str:
     ts = datetime.now(tz=UTC).strftime("%Y-%m-%d %H:%M UTC")
     rows = report["rows"]  # type: ignore[assignment]
     out = [
-        f"# Investigator evals — {ts}",
+        f"# Investigator evals: {ts}",
         "",
         f"Open, low-confidence exceptions investigated: **{report['n']}** · scored {report['scored']} · errors {report['errors']} · **hypothesis accuracy {report['accuracy_pct']}%** (PRD expectation: 70-85%, reported honestly).",
         "",

@@ -149,7 +149,7 @@ class RazorpayClient:
 
 def fetch_month(client: RazorpayClient, year: int, month: int) -> dict[str, tuple[Any, ...]]:
     """Everything Razorpay knows about a month, in the normalised model. Recon lines are
-    empty on accounts where settlements are not generated (test mode) — the caller then
+    empty on accounts where settlements are not generated (test mode), the caller then
     runs the Settlement Simulator over the real entities."""
     payments = client.payments(year, month)
     receipts = client.order_receipts(year, month)

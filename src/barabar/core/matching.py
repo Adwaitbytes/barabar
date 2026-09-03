@@ -370,7 +370,7 @@ def _try_split(ctx: _Ctx, s: RzSettlement, sref: str) -> bool:
 
 def _try_calendar_reshift(ctx: _Ctx, s: RzSettlement, sref: str) -> bool:
     """Exact amount, Razorpay narration with no UTR at all, landing on the settled
-    day or its calendar-shifted successor — and unique."""
+    day or its calendar-shifted successor, and unique."""
     sd = _settled_date(s)
     expected = {sd, ctx.cfg.calendar.next_working_day(sd), ctx.cfg.calendar.add_working_days(sd, 1)}
     cands = [

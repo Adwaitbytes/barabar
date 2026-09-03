@@ -12,7 +12,7 @@ function Cell({ label, value }: { label: string; value: string | null }) {
           <code className="truncate text-[12px] text-muted">{value.slice(0, 12)}</code>
         </Hint>
       ) : (
-        <span className="text-faint">—</span>
+        <span className="text-faint">, </span>
       )}
       {value && <CopyButton value={value} label={`Copy ${label}`} />}
     </div>

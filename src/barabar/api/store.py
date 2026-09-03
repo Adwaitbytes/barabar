@@ -1,5 +1,5 @@
 """Persistence: runs, months, results, exception state, audit chain, webhook
-events. SQLite for the demo, Postgres in production — one code path via
+events. SQLite for the demo, Postgres in production, one code path via
 SQLAlchemy Core. A run's lifecycle is staged (ingested → reconciled → finished)
 and persisted at each stage, so a killed process resumes deterministically."""
 

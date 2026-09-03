@@ -62,7 +62,7 @@ export default async function SettlementProofPage({ params }: PageProps<"/app/se
           <dl className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-[12.5px] text-muted">
             <div className="flex gap-1.5">
               <dt className="text-faint">UTR</dt>
-              <dd className="mono text-text">{s.utr ?? "—"}</dd>
+              <dd className="mono text-text">{s.utr ?? ", "}</dd>
               {s.utr && <CopyButton value={s.utr} label="Copy UTR" className="-my-1 size-5" />}
             </div>
             <div className="flex gap-1.5">

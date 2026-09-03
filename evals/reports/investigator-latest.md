@@ -1,4 +1,4 @@
-# Investigator evals — 2026-09-01 20:20 UTC
+# Investigator evals: 2026-09-03 09:00 UTC
 
 Open, low-confidence exceptions investigated: **24** · scored 24 · errors 0 · **hypothesis accuracy 100.0%** (PRD expectation: 70-85%, reported honestly).
 

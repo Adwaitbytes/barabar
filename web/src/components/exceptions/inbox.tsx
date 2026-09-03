@@ -260,7 +260,7 @@ export function ExceptionInbox({
                               )}
                             </span>
                           ) : (
-                            <span className="text-faint">—</span>
+                            <span className="text-faint">, </span>
                           )}
                         </td>
                         <td className="max-w-0 py-2 pr-3">

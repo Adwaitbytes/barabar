@@ -6,7 +6,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Barabar — every rupee explained",
+    default: "Barabar: every rupee explained",
     template: "%s · Barabar",
   },
   description:

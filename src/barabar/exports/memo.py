@@ -47,7 +47,7 @@ def controller_memo(month: Month, result: ReconResult, *, on: date | None = None
     open_exc = [e for e in result.exceptions if e.status == ExceptionStatus.OPEN]
     by_type = Counter(e.type.value for e in open_exc)
     lines = [
-        f"# Month-end controller's memo — as of {f['as_of']}",
+        f"# Month-end controller's memo, as of {f['as_of']}",
         "",
         f"Gross captured through Razorpay: **{format_inr(int(f['gross_captured']))}**. "
         f"Explained to the paise: **{format_inr(int(f['explained']))}** ({f['rupees_explained_pct']}%). "

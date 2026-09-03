@@ -215,7 +215,7 @@ def render_exceptions_md() -> str:
     lines = [
         "# Exception taxonomy",
         "",
-        "Rendered from `barabar.core.exceptions` — do not edit by hand "
+        "Rendered from `barabar.core.exceptions`, do not edit by hand "
         "(`make docs` regenerates; a test asserts sync).",
         "",
         "Every unmatched or partially matched item gets exactly one primary type. "

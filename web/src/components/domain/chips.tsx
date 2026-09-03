@@ -38,7 +38,7 @@ export function TierBadge({ tier, className }: { tier: Tier; className?: string 
 /* ---------- rule ids ---------- */
 
 export function RuleId({ id, className }: { id: string | null | undefined; className?: string }) {
-  if (!id) return <span className="text-faint">—</span>;
+  if (!id) return <span className="text-faint">, </span>;
   return (
     <code
       className={cn(
@@ -158,7 +158,7 @@ export function EntityRef({ refId, className }: { refId: string; className?: str
 /* ---------- hashes ---------- */
 
 export function Hash({ value, n = 8 }: { value: string | null | undefined; n?: number }) {
-  if (!value) return <span className="text-faint">—</span>;
+  if (!value) return <span className="text-faint">, </span>;
   return (
     <Hint label={value}>
       <code className="text-[12px] text-muted">{value.slice(0, n)}</code>

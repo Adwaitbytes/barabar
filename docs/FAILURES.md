@@ -1,18 +1,18 @@
-# FAILURES.md — what broke, and how we got out
+# FAILURES.md: what broke, and how we got out
 
 Fixed shape per entry: **what we saw · what we believed · what was true · what changed.**
 Only real entries. Nothing here was invented for the video.
 
 ## 1. Ground truth called a correct match wrong (RTGS survives a 50-char cut)
-- **Saw:** evals at 6,000 orders reported tier-A precision 99.983% and a false-match cost of ₹3,68,233 — the PRD says tiers A/B must be ₹0.
+- **Saw:** evals at 6,000 orders reported tier-A precision 99.983% and a false-match cost of ₹3,68,233, the PRD says tiers A/B must be ₹0.
 - **Believed:** the matcher had linked a bank credit to the wrong settlement by UTR.
-- **True:** the generator flagged every settlement with a *truncation directive* as "no bank link" in ground truth. HDFC's NEFT layout puts the UTR last (so 50 characters kill it), but its RTGS layout puts the UTR second — a ₹10.2L batch went RTGS, kept its UTR, and tier A matched it correctly. The match was right; the truth was wrong.
+- **True:** the generator flagged every settlement with a *truncation directive* as "no bank link" in ground truth. HDFC's NEFT layout puts the UTR last (so 50 characters kill it), but its RTGS layout puts the UTR second, a ₹10.2L batch went RTGS, kept its UTR, and tier A matched it correctly. The match was right; the truth was wrong.
 - **Changed:** the simulator now decides the truth link by parsing the narration exactly as the matcher does. Ground truth is derived from data, never from a flag.
 
 ## 2. A settlement day where refunds exceeded sales
 - **Saw:** the Tally XML test failed with a voucher off by −₹782; a journal line for the bank ledger carried a negative debit.
 - **Believed:** a sign-convention bug in the XML writer (Tally's "debits are negative" rule).
-- **True:** on a 40-order month one settlement day netted below zero (two refunds, one small sale). The simulator emitted a negative "settlement". Razorpay never does that — it carries a negative balance forward to the next settlement.
+- **True:** on a 40-order month one settlement day netted below zero (two refunds, one small sale). The simulator emitted a negative "settlement". Razorpay never does that, it carries a negative balance forward to the next settlement.
 - **Changed:** non-positive days are carried forward; leftovers at month-end become `REFUND_PENDING_NET` / `TIMING_NOT_YET_SETTLED` truths. Journal lines now reject negative or two-sided amounts at construction.
 
 ## 3. Injected a tax variance on a payment that had no recon line yet
@@ -22,21 +22,21 @@ Only real entries. Nothing here was invented for the video.
 - **Changed:** the generator only injects fee/tax variances on payments that settle inside the month.
 
 ## 4. Bank row IDs drifted through a CSV round-trip
-- **Saw:** `outputs_hash` changed after writing the statement in HDFC layout and reading it back — determinism, the one property we promised.
+- **Saw:** `outputs_hash` changed after writing the statement in HDFC layout and reading it back, determinism, the one property we promised.
 - **Believed:** the per-bank parser lost information.
 - **True:** the simulator numbered bank rows in the order it queued them; the statement is written sorted by value date. IDs shifted, links renamed, hash changed.
 - **Changed:** rows are numbered in statement order and every ground-truth reference is remapped. A statement uploaded by a merchant now hashes identically to the synthetic one it came from.
 
 ## 5. "Unexplained" counted COD invoices against Razorpay's gross
-- **Saw:** 81.7% of gross "explained" on the demo month, and 109 open exceptions — 65 of them one-per-payment "not yet settled".
+- **Saw:** 81.7% of gross "explained" on the demo month, and 109 open exceptions, 65 of them one-per-payment "not yet settled".
 - **Believed:** the matcher was leaving real money unexplained.
 - **True:** orphan COD invoices and missing credit notes are ledger hygiene; they change what the books say, not how much Razorpay money is accounted for. And a queue that repeats the same fact 65 times is noise, not honesty.
-- **Changed:** `unexplained` is money-flow only; ledger items are reported separately as `ledger_open`. Not-yet-due payments are one exception per due date ("65 payments captured 29–31 Aug, due 2 Sep"). Evals now also report *coverage of the explainable* next to the raw figure, because a month with an injected missing bank credit is honestly not 99% explained.
+- **Changed:** `unexplained` is money-flow only; ledger items are reported separately as `ledger_open`. Not-yet-due payments are one exception per due date ("65 payments captured 29-31 Aug, due 2 Sep"). Evals now also report *coverage of the explainable* next to the raw figure, because a month with an injected missing bank credit is honestly not 99% explained.
 
 ## 6. A partial settlement with nothing in it
 - **Saw:** on the 60-order set a `PARTIAL_SETTLEMENT` was classified as `MISSING_BANK_CREDIT`.
 - **Believed:** the B5 continuation rule fired late.
-- **True:** the partial-settlement cap (60% of the day's net) was smaller than the day's first payment, so the "partial" batch settled ₹0 and its bank credit was ₹0 — which the matcher rightly cannot see.
+- **True:** the partial-settlement cap (60% of the day's net) was smaller than the day's first payment, so the "partial" batch settled ₹0 and its bank credit was ₹0, which the matcher rightly cannot see.
 - **Changed:** a partial batch always keeps at least one payment; Razorpay pays out what the balance allows, never nothing.
 
 ## 7. A patch that silently didn't apply

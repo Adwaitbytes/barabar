@@ -40,7 +40,7 @@ export function formatInr(
   return `${p.sign}${sym}${p.rupees}.${p.paise}`;
 }
 
-/** ₹1.08 Cr, ₹10.85 L, ₹8,159 — for chart axes and dense labels only. */
+/** ₹1.08 Cr, ₹10.85 L, ₹8,159, for chart axes and dense labels only. */
 export function formatInrCompact(paise: Paise): string {
   const abs = Math.abs(paise) / 100;
   const sign = paise < 0 ? "-" : "";

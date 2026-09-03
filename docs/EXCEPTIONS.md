@@ -1,6 +1,6 @@
 # Exception taxonomy
 
-Rendered from `barabar.core.exceptions` — do not edit by hand (`make docs` regenerates; a test asserts sync).
+Rendered from `barabar.core.exceptions`, do not edit by hand (`make docs` regenerates; a test asserts sync).
 
 Every unmatched or partially matched item gets exactly one primary type. Secondary tags are allowed. **Unexplained** is not a type: it is the sum of open exceptions with confidence below the threshold.
 

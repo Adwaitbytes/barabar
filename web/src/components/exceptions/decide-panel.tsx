@@ -151,7 +151,7 @@ export function DecidePanel({ runId, exc }: { runId: string; exc: ExceptionItem 
       {(exc.resolved_by || exc.resolved_at || exc.resolution_note) && (
         <div className="rounded-md bg-raised px-3 py-2.5 text-[12.5px] hairline">
           <div className="text-faint">
-            {exc.resolved_by ?? "—"} · {fmtDateTime(exc.resolved_at)}
+            {exc.resolved_by ?? ", "} · {fmtDateTime(exc.resolved_at)}
           </div>
           {exc.resolution_note && <p className="mt-1 text-text">{exc.resolution_note}</p>}
         </div>
