@@ -1,0 +1,701 @@
+- generic:
+  - generic [aria-hidden]:
+    - generic:
+      - banner:
+        - button [expanded]
+        - button:
+          - generic:
+            - generic: hosted demo month
+            - generic: August 2026 · as of 2026-09-01
+        - generic:
+          - button:
+            - generic: ⌘K
+          - button
+      - main:
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - generic: Close pack · August 2026
+                - heading [level=1]: hosted demo month
+                - paragraph: Reconciled as of 01 Sept 2026. Every figure below is taken from the run's structured metrics.
+              - generic:
+                - generic:
+                  - button: Re-run
+                - link:
+                  - /url: https://barabar-api.vercel.app/runs/run_f2a19c88ec04/export/memo.md
+                  - text: Export memo
+            - region:
+              - heading [level=2]: Headline
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: Unexplained
+                    - generic:
+                      - generic:
+                        - generic:
+                          - text: ₹80,855
+                          - generic: ".20"
+                    - generic:
+                      - text: of
+                      - generic:
+                        - text: ₹10,85,294
+                        - generic: ".03"
+                      - text: gross captured
+                - generic:
+                  - generic:
+                    - generic: Explained to the paise
+                    - generic:
+                      - generic:
+                        - generic:
+                          - text: ₹10,04,438
+                          - generic: ".83"
+                    - generic: 92.55% of gross
+                - generic:
+                  - generic:
+                    - generic: Open exceptions
+                    - generic:
+                      - generic:
+                        - text: "45"
+                        - generic: / 50
+                    - generic:
+                      - generic:
+                        - text: ₹3,63,366
+                        - generic: ".02"
+                      - text: awaiting a decision
+                - generic:
+                  - generic:
+                    - generic: Settlements matched
+                    - generic:
+                      - generic:
+                        - text: "18"
+                        - generic: / 21
+                    - generic: processed batches with a bank credit
+              - generic:
+                - generic:
+                  - generic:
+                    - text: Explained
+                    - generic: ₹7,48,368.01
+                  - generic:
+                    - text: Open exceptions
+                    - generic: ₹2,56,070.82
+                  - generic:
+                    - text: Unexplained
+                    - generic: ₹80,855.20
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - heading [level=3]: Settlement calendar
+                    - paragraph: What Razorpay processed on each value date against what landed in the bank.
+                  - link:
+                    - /url: /app/settlements
+                    - text: All settlements
+                - generic:
+                  - figure:
+                    - generic:
+                      - generic: Expected (Razorpay processed)
+                      - generic: Landed in bank
+                      - generic: ▲ surplus
+                      - generic: ▼ short
+                    - img:
+                      - generic: "0"
+                      - generic: ₹50,000
+                      - generic: ₹1.00 L
+                      - generic: ₹1.50 L
+                      - generic:
+                        - generic: "05"
+                        - generic: Wed
+                      - generic:
+                        - generic: "06"
+                        - generic: Thu
+                      - generic:
+                        - generic: "07"
+                        - generic: Fri
+                      - generic:
+                        - generic: "10"
+                        - generic: Mon
+                      - generic:
+                        - generic: ▲ ₹12,346
+                        - generic: "11"
+                        - generic: Tue
+                      - generic:
+                        - generic: "13"
+                        - generic: Thu
+                      - generic:
+                        - generic: "14"
+                        - generic: Fri
+                      - generic:
+                        - generic: "17"
+                        - generic: Mon
+                      - generic:
+                        - generic: "18"
+                        - generic: Tue
+                      - generic:
+                        - generic: "19"
+                        - generic: Wed
+                      - generic:
+                        - generic: "20"
+                        - generic: Thu
+                      - generic:
+                        - generic: "21"
+                        - generic: Fri
+                      - generic:
+                        - generic: "22"
+                        - generic: Sat
+                      - generic:
+                        - generic: ▼ ₹23,098
+                        - generic: "24"
+                        - generic: Mon
+                      - generic:
+                        - generic: "25"
+                        - generic: Tue
+                      - generic:
+                        - generic: "27"
+                        - generic: Thu
+                      - generic:
+                        - generic: ▲ ₹30,871
+                        - generic: "28"
+                        - generic: Fri
+                      - generic:
+                        - generic: "31"
+                        - generic: Mon
+                      - generic:
+                        - generic: ▼ ₹74,792
+                        - generic: "01"
+                        - generic: Tue
+                    - generic: Bars grow from a shared baseline; a labelled delta marks days where the bank balance differs from what Razorpay processed.
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - heading [level=3]: What still needs a human
+                      - paragraph: Open exceptions by type, largest rupees first.
+                    - link:
+                      - /url: /app/exceptions
+                      - text: Open inbox
+                  - generic:
+                    - generic:
+                      - table:
+                        - rowgroup:
+                          - row:
+                            - columnheader: Exception
+                            - columnheader: Count
+                            - columnheader: Amount
+                            - columnheader
+                        - rowgroup:
+                          - row:
+                            - cell:
+                              - link:
+                                - /url: /app/exceptions?type=TIMING_NOT_YET_SETTLED
+                                - generic: Not yet settled
+                                - generic: Timing
+                            - cell: "1"
+                            - cell:
+                              - generic:
+                                - text: ₹1,28,071
+                                - generic: ".55"
+                            - cell:
+                              - link:
+                                - /url: /app/exceptions?type=TIMING_NOT_YET_SETTLED
+                          - row:
+                            - cell:
+                              - link:
+                                - /url: /app/exceptions?type=TIMING_BANK_LAG
+                                - generic: Bank lag
+                                - generic: Timing
+                            - cell: "1"
+                            - cell:
+                              - generic:
+                                - text: ₹74,791
+                                - generic: ".80"
+                            - cell:
+                              - link:
+                                - /url: /app/exceptions?type=TIMING_BANK_LAG
+                          - row:
+                            - cell:
+                              - link:
+                                - /url: /app/exceptions?type=NARRATION_TRUNCATED_UTR
+                                - generic: Truncated UTR
+                                - generic: Bank
+                            - cell: "1"
+                            - cell:
+                              - generic:
+                                - text: ₹32,897
+                                - generic: ".64"
+                            - cell:
+                              - link:
+                                - /url: /app/exceptions?type=NARRATION_TRUNCATED_UTR
+                          - row:
+                            - cell:
+                              - link:
+                                - /url: /app/exceptions?type=DUPLICATE_BANK_CREDIT
+                                - generic: Duplicate bank credit
+                                - generic: Bank
+                            - cell: "1"
+                            - cell:
+                              - generic:
+                                - text: ₹30,870
+                                - generic: ".95"
+                            - cell:
+                              - link:
+                                - /url: /app/exceptions?type=DUPLICATE_BANK_CREDIT
+                          - row:
+                            - cell:
+                              - link:
+                                - /url: /app/exceptions?type=ORPHAN_LEDGER_ENTRY
+                                - generic: Orphan ledger entry
+                                - generic: Ledger
+                            - cell: "9"
+                            - cell:
+                              - generic:
+                                - text: ₹25,596
+                                - generic: ".00"
+                            - cell:
+                              - link:
+                                - /url: /app/exceptions?type=ORPHAN_LEDGER_ENTRY
+                          - row:
+                            - cell:
+                              - link:
+                                - /url: /app/exceptions?type=MISSING_BANK_CREDIT
+                                - generic: Missing bank credit
+                                - generic: Bank
+                            - cell: "1"
+                            - cell:
+                              - generic:
+                                - text: ₹23,097
+                                - generic: ".82"
+                            - cell:
+                              - link:
+                                - /url: /app/exceptions?type=MISSING_BANK_CREDIT
+                          - row:
+                            - cell:
+                              - link:
+                                - /url: /app/exceptions?type=ADJUSTMENT
+                                - generic: Manual adjustment
+                                - generic: Razorpay
+                            - cell: "2"
+                            - cell:
+                              - generic:
+                                - text: ₹12,500
+                                - generic: ".00"
+                            - cell:
+                              - link:
+                                - /url: /app/exceptions?type=ADJUSTMENT
+                          - row:
+                            - cell:
+                              - link:
+                                - /url: /app/exceptions?type=UNKNOWN_BANK_CREDIT
+                                - generic: Unknown bank credit
+                                - generic: Bank
+                            - cell: "1"
+                            - cell:
+                              - generic:
+                                - text: ₹12,345
+                                - generic: ".67"
+                            - cell:
+                              - link:
+                                - /url: /app/exceptions?type=UNKNOWN_BANK_CREDIT
+                          - row:
+                            - cell:
+                              - link:
+                                - /url: /app/exceptions?type=REFUND_NETTED
+                                - generic: Refund netted
+                                - generic: Refunds
+                            - cell: "10"
+                            - cell:
+                              - generic:
+                                - text: ₹11,667
+                                - generic: ".20"
+                            - cell:
+                              - link:
+                                - /url: /app/exceptions?type=REFUND_NETTED
+                          - row:
+                            - cell:
+                              - link:
+                                - /url: /app/exceptions?type=DUPLICATE_LEDGER_ENTRY
+                                - generic: Duplicate ledger entry
+                                - generic: Ledger
+                            - cell: "2"
+                            - cell:
+                              - generic:
+                                - text: ₹3,017
+                                - generic: ".00"
+                            - cell:
+                              - link:
+                                - /url: /app/exceptions?type=DUPLICATE_LEDGER_ENTRY
+                          - row:
+                            - cell:
+                              - link:
+                                - /url: /app/exceptions?type=ON_HOLD
+                                - generic: On hold
+                                - generic: Razorpay
+                            - cell: "2"
+                            - cell:
+                              - generic:
+                                - text: ₹2,664
+                                - generic: ".12"
+                            - cell:
+                              - link:
+                                - /url: /app/exceptions?type=ON_HOLD
+                          - row:
+                            - cell:
+                              - link:
+                                - /url: /app/exceptions?type=DISPUTE_DEBIT
+                                - generic: Chargeback debited
+                                - generic: Disputes
+                            - cell: "1"
+                            - cell:
+                              - generic:
+                                - text: ₹2,059
+                                - generic: ".00"
+                            - cell:
+                              - link:
+                                - /url: /app/exceptions?type=DISPUTE_DEBIT
+                          - row:
+                            - cell:
+                              - link:
+                                - /url: /app/exceptions?type=REFUND_PENDING_NET
+                                - generic: Refund pending
+                                - generic: Refunds
+                            - cell: "1"
+                            - cell:
+                              - generic:
+                                - text: ₹1,962
+                                - generic: ".00"
+                            - cell:
+                              - link:
+                                - /url: /app/exceptions?type=REFUND_PENDING_NET
+                          - row:
+                            - cell:
+                              - link:
+                                - /url: /app/exceptions?type=DISPUTE_REVERSAL
+                                - generic: Dispute reversal
+                                - generic: Disputes
+                            - cell: "1"
+                            - cell:
+                              - generic:
+                                - text: ₹958
+                                - generic: ".89"
+                            - cell:
+                              - link:
+                                - /url: /app/exceptions?type=DISPUTE_REVERSAL
+                          - row:
+                            - cell:
+                              - link:
+                                - /url: /app/exceptions?type=AMOUNT_MISMATCH_LEDGER
+                                - generic: Ledger amount mismatch
+                                - generic: Ledger
+                            - cell: "6"
+                            - cell:
+                              - generic:
+                                - text: ₹844
+                                - generic: ".00"
+                            - cell:
+                              - link:
+                                - /url: /app/exceptions?type=AMOUNT_MISMATCH_LEDGER
+                          - row:
+                            - cell:
+                              - link:
+                                - /url: /app/exceptions?type=FEE_VARIANCE
+                                - generic: Fee variance
+                                - generic: Fees & tax
+                            - cell: "3"
+                            - cell:
+                              - generic:
+                                - text: ₹14
+                                - generic: ".00"
+                            - cell:
+                              - link:
+                                - /url: /app/exceptions?type=FEE_VARIANCE
+                          - row:
+                            - cell:
+                              - link:
+                                - /url: /app/exceptions?type=INSTANT_SETTLEMENT_FEE
+                                - generic: Instant settlement fee
+                                - generic: Fees & tax
+                            - cell: "1"
+                            - cell:
+                              - generic:
+                                - text: ₹8
+                                - generic: ".31"
+                            - cell:
+                              - link:
+                                - /url: /app/exceptions?type=INSTANT_SETTLEMENT_FEE
+                          - row:
+                            - cell:
+                              - link:
+                                - /url: /app/exceptions?type=TAX_VARIANCE
+                                - generic: Tax variance
+                                - generic: Fees & tax
+                            - cell: "1"
+                            - cell:
+                              - generic:
+                                - text: ₹0
+                                - generic: ".07"
+                            - cell:
+                              - link:
+                                - /url: /app/exceptions?type=TAX_VARIANCE
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - heading [level=3]: Controller's facts
+                      - paragraph: The numbers that go into the memo and the GST return.
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - term: Payment-gateway fees
+                          - definition:
+                            - generic:
+                              - text: ₹8,159
+                              - generic: ".97"
+                        - generic:
+                          - term: GST on feesITC · GSTR-3B 4A(5)
+                          - definition:
+                            - generic:
+                              - text: ₹1,468
+                              - generic: ".85"
+                        - generic:
+                          - term: Refunds netted in batches
+                          - definition:
+                            - generic:
+                              - text: "-₹21,608"
+                              - generic: ".80"
+                        - generic:
+                          - term: Chargebacks debited
+                          - definition:
+                            - generic:
+                              - text: "-₹2,059"
+                              - generic: ".00"
+                      - generic:
+                        - generic:
+                          - term: Exceptions auto-resolved by rule
+                          - definition:
+                            - generic:
+                              - text: "5"
+                              - generic: / 50
+                        - generic:
+                          - term: Payments matched to ledger
+                          - definition:
+                            - generic:
+                              - text: "594"
+                              - generic: / 600
+                        - generic:
+                          - term:
+                            - text: Links by tier
+                            - generic: 1,732 total
+                          - definition:
+                            - generic:
+                              - generic: A
+                              - generic: "611"
+                            - generic:
+                              - generic: B
+                              - generic: 1,121
+                            - generic:
+                              - generic: C
+                              - generic: "0"
+                            - generic:
+                              - generic: D
+                              - generic: "0"
+                        - generic:
+                          - term: Bank credits seen
+                          - definition: "23"
+            - generic:
+              - generic:
+                - generic:
+                  - heading [level=3]: Recent settlements
+                  - link:
+                    - /url: /app/settlements
+                    - text: All 22 settlements
+                - generic:
+                  - generic:
+                    - table:
+                      - rowgroup:
+                        - row:
+                          - columnheader: Settled
+                          - columnheader: Settlement
+                          - columnheader: UTR
+                          - columnheader: Net
+                          - columnheader: Bank
+                      - rowgroup:
+                        - row:
+                          - cell: 01 Sept
+                          - cell:
+                            - link:
+                              - /url: /app/settlements/setl_OsoSPSgn3OxshH
+                              - text: setl_OsoSPSgn3OxshH
+                          - cell: HDFCN26244000123
+                          - cell:
+                            - generic:
+                              - text: ₹74,791
+                              - generic: ".80"
+                          - cell:
+                            - generic: Bank lag
+                        - row:
+                          - cell: 31 Aug
+                          - cell:
+                            - link:
+                              - /url: /app/settlements/setl_BOeqKKkyEitjz9
+                              - text: setl_BOeqKKkyEitjz9
+                          - cell: HDFCN26243000122
+                          - cell:
+                            - generic:
+                              - text: ₹60,545
+                              - generic: ".41"
+                          - cell:
+                            - generic: Matched
+                        - row:
+                          - cell: 28 Aug
+                          - cell:
+                            - link:
+                              - /url: /app/settlements/setl_K6ySB0dZCbApX8
+                              - text: setl_K6ySB0dZCbApX8
+                          - cell: HDFCN26240000121
+                          - cell:
+                            - generic:
+                              - text: ₹30,870
+                              - generic: ".95"
+                          - cell:
+                            - generic: Matched
+                        - row:
+                          - cell: 27 Aug
+                          - cell:
+                            - link:
+                              - /url: /app/settlements/setl_UdfpVvhIBaxsdz
+                              - text: setl_UdfpVvhIBaxsdz
+                          - cell: HDFCN26239000120
+                          - cell:
+                            - generic:
+                              - text: ₹1,04,501
+                              - generic: ".12"
+                          - cell:
+                            - generic: Matched
+                        - row:
+                          - cell: 25 Aug
+                          - cell:
+                            - link:
+                              - /url: /app/settlements/setl_90yytBBHMgHwO0
+                              - text: setl_90yytBBHMgHwO0
+                          - cell: HDFCN26237000119
+                          - cell:
+                            - generic:
+                              - text: ₹24,600
+                              - generic: ".99"
+                          - cell:
+                            - generic: Matched
+                        - row:
+                          - cell: 24 Aug
+                          - cell:
+                            - link:
+                              - /url: /app/settlements/setl_XTOOCOwpxXgG8w
+                              - text: setl_XTOOCOwpxXgG8w
+                          - cell: HDFCN26236000118
+                          - cell:
+                            - generic:
+                              - text: ₹23,097
+                              - generic: ".82"
+                          - cell:
+                            - generic: Missing credit
+                        - row:
+                          - cell: 22 Aug
+                          - cell:
+                            - link:
+                              - /url: /app/settlements/setl_NgHQITueSE5Ib7
+                              - text: setl_NgHQITueSE5Ib7
+                          - cell: HDFCN26234000101
+                          - cell:
+                            - generic:
+                              - text: ₹3,315
+                              - generic: ".36"
+                          - cell:
+                            - generic: Matched
+                        - row:
+                          - cell: 21 Aug
+                          - cell:
+                            - link:
+                              - /url: /app/settlements/setl_CLABPFF44mXpxZ
+                              - text: setl_CLABPFF44mXpxZ
+                          - cell: HDFCN26233000116
+                          - cell:
+                            - generic:
+                              - text: ₹8,702
+                              - generic: ".22"
+                          - cell:
+                            - generic: Partial
+            - generic:
+              - generic:
+                - generic: Same inputs + same config + same code ⇒ same outputs.
+                - generic:
+                  - generic: inputs
+                  - code: a42f293698d4
+                  - button
+                - generic:
+                  - generic: config
+                  - code: 86ceae355ed4
+                  - button
+                - generic:
+                  - generic: outputs
+                  - code: 5f96a2a4472e
+                  - button
+                - generic:
+                  - generic: code
+                  - code: c5a4e90c65f4
+                  - button
+  - alert
+  - dialog [ref=f4e724]:
+    - heading "Navigation" [level=2] [ref=f4e725]
+    - link "Barabar home" [ref=f4e727] [cursor=pointer]:
+      - /url: /
+      - generic [ref=f4e728]: barabar
+    - navigation "Primary" [ref=f4e731]:
+      - generic [ref=f4e732]:
+        - generic [ref=f4e733]: Close
+        - list [ref=f4e734]:
+          - listitem [ref=f4e735]:
+            - link "Close pack" [ref=f4e737] [cursor=pointer]:
+              - /url: /app
+          - listitem [ref=f4e744]:
+            - link "Exceptions 45" [ref=f4e745] [cursor=pointer]:
+              - /url: /app/exceptions
+              - generic [ref=f4e749]: Exceptions
+              - generic [ref=f4e750]: "45"
+          - listitem [ref=f4e751]:
+            - link "Ask the books" [ref=f4e752] [cursor=pointer]:
+              - /url: /app/ask
+      - generic [ref=f4e756]:
+        - generic [ref=f4e757]: Three legs
+        - list [ref=f4e758]:
+          - listitem [ref=f4e759]:
+            - link "Settlements" [ref=f4e760] [cursor=pointer]:
+              - /url: /app/settlements
+          - listitem [ref=f4e765]:
+            - link "Bank statement" [ref=f4e766] [cursor=pointer]:
+              - /url: /app/bank
+          - listitem [ref=f4e770]:
+            - link "Sales ledger" [ref=f4e771] [cursor=pointer]:
+              - /url: /app/ledger
+      - generic [ref=f4e775]:
+        - generic [ref=f4e776]: Output
+        - list [ref=f4e777]:
+          - listitem [ref=f4e778]:
+            - link "Journal entries" [ref=f4e779] [cursor=pointer]:
+              - /url: /app/journal
+          - listitem [ref=f4e784]:
+            - link "Sources" [ref=f4e785] [cursor=pointer]:
+              - /url: /app/sources
+          - listitem [ref=f4e790]:
+            - link "Runs & audit" [ref=f4e791] [cursor=pointer]:
+              - /url: /app/runs
+          - listitem [ref=f4e797]:
+            - link "Rate card & rules" [ref=f4e798] [cursor=pointer]:
+              - /url: /app/settings
+      - generic [ref=f4e803]:
+        - generic [ref=f4e804]: Learn
+        - list [ref=f4e805]:
+          - listitem [ref=f4e806]:
+            - link "How Barabar works" [ref=f4e807] [cursor=pointer]:
+              - /url: /app/guide
+    - button "Close" [active] [ref=f4e812] [cursor=pointer]

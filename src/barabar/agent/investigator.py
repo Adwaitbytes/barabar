@@ -12,6 +12,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import tempfile
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Protocol
@@ -154,26 +155,41 @@ def request_extras() -> dict[str, Any]:
     return {"betas": [FALLBACK_BETA], "fallbacks": "default"}
 
 
+def _default_cache_root() -> Path:
+    """A writable cache dir: the configured one, else /tmp on read-only hosts (Vercel)."""
+    preferred = Path(os.environ.get("BARABAR_AGENT_CACHE", "data/local/agent_cache"))
+    try:
+        preferred.mkdir(parents=True, exist_ok=True)
+        return preferred
+    except OSError:
+        return Path(tempfile.gettempdir()) / "barabar_agent_cache"
+
+
 @dataclass
 class AgentCache:
-    root: Path = field(
-        default_factory=lambda: Path(
-            os.environ.get("BARABAR_AGENT_CACHE", "data/local/agent_cache")
-        )
-    )
+    """Best-effort cache of investigator outputs. A cache that cannot be written must
+    never fail the request: the hypothesis is also persisted by the API's store."""
+
+    root: Path = field(default_factory=_default_cache_root)
 
     def key(self, *parts: str) -> str:
         return hashlib.sha256("|".join(parts).encode()).hexdigest()[:24]
 
     def get(self, key: str) -> dict[str, Any] | None:
         p = self.root / f"{key}.json"
-        return json.loads(p.read_text(encoding="utf-8")) if p.exists() else None
+        try:
+            return json.loads(p.read_text(encoding="utf-8")) if p.exists() else None
+        except OSError:
+            return None
 
     def put(self, key: str, value: dict[str, Any]) -> None:
-        self.root.mkdir(parents=True, exist_ok=True)
-        (self.root / f"{key}.json").write_text(
-            json.dumps(value, indent=1, sort_keys=True), encoding="utf-8"
-        )
+        try:
+            self.root.mkdir(parents=True, exist_ok=True)
+            (self.root / f"{key}.json").write_text(
+                json.dumps(value, indent=1, sort_keys=True), encoding="utf-8"
+            )
+        except OSError:
+            pass  # read-only host: skip the cache, keep the answer
 
 
 def _run_loop(
